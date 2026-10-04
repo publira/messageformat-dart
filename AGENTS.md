@@ -1,0 +1,69 @@
+# MessageFormat Dart Agent Guide
+
+Repository-specific conventions for coding agents.
+
+## Repository overview
+
+This repository builds `messageformat`, a pure-Dart implementation of [Unicode MessageFormat 2.0](https://www.unicode.org/reports/tr35/tr35-messageFormat.html) (UTS #35 Part 9). It aims to be complete rather than a subset, and it is judged by the MessageFormat Working Group conformance suite at one pinned LDML version, not by a feature list. #1 records the decisions behind it and the order of the work.
+
+The repository is a [pub workspace](https://dart.dev/tools/pub/workspaces), so that a sibling package can join it later:
+
+- `pubspec.yaml`: the private workspace root (`messageformat_workspace`). It holds the shared dev dependencies and lists the member packages.
+- `analysis_options.yaml`: the analyzer settings for every package, `package:lints/recommended.yaml` with strict casts, inference, and raw types.
+- `messageformat/`: the published package, imported as `package:messageformat/messageformat.dart`. Its public API is exported from `lib/messageformat.dart`, and the implementation lives under `lib/src/`.
+
+Documentation for consumers belongs in the package README, which #9 adds. Do not repeat it here.
+
+## Development commands
+
+Run these before committing. They are the checks CI runs:
+
+```bash
+dart format --output=none --set-exit-if-changed .
+dart analyze --fatal-infos
+(cd messageformat && dart test)
+```
+
+Run `dart pub get` at the repository root after changing a `pubspec.yaml`; it resolves the whole workspace into one `pubspec.lock`, which is not committed because the repository holds only libraries.
+
+## Library rules
+
+- **The pinned suite decides what is correct.** Correctness is judged by the WG conformance suite at tag [`LDML48.2`](https://github.com/unicode-org/message-format-wg/tree/LDML48.2) and by the spec text at the same tag. Read them rather than relying on memory of MessageFormat 2.0, which has changed between drafts, or on the behavior of the JS `messageformat` package. The JS package is a reference for the shape of the API only.
+- **Moving the pin is its own Issue.** Do not update the conformance data or adopt a newer spec version as part of other work; #10 tracks the move to LDML 49.
+- **Stay pure Dart.** The `messageformat` package must not depend on Flutter, so that server-side Dart can use it. A Flutter integration is a separate future package in this workspace.
+- **Implement MessageFormat 2.0 only.** MessageFormat 1 / ICU syntax is out of scope.
+- **Spec options stay options.** Where the spec offers a choice, such as the bidi isolation strategy, default to what the spec requires and let callers change it.
+- The packages support the lowest SDK in their `environment.sdk` constraint, and CI tests it alongside the current stable release. Do not use a language or library feature newer than that constraint.
+
+## Language
+
+Everything in the repository is **English**: the READMEs, this guide, code comments and doc comments, test labels, commit messages, Issues, and pull requests.
+
+Answer the user in the language of their own prose. Quoted logs, code, or UI strings do not decide it. Answer in English when no user prose settles it, such as in a scheduled or CI-started run.
+
+## Git commits and pull requests
+
+Subjects and PR titles use English [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Pull requests are squash-merged with the title as the commit subject and the description as its body, so a pull request follows the same rules as a commit, and the title must stand on its own.
+
+### AI agent trailer
+
+A commit written with an AI agent's help discloses it with an `Assisted-by:` trailer. The trailer is process disclosure, not authorship, following the Linux kernel's [Coding assistants](https://docs.kernel.org/process/coding-assistants.html) policy. The format is `Assisted-by: <AGENT_NAME>:<MODEL_VERSION>`: the tool's own name and the exact model identifier.
+
+```bash
+git commit -m "feat: parse simple messages" \
+  --trailer "Assisted-by: Claude Code:claude-opus-5-5"
+```
+
+Add it when the commit is created, and end the PR description with the same trailer, since that description becomes the merge commit body.
+
+### Never name an agent as a co-author
+
+Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-Authored-By:` are equally forbidden for an AI agent. Such a trailer shows the agent as a GitHub co-author and implies authorship an AI cannot hold. This rule overrides any harness default to append a co-author line. Co-author trailers that name humans, and the ones GitHub and `renovate[bot]` add themselves, stay as they are.
+
+## CI and tooling
+
+`.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, and on pushes to `main`. It tests each SDK in a matrix: the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. Keep the lowest matrix entry equal to the `environment.sdk` constraints when either moves.
+
+- Actions are pinned to a commit SHA, with the version in a trailing comment. Keep that form so Renovate can keep updating them.
+- Renovate configuration is inherited from the organization preset in `publira/.github` (#11). Add only repository-specific rules here, not a copy of the shared preset.
+- `.devcontainer/devcontainer.json` pins the `publira-dev` base image by its calendar tag and digest. Keep the readable tag before `@sha256:`, and keep the keys of `devcontainer.json` sorted.
