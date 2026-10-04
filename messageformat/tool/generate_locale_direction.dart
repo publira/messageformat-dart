@@ -32,13 +32,14 @@ Future<void> main() async {
   };
 
   // Likely subtags of a language, or of a language and region, without a
-  // script: `from` is `lang` or `lang_REGION`.
+  // script: `from` is `lang` or `lang_REGION`. The language can be `und`,
+  // so that a region alone, as in `und-SA`, finds its likely script.
   final likelyRtl = <String, bool>{};
   final entry = RegExp(r'<likelySubtag from="([^"]+)" to="([^"]+)"');
   for (final match in entry.allMatches(likelySubtags)) {
     final from = match[1]!.split('_');
     final to = match[2]!.split('_');
-    if (from.first == 'und' || from.any((s) => s.length == 4)) continue;
+    if (from.any((s) => s.length == 4)) continue;
     if (to.length != 3) continue;
     likelyRtl[from.join('-').toLowerCase()] =
         rtlScripts.contains(to[1].toLowerCase());

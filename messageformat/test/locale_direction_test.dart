@@ -27,6 +27,9 @@ void main() {
     expect(localeDirection('sd-IN'), ltr);
     expect(localeDirection('sd_PK'), rtl);
     expect(localeDirection('ar-001'), rtl);
+    expect(localeDirection('und-SA'), rtl);
+    expect(localeDirection('und-IR'), rtl);
+    expect(localeDirection('und-US'), ltr);
   });
 
   test('recognises deprecated codes', () {
