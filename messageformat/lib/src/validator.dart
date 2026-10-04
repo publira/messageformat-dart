@@ -8,8 +8,9 @@ import 'nfc.dart';
 /// [MessageDataModelError]. With [onError], each error is passed to it.
 ///
 /// A data model built in code has no source, so the errors carry no
-/// location. Duplicate option names cannot occur in the data model, whose
-/// options are a map; `parseMessage` reports those from the source.
+/// location. Its option maps cannot repeat a key, but they can hold two
+/// spellings of a name that are equal under NFC, which is a Duplicate
+/// Option Name. `parseMessage` reports repeated options from the source.
 void validateMessage(
   Message message, {
   void Function(MessageDataModelError error)? onError,
@@ -30,6 +31,7 @@ void validate(
   }
 
   final declarations = message.declarations;
+  _checkOptions(message, report);
   _checkDeclarations(declarations, report);
 
   if (message case SelectMessage(:final selectors, :final variants)) {
@@ -71,6 +73,55 @@ void validate(
         message,
       );
     }
+  }
+}
+
+/// Reports each function and markup whose options repeat a name under NFC.
+///
+/// The parser keeps only the first of repeated options, so a parsed message
+/// never has these; a data model built in code can.
+void _checkOptions(
+  Message message,
+  void Function(DataModelErrorKind, String, Object) report,
+) {
+  void check(Object node, Map<String, Operand> options) {
+    final names = <String>{};
+    for (final name in options.keys) {
+      if (!names.add(toNfc(name))) {
+        report(
+          DataModelErrorKind.duplicateOptionName,
+          'The option $name is already set',
+          node,
+        );
+      }
+    }
+  }
+
+  void checkPattern(List<PatternElement> pattern) {
+    for (final element in pattern) {
+      switch (element) {
+        case Expression(function: final function?):
+          check(function, function.options);
+        case Markup():
+          check(element, element.options);
+        case Expression() || TextElement():
+          break;
+      }
+    }
+  }
+
+  for (final declaration in message.declarations) {
+    if (declaration.value.function case final function?) {
+      check(function, function.options);
+    }
+  }
+  switch (message) {
+    case PatternMessage(:final pattern):
+      checkPattern(pattern);
+    case SelectMessage(:final variants):
+      for (final variant in variants) {
+        checkPattern(variant.value);
+      }
   }
 }
 

@@ -380,6 +380,38 @@ void main() {
       expect(errors.map((e) => e.start), everyElement(isNull));
     });
 
+    test('reports option names that are equal under NFC', () {
+      final errors = <MessageDataModelError>[];
+      validateMessage(
+        const PatternMessage(
+          [
+            FunctionExpression(FunctionRef('f', options: {
+              '\u1e0c\u0307': Literal('1'),
+              'D\u0323\u0307': Literal('2'),
+            })),
+            Markup(MarkupKind.open, 'b', options: {
+              'a': Literal('1'),
+              'b': Literal('2'),
+            }),
+          ],
+          declarations: [
+            LocalDeclaration(
+              'x',
+              FunctionExpression(FunctionRef('g', options: {
+                'k\u00e9': Literal('1'),
+                'ke\u0301': Literal('2'),
+              })),
+            ),
+          ],
+        ),
+        onError: errors.add,
+      );
+      expect(errors.map((e) => e.kind), [
+        DataModelErrorKind.duplicateOptionName,
+        DataModelErrorKind.duplicateOptionName,
+      ]);
+    });
+
     test('throws the first error without a callback', () {
       expect(
         () => validateMessage(const PatternMessage([], declarations: [
