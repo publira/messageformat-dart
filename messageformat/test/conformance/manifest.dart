@@ -57,8 +57,19 @@ const unpairedSurrogatesFile = 'unpaired-surrogates';
 /// This is a temporary list, separate from [draftDeferred]. Each
 /// implementation Issue removes the files it makes pass, and the list must be
 /// empty before #1 is closed. Never add a file to it to hide a regression.
-const notYetImplemented = <String, String>{
+const notYetImplemented = <String, String>{};
+
+/// Files whose cases are, for now, only parsed, mapped to the Issues that
+/// will let them run in full.
+///
+/// A parsed case must report exactly the Syntax Errors and Data Model Errors
+/// in its `expErrors` ([staticErrorTypes]) and no others; its expected output
+/// and its formatting errors are not checked. Like [notYetImplemented], this
+/// list is temporary and must be empty before #1 is closed. A file is on at
+/// most one of the two lists.
+const parseOnly = <String, String>{
   'bidi.json': '#5, #6',
+  'data-model-errors.json': '#5',
   'fallback.json': '#5',
   'functions/currency.json': '#6',
   'functions/date.json': '#7',
@@ -70,21 +81,9 @@ const notYetImplemented = <String, String>{
   'functions/string.json': '#6',
   'functions/time.json': '#7',
   'pattern-selection.json': '#5',
-  'u-options.json': '#5, #6',
-};
-
-/// Files whose cases are, for now, only parsed, mapped to the Issues that
-/// will let them run in full.
-///
-/// A parsed case must report exactly the Syntax Errors and Data Model Errors
-/// in its `expErrors` ([staticErrorTypes]) and no others; its expected output
-/// and its formatting errors are not checked. Like [notYetImplemented], this
-/// list is temporary and must be empty before #1 is closed. A file is on at
-/// most one of the two lists.
-const parseOnly = <String, String>{
-  'data-model-errors.json': '#5',
   'syntax-errors.json': '#5',
   'syntax.json': '#5',
+  'u-options.json': '#5, #6',
   unpairedSurrogatesFile: '#5',
 };
 
