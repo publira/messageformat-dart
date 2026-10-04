@@ -35,6 +35,9 @@ Future<void> main() async {
   // script: `from` is `lang` or `lang_REGION`. The language can be `und`,
   // so that a region alone, as in `und-SA`, finds its likely script.
   final likelyRtl = <String, bool>{};
+  // The likely region of each language, for choosing among the replacements
+  // of a deprecated region.
+  final likelyRegion = <String, String>{};
   final entry = RegExp(r'<likelySubtag from="([^"]+)" to="([^"]+)"');
   for (final match in entry.allMatches(likelySubtags)) {
     final from = match[1]!.split('_');
@@ -43,6 +46,7 @@ Future<void> main() async {
     if (to.length != 3) continue;
     likelyRtl[from.join('-').toLowerCase()] =
         rtlScripts.contains(to[1].toLowerCase());
+    if (from.length == 1) likelyRegion[from.first] = to[2].toLowerCase();
   }
 
   // A language and region is listed only where its direction differs from
@@ -57,6 +61,30 @@ Future<void> main() async {
           value != rtlLanguages.contains(key.split('-').first))
         key: value,
   };
+
+  // A deprecated region, such as `YD`, takes the direction of its
+  // replacement. Where it has several, UTS #35 canonicalization picks the
+  // language's likely region if it is one of them, and otherwise the first.
+  // Only codes that are valid region subtags, two letters or three digits,
+  // are kept; the three-letter ISO 3166 codes cannot appear in a tag.
+  final territoryAlias = RegExp(
+      r'<territoryAlias type="([A-Z]{2}|[0-9]{3})" replacement="([A-Z0-9 ]+)"');
+  final aliasOverrides = <String, bool>{};
+  for (final match in territoryAlias.allMatches(metadata)) {
+    final deprecated = match[1]!.toLowerCase();
+    final replacements = match[2]!.toLowerCase().split(' ');
+    for (final MapEntry(:key, :value) in regionOverrides.entries) {
+      final [language, region] = key.split('-');
+      final likely = likelyRegion[language];
+      final chosen =
+          replacements.contains(likely) ? likely : replacements.first;
+      final aliasKey = '$language-$deprecated';
+      if (chosen == region && !likelyRtl.containsKey(aliasKey)) {
+        aliasOverrides[aliasKey] = value;
+      }
+    }
+  }
+  regionOverrides.addAll(aliasOverrides);
 
   // The direction of a replacement locale such as `he`, `fa_AF`, or
   // `sr_Latn`: its script if it has one, otherwise the likely script of its

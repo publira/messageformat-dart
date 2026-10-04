@@ -43,6 +43,16 @@ void main() {
     expect(localeDirection('cnr'), ltr);
   });
 
+  test('follows deprecated and numeric regions to their replacements', () {
+    // YD is replaced by YE, and NT by SA (first of SA and IQ).
+    expect(localeDirection('und-YD'), rtl);
+    expect(localeDirection('und-NT'), rtl);
+    // 682 is Saudi Arabia, 586 Pakistan, and 356 India.
+    expect(localeDirection('und-682'), rtl);
+    expect(localeDirection('pa-586'), rtl);
+    expect(localeDirection('sd-356'), ltr);
+  });
+
   test('ignores case and empty subtags', () {
     expect(localeDirection('AR-eg'), rtl);
     expect(localeDirection('ar-'), rtl);
