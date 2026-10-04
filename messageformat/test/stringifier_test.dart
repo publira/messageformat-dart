@@ -19,6 +19,33 @@ void main() {
       );
     });
 
+    test('looks past leading text elements that are only whitespace', () {
+      expect(
+        stringifyMessage(const PatternMessage([
+          TextElement(' '),
+          TextElement('\u200e'),
+          TextElement('.'),
+        ])),
+        '{{ \u200e.}}',
+      );
+      expect(
+        stringifyMessage(const PatternMessage([
+          TextElement(' '),
+          VariableExpression(VariableRef('x')),
+          TextElement('.'),
+        ])),
+        ' {\$x}.',
+      );
+    });
+
+    test('quotes literals with unpaired surrogates', () {
+      for (final source in ['{|\ud800|}', '{|a\udc00|}', '{|\udc00\ud800|}']) {
+        final message = parseMessage(source);
+        expect(stringifyMessage(message), source);
+        expect(parseMessage(stringifyMessage(message)), message);
+      }
+    });
+
     test('escapes text and quoted literals', () {
       expect(
         stringifyMessage(parseMessage(r'\{\}\\| {|a\|\\{}|}')),

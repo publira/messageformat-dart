@@ -57,10 +57,12 @@ String stringifyMessage(Message message) {
 
 /// Whether [pattern] can be written as a simple message: its first
 /// character other than whitespace and bidi marks must not be a `.`, which
-/// would start a complex message.
+/// would start a complex message. A data model built in code can split that
+/// text across several adjacent elements.
 bool _canBeSimple(List<PatternElement> pattern) {
-  if (pattern.firstOrNull case TextElement(:final value)) {
-    for (final unit in value.codeUnits) {
+  for (final element in pattern) {
+    if (element is! TextElement) return true;
+    for (final unit in element.value.codeUnits) {
       if (isWhitespace(unit) || isBidi(unit)) continue;
       return unit != $period;
     }
