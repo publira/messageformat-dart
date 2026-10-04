@@ -1,0 +1,7 @@
+# Dart
+.dart_tool/
+build/
+
+# This repository only contains libraries, so lock files are not committed.
+# https://dart.dev/guides/libraries/private-files#pubspec-lock
+pubspec.lock
