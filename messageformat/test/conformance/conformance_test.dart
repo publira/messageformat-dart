@@ -1,7 +1,8 @@
 /// Runs every case of the MessageFormat WG conformance suite at the pinned
 /// tag, one `dart test` case per entry.
 ///
-/// See `manifest.dart` for the pin and for the lists that skip files.
+/// See `manifest.dart` for the pin and for the lists that skip files or
+/// only parse them.
 library;
 
 import 'package:test/test.dart';
@@ -42,12 +43,13 @@ void _defineGroup(String path, String scenario, List<ConformanceCase> cases) {
     (_, final issues?) => 'Not yet implemented; see $issues',
     _ => null,
   };
+  final check = parseOnly.containsKey(path) ? checkParse : checkCase;
   group('$path ($scenario)', skip: skip, () {
     for (final testCase in cases) {
       test(
         testCase.name,
         tags: [for (final tag in testCase.tags) testTags[tag]!],
-        () => checkCase(subject, testCase),
+        () => check(subject, testCase),
       );
     }
   });

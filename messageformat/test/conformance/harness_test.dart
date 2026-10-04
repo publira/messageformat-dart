@@ -43,6 +43,7 @@ void main() {
     test('skip lists name only known files', () {
       expect(knownFiles, containsAll(notYetImplemented.keys));
       expect(knownFiles, containsAll(draftDeferred.keys));
+      expect(knownFiles, containsAll(parseOnly.keys));
     });
 
     test('only Draft function files may be deferred', () {
@@ -52,6 +53,15 @@ void main() {
     test('a file is never on both skip lists', () {
       expect(
         notYetImplemented.keys.toSet().intersection(draftDeferred.keys.toSet()),
+        isEmpty,
+      );
+    });
+
+    test('a parsed-only file is never skipped', () {
+      expect(
+        parseOnly.keys
+            .toSet()
+            .intersection({...notYetImplemented.keys, ...draftDeferred.keys}),
         isEmpty,
       );
     });
@@ -200,6 +210,47 @@ void main() {
       );
       expect(
         () => checkCase(_FakeSubject(testCase, partsErrors: []), testCase),
+        throwsA(isA<TestFailure>()),
+      );
+    });
+  });
+
+  group('checkParse', () {
+    final cases = [
+      for (final file in loadSuite()) ...file.cases,
+      ...unpairedSurrogateCases,
+    ];
+
+    test('accepts the expected parse errors of every case', () {
+      for (final testCase in cases) {
+        checkParse(_FakeSubject(testCase), testCase);
+      }
+    });
+
+    test('ignores errors that only formatting reports', () {
+      final testCase = cases.firstWhere(
+        (c) => c.expErrors?.contains('unresolved-variable') ?? false,
+      );
+      checkParse(_FakeSubject(testCase, parseErrors: []), testCase);
+    });
+
+    test('rejects a missing error', () {
+      final testCase = cases.firstWhere(
+        (c) => c.expErrors?.contains('duplicate-declaration') ?? false,
+      );
+      expect(
+        () => checkParse(_FakeSubject(testCase, parseErrors: []), testCase),
+        throwsA(isA<TestFailure>()),
+      );
+    });
+
+    test('rejects an unexpected error', () {
+      final testCase = cases.firstWhere((c) => c.expErrors == null);
+      expect(
+        () => checkParse(
+          _FakeSubject(testCase, parseErrors: ['syntax-error']),
+          testCase,
+        ),
         throwsA(isA<TestFailure>()),
       );
     });
@@ -461,6 +512,7 @@ final class _FakeSubject implements ConformanceSubject {
     List<String>? errors,
     List<Map<String, Object?>>? parts,
     List<String>? partsErrors,
+    List<String>? parseErrors,
   })  : _value = identical(value, _expected) ? testCase.exp : value as String?,
         _errors = errors ?? testCase.expErrors ?? const [],
         _parts = parts ??
@@ -469,7 +521,12 @@ final class _FakeSubject implements ConformanceSubject {
                   in testCase.expParts ?? const <Map<String, Object?>>[])
                 {...part, 'extra': true},
             ],
-        _partsErrors = partsErrors ?? errors ?? testCase.expErrors ?? const [];
+        _partsErrors = partsErrors ?? errors ?? testCase.expErrors ?? const [],
+        _parseErrors = parseErrors ??
+            [
+              for (final type in testCase.expErrors ?? const <String>[])
+                if (staticErrorTypes.contains(type)) type,
+            ];
 
   static const _expected = Object();
 
@@ -477,6 +534,10 @@ final class _FakeSubject implements ConformanceSubject {
   final List<String> _errors;
   final List<Map<String, Object?>> _parts;
   final List<String> _partsErrors;
+  final List<String> _parseErrors;
+
+  @override
+  List<String> parse(String src) => _parseErrors;
 
   @override
   FormatOutcome format({

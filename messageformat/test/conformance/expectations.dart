@@ -3,6 +3,7 @@ library;
 
 import 'package:test/test.dart';
 
+import 'manifest.dart';
 import 'subject.dart';
 import 'suite.dart';
 
@@ -60,6 +61,22 @@ void checkCase(ConformanceSubject subject, ConformanceCase testCase) {
       reason: 'errors from formatToParts()',
     );
   }
+}
+
+/// Checks that parsing [testCase] with [subject] reports exactly the Syntax
+/// Errors and Data Model Errors that its `expErrors` lists.
+///
+/// The other expected errors, and the expected output, need formatting and
+/// are not checked. See `parseOnly` in `manifest.dart`.
+void checkParse(ConformanceSubject subject, ConformanceCase testCase) {
+  expect(
+    subject.parse(testCase.src),
+    hasErrorTypes([
+      for (final type in testCase.expErrors ?? const <String>[])
+        if (staticErrorTypes.contains(type)) type,
+    ]),
+    reason: 'errors from parse()',
+  );
 }
 
 final class _SubsetMatcher extends Matcher {

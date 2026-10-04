@@ -59,7 +59,6 @@ const unpairedSurrogatesFile = 'unpaired-surrogates';
 /// empty before #1 is closed. Never add a file to it to hide a regression.
 const notYetImplemented = <String, String>{
   'bidi.json': '#5, #6',
-  'data-model-errors.json': '#4',
   'fallback.json': '#5',
   'functions/currency.json': '#6',
   'functions/date.json': '#7',
@@ -71,10 +70,34 @@ const notYetImplemented = <String, String>{
   'functions/string.json': '#6',
   'functions/time.json': '#7',
   'pattern-selection.json': '#5',
-  'syntax-errors.json': '#4',
-  'syntax.json': '#4, #5',
   'u-options.json': '#5, #6',
-  unpairedSurrogatesFile: '#4',
+};
+
+/// Files whose cases are, for now, only parsed, mapped to the Issues that
+/// will let them run in full.
+///
+/// A parsed case must report exactly the Syntax Errors and Data Model Errors
+/// in its `expErrors` ([staticErrorTypes]) and no others; its expected output
+/// and its formatting errors are not checked. Like [notYetImplemented], this
+/// list is temporary and must be empty before #1 is closed. A file is on at
+/// most one of the two lists.
+const parseOnly = <String, String>{
+  'data-model-errors.json': '#5',
+  'syntax-errors.json': '#5',
+  'syntax.json': '#5',
+  unpairedSurrogatesFile: '#5',
+};
+
+/// The error types that parsing reports: the Syntax Error and the Data
+/// Model Errors.
+const staticErrorTypes = {
+  'syntax-error',
+  'variant-key-mismatch',
+  'missing-fallback-variant',
+  'missing-selector-annotation',
+  'duplicate-declaration',
+  'duplicate-option-name',
+  'duplicate-variant',
 };
 
 /// Files deliberately not run because they test a function that the pinned
