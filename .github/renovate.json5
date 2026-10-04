@@ -10,13 +10,5 @@
       matchDepNames: ["dart"],
       enabled: false,
     },
-    // `replace` turns `>=5.1.1 <7.0.0` into `<8.0.0`, and `widen` turns a
-    // caret range into `^1.0.0 || ^2.0.0`, which pub rejects.
-    {
-      description: "Widen `>=x <y` pub constraints instead of replacing them.",
-      matchManagers: ["pub"],
-      matchCurrentValue: "/^>=\\S+ <\\S+$/",
-      rangeStrategy: "widen",
-    },
   ],
 }
