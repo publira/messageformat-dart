@@ -35,6 +35,12 @@ void main() {
   test('recognises deprecated codes', () {
     expect(localeDirection('iw'), rtl);
     expect(localeDirection('ji-US'), rtl);
+    // Replaced by fa_AF.
+    expect(localeDirection('prs'), rtl);
+    expect(localeDirection('drw'), rtl);
+    // Replaced by sr_Latn and sr_ME.
+    expect(localeDirection('sh'), ltr);
+    expect(localeDirection('cnr'), ltr);
   });
 
   test('ignores case and empty subtags', () {

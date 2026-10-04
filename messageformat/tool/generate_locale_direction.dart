@@ -58,13 +58,29 @@ Future<void> main() async {
         key: value,
   };
 
-  // Deprecated language codes whose replacement is right-to-left.
+  // The direction of a replacement locale such as `he`, `fa_AF`, or
+  // `sr_Latn`: its script if it has one, otherwise the likely script of its
+  // language and region.
+  bool isRtl(String locale) {
+    final [language, ...rest] = locale.toLowerCase().split('_');
+    String? region;
+    for (final subtag in rest) {
+      if (subtag.length == 4) return rtlScripts.contains(subtag);
+      if (subtag.length == 2 || int.tryParse(subtag) != null) {
+        region = subtag;
+        break;
+      }
+    }
+    return likelyRtl['$language-$region'] ?? likelyRtl[language] ?? false;
+  }
+
+  // Deprecated language codes whose replacement is right-to-left. A code
+  // that has likely subtags of its own keeps their direction.
   final alias =
-      RegExp(r'<languageAlias type="([a-z]+)" replacement="([a-z]+)"');
+      RegExp(r'<languageAlias type="([a-z]+)" replacement="([A-Za-z0-9_]+)"');
   final rtlAliases = {
     for (final match in alias.allMatches(metadata))
-      if (rtlLanguages.contains(match[2]) && !likelyRtl.containsKey(match[1]))
-        match[1]!,
+      if (!likelyRtl.containsKey(match[1]) && isRtl(match[2]!)) match[1]!,
   };
 
   final output = StringBuffer()
