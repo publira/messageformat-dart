@@ -1,0 +1,5 @@
+# The conformance harness is not published: its vendored suite is test-only
+# data under its own license (Unicode-3.0), and the harness cannot run
+# without it.
+/test/conformance/
+/tool/vendor_conformance_suite.sh

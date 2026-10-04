@@ -1,0 +1,105 @@
+/// The pinned MessageFormat Working Group conformance suite and the lists
+/// that decide which of its files run.
+///
+/// The suite is vendored under [suiteDirectory] by
+/// `tool/vendor_conformance_suite.sh <tag>`. Moving the pin is its own Issue
+/// (#10): re-vendor, then update [suiteTag], [suiteCommit], and
+/// [expectedCaseCounts] together.
+library;
+
+/// The WG repository tag the vendored suite was copied from.
+const suiteTag = 'LDML48.2';
+
+/// The commit [suiteTag] points to.
+const suiteCommit = '7f142fb4f1f5ea6ab1eb34ce2b87e918ca9fd331';
+
+/// The vendored copy of the WG repository's `test/` directory, relative to
+/// the package root, which is where `dart test` runs.
+const suiteDirectory = 'test/conformance/message-format-wg';
+
+/// The number of test cases in each file under `tests/`, keyed by its path
+/// relative to that directory.
+///
+/// The harness asserts these counts, so a file that is dropped, added, or
+/// truncated by a re-vendor fails the run instead of silently shrinking it.
+const expectedCaseCounts = <String, int>{
+  'bidi.json': 27,
+  'data-model-errors.json': 23,
+  'fallback.json': 8,
+  'functions/currency.json': 12,
+  'functions/date.json': 7,
+  'functions/datetime.json': 7,
+  'functions/integer.json': 13,
+  'functions/number.json': 41,
+  'functions/offset.json': 16,
+  'functions/percent.json': 13,
+  'functions/string.json': 9,
+  'functions/time.json': 6,
+  'pattern-selection.json': 22,
+  'syntax-errors.json': 133,
+  'syntax.json': 114,
+  'u-options.json': 10,
+};
+
+/// The total number of test cases at [suiteTag].
+const expectedTotalCaseCount = 461;
+
+/// The name under which the harness's own unpaired-surrogate cases are
+/// reported, alongside the vendored files.
+///
+/// JSON cannot carry unpaired surrogates, so the WG suite asks UTF-16
+/// implementations to add these cases themselves.
+const unpairedSurrogatesFile = 'unpaired-surrogates';
+
+/// Files whose cases are skipped because the code that makes them pass has
+/// not landed yet, mapped to the Issues that will land it.
+///
+/// This is a temporary list, separate from [draftDeferred]. Each
+/// implementation Issue removes the files it makes pass, and the list must be
+/// empty before #1 is closed. Never add a file to it to hide a regression.
+const notYetImplemented = <String, String>{
+  'bidi.json': '#5, #6',
+  'data-model-errors.json': '#4',
+  'fallback.json': '#5',
+  'functions/currency.json': '#6',
+  'functions/date.json': '#7',
+  'functions/datetime.json': '#7',
+  'functions/integer.json': '#6',
+  'functions/number.json': '#6',
+  'functions/offset.json': '#6',
+  'functions/percent.json': '#6',
+  'functions/string.json': '#6',
+  'functions/time.json': '#7',
+  'pattern-selection.json': '#5',
+  'syntax-errors.json': '#4',
+  'syntax.json': '#4, #5',
+  'u-options.json': '#5, #6',
+  unpairedSurrogatesFile: '#4',
+};
+
+/// Files deliberately not run because they test a function that the pinned
+/// version of the spec marks **Draft**, mapped to the reason.
+///
+/// This is the only permanent exclusion the project allows, and it is
+/// expected to stay empty: #7 implements the Draft date/time functions
+/// instead of deferring them. Only [draftFunctionFiles] may be listed.
+const draftDeferred = <String, String>{};
+
+/// The test files for functions that LDML 48.2 marks Draft: `:datetime`,
+/// `:date`, `:time`, and `:unit` (which has no file at this tag).
+const draftFunctionFiles = {
+  'functions/date.json',
+  'functions/datetime.json',
+  'functions/time.json',
+  'functions/unit.json',
+};
+
+/// Maps the suite's test tags to `dart test` tag names, which cannot contain
+/// a colon. Tagged cases still run; the tags let `dart test --tags` select
+/// them. Every tag is declared in `dart_test.yaml`.
+const testTags = <String, String>{
+  ':currency': 'mf2-currency',
+  ':percent': 'mf2-percent',
+  'u:dir': 'mf2-u-dir',
+  'u:id': 'mf2-u-id',
+};

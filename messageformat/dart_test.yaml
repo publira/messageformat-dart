@@ -1,0 +1,12 @@
+# Tags mirror the conformance suite's test tags (see `testTags` in
+# test/conformance/manifest.dart). They are metadata only: tagged cases run
+# like any other.
+tags:
+  mf2-currency:
+    description: Uses the :currency function.
+  mf2-percent:
+    description: Uses the :percent function.
+  mf2-u-dir:
+    description: Uses the u:dir option.
+  mf2-u-id:
+    description: Uses the u:id option.

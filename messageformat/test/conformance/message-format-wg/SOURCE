@@ -1,0 +1,11 @@
+The files in this directory, except this one, are copied without modification
+from the Unicode MessageFormat Working Group repository: its `test/`
+directory and its LICENSE. They are licensed under the Unicode License v3
+(SPDX-License-Identifier: Unicode-3.0); see LICENSE.
+
+Repository: https://github.com/unicode-org/message-format-wg
+Tag: LDML48.2
+Commit: 7f142fb4f1f5ea6ab1eb34ce2b87e918ca9fd331
+Path: test/
+
+Regenerate with: tool/vendor_conformance_suite.sh LDML48.2
