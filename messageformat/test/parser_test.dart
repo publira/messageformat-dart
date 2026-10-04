@@ -59,6 +59,16 @@ void main() {
       );
     });
 
+    test('treats attribute names that are equal under NFC as repeated', () {
+      final message = parseMessage(
+        '{x @\u1e0c\u0307=1 @b @D\u0323\u0307=2}',
+      ) as PatternMessage;
+      expect((message.pattern.single as Expression).attributes, {
+        'b': null,
+        'D\u0323\u0307': const Literal('2'),
+      });
+    });
+
     test('parses open, standalone, and close markup', () {
       expect(
         parseMessage('{#b k=v @a}{#img /}{/b}'),

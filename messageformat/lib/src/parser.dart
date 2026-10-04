@@ -348,6 +348,7 @@ final class _Parser {
 
   Map<String, Literal?> _parseAttributes() {
     final attributes = <String, Literal?>{};
+    final spellings = <String, String>{};
     while (true) {
       final before = _pos;
       if (!_skipWhitespace() || _peek() != $at) {
@@ -358,15 +359,21 @@ final class _Parser {
       final name = _parseIdentifier();
       final afterName = _pos;
       _skipOptionalWhitespace();
+      Literal? value;
       if (_peek() == $equals) {
         _pos++;
         _skipOptionalWhitespace();
-        // Only the last of several attributes with the same name counts.
-        attributes[name] = _parseLiteral();
+        value = _parseLiteral();
       } else {
         _pos = afterName;
-        attributes[name] = null;
       }
+      // Only the last of several attributes with the same name counts, and
+      // names compare as if normalized, so it replaces an earlier spelling.
+      if (spellings[toNfc(name)] case final earlier?) {
+        attributes.remove(earlier);
+      }
+      spellings[toNfc(name)] = name;
+      attributes[name] = value;
     }
     return Map.unmodifiable(attributes);
   }
