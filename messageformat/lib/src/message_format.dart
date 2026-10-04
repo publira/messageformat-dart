@@ -550,53 +550,55 @@ final class _Formatter {
   /// or `null` for `inherit` or an invalid value.
   MessageDirection? _takeDir(Map<String, Object?> options, String source) {
     if (!options.containsKey(_uDir)) return null;
-    final value = _optionString(options.remove(_uDir));
-    switch (value) {
-      case 'ltr':
-        return MessageDirection.ltr;
-      case 'rtl':
-        return MessageDirection.rtl;
-      case 'auto':
-        return MessageDirection.auto;
-      case 'inherit':
-        return null;
+    final option = options.remove(_uDir);
+    Object? cause;
+    try {
+      switch (option is MessageValue ? option.value : option) {
+        case 'ltr':
+          return MessageDirection.ltr;
+        case 'rtl':
+          return MessageDirection.rtl;
+        case 'auto':
+          return MessageDirection.auto;
+        case 'inherit':
+          return null;
+      }
+    } catch (error) {
+      cause = error;
     }
-    _report(MessageFunctionError.badOption(
+    _report(MessageFunctionError(
+      'bad-option',
       'The option u:dir must be ltr, rtl, auto, or inherit',
       source: source,
+      cause: cause,
     ));
     return null;
   }
 
-  /// Removes the `u:id` option from [options] and returns its value, or
-  /// `null` if it is not a string.
+  /// Removes the `u:id` option from [options] and returns its value as a
+  /// string, or `null` if it cannot be resolved to one.
+  ///
+  /// A string is used as it is, a [MessageValue] is formatted, and any
+  /// other input value is converted with `toString()`.
   String? _takeId(Map<String, Object?> options, String source) {
     if (!options.containsKey(_uId)) return null;
-    final value = options.remove(_uId);
-    final id = switch (value) {
-      String() => value,
-      MessageValue() => _tryFormat(value),
-      _ => null,
-    };
-    if (id == null) {
-      _report(MessageFunctionError.badOption(
-        'The option u:id must be a string',
-        source: source,
-      ));
-    }
-    return id;
-  }
-
-  String? _tryFormat(MessageValue value) {
+    final option = options.remove(_uId);
     try {
-      return value.formatToString();
-    } catch (_) {
+      return switch (option) {
+        String() => option,
+        MessageValue() => option.formatToString(),
+        _ => '$option',
+      };
+    } catch (error) {
+      _report(MessageFunctionError(
+        'bad-option',
+        'The option u:id cannot be resolved to a string',
+        source: source,
+        cause: error,
+      ));
       return null;
     }
   }
-
-  static Object? _optionString(Object? value) =>
-      value is MessageValue ? value.value : value;
 
   /// *Markup Resolution*, which always succeeds.
   MessageMarkupPart _resolveMarkup(Markup markup) {
@@ -613,14 +615,20 @@ final class _Formatter {
       ));
     }
     final id = _takeId(options, source);
+    final unwrapped = <String, Object?>{};
+    for (final MapEntry(:key, :value) in options.entries) {
+      try {
+        unwrapped[key] = value is MessageValue ? value.value : value;
+      } catch (error) {
+        // The option is left out, as if it had failed to resolve.
+        _report(_wrap(error, source));
+      }
+    }
     return MessageMarkupPart(
       markup.kind,
       markup.name,
       id: id,
-      options: {
-        for (final MapEntry(:key, :value) in options.entries)
-          key: value is MessageValue ? value.value : value,
-      },
+      options: unwrapped,
     );
   }
 

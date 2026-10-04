@@ -472,10 +472,33 @@ void main() {
     test('reject an invalid u:dir or u:id and ignore it', () {
       final mf = _mf('{a :string u:dir=up} {b :string u:id=\$n}',
           bidiIsolation: BidiIsolation.none);
-      final (parts, errors) = _parts(mf, {'n': 1});
+      final (parts, errors) = _parts(mf, {'n': _ThrowingToString()});
       expect(errors, ['bad-option', 'bad-option']);
       expect(parts.whereType<MessageExpressionPart>().map((p) => p.id),
           [null, null]);
+    });
+
+    test('accept a u:id that resolves to a string', () {
+      final mf = _mf(
+        '.local \$v = {1 :n} {{{a :string u:id=\$n} {b :string u:id=\$v}}}',
+        functions: {
+          ..._functions,
+          'n': (context, options, operand) => _NumberValue(7),
+        },
+      );
+      final (parts, errors) = _parts(mf, {'n': 42});
+      expect(errors, isEmpty);
+      expect(parts.whereType<MessageExpressionPart>().map((p) => p.id),
+          ['42', '7']);
+    });
+
+    test('report a u:dir whose value cannot be read, and ignore it', () {
+      final mf = _mf('.local \$d = {d :unreadable} {{{a :string u:dir=\$d}}}',
+          functions: {
+            ..._functions,
+            'unreadable': (context, options, operand) => _UnreadableValue(),
+          });
+      expect(_format(mf), _yields('\u2068a\u2069', ['bad-option']));
     });
 
     test('accept u:dir and u:id from variables', () {
@@ -503,7 +526,35 @@ void main() {
         const MessageMarkupPart(MarkupKind.standalone, 'br'),
       ]);
     });
+
+    test('leaves out an option whose value cannot be read', () {
+      final mf =
+          _mf('.local \$v = {v :unreadable} {{{#a x=\$v y=1/}}}', functions: {
+        'unreadable': (context, options, operand) => _UnreadableValue(),
+      });
+      expect(
+        _parts(mf),
+        _yields([
+          const MessageMarkupPart(MarkupKind.standalone, 'a',
+              options: {'y': '1'}),
+        ], [
+          'function-error'
+        ]),
+      );
+    });
   });
+}
+
+/// A value whose [value] getter throws.
+final class _UnreadableValue extends MessageValue {
+  @override
+  String get type => 'unreadable';
+
+  @override
+  Object? get value => throw StateError('unreadable');
+
+  @override
+  String formatToString() => 'unreadable';
 }
 
 final class _ThrowingValue extends MessageValue {
