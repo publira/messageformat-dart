@@ -35,6 +35,15 @@ Run `dart pub get` at the repository root after changing a `pubspec.yaml`; it re
 - **Spec options stay options.** Where the spec offers a choice, such as the bidi isolation strategy, default to what the spec requires and let callers change it.
 - The packages support the lowest SDK in their `environment.sdk` constraint, and CI tests it alongside the current stable release. Do not use a language or library feature newer than that constraint.
 
+## Conformance suite
+
+The WG suite is vendored, unmodified, in `messageformat/test/conformance/message-format-wg/`, with its Unicode License v3 and a `SOURCE` file that records the tag and commit. `messageformat/test/conformance/manifest.dart` holds the pin, the expected case count of every file, and the two skip lists.
+
+- Re-vendor only with `messageformat/tool/vendor_conformance_suite.sh <tag>`, and only in the Issue that moves the pin. Never vendor the WG `spec/` directory: its license forbids redistribution.
+- `notYetImplemented` is temporary. When your change makes a file pass, remove the file from the list in the same change. Never add a file to hide a failure. The list must be empty before #1 closes.
+- `draftDeferred` may name only test files for functions that the pinned spec marks Draft, and it is expected to stay empty.
+- The harness reaches the implementation only through `ConformanceSubject` in `subject.dart`. The `:test:function`, `:test:select`, and `:test:format` functions live in `test_functions.dart` and are registered through the public custom-function API, never through a private hook.
+
 ## Language
 
 Everything in the repository is **English**: the READMEs, this guide, code comments and doc comments, test labels, commit messages, Issues, and pull requests.
