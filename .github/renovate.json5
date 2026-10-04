@@ -1,0 +1,14 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>publira/.github//renovate.json5"],
+  packageRules: [
+    // The lower bound is the minimum SDK for consumers; it moves by hand
+    // together with the lowest SDK in CI.
+    {
+      description: "Do not raise the minimum Dart SDK of the packages.",
+      matchManagers: ["pub"],
+      matchDepNames: ["dart"],
+      enabled: false,
+    },
+  ],
+}
