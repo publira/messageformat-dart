@@ -67,7 +67,7 @@ void checkCase(ConformanceSubject subject, ConformanceCase testCase) {
 /// Errors and Data Model Errors that its `expErrors` lists.
 ///
 /// The other expected errors, and the expected output, need formatting and
-/// are not checked. See `parseOnly` in `manifest.dart`.
+/// are not checked. See `pendingFunctions` in `manifest.dart`.
 void checkParse(ConformanceSubject subject, ConformanceCase testCase) {
   expect(
     subject.parse(testCase.src),
@@ -78,6 +78,65 @@ void checkParse(ConformanceSubject subject, ConformanceCase testCase) {
     reason: 'errors from parse()',
   );
 }
+
+/// The functions of [pendingFunctions] that formatting [testCase] uses, in
+/// source order.
+///
+/// A case that expects a Syntax Error or a Data Model Error is never
+/// formatted, so it uses none.
+///
+/// This reads the source rather than parsing it, so that the harness
+/// reaches the implementation only through `ConformanceSubject`. A function
+/// is called by `:` and its identifier after `{` or whitespace; the suite
+/// writes no such text outside expressions. A parameter that is a number or
+/// a [DateTime] uses `number` or `datetime` when an expression holds just
+/// its variable, such as `{$x}`, unless an `.input` declaration gives the
+/// variable a function.
+List<String> pendingFunctionsUsedBy(ConformanceCase testCase) {
+  final src = testCase.src;
+  if (testCase.expErrors?.any(staticErrorTypes.contains) ?? false) {
+    return const [];
+  }
+  final used = {
+    for (final match in _functionReference.allMatches(src)) match[1]!,
+    for (final MapEntry(:key, :value) in (testCase.params ?? {}).entries)
+      if (_implicitFunction(value) case final function?
+          when _bareVariable(key).hasMatch(src) &&
+              !_annotatedInput(key).hasMatch(src))
+        function,
+  };
+  return [
+    for (final function in used)
+      if (pendingFunctions.containsKey(function)) function,
+  ];
+}
+
+/// `:` and an identifier, after `{`, whitespace, or a bidi control.
+final _functionReference = RegExp(
+  '(?:^|[{\\s$_bidi]):([^\\s$_bidi{}|=@/]+)',
+);
+
+/// The bidi controls that the syntax allows around names: ALM, LRM, RLM,
+/// and the isolates.
+const _bidi = '\u061c\u200e\u200f\u2066-\u2069';
+
+String? _implicitFunction(Object? value) => switch (value) {
+      num() => 'number',
+      DateTime() => 'datetime',
+      _ => null,
+    };
+
+/// An expression of just the variable [name], with optional attributes.
+RegExp _bareVariable(String name) => RegExp(
+      '\\{[\\s$_bidi]*${_variable(name)}[\\s$_bidi]*[}@]',
+    );
+
+/// An `.input` declaration of the variable [name] with a function.
+RegExp _annotatedInput(String name) => RegExp(
+      '\\.input[\\s$_bidi]*\\{[\\s$_bidi]*${_variable(name)}[\\s$_bidi]+:',
+    );
+
+String _variable(String name) => '\\\$[$_bidi]?${RegExp.escape(name)}[$_bidi]?';
 
 final class _SubsetMatcher extends Matcher {
   const _SubsetMatcher(this._expected);

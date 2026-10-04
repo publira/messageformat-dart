@@ -2,10 +2,11 @@
 /// `:test:format`, as the "Test Functions" section of the vendored
 /// `README.md` specifies them.
 ///
-/// This file holds their behaviour independently of the public API, which
-/// #5 defines. The subject adapter wraps [TestFunctionValue] in the public
-/// custom-function interface, so the functions are registered only in the
-/// harness and through the public API, never through private hooks.
+/// This file holds their behaviour independently of the public API.
+/// `subject.dart` wraps [TestFunctionValue] in a `MessageValue` and
+/// registers the functions as `MessageFunction`s, so they exist only in the
+/// harness and reach the runtime through the public API, never through
+/// private hooks.
 library;
 
 /// One of the three test functions.
