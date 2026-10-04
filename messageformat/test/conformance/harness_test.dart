@@ -43,7 +43,6 @@ void main() {
     test('skip lists name only known files', () {
       expect(knownFiles, containsAll(notYetImplemented.keys));
       expect(knownFiles, containsAll(draftDeferred.keys));
-      expect(knownFiles, containsAll(parseOnly.keys));
     });
 
     test('only Draft function files may be deferred', () {
@@ -57,12 +56,13 @@ void main() {
       );
     });
 
-    test('a parsed-only file is never skipped', () {
+    test('only default functions are pending', () {
       expect(
-        parseOnly.keys
-            .toSet()
-            .intersection({...notYetImplemented.keys, ...draftDeferred.keys}),
-        isEmpty,
+        {
+          'string', 'number', 'integer', 'offset', 'currency', 'percent', //
+          'datetime', 'date', 'time', 'unit',
+        },
+        containsAll(pendingFunctions.keys),
       );
     });
 
@@ -253,6 +253,62 @@ void main() {
         ),
         throwsA(isA<TestFailure>()),
       );
+    });
+  });
+
+  group('pendingFunctionsUsedBy', () {
+    List<String> used(
+      String src, [
+      Map<String, Object?>? params,
+      List<String>? expErrors,
+    ]) =>
+        pendingFunctionsUsedBy(ConformanceCase(
+          file: 'example.json',
+          index: 0,
+          locale: 'en-US',
+          src: src,
+          params: params,
+          expErrors: expErrors,
+        ));
+
+    test('finds pending functions that the source calls', () {
+      expect(used('{1 :number}'), ['number']);
+      expect(used('{:datetime}'), ['datetime']);
+      expect(used('{\u200e:string}'), ['string']);
+      expect(used('.local \$x = {1 :integer} {{{\$x :number}}}'),
+          ['integer', 'number']);
+    });
+
+    test('ignores other functions, options, and text', () {
+      expect(used('{1 :test:function}'), isEmpty);
+      expect(used('{a :string:x}'), isEmpty);
+      expect(used('{a :f u:dir=ltr}'), isEmpty);
+      expect(used('a:number'), isEmpty);
+    });
+
+    test('finds number and date parameters in bare placeholders', () {
+      expect(used('{\$x}', {'x': 1.5}), ['number']);
+      expect(used('{ \$x @a}', {'x': 1}), ['number']);
+      expect(used('{\$x}', {'x': DateTime(2006)}), ['datetime']);
+      expect(used('{\$x}', {'x': '1'}), isEmpty);
+      expect(used('{\$x :test:function}', {'x': 1}), isEmpty);
+      expect(used('{\$xy}', {'x': 1}), isEmpty);
+      expect(used('.input {\$x} {{{\$x}}}', {'x': 1}), ['number']);
+      expect(
+        used(
+            '.input {\$x :test:select} .local \$y = {\$x} {{{\$y}}}', {'x': 1}),
+        isEmpty,
+      );
+    });
+
+    test('finds none in a case that is not formatted', () {
+      expect(used('{1 :number', null, ['syntax-error']), isEmpty);
+      expect(
+        used('.input {\$x :string} .match \$x * {{a}} * {{b}}', null,
+            ['duplicate-variant']),
+        isEmpty,
+      );
+      expect(used('{\$x :number}', null, ['unresolved-variable']), ['number']);
     });
   });
 

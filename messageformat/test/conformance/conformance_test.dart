@@ -43,13 +43,18 @@ void _defineGroup(String path, String scenario, List<ConformanceCase> cases) {
     (_, final issues?) => 'Not yet implemented; see $issues',
     _ => null,
   };
-  final check = parseOnly.containsKey(path) ? checkParse : checkCase;
   group('$path ($scenario)', skip: skip, () {
     for (final testCase in cases) {
+      final pending = pendingFunctionsUsedBy(testCase);
+      final issues = {for (final name in pending) pendingFunctions[name]};
       test(
-        testCase.name,
+        pending.isEmpty
+            ? testCase.name
+            : '${testCase.name} (parse only until ${issues.join(', ')})',
         tags: [for (final tag in testCase.tags) testTags[tag]!],
-        () => check(subject, testCase),
+        () => pending.isEmpty
+            ? checkCase(subject, testCase)
+            : checkParse(subject, testCase),
       );
     }
   });

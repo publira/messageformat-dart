@@ -59,32 +59,30 @@ const unpairedSurrogatesFile = 'unpaired-surrogates';
 /// empty before #1 is closed. Never add a file to it to hide a regression.
 const notYetImplemented = <String, String>{};
 
-/// Files whose cases are, for now, only parsed, mapped to the Issues that
-/// will let them run in full.
+/// Default functions that are not implemented yet, by identifier, mapped to
+/// the Issues that will add them.
 ///
-/// A parsed case must report exactly the Syntax Errors and Data Model Errors
-/// in its `expErrors` ([staticErrorTypes]) and no others; its expected output
-/// and its formatting errors are not checked. Like [notYetImplemented], this
-/// list is temporary and must be empty before #1 is closed. A file is on at
-/// most one of the two lists.
-const parseOnly = <String, String>{
-  'bidi.json': '#5, #6',
-  'data-model-errors.json': '#5',
-  'fallback.json': '#5',
-  'functions/currency.json': '#6',
-  'functions/date.json': '#7',
-  'functions/datetime.json': '#7',
-  'functions/integer.json': '#6',
-  'functions/number.json': '#6',
-  'functions/offset.json': '#6',
-  'functions/percent.json': '#6',
-  'functions/string.json': '#6',
-  'functions/time.json': '#7',
-  'pattern-selection.json': '#5',
-  'syntax-errors.json': '#5',
-  'syntax.json': '#5',
-  'u-options.json': '#5, #6',
-  unpairedSurrogatesFile: '#5',
+/// A case that uses one of them is, for now, only parsed: it must report
+/// exactly the Syntax Errors and Data Model Errors in its `expErrors`
+/// ([staticErrorTypes]) and no others, and its expected output and
+/// formatting errors are not checked. Every other case runs in full. A case
+/// uses a function when its source calls it, or, for `number` and
+/// `datetime`, when it formats a number or date parameter in a placeholder
+/// without a function, which the runtime does with those functions (see
+/// `pendingFunctionsUsedBy` in `expectations.dart`).
+///
+/// Like [notYetImplemented], this list is temporary: each Issue removes the
+/// functions it adds, and the list must be empty before #1 is closed.
+const pendingFunctions = <String, String>{
+  'currency': '#6',
+  'integer': '#6',
+  'number': '#6',
+  'offset': '#6',
+  'percent': '#6',
+  'string': '#6',
+  'date': '#7',
+  'datetime': '#7',
+  'time': '#7',
 };
 
 /// The error types that parsing reports: the Syntax Error and the Data

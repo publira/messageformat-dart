@@ -37,11 +37,11 @@ Run `dart pub get` at the repository root after changing a `pubspec.yaml`; it re
 
 ## Conformance suite
 
-The WG suite is vendored, unmodified, in `messageformat/test/conformance/message-format-wg/`, with its Unicode License v3 and a `SOURCE` file that records the tag and commit. `messageformat/test/conformance/manifest.dart` holds the pin, the expected case count of every file, the two skip lists, and the `parseOnly` list.
+The WG suite is vendored, unmodified, in `messageformat/test/conformance/message-format-wg/`, with its Unicode License v3 and a `SOURCE` file that records the tag and commit. `messageformat/test/conformance/manifest.dart` holds the pin, the expected case count of every file, the two skip lists, and the `pendingFunctions` list.
 
 - Re-vendor only with `messageformat/tool/vendor_conformance_suite.sh <tag>`, and only in the Issue that moves the pin. Never vendor the WG `spec/` directory: its license forbids redistribution.
 - `notYetImplemented` is temporary. When your change makes a file pass, remove the file from the list in the same change. Never add a file to hide a failure. The list must be empty before #1 closes.
-- `parseOnly` is temporary in the same way. Its files run, but each case only checks the Syntax Errors and Data Model Errors that parsing reports, until formatting can check the rest. Move a file from `notYetImplemented` to `parseOnly`, or off both lists, as soon as it passes there.
+- `pendingFunctions` is temporary in the same way. It names the default functions that are not implemented yet; a case that uses one only checks the Syntax Errors and Data Model Errors that parsing reports, and every other case runs in full. When your change adds a function, remove it from the list in the same change.
 - `draftDeferred` may name only test files for functions that the pinned spec marks Draft, and it is expected to stay empty.
 - The harness reaches the implementation only through `ConformanceSubject` in `subject.dart`. The `:test:function`, `:test:select`, and `:test:format` functions live in `test_functions.dart` and are registered through the public custom-function API, never through a private hook.
 
