@@ -24,14 +24,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # The lowest SDK the packages support. Keep it equal to the lower
-          # bound of their `environment.sdk` constraint; Renovate updates
-          # neither of them.
+          # The lowest SDK the packages support (`environment.sdk`).
           - DART_VERSION: 3.6.0
-          # The current stable release, pinned so that Renovate raises a new
-          # release as a pull request. The comment sits inside the entry
-          # because the preset's customManagers:githubActionsVersions matches
-          # only a `*_VERSION` key on the line after it.
+          # The current stable release.
           - # renovate: datasource=dart-version depName=dart
             DART_VERSION: 3.13.5
     steps:
