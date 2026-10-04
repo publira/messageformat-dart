@@ -339,6 +339,33 @@ void main() {
       ]);
     });
 
+    test('truncate the decimal value as written', () {
+      // Floating-point subtraction would give 1.1, 2.2, and 4.3 here.
+      final cases = {
+        1.2: '1.2',
+        2.3: '2.3',
+        -1.2: '-1.2',
+        4.35: '4.3',
+        0.95: '0.9',
+        '1.2': '1.2',
+        '2.3e0': '2.3',
+        1.0: '1.0',
+        1e-7: '0.0',
+        1.5e21: '1500000000000000000000.0',
+        '1e25': '10000000000000000000000000.0',
+        123456789.9: '123456789.9',
+        9007199254740993: '9007199254740993.0',
+      };
+      for (final MapEntry(key: operand, value: expected) in cases.entries) {
+        expect(
+          resolve(operand, {'decimalPlaces': 1}).format(),
+          expected,
+          reason: '$operand',
+        );
+      }
+      expect(resolve(1.5e21).format(), '1500000000000000000000');
+    });
+
     test('reject a decimalPlaces other than 0 or 1 with bad-option', () {
       for (final value in [2, '9', -1, 0.5, 'one']) {
         expect(

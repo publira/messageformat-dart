@@ -181,16 +181,36 @@ final class TestFunctionValue {
     if (failsFormat) {
       throw const TestFunctionError('bad-option', 'Formatting failed');
     }
-    final absolute = input.abs();
-    final integer = absolute.floor();
+    final (integer, tenths) = _truncatedDigits(input.abs());
     return [
       if (input < 0) (type: 'neg', value: '-'),
-      (type: 'int', value: '$integer'),
+      (type: 'int', value: integer),
       if (decimalPlaces == 1) ...[
         (type: 'dot', value: '.'),
-        (type: 'frac', value: '${((absolute - integer) * 10).floor()}'),
+        (type: 'frac', value: tenths),
       ],
     ];
+  }
+
+  /// The integer digits and the first fraction digit of [value], which is
+  /// finite and not negative, truncated as written in decimal.
+  ///
+  /// The digits come from the shortest decimal representation of a double
+  /// rather than from arithmetic: `(1.2 - 1) * 10` is just below 2, and
+  /// `floor()` of a double of 2^63 or more does not fit in an `int`.
+  static (String, String) _truncatedDigits(num value) {
+    if (value is int) return ('$value', '0');
+    // Dart writes doubles of 1e21 or more and below 1e-6 with an exponent.
+    final [mantissa, ...exponent] = value.toString().split('e');
+    final [whole, ...fraction] = mantissa.split('.');
+    final digits = whole + (fraction.isEmpty ? '' : fraction.single);
+    final point =
+        whole.length + (exponent.isEmpty ? 0 : int.parse(exponent.single));
+    if (point <= 0) return ('0', '0');
+    return (
+      digits.padRight(point, '0').substring(0, point),
+      point < digits.length ? digits[point] : '0',
+    );
   }
 
   /// The concatenation of [formatToParts].
