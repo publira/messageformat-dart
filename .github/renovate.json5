@@ -1,0 +1,32 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>publira/.github//renovate.json5"],
+  packageRules: [
+    // The pub manager reads `environment.sdk` as a `dart` dependency. Its
+    // lower bound is the oldest SDK the published packages accept, so raising
+    // it drops support for every consumer on an older SDK. It moves only by
+    // hand, together with the lowest SDK in the CI matrix. The newest SDK in
+    // the matrix is not affected: it is matched by the github-actions custom
+    // manager rather than by pub.
+    {
+      description: "Do not raise the minimum Dart SDK of the packages.",
+      matchManagers: ["pub"],
+      matchDepNames: ["dart"],
+      enabled: false,
+    },
+    // pub has no `||` range, and Renovate's default `replace` strategy turns
+    // `>=5.1.1 <7.0.0` into `<8.0.0` when 7.0.0 is released, dropping the
+    // lower bound. `widen` keeps it and raises only the upper bound
+    // (`>=5.1.1 <8.0.0`), so the lowest SDK in CI can still resolve an older
+    // release. Caret ranges keep `replace` (`^1.2.3` becomes `^2.0.0`),
+    // because `widen` would write `^1.2.3 || ^2.0.0`, which pub rejects. A
+    // dependency whose older majors must stay allowed is written as
+    // `>=x <y` instead.
+    {
+      description: "Widen explicit `>=x <y` pub constraints instead of replacing them.",
+      matchManagers: ["pub"],
+      matchCurrentValue: "/^>=\\S+ <\\S+$/",
+      rangeStrategy: "widen",
+    },
+  ],
+}

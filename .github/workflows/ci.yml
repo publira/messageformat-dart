@@ -17,17 +17,23 @@ permissions:
 
 jobs:
   test:
-    name: Test (Dart ${{ matrix.sdk }})
+    name: Test (Dart ${{ matrix.DART_VERSION }})
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        # The lowest SDK the packages support (their `environment.sdk`
-        # constraint) and the current stable release.
-        sdk:
-          - 3.6.0
-          - stable
+        include:
+          # The lowest SDK the packages support. Keep it equal to the lower
+          # bound of their `environment.sdk` constraint; Renovate updates
+          # neither of them.
+          - DART_VERSION: 3.6.0
+          # The current stable release, pinned so that Renovate raises a new
+          # release as a pull request. The comment sits inside the entry
+          # because the preset's customManagers:githubActionsVersions matches
+          # only a `*_VERSION` key on the line after it.
+          - # renovate: datasource=dart-version depName=dart
+            DART_VERSION: 3.13.5
     steps:
       - name: Setup / Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -37,7 +43,7 @@ jobs:
       - name: Setup / Dart
         uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1.8.1
         with:
-          sdk: ${{ matrix.sdk }}
+          sdk: ${{ matrix.DART_VERSION }}
 
       - name: Setup / Dependencies
         run: dart pub get
