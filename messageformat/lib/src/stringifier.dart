@@ -3,15 +3,20 @@ import 'data_model.dart';
 
 /// Serializes [message] as MessageFormat 2.0 source.
 ///
-/// The result parses back to a message equal to [message]. A message
-/// without declarations or selectors is written as a simple message when
-/// its pattern allows it, and otherwise as a quoted pattern. Literals are
-/// written unquoted when they can be.
+/// A message without declarations or selectors is written as a simple
+/// message when its pattern allows it, and otherwise as a quoted pattern.
+/// Literals are written unquoted when they can be.
+///
+/// A message returned by `parseMessage` is written as source that parses
+/// back to an equal message. A data model built in code, for example from
+/// another format, is written as an equivalent message, which can parse
+/// back to a different but equally functional data model: adjacent text
+/// elements merge, empty ones disappear, and a [CatchallKey] is written as
+/// `*`, which drops its [CatchallKey.value], as the specification describes.
 ///
 /// The serializer does not validate [message]: names that are not valid
 /// MessageFormat names, or text and literals containing U+0000, produce
-/// source that does not parse. Every message returned by `parseMessage` can
-/// be serialized.
+/// source that does not parse.
 String stringifyMessage(Message message) {
   final buffer = StringBuffer();
   for (final declaration in message.declarations) {

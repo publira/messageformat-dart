@@ -46,6 +46,30 @@ void main() {
       }
     });
 
+    test('writes a hand-built model as an equivalent message', () {
+      final source = stringifyMessage(const SelectMessage(
+        [VariableRef('x')],
+        [
+          Variant([
+            CatchallKey('other')
+          ], [
+            TextElement('a'),
+            TextElement(''),
+            TextElement('b'),
+          ]),
+        ],
+      ));
+      expect(source, '.match \$x\n* {{ab}}');
+      expect(
+        parseMessage(source, onError: (_) {}),
+        const SelectMessage([
+          VariableRef('x')
+        ], [
+          Variant([CatchallKey()], [TextElement('ab')]),
+        ]),
+      );
+    });
+
     test('escapes text and quoted literals', () {
       expect(
         stringifyMessage(parseMessage(r'\{\}\\| {|a\|\\{}|}')),
