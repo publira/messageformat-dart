@@ -1,9 +1,16 @@
 {
-  "name": "messageformat-dart",
-  "image": "ghcr.io/publira/base-images/publira-dev:2026.10.04@sha256:3aeffdcfe550a53ad9c57c0c86e7ded25a4c504434fa9218f06924fb766fe12a",
+  "containerEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["Dart-Code.dart-code"]
+    }
+  },
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0.5": {}
   },
+  "image": "ghcr.io/publira/base-images/publira-dev:2026.10.04@sha256:3aeffdcfe550a53ad9c57c0c86e7ded25a4c504434fa9218f06924fb766fe12a",
   "mounts": [
     "source=messageformat-dart-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
     "source=messageformat-dart-codex-${devcontainerId},target=/home/vscode/.codex,type=volume",
@@ -11,10 +18,6 @@
     "source=messageformat-dart-gh-${devcontainerId},target=/home/vscode/.config/gh,type=volume",
     "source=messageformat-dart-grok-${devcontainerId},target=/home/vscode/.grok,type=volume"
   ],
-  "customizations": {
-    "vscode": {
-      "extensions": ["Dart-Code.dart-code"]
-    }
-  },
+  "name": "messageformat-dart",
   "postCreateCommand": ".devcontainer/post-create.sh"
 }
