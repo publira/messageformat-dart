@@ -33,6 +33,7 @@ const _rtlScripts = {
 /// right-to-left.
 const _rtlLanguages = {
   'ar', 'arc', 'azb', 'bal', 'bqi', 'ckb', 'dv', 'fa', 'glk', 'he', 'iw', //
-  'khw', 'ks', 'lrc', 'mzn', 'nqo', 'pnb', 'ps', 'sd', 'sdh', 'syr', 'ug',
+  'khw', 'ks', 'lrc', 'mzn', 'nqo', 'pnb', 'ps', 'rhg', 'sd', 'sdh', 'syr',
+  'ug',
   'ur', 'yi',
 };

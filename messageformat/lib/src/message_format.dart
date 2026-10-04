@@ -629,8 +629,8 @@ final class _Formatter {
   /// Formats [resolved] to a string, returning it with its directionality
   /// and whether `u:dir` asks to isolate it.
   (String, MessageDirection, bool) formatValue(_Value resolved, String source) {
-    final value = _messageValue(resolved.value);
     try {
+      final value = _messageValue(resolved.value);
       return (
         value.formatToString(),
         resolved.dir ?? value.dir,
@@ -648,8 +648,8 @@ final class _Formatter {
     _Value resolved,
     String source,
   ) {
-    final value = _messageValue(resolved.value);
     try {
+      final value = _messageValue(resolved.value);
       final parts = value.formatToParts();
       final dir = resolved.dir ?? value.dir;
       final part = MessageExpressionPart(
@@ -675,6 +675,9 @@ final class _Formatter {
 
   /// The [MessageValue] that formats [value]: [value] itself, or a string
   /// value for a literal or an input value without a function.
+  ///
+  /// It calls `toString()` on other input values, which can throw, so call
+  /// it where the error is reported as a Message Function Error.
   MessageValue _messageValue(Object value) => switch (value) {
         MessageValue() => value,
         String() => _StringValue(value, 'string', _format._locales.first),

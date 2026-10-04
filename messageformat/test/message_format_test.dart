@@ -242,6 +242,16 @@ void main() {
           ));
     });
 
+    test('wrap an input value whose toString throws', () {
+      final mf = _mf('{\$x}', bidiIsolation: BidiIsolation.none);
+      final params = {'x': _ThrowingToString()};
+      expect(_format(mf, params), _yields(r'{$x}', ['function-error']));
+      expect(
+        _parts(mf, params),
+        _yields([const MessageFallbackPart(r'$x')], ['function-error']),
+      );
+    });
+
     test('report errors a function handler recovers from', () {
       final mf =
           _mf('{1 :warn}', bidiIsolation: BidiIsolation.none, functions: {
@@ -400,6 +410,8 @@ void main() {
           '\u20661\u2069');
       expect(_mf('{1 :n}', locales: 'az-Arab', functions: functions).format(),
           '\u20661\u2069');
+      expect(_mf('{1 :n}', locales: 'rhg', functions: functions).format(),
+          '\u20661\u2069');
       expect(
           _mf('{1 :n}', dir: MessageDirection.auto, functions: functions)
               .format(),
@@ -524,4 +536,10 @@ final class _FlakyValue extends SelectableMessageValue {
 
   @override
   bool betterThan(String key1, String key2) => throw StateError('flaky');
+}
+
+/// An input value that cannot be converted to a string.
+final class _ThrowingToString {
+  @override
+  String toString() => throw StateError('no string');
 }
