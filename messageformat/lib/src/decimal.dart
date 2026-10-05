@@ -13,9 +13,8 @@ final class Decimal {
   ///
   /// Zero always has the exponent 0, so that a literal such as `0e999999`
   /// costs nothing to round.
-  Decimal.finite(this.negative, BigInt coefficient, int exponent)
-      : coefficient = coefficient,
-        exponent = coefficient == BigInt.zero ? 0 : exponent,
+  Decimal.finite(this.negative, BigInt this.coefficient, int exponent)
+      : exponent = coefficient == BigInt.zero ? 0 : exponent,
         _kind = _Kind.finite;
 
   /// Positive or negative infinity.
