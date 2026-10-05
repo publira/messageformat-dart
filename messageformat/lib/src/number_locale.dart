@@ -6,16 +6,19 @@ import 'number_data.dart';
 final class NumberLocale {
   NumberLocale._(
     this.tag,
-    this._chain,
+    this.chain,
     this.numberingSystem,
     this.pluralLocales,
+    this.region,
+    this.hourCycle,
   ) : digits = numberingSystemDigits[numberingSystem]!;
 
   /// The data of the first of [tags] that CLDR has data for, or of the root
   /// locale if none has.
   ///
   /// Each tag is a BCP 47 language tag. Its `nu` Unicode extension keyword,
-  /// as in `ar-u-nu-latn`, chooses a numeric numbering system.
+  /// as in `ar-u-nu-latn`, chooses a numeric numbering system, and its `hc`
+  /// keyword is kept as [hourCycle].
   factory NumberLocale(List<String> tags) {
     final key = tags.join(' ');
     final cached = _cache[key];
@@ -31,7 +34,7 @@ final class NumberLocale {
   final String tag;
 
   /// The locale with data and its ancestors, ending with `und`.
-  final List<String> _chain;
+  final List<String> chain;
 
   /// The numbering system, such as `latn` or `arab`.
   final String numberingSystem;
@@ -42,10 +45,17 @@ final class NumberLocale {
   /// The CLDR locales whose plural rules apply, most specific first.
   final List<String> pluralLocales;
 
+  /// The region subtag of the requested tag, if it has one.
+  final String? region;
+
+  /// The value of the `hc` Unicode extension keyword of the requested tag,
+  /// such as `h23`, if it has one.
+  final String? hourCycle;
+
   /// The value of [field] in this locale or the nearest ancestor that has
   /// it.
   String? _field(String field) {
-    for (final locale in _chain) {
+    for (final locale in chain) {
       if (numberLocales[locale]![field] case final value?) return value;
     }
     return null;
@@ -108,6 +118,8 @@ final class NumberLocale {
         if (tag != null) tag.language,
         'und',
       ]),
+      tag?.region,
+      tag?.hourCycle,
     );
   }
 
@@ -137,7 +149,7 @@ final class NumberLocale {
 /// The parts of a language tag that select locale data.
 final class _Tag {
   _Tag(this.language, this.script, this.region, this.variants,
-      this.numberingSystem);
+      this.numberingSystem, this.hourCycle);
 
   /// [tag] split into its parts, with their case normalized, or `null` if
   /// it does not start with a language subtag.
@@ -152,6 +164,7 @@ final class _Tag {
     String? region;
     final variants = <String>[];
     String? numberingSystem;
+    String? hourCycle;
     var index = 1;
     bool at(bool Function(String subtag) test) =>
         index < subtags.length && test(subtags[index]);
@@ -173,7 +186,8 @@ final class _Tag {
         (subtag.length == 4 && _isDigits(subtag.substring(0, 1))))) {
       variants.add(subtags[index++].toLowerCase());
     }
-    // The `nu` keyword of a `u` extension; a private use `x` ends the tag.
+    // The `nu` and `hc` keywords of a `u` extension; a private use `x` ends
+    // the tag.
     while (index < subtags.length) {
       final singleton = subtags[index++].toLowerCase();
       if (singleton == 'x') break;
@@ -182,6 +196,8 @@ final class _Tag {
         final key = subtags[index++].toLowerCase();
         if (key == 'nu' && at((subtag) => subtag.length > 2)) {
           numberingSystem = subtags[index++].toLowerCase();
+        } else if (key == 'hc' && at((subtag) => subtag.length > 2)) {
+          hourCycle = subtags[index++].toLowerCase();
         }
       }
     }
@@ -197,7 +213,7 @@ final class _Tag {
         }
       }
     }
-    return _Tag(language, script, region, variants, numberingSystem);
+    return _Tag(language, script, region, variants, numberingSystem, hourCycle);
   }
 
   final String language;
@@ -205,6 +221,7 @@ final class _Tag {
   final String? region;
   final List<String> variants;
   final String? numberingSystem;
+  final String? hourCycle;
 
   /// The most specific locale with data that this tag falls back to, other
   /// than the root locale, or `null` if there is none.

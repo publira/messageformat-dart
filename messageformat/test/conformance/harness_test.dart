@@ -257,19 +257,25 @@ void main() {
   });
 
   group('pendingFunctionsUsedBy', () {
+    // The date/time functions were pending until #7 added them.
+    const pending = {'date': '#7', 'datetime': '#7', 'time': '#7'};
+
     List<String> used(
       String src, [
       Map<String, Object?>? params,
       List<String>? expErrors,
     ]) =>
-        pendingFunctionsUsedBy(ConformanceCase(
-          file: 'example.json',
-          index: 0,
-          locale: 'en-US',
-          src: src,
-          params: params,
-          expErrors: expErrors,
-        ));
+        pendingFunctionsUsedBy(
+          ConformanceCase(
+            file: 'example.json',
+            index: 0,
+            locale: 'en-US',
+            src: src,
+            params: params,
+            expErrors: expErrors,
+          ),
+          pending,
+        );
 
     test('finds pending functions that the source calls', () {
       expect(used('{1 :date}'), ['date']);
