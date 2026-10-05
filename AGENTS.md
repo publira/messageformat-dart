@@ -75,8 +75,21 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 
 ## CI and tooling
 
-`.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, and on pushes to `main`. It runs them in each package's directory, in a matrix of every workspace member (`PACKAGE`) and two SDKs (`SDK`): the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. When you add a workspace member, add it to `PACKAGE` in the same change. Keep the lowest SDK entry equal to the `environment.sdk` constraints when either moves, and keep each SDK a `DART_VERSION:` mapping, which Renovate's annotation needs.
+`.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, on pushes to `main`, and before `publish.yml` publishes a release. It runs them in each package's directory, in a matrix of every workspace member (`PACKAGE`) and two SDKs (`SDK`): the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. When you add a workspace member, add it to `PACKAGE` in the same change. Keep the lowest SDK entry equal to the `environment.sdk` constraints when either moves, and keep each SDK a `DART_VERSION:` mapping, which Renovate's annotation needs.
 
 - Actions are pinned to a commit SHA, with the version in a trailing comment. Keep that form so Renovate can keep updating them.
 - Renovate configuration is inherited from the organization preset in `publira/.github` (#11). Add only repository-specific rules here, not a copy of the shared preset.
 - `.devcontainer/devcontainer.json` pins the `publira-dev` base image by its calendar tag and digest. Keep the readable tag before `@sha256:`, and keep the keys of `devcontainer.json` sorted.
+
+## Releases
+
+`messageformat` and `messageformat_datetime` release together, with the same version. A release is a pull request that sets, in both packages, the `version` in `pubspec.yaml`, the version constant in `lib/src/version.dart` (`packageVersion` and `dateTimePackageVersion`), the lower bound of the `^` constraints between the two packages, and a new top entry in `CHANGELOG.md`. The tests in `test/messageformat_test.dart` and `test/messageformat_datetime_test.dart` of each package, and `messageformat_datetime/test/release_sync_test.dart` across the two, fail when these disagree.
+
+After the pull request is merged, tag its merge commit on `main` by hand, one tag per package, `messageformat-v<version>` first and then `messageformat_datetime-v<version>`, and push the tags. pub.dev accepts an upload from GitHub Actions only from a workflow started by such a tag push, so the tag is what starts `.github/workflows/publish.yml`. It runs `ci.yml`, checks that the tag matches the package's `pubspec.yaml`, runs `dart pub publish --dry-run`, and publishes the package from the `pub.dev` environment. A sibling package that joins the workspace gets its own tag pattern in `publish.yml` and on pub.dev.
+
+```bash
+git tag messageformat-v0.1.0 <merge-commit>
+git push origin messageformat-v0.1.0
+```
+
+The first upload of each package is made by hand, before pub.dev can be configured to accept automated uploads (#9).

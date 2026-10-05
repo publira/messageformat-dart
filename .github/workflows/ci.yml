@@ -7,6 +7,8 @@ on:
     types: [checks_requested]
   push:
     branches: [main]
+  # Run by publish.yml before it publishes a release.
+  workflow_call:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

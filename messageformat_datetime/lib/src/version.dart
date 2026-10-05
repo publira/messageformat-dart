@@ -1,3 +1,6 @@
+/// The version of the `messageformat_datetime` package.
+const dateTimePackageVersion = '0.1.0';
+
 /// The version of Unicode CLDR that the date and time patterns, names, and
 /// preferences of the date/time functions come from.
 ///
