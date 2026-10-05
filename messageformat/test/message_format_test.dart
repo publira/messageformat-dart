@@ -1,22 +1,7 @@
 import 'package:messageformat/messageformat.dart';
 import 'package:test/test.dart';
 
-/// A minimal `:string`, enough to exercise the runtime until #6 adds the
-/// default one.
-MessageValue _string(
-  MessageFunctionContext context,
-  Map<String, Object?> options,
-  Object? operand,
-) {
-  final value = switch (operand) {
-    final String text => text,
-    final MessageValue value => '${value.value}',
-    null => throw MessageFunctionError.badOperand('An operand is required'),
-    _ => '$operand',
-  };
-  return _StringValue(value, context.locales.first, context.dir);
-}
-
+/// A string value, for custom functions.
 final class _StringValue extends SelectableMessageValue {
   _StringValue(this.value, this.locale, MessageDirection? dir)
       : dir = dir ?? MessageDirection.auto;
@@ -70,14 +55,12 @@ final class _NumberValue extends SelectableMessageValue {
   bool betterThan(String key1, String key2) => false;
 }
 
-const _functions = <String, MessageFunction>{'string': _string};
-
 MessageFormat _mf(
   String source, {
   Object? locales = 'en-US',
   BidiIsolation bidiIsolation = BidiIsolation.defaultStrategy,
   MessageDirection? dir,
-  Map<String, MessageFunction> functions = _functions,
+  Map<String, MessageFunction> functions = const {},
 }) =>
     MessageFormat(
       locales,
@@ -325,17 +308,30 @@ void main() {
       expect(_format(mf), _yields('ok', <String>[]));
     });
 
-    test('see a fallback operand as a Bad Operand without being called', () {
-      var called = false;
+    test('receive an operand that failed to resolve as a fallback value', () {
+      late Object? seen;
       final mf = _mf('{\$x :f}', bidiIsolation: BidiIsolation.none, functions: {
         'f': (context, options, operand) {
-          called = true;
-          return _StringValue('', 'en', null);
+          seen = operand;
+          return _StringValue('$operand', 'en', null);
         },
+      });
+      expect(_format(mf), _yields(r'{$x}', ['unresolved-variable']));
+      expect(
+        seen,
+        isA<MessageFallbackValue>()
+            .having((value) => value.source, 'source', r'$x')
+            .having((value) => value.value, 'value', isNull),
+      );
+    });
+
+    test('report a Bad Operand when they fail on a fallback operand', () {
+      final mf = _mf('{\$x :f}', bidiIsolation: BidiIsolation.none, functions: {
+        'f': (context, options, operand) =>
+            _StringValue(operand! as String, 'en', null),
       });
       expect(_format(mf),
           _yields(r'{$x}', ['unresolved-variable', 'bad-operand']));
-      expect(called, isFalse);
     });
 
     test('are called at most once per declaration', () {
@@ -390,7 +386,6 @@ void main() {
         '{a} {1 :n} {b :string u:dir=ltr} {c :string u:dir=rtl} '
         '{d :string u:dir=auto} {e :string u:dir=inherit}',
         functions: {
-          ..._functions,
           'n': (context, options, operand) => _NumberValue(1),
         },
       );
@@ -482,7 +477,6 @@ void main() {
       final mf = _mf(
         '.local \$v = {1 :n} {{{a :string u:id=\$n} {b :string u:id=\$v}}}',
         functions: {
-          ..._functions,
           'n': (context, options, operand) => _NumberValue(7),
         },
       );
@@ -495,7 +489,6 @@ void main() {
     test('report a u:dir whose value cannot be read, and ignore it', () {
       final mf = _mf('.local \$d = {d :unreadable} {{{a :string u:dir=\$d}}}',
           functions: {
-            ..._functions,
             'unreadable': (context, options, operand) => _UnreadableValue(),
           });
       expect(_format(mf), _yields('\u2068a\u2069', ['bad-option']));

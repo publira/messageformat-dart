@@ -74,12 +74,6 @@ const notYetImplemented = <String, String>{};
 /// Like [notYetImplemented], this list is temporary: each Issue removes the
 /// functions it adds, and the list must be empty before #1 is closed.
 const pendingFunctions = <String, String>{
-  'currency': '#6',
-  'integer': '#6',
-  'number': '#6',
-  'offset': '#6',
-  'percent': '#6',
-  'string': '#6',
   'date': '#7',
   'datetime': '#7',
   'time': '#7',

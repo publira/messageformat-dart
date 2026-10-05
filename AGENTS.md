@@ -32,6 +32,7 @@ Run `dart pub get` at the repository root after changing a `pubspec.yaml`; it re
 - **Moving the pin is its own Issue.** Do not update the conformance data or adopt a newer spec version as part of other work; #10 tracks the move to LDML 49.
 - **Stay pure Dart.** The `messageformat` package must not depend on Flutter, so that server-side Dart can use it. A Flutter integration is a separate future package in this workspace.
 - **Implement MessageFormat 2.0 only.** MessageFormat 1 / ICU syntax is out of scope.
+- **Locale data is generated from CLDR.** The `lib/src/*_data.dart` files and `test/plural_samples.dart` come from the CLDR release of the pinned LDML version (`release-48-2`, whose JSON form is 48.2.0), through the scripts in `messageformat/tool/`. Change a script and rerun it rather than editing its output; the pin's Issue moves CLDR with it.
 - **Spec options stay options.** Where the spec offers a choice, such as the bidi isolation strategy, default to what the spec requires and let callers change it.
 - The packages support the lowest SDK in their `environment.sdk` constraint, and CI tests it alongside the current stable release. Do not use a language or library feature newer than that constraint.
 

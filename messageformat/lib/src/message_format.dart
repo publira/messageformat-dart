@@ -1,4 +1,5 @@
 import 'data_model.dart';
+import 'default_functions.dart';
 import 'errors.dart';
 import 'locale_direction.dart';
 import 'message_value.dart';
@@ -6,6 +7,7 @@ import 'nfc.dart';
 import 'parser.dart';
 import 'parts.dart';
 import 'validator.dart';
+import 'version.dart';
 
 /// How formatting isolates placeholders from the surrounding text.
 ///
@@ -48,8 +50,8 @@ final class MessageFormatOptions {
 
 /// The default functions that every [MessageFormat] has, by identifier.
 ///
-/// The default functions of the specification are added by #6 and #7.
-const Map<String, MessageFunction> _defaultFunctions = {};
+/// The Draft date and time functions are added by #7.
+const Map<String, MessageFunction> _defaultFunctions = stableFunctions;
 
 /// A MessageFormat 2.0 message, ready to be formatted.
 ///
@@ -65,6 +67,26 @@ const Map<String, MessageFunction> _defaultFunctions = {};
 /// still returns a result, in which a placeholder that failed is replaced by
 /// its fallback value, such as `{$name}`. Without `onError`, those errors
 /// are ignored.
+///
+/// Every message can use the default functions that the specification
+/// marks Stable: `:string`, `:number`, `:integer`, `:offset`, `:currency`,
+/// and `:percent`. Their plural rules and number formats come from Unicode
+/// CLDR [cldrVersion] for every CLDR locale, and they format as ECMA-402
+/// `Intl.NumberFormat` does, with two differences. `:currency` with
+/// `currencyDisplay=name` shows the currency code in the locale's pattern
+/// for a number and its unit, such as `42.00 EUR`, since currency names are
+/// not included. And the locale `und` uses CLDR's root data.
+///
+/// ```dart
+/// final mf = MessageFormat('en', r'''
+/// .input {$count :number}
+/// .match $count
+/// one {{{$count} episode}}
+/// *   {{{$count} episodes}}
+/// ''');
+/// mf.format({'count': 1}); // '1 episode'
+/// mf.format({'count': 2}); // '2 episodes'
+/// ```
 ///
 /// This corresponds to `MessageFormat` in the JS `messageformat` package and
 /// to the TC39 `Intl.MessageFormat` proposal.
@@ -487,14 +509,11 @@ final class _Formatter {
       ));
       return const _Fallback();
     }
-    if (operand is _Fallback) {
-      // The handler cannot accept a fallback value as its operand.
-      _report(MessageFunctionError.badOperand(
-        'The operand of :${function.name} failed to resolve',
-        source: source,
-      ));
-      return const _Fallback();
-    }
+    // A fallback operand is passed to the handler, which decides whether it
+    // can use it, as in the JS implementation. The conformance suite
+    // expects `:string` to accept it and `:number` to report a Bad Operand.
+    final fallbackOperand =
+        operand is _Fallback ? MessageFallbackValue(source) : null;
 
     final (options, literalKeys) = _resolveOptions(function.options);
     final dir = _takeDir(options, source);
@@ -509,12 +528,23 @@ final class _Formatter {
       onError: _report,
     );
     try {
-      final value = handler(context, options, (operand as _Value?)?.value);
+      final value = handler(
+        context,
+        options,
+        fallbackOperand ?? (operand as _Value?)?.value,
+      );
       return _Value(value, dir: dir, id: id);
     } on MessageFunctionError catch (error) {
       _report(error);
     } catch (error) {
-      _report(_wrap(error, source));
+      _report(fallbackOperand == null
+          ? _wrap(error, source)
+          : MessageFunctionError(
+              'bad-operand',
+              'The operand of :${function.name} failed to resolve',
+              source: source,
+              cause: error,
+            ));
     }
     return const _Fallback();
   }
@@ -711,6 +741,7 @@ final class _Formatter {
 
 const _uDir = 'u:dir';
 const _uId = 'u:id';
+const _badVariantKey = 'bad-variant-key';
 
 /// A selector's resolved value, which reports a Bad Selector once and then
 /// matches only `*` when it does not support selection or fails.
@@ -722,6 +753,10 @@ final class _Selector {
   final String _source;
 
   bool failed = false;
+
+  /// The keys already reported as Bad Variant Keys, so that comparing the
+  /// variants again does not report them twice.
+  final _badKeys = <String>{};
 
   void fail([Object? cause]) {
     if (failed) return;
@@ -740,6 +775,12 @@ final class _Selector {
     try {
       return _value!.match(key);
     } catch (error) {
+      if (error is MessageFunctionError && error.type == _badVariantKey) {
+        // Only this key is bad: it does not match, and the selector still
+        // works for the others.
+        if (_badKeys.add(key)) _formatter._report(error);
+        return false;
+      }
       fail(error);
       return false;
     }

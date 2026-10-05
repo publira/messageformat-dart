@@ -92,6 +92,38 @@ abstract class SelectableMessageValue extends MessageValue {
   bool betterThan(String key1, String key2);
 }
 
+/// The operand that a [MessageFunction] receives when its expression's
+/// operand failed to resolve: a variable without a value, or one whose
+/// declaration failed. The error has already been reported.
+///
+/// A handler that cannot use it throws a Bad Operand error, as the
+/// numeric default functions do. One that can, such as `:string`, uses its
+/// string representation, `{$name}`.
+///
+/// This is the *fallback value* of the specification and corresponds to
+/// the `fallback` value of the JS `messageformat` package, which also passes
+/// it to function handlers.
+final class MessageFallbackValue extends MessageValue {
+  /// Creates the fallback value of the operand [source], such as `$x`.
+  const MessageFallbackValue(this.source);
+
+  /// The fallback representation of the operand, such as `$x`.
+  final String source;
+
+  @override
+  String get type => 'fallback';
+
+  /// Always `null`: a fallback value has no value.
+  @override
+  Object? get value => null;
+
+  @override
+  String formatToString() => '{$source}';
+
+  @override
+  String toString() => formatToString();
+}
+
 /// A part of a formatted [MessageValue], such as the `integer` part of a
 /// number.
 final class MessageValuePart {
@@ -125,15 +157,15 @@ final class MessageValuePart {
 /// and the `u:dir` and `u:id` options are passed in [context] instead.
 ///
 /// [operand] is the resolved value of the operand in the same forms, or
-/// `null` when the expression has none. An operand that fails to resolve
-/// never reaches the handler: formatting reports a *Bad Operand* error
-/// itself.
+/// `null` when the expression has none. An operand that failed to resolve
+/// is a [MessageFallbackValue].
 ///
 /// Throw a [MessageFunctionError] to make the expression resolve to a
 /// fallback value, and use [MessageFunctionContext.onError] to report an
 /// error that the handler recovers from. Anything else thrown is reported
 /// as a [MessageFunctionError] of type
-/// [MessageFunctionError.functionErrorType].
+/// [MessageFunctionError.functionErrorType], or as a *Bad Operand* error
+/// when the operand is a [MessageFallbackValue].
 ///
 /// This corresponds to `MessageFunction` in the JS `messageformat` package.
 typedef MessageFunction = MessageValue Function(
