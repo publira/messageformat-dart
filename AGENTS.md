@@ -88,8 +88,10 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 After the pull request is merged, tag its merge commit on `main` by hand, one tag per package, `messageformat-v<version>` first and then `messageformat_datetime-v<version>`, and push the tags. pub.dev accepts an upload from GitHub Actions only from a workflow started by such a tag push, so the tag is what starts `.github/workflows/publish.yml`. It runs `ci.yml`, checks that the tag matches the package's `pubspec.yaml`, runs `dart pub publish --dry-run`, and publishes the package from the `pub.dev` environment. A sibling package that joins the workspace gets its own tag pattern in `publish.yml` and on pub.dev.
 
 ```bash
-git tag messageformat-v0.1.0 <merge-commit>
-git push origin messageformat-v0.1.0
+git tag messageformat-v<version> <merge-commit>
+git tag messageformat_datetime-v<version> <merge-commit>
+git push origin messageformat-v<version>
+git push origin messageformat_datetime-v<version>
 ```
 
-The first upload of each package is made by hand, before pub.dev can be configured to accept automated uploads (#9).
+pub.dev accepts automated uploads only for a package that already exists, so the first version of a new sibling package is uploaded by hand. Then transfer it to the verified publisher `publira.dev`, and, under Automated publishing on pub.dev, enable publishing from GitHub Actions with its tag pattern and require the `pub.dev` environment. Do not tag a version that is already on pub.dev, such as one uploaded by hand: the workflow would fail to publish it again.
