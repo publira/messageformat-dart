@@ -1,0 +1,24 @@
+name: messageformat_datetime
+description: >-
+  The date/time functions of Unicode MessageFormat 2.0 (:datetime, :date,
+  and :time) with Unicode CLDR data, for package:messageformat.
+version: 0.1.0-dev
+repository: https://github.com/publira/messageformat-dart/tree/main/messageformat_datetime
+issue_tracker: https://github.com/publira/messageformat-dart/issues
+topics:
+  - i18n
+  - l10n
+  - messageformat
+  - datetime
+  - cldr
+
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  messageformat: ^0.1.0-dev
+
+dev_dependencies:
+  test: ^1.25.15

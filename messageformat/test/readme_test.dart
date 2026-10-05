@@ -5,6 +5,7 @@ library;
 import 'dart:async';
 
 import 'package:messageformat/messageformat.dart';
+import 'package:messageformat_datetime/messageformat_datetime.dart';
 import 'package:test/test.dart';
 
 import '../example/messageformat_example.dart' as example;
@@ -38,7 +39,7 @@ one {{{$count} episode}}
     expect(mf.format({'count': 1000}), '1,000 episodes');
   });
 
-  test('numbers and dates', () {
+  test('numbers', () {
     expect(
       MessageFormat('de', r'{$price :currency currency=EUR}', options: _none)
           .format({'price': 1234.5}),
@@ -49,11 +50,36 @@ one {{{$count} episode}}
           .format({'ratio': 0.5}),
       '50%',
     );
-    expect(
-      MessageFormat('en', r'Updated {$when :date}', options: _none)
-          .format({'when': DateTime(2006, 1, 2, 15, 4)}),
-      'Updated Jan 2, 2006',
+  });
+
+  test('dates and times', () {
+    final mf = MessageFormat(
+      'en',
+      r'Updated {$when :date}',
+      options: const MessageFormatOptions(
+        bidiIsolation: BidiIsolation.none,
+        functions: dateTimeFunctions,
+      ),
     );
+    final when = DateTime(2006, 1, 2, 15, 4);
+    expect(mf.format({'when': when}), 'Updated Jan 2, 2006');
+
+    final implicit = MessageFormat('en', r'{$when}',
+        options: const MessageFormatOptions(
+          bidiIsolation: BidiIsolation.none,
+          functions: dateTimeFunctions,
+        ));
+    expect(implicit.format({'when': when}), 'Jan 2, 2006, 3:04\u202fPM');
+
+    final errors = <MessageError>[];
+    final unregistered =
+        MessageFormat('en', r'Updated {$when :date}', options: _none);
+    expect(unregistered.format({'when': when}, errors.add), r'Updated {$when}');
+    expect(errors.single.type, 'unknown-function');
+    expect(errors.single.message, contains('messageformat_datetime'));
+    expect(
+        MessageFormat('en', r'{$when}', options: _none).format({'when': when}),
+        when.toString());
   });
 
   test('formatting to parts', () {

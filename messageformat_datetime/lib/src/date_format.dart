@@ -1,5 +1,6 @@
+import 'package:messageformat/messageformat.dart';
+
 import 'date_locale.dart';
-import 'message_value.dart';
 
 /// The fields of a date and time as they are shown: in the time zone it is
 /// formatted in, whose offset from UTC is [offset].
@@ -173,7 +174,7 @@ final class DateTimeFormat {
     final format = switch (hour12) {
       true => 'h',
       false => 'H',
-      null => switch (_locale.numbers.hourCycle) {
+      null => switch (_locale.cldr.hourCycle) {
           'h11' => 'K',
           'h12' => 'h',
           'h23' => 'H',
@@ -596,7 +597,7 @@ final class _Formatter {
       _digits('$number'.padLeft(length, '0'));
 
   String _digits(String ascii) {
-    final digits = _locale.numbers.digits;
+    final digits = _locale.cldr.digits;
     final buffer = StringBuffer();
     for (final unit in ascii.codeUnits) {
       buffer.write(unit >= 0x30 && unit <= 0x39

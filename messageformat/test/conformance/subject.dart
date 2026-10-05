@@ -4,10 +4,13 @@
 /// [subject] adapts the public API: [ConformanceSubject.parse] calls
 /// `parseMessage`, and the formatting methods create a `MessageFormat` with
 /// `:test:function`, `:test:select`, and `:test:format` (built from
-/// `test_functions.dart`) registered through the public custom-function API.
+/// `test_functions.dart`) and the date/time functions of
+/// `package:messageformat_datetime` registered through the public
+/// custom-function API.
 library;
 
 import 'package:messageformat/messageformat.dart';
+import 'package:messageformat_datetime/messageformat_datetime.dart';
 
 import 'test_functions.dart';
 
@@ -121,7 +124,7 @@ final class _Subject implements ConformanceSubject {
             'none' => BidiIsolation.none,
             _ => throw ArgumentError.value(bidiIsolation, 'bidiIsolation'),
           },
-          functions: _testFunctions,
+          functions: _functions,
         ),
       );
 
@@ -157,6 +160,13 @@ final class _Subject implements ConformanceSubject {
 }
 
 /// The test functions, by identifier.
+/// The functions that every message can use beyond the core's default
+/// ones.
+final Map<String, MessageFunction> _functions = {
+  ...dateTimeFunctions,
+  ..._testFunctions,
+};
+
 final Map<String, MessageFunction> _testFunctions = {
   for (final function in TestFunction.values)
     function.functionName: (context, options, operand) {

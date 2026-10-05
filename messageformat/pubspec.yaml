@@ -22,4 +22,5 @@ dependencies:
 
 dev_dependencies:
   json_schema: ^5.2.2
+  messageformat_datetime: ^0.1.0-dev
   test: ^1.25.15

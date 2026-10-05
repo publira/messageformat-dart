@@ -12,7 +12,9 @@ Correctness is judged by the [MessageFormat Working Group conformance suite](htt
 
 ## Conformance
 
-At WG tag `LDML48.2`, **all 461 test cases in the 16 test files pass**, with none skipped and none deferred. The suite runs under `dart test` in CI on every change, together with the 20 unpaired-surrogate cases that the suite asks UTF-16 implementations to add themselves.
+At WG tag `LDML48.2`, **all 461 test cases in the 16 test files pass**, with none skipped and none deferred, when the date/time functions of [`messageformat_datetime`](https://pub.dev/packages/messageformat_datetime) are registered. The suite runs under `dart test` in CI on every change, together with the 20 unpaired-surrogate cases that the suite asks UTF-16 implementations to add themselves.
+
+This package provides the default functions that the specification marks Stable, which it requires of every implementation. The Draft date/time functions, whose locale data is most of the size of the CLDR data, are in the separate `messageformat_datetime` package, so that an app that does not format dates does not ship that data.
 
 | Function | Status in LDML 48.2 | Supported |
 |---|---|---|
@@ -22,21 +24,12 @@ At WG tag `LDML48.2`, **all 461 test cases in the 16 test files pass**, with non
 | `:offset` | Stable | Yes |
 | `:currency` | Stable | Yes |
 | `:percent` | Stable | Yes |
-| `:datetime` | Draft | Yes, see below |
-| `:date` | Draft | Yes, see below |
-| `:time` | Draft | Yes, see below |
+| `:datetime` | Draft | With `messageformat_datetime` |
+| `:date` | Draft | With `messageformat_datetime` |
+| `:time` | Draft | With `messageformat_datetime` |
 | `:unit` | Draft | No; the suite has no tests for it |
 
-> [!NOTE]
-> The specification marks `:datetime`, `:date`, and `:time` as **Draft**. Their options and output can change in a minor release of this package when a later version of the specification changes them.
-
 The number functions cover every CLDR locale, and they format as ECMA-402 `Intl.NumberFormat` does, with two differences: `:currency` with `currencyDisplay=name` shows the currency code, such as `42.00 EUR`, because currency names are not included; and the locale `und` uses CLDR's root data.
-
-The date/time functions format a `DateTime` or an ISO 8601 literal with the CLDR patterns of their *semantic skeleton*, with these limits:
-
-- Dates use the Gregorian calendar in every locale.
-- The default time zone is the platform's local time zone. The option `timeZone` accepts `input` and CLDR time zone identifiers, but since time zone data is not included, a value with an offset can be converted only to UTC.
-- `timeZoneStyle` shows the offset from GMT, such as `GMT-8`, since time zone names are not included.
 
 ## Installation
 
@@ -100,7 +93,7 @@ mf.format({'count': 1000}); // '1,000 episodes'
 
 `select=ordinal` selects with ordinal rules instead, and `:string` matches keys literally.
 
-### Numbers and dates
+### Numbers
 
 ```dart
 const none = MessageFormatOptions(bidiIsolation: BidiIsolation.none);
@@ -110,12 +103,29 @@ MessageFormat('de', r'{$price :currency currency=EUR}', options: none)
 
 MessageFormat('en', r'{$ratio :percent}', options: none)
     .format({'ratio': 0.5}); // '50%'
-
-MessageFormat('en', r'Updated {$when :date}', options: none)
-    .format({'when': DateTime(2006, 1, 2, 15, 4)}); // 'Updated Jan 2, 2006'
 ```
 
-A number or `DateTime` in a placeholder without a function is formatted with `:number` or `:datetime`.
+A number in a placeholder without a function is formatted with `:number`.
+
+### Dates and times
+
+The date/time functions `:datetime`, `:date`, and `:time` are in the [`messageformat_datetime`](https://pub.dev/packages/messageformat_datetime) package, which provides them as the map `dateTimeFunctions` to register:
+
+```dart
+import 'package:messageformat_datetime/messageformat_datetime.dart';
+
+final mf = MessageFormat(
+  'en',
+  r'Updated {$when :date}',
+  options: MessageFormatOptions(
+    bidiIsolation: BidiIsolation.none,
+    functions: dateTimeFunctions,
+  ),
+);
+mf.format({'when': DateTime(2006, 1, 2, 15, 4)}); // 'Updated Jan 2, 2006'
+```
+
+Once they are registered, a `DateTime` in a placeholder without a function is formatted with `:datetime`. Without them, a message that calls one of them reports an `unknown-function` error that names the package, and a `DateTime` in a placeholder without a function is formatted with its `toString()`.
 
 ### Formatting to parts
 
@@ -210,6 +220,8 @@ mf.format({'word': 'hello'}); // 'HELLO!'
 
 A value that can be used in `.match` extends `SelectableMessageValue` and implements `match` and `betterThan`, the specification's key matching. A value can also override `formatToParts`, `dir`, and `options`.
 
+A package of functions with Unicode CLDR data of its own, such as `messageformat_datetime`, can import `package:messageformat/locale.dart`. Its `CldrLocale` resolves a list of language tags to a CLDR locale and its ancestors in the same way as the default functions, with the locale's digits and direction.
+
 ### The data model
 
 `parseMessage` parses a source into the specification's data model, `stringifyMessage` turns a data model back into source, and `validateMessage` checks one built in code. `MessageFormat.fromMessage` formats a data model directly.
@@ -227,7 +239,7 @@ The API follows the JS [`messageformat`](https://www.npmjs.com/package/messagefo
 | `bidiIsolation: 'default'` / `'none'` | `bidiIsolation: BidiIsolation.defaultStrategy` / `BidiIsolation.none` |
 | `dir: 'ltr' \| 'rtl' \| 'auto'` | `dir: MessageDirection.ltr` / `.rtl` / `.auto` |
 | `localeMatcher` | Not supported; the first locale is used |
-| `functions: { ...DraftFunctions, ...custom }` | `functions: {...custom}`; the Draft date/time functions are always available |
+| `functions: { ...DraftFunctions, ...custom }` | `functions: {...dateTimeFunctions, ...custom}`, with `dateTimeFunctions` from `messageformat_datetime` |
 | `MessageFunction` `(context, options, input)` | `MessageFunction` `(context, options, operand)` |
 | `MessageValue` with `toString()`, `toParts()`, `valueOf()` | `MessageValue` with `formatToString()`, `formatToParts()`, `value` |
 | `MessageValue.selectKey(keys)` | `SelectableMessageValue.match(key)` and `betterThan(key1, key2)` |

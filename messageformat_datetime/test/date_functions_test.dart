@@ -1,5 +1,12 @@
 import 'package:messageformat/messageformat.dart';
+import 'package:messageformat_datetime/messageformat_datetime.dart';
 import 'package:test/test.dart';
+
+/// The date/time functions, without bidi isolation.
+const _options = MessageFormatOptions(
+  bidiIsolation: BidiIsolation.none,
+  functions: dateTimeFunctions,
+);
 
 /// Formats [source] for [locale] without bidi isolation, returning the
 /// result and the types of the errors reported, separated by spaces.
@@ -12,7 +19,7 @@ import 'package:test/test.dart';
   final result = MessageFormat(
     locale,
     source,
-    options: const MessageFormatOptions(bidiIsolation: BidiIsolation.none),
+    options: _options,
   ).format(params, (error) => errors.add(error.type));
   return (result, errors.join(' '));
 }
@@ -30,6 +37,7 @@ Object? _declared(String source) {
   Object? value;
   MessageFormat('en-US', source,
       options: MessageFormatOptions(functions: {
+        ...dateTimeFunctions,
         'peek': (context, options, operand) {
           value = operand;
           return _Empty();
@@ -214,7 +222,7 @@ void main() {
       final parts = MessageFormat(
         'en-US',
         '{|2006-01-02T15:04:06| :datetime}',
-        options: const MessageFormatOptions(bidiIsolation: BidiIsolation.none),
+        options: _options,
       ).formatToParts().single as MessageExpressionPart;
       expect(parts.type, 'datetime');
       expect(parts.locale, 'en-US');

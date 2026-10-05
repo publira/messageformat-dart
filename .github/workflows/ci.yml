@@ -17,18 +17,27 @@ permissions:
 
 jobs:
   test:
-    name: Test (Dart ${{ matrix.DART_VERSION }})
+    name: Test (${{ matrix.PACKAGE }}, Dart ${{ matrix.SDK.DART_VERSION }})
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        include:
+        # The workspace members (`workspace:` in the root pubspec.yaml).
+        PACKAGE:
+          - messageformat
+          - messageformat_datetime
+        # Each SDK is a mapping so that Renovate's `*_VERSION:` annotation
+        # still matches the stable release.
+        SDK:
           # The lowest SDK the packages support (`environment.sdk`).
           - DART_VERSION: 3.6.0
           # The current stable release.
           - # renovate: datasource=dart-version depName=dart
             DART_VERSION: 3.13.5
+    defaults:
+      run:
+        working-directory: ${{ matrix.PACKAGE }}
     steps:
       - name: Setup / Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -38,8 +47,10 @@ jobs:
       - name: Setup / Dart
         uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1.8.1
         with:
-          sdk: ${{ matrix.DART_VERSION }}
+          sdk: ${{ matrix.SDK.DART_VERSION }}
 
+      # Resolves the whole workspace, so every package is tested against the
+      # same dependency versions.
       - name: Setup / Dependencies
         run: dart pub get
 
@@ -51,11 +62,11 @@ jobs:
 
       - name: Validate / Test
         run: dart test
-        working-directory: messageformat
 
   # Single required status check for the branch ruleset (shown as "CI / Summary").
-  # The matrix job names include the SDK version, so requiring them directly
-  # would silently drop a check whenever the minimum SDK moves.
+  # The matrix job names include the package and the SDK version, so requiring
+  # them directly would silently drop a check whenever a package is added or
+  # the minimum SDK moves.
   summary:
     name: Summary
     if: always()
