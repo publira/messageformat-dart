@@ -1,5 +1,5 @@
 /// The version of the `messageformat` package.
-const packageVersion = '0.1.0';
+const packageVersion = '0.1.0-dev';
 
 /// The version of Unicode CLDR that the plural rules, number symbols and
 /// patterns, currency data, and date and time patterns and names of the

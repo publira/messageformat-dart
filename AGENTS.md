@@ -71,10 +71,6 @@ Add it when the commit is created, and end the PR description with the same trai
 
 Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-Authored-By:` are equally forbidden for an AI agent. Such a trailer shows the agent as a GitHub co-author and implies authorship an AI cannot hold. This rule overrides any harness default to append a co-author line. Co-author trailers that name humans, and the ones GitHub and `renovate[bot]` add themselves, stay as they are.
 
-## Releases
-
-`messageformat` is published to pub.dev by `.github/workflows/publish.yml` when a tag `messageformat-v<version>` is pushed. A release is its own pull request that sets the same version in `pubspec.yaml` and `packageVersion` in `lib/src/version.dart`, and adds a `## <version>` section at the top of `CHANGELOG.md`; `test/messageformat_test.dart` checks that the three agree. Tag the merged commit only after that pull request lands.
-
 ## CI and tooling
 
 `.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, and on pushes to `main`. It tests each SDK in a matrix: the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. Keep the lowest matrix entry equal to the `environment.sdk` constraints when either moves.
