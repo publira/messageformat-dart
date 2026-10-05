@@ -75,7 +75,7 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 
 ## CI and tooling
 
-`.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, and on pushes to `main`. It tests each SDK in a matrix: the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. Keep the lowest matrix entry equal to the `environment.sdk` constraints when either moves.
+`.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, and on pushes to `main`. It runs them in each package's directory, in a matrix of every workspace member (`PACKAGE`) and two SDKs (`SDK`): the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. When you add a workspace member, add it to `PACKAGE` in the same change. Keep the lowest SDK entry equal to the `environment.sdk` constraints when either moves, and keep each SDK a `DART_VERSION:` mapping, which Renovate's annotation needs.
 
 - Actions are pinned to a commit SHA, with the version in a trailing comment. Keep that form so Renovate can keep updating them.
 - Renovate configuration is inherited from the organization preset in `publira/.github` (#11). Add only repository-specific rules here, not a copy of the shared preset.
