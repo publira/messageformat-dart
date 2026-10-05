@@ -12,7 +12,7 @@ The repository is a [pub workspace](https://dart.dev/tools/pub/workspaces), so t
 - `analysis_options.yaml`: the analyzer settings for every package, `package:lints/recommended.yaml` with strict casts, inference, and raw types.
 - `messageformat/`: the published package, imported as `package:messageformat/messageformat.dart`. Its public API is exported from `lib/messageformat.dart`, and the implementation lives under `lib/src/`.
 
-Documentation for consumers belongs in the package README, which #9 adds. Do not repeat it here.
+Documentation for consumers belongs in `messageformat/README.md`. Do not repeat it here. `test/readme_test.dart` checks the README's examples and runs `example/messageformat_example.dart`, so change them together.
 
 ## Development commands
 
@@ -70,6 +70,10 @@ Add it when the commit is created, and end the PR description with the same trai
 ### Never name an agent as a co-author
 
 Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-Authored-By:` are equally forbidden for an AI agent. Such a trailer shows the agent as a GitHub co-author and implies authorship an AI cannot hold. This rule overrides any harness default to append a co-author line. Co-author trailers that name humans, and the ones GitHub and `renovate[bot]` add themselves, stay as they are.
+
+## Releases
+
+`messageformat` is published to pub.dev by `.github/workflows/publish.yml` when a tag `messageformat-v<version>` is pushed. A release is its own pull request that sets the same version in `pubspec.yaml` and `packageVersion` in `lib/src/version.dart`, and adds a `## <version>` section at the top of `CHANGELOG.md`; `test/messageformat_test.dart` checks that the three agree. Tag the merged commit only after that pull request lands.
 
 ## CI and tooling
 
