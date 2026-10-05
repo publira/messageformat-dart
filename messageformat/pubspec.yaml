@@ -1,10 +1,16 @@
 name: messageformat
 description: >-
-  A Dart implementation of Unicode MessageFormat 2.0 for formatting
+  A pure-Dart implementation of Unicode MessageFormat 2.0 for formatting
   localized messages with plurals, selectors, and placeholders.
 version: 0.1.0-dev
 repository: https://github.com/publira/messageformat-dart/tree/main/messageformat
 issue_tracker: https://github.com/publira/messageformat-dart/issues
+topics:
+  - i18n
+  - l10n
+  - messageformat
+  - unicode
+  - cldr
 
 environment:
   sdk: ^3.6.0

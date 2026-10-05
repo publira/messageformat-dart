@@ -12,7 +12,7 @@ The repository is a [pub workspace](https://dart.dev/tools/pub/workspaces), so t
 - `analysis_options.yaml`: the analyzer settings for every package, `package:lints/recommended.yaml` with strict casts, inference, and raw types.
 - `messageformat/`: the published package, imported as `package:messageformat/messageformat.dart`. Its public API is exported from `lib/messageformat.dart`, and the implementation lives under `lib/src/`.
 
-Documentation for consumers belongs in the package README, which #9 adds. Do not repeat it here.
+Documentation for consumers belongs in `messageformat/README.md`. Do not repeat it here. `test/readme_test.dart` checks the README's examples and runs `example/messageformat_example.dart`, so change them together.
 
 ## Development commands
 
