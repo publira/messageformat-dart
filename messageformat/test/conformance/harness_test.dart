@@ -272,43 +272,44 @@ void main() {
         ));
 
     test('finds pending functions that the source calls', () {
-      expect(used('{1 :number}'), ['number']);
+      expect(used('{1 :date}'), ['date']);
       expect(used('{:datetime}'), ['datetime']);
-      expect(used('{\u200e:string}'), ['string']);
-      expect(used('.local \$x = {1 :integer} {{{\$x :number}}}'),
-          ['integer', 'number']);
+      expect(used('{\u200e:time}'), ['time']);
+      expect(used('.local \$x = {1 :date} {{{\$x :time}}}'), ['date', 'time']);
     });
 
-    test('ignores other functions, options, and text', () {
+    test('ignores implemented and other functions, options, and text', () {
+      expect(used('{1 :number}'), isEmpty);
       expect(used('{1 :test:function}'), isEmpty);
-      expect(used('{a :string:x}'), isEmpty);
+      expect(used('{a :date:x}'), isEmpty);
       expect(used('{a :f u:dir=ltr}'), isEmpty);
-      expect(used('a:number'), isEmpty);
+      expect(used('a:date'), isEmpty);
     });
 
-    test('finds number and date parameters in bare placeholders', () {
-      expect(used('{\$x}', {'x': 1.5}), ['number']);
-      expect(used('{ \$x @a}', {'x': 1}), ['number']);
-      expect(used('{\$x}', {'x': DateTime(2006)}), ['datetime']);
+    test('finds date parameters in bare placeholders', () {
+      final date = DateTime(2006);
+      expect(used('{\$x}', {'x': date}), ['datetime']);
+      expect(used('{ \$x @a}', {'x': date}), ['datetime']);
+      expect(used('{\$x}', {'x': 1.5}), isEmpty);
       expect(used('{\$x}', {'x': '1'}), isEmpty);
-      expect(used('{\$x :test:function}', {'x': 1}), isEmpty);
-      expect(used('{\$xy}', {'x': 1}), isEmpty);
-      expect(used('.input {\$x} {{{\$x}}}', {'x': 1}), ['number']);
+      expect(used('{\$x :test:function}', {'x': date}), isEmpty);
+      expect(used('{\$xy}', {'x': date}), isEmpty);
+      expect(used('.input {\$x} {{{\$x}}}', {'x': date}), ['datetime']);
       expect(
-        used(
-            '.input {\$x :test:select} .local \$y = {\$x} {{{\$y}}}', {'x': 1}),
+        used('.input {\$x :test:select} .local \$y = {\$x} {{{\$y}}}',
+            {'x': date}),
         isEmpty,
       );
     });
 
     test('finds none in a case that is not formatted', () {
-      expect(used('{1 :number', null, ['syntax-error']), isEmpty);
+      expect(used('{1 :date', null, ['syntax-error']), isEmpty);
       expect(
-        used('.input {\$x :string} .match \$x * {{a}} * {{b}}', null,
+        used('.input {\$x :date} .match \$x * {{a}} * {{b}}', null,
             ['duplicate-variant']),
         isEmpty,
       );
-      expect(used('{\$x :number}', null, ['unresolved-variable']), ['number']);
+      expect(used('{\$x :date}', null, ['unresolved-variable']), ['date']);
     });
   });
 
