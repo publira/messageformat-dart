@@ -85,12 +85,14 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 
 `messageformat` and `messageformat_datetime` release together, with the same version. A release is a pull request that sets, in both packages, the `version` in `pubspec.yaml`, the version constant in `lib/src/version.dart` (`packageVersion` and `dateTimePackageVersion`), the lower bound of the `^` constraints between the two packages, and a new top entry in `CHANGELOG.md`. The tests in `test/messageformat_test.dart` and `test/messageformat_datetime_test.dart` of each package, and `messageformat_datetime/test/release_sync_test.dart` across the two, fail when these disagree.
 
-After the pull request is merged, tag its merge commit on `main` by hand, one tag per package, `messageformat-v<version>` first and then `messageformat_datetime-v<version>`, and push the tags. pub.dev accepts an upload from GitHub Actions only from a workflow started by such a tag push, so the tag is what starts `.github/workflows/publish.yml`. It runs `ci.yml`, checks that the tag matches the package's `pubspec.yaml`, runs `dart pub publish --dry-run`, and publishes the package from the `pub.dev` environment. A sibling package that joins the workspace gets its own tag pattern in `publish.yml` and on pub.dev.
+After the pull request is merged, tag its merge commit on `main` by hand, one tag per package, and push the tags one at a time: `messageformat-v<version>` first, and `messageformat_datetime-v<version>` only once pub.dev serves the new `messageformat`. Each tag starts its own workflow run, and `messageformat_datetime` requires the same version of `messageformat`. Its dry run resolves `messageformat` from the workspace, not from pub.dev, so it does not catch a `messageformat` that is not published yet. pub.dev accepts an upload from GitHub Actions only from a workflow started by such a tag push, so the tag is what starts `.github/workflows/publish.yml`. It runs `ci.yml`, checks that the tag matches the package's `pubspec.yaml`, runs `dart pub publish --dry-run`, and publishes the package from the `pub.dev` environment. A sibling package that joins the workspace gets its own tag pattern in `publish.yml` and on pub.dev.
 
 ```bash
 git tag messageformat-v<version> <merge-commit>
-git tag messageformat_datetime-v<version> <merge-commit>
 git push origin messageformat-v<version>
+# Once the publish run has succeeded, this must print 200.
+curl -sS -o /dev/null -w '%{http_code}\n' https://pub.dev/api/packages/messageformat/versions/<version>
+git tag messageformat_datetime-v<version> <merge-commit>
 git push origin messageformat_datetime-v<version>
 ```
 
