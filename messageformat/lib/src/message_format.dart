@@ -103,10 +103,11 @@ const Map<String, MessageFunction> _defaultFunctions = {
 /// - Dates use the Gregorian calendar in every locale, and the option
 ///   `calendar` accepts only `gregory`.
 /// - The default time zone is the platform's local time zone. The option
-///   `timeZone` accepts `UTC`, `input`, and other time zone identifiers;
-///   since time zone data is not included, a value with an offset cannot
-///   be converted to one of the others, and its expression formats as its
-///   fallback value with a *Bad Option* error.
+///   `timeZone` accepts `input` and the time zone identifiers that CLDR
+///   knows, such as `UTC` or `America/New_York`. Since time zone data is
+///   not included, a value with an offset cannot be converted to a zone
+///   other than UTC, and its expression formats as its fallback value with
+///   a *Bad Option* error.
 /// - The option `timeZoneStyle` shows the offset from GMT, such as
 ///   `GMT-8`, since time zone names are not included.
 ///

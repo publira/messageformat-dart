@@ -135,6 +135,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sondag\u001fMaandag\u001fDinsdag\u001fWoensdag\u001fDonderdag\u001fVrydag\u001fSaterdag',
     'eras.eraAbbr': 'v.C.\u001fn.C.',
+    'eras.eraNames': 'voor Christus\u001fn\u00e1 Christus',
     'eras.eraNarrow': 'v.C.\u001fn.C.',
     'months.format.abbreviated':
         'Jan.\u001fFeb.\u001fMrt.\u001fApr.\u001fMei\u001fJun.\u001fJul.\u001fAug.\u001fSep.\u001fOkt.\u001fNov.\u001fDes.',
@@ -179,6 +180,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'tsu\u0294nts\u0268\u001ftsu\u0294ukp\u00e0\u001ftsu\u0294ugh\u0254e\u001ftsu\u0294ut\u0254\u0300ml\u00f2\u001ftsu\u0294um\u00e8\u001ftsu\u0294ugh\u0268\u0302m\u001ftsu\u0294ndz\u0268k\u0254\u0294\u0254',
     'eras.eraAbbr': 'SK\u001fBK',
+    'eras.eraNames':
+        'S\u011be K\u0268\u0300lesto\u001fB\u01cea K\u0268\u0300lesto',
     'eras.eraNarrow': 'SK\u001fBK',
     'months.format.abbreviated':
         'n\u00f9m\u001fk\u0268z\u001ft\u0268d\u001ftaa\u001fsee\u001fnzu\u001fdum\u001ff\u0254e\u001fdzu\u001fl\u0254m\u001fkaa\u001ffwo',
@@ -220,6 +223,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sun\u001fDwoada\u001fBenada\u001fWukuada\u001fYawoada\u001fFiada\u001fMemeneda',
     'eras.eraAbbr': 'AK\u001fKE',
+    'eras.eraNames': 'Ansa Kristo\u001fKristo Akyi',
     'eras.eraNarrow': 'AK\u001fKE',
     'months.format.abbreviated':
         '\u0186p\u025bp\u0254n\u001f\u0186gyefo\u0254\u001f\u0186b\u025bnem\u001fOforisuo\u001fK\u0254t\u0254nimma\u001fAy\u025bwohomumu\u001fKutawonsa\u001f\u0186sanaa\u001f\u0190b\u0254\u001fAhinime\u001fObubuo\u001f\u0186p\u025bnimma',
@@ -288,6 +292,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u12a5\u1211\u12f5\u001f\u1230\u129e\u001f\u121b\u12ad\u1230\u129e\u001f\u1228\u1261\u12d5\u001f\u1210\u1219\u1235\u001f\u12d3\u122d\u1265\u001f\u1245\u12f3\u121c',
     'eras.eraAbbr': '\u12d3/\u12d3\u001f\u12d3/\u121d',
+    'eras.eraNames':
+        '\u12d3\u1218\u1270 \u12d3\u1208\u121d\u001f\u12d3\u1218\u1270 \u121d\u1215\u1228\u1275',
     'eras.eraNarrow': '\u12d3/\u12d3\u001f\u12d3/\u121d',
     'gmtFormat': '\u1302 \u12a4\u121d \u1272{0}',
     'hourFormat': '+HHmm;-HHmm',
@@ -362,6 +368,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0627\u0644\u0623\u062d\u062f\u001f\u0627\u0644\u0627\u062b\u0646\u064a\u0646\u001f\u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621\u001f\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621\u001f\u0627\u0644\u062e\u0645\u064a\u0633\u001f\u0627\u0644\u062c\u0645\u0639\u0629\u001f\u0627\u0644\u0633\u0628\u062a',
     'eras.eraAbbr': '\u0642.\u0645\u001f\u0645',
+    'eras.eraNames':
+        '\u0642\u0628\u0644 \u0627\u0644\u0645\u064a\u0644\u0627\u062f\u001f\u0645\u064a\u0644\u0627\u062f\u064a',
     'eras.eraNarrow': '\u0642.\u0645\u001f\u0645',
     'gmtFormat': '\u063a\u0631\u064a\u0646\u062a\u0634{0}',
     'months.format.abbreviated':
@@ -525,6 +533,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u09a6\u09c7\u0993\u09ac\u09be\u09f0\u001f\u09b8\u09cb\u09ae\u09ac\u09be\u09f0\u001f\u09ae\u0999\u09cd\u0997\u09b2\u09ac\u09be\u09f0\u001f\u09ac\u09c1\u09a7\u09ac\u09be\u09f0\u001f\u09ac\u09c3\u09b9\u09b8\u09cd\u09aa\u09a4\u09bf\u09ac\u09be\u09f0\u001f\u09b6\u09c1\u0995\u09cd\u09f0\u09ac\u09be\u09f0\u001f\u09b6\u09a8\u09bf\u09ac\u09be\u09f0',
     'eras.eraAbbr':
         '\u0996\u09cd\u09f0\u09c0\u0983 \u09aa\u09c2\u0983\u001f\u0996\u09cd\u09f0\u09c0\u0983',
+    'eras.eraNames':
+        '\u0996\u09cd\u09f0\u09c0\u09b7\u09cd\u099f\u09aa\u09c2\u09f0\u09cd\u09ac\u001f\u0996\u09cd\u09f0\u09c0\u09b7\u09cd\u099f\u09be\u09ac\u09cd\u09a6',
     'eras.eraNarrow':
         '\u0996\u09cd\u09f0\u09c0\u0983 \u09aa\u09c2\u0983\u001f\u0996\u09cd\u09f0\u09c0\u0983',
     'months.format.abbreviated':
@@ -565,6 +575,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapili\u001fJumatatu\u001fJumanne\u001fJumatano\u001fAlhamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'KM\u001fBM',
+    'eras.eraNames': 'Kabla yakwe Yethu\u001fBaada yakwe Yethu',
     'eras.eraNarrow': 'KM\u001fBM',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDec',
@@ -612,6 +623,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'domingu\u001fllunes\u001fmartes\u001fmi\u00e9rcoles\u001fxueves\u001fvienres\u001fs\u00e1badu',
     'eras.eraAbbr': 'e.C.\u001fd.C.',
+    'eras.eraNames': 'enantes de Cristu\u001fdespu\u00e9s de Cristu',
     'eras.eraNarrow': 'e.C.\u001fd.C.',
     'months.format.abbreviated':
         'xin\u001ffeb\u001fmar\u001fabr\u001fmay\u001fxun\u001fxnt\u001fago\u001fset\u001foch\u001fpay\u001favi',
@@ -678,6 +690,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.abbreviated':
         'B.\u001fB.E.\u001f\u00c7.A.\u001f\u00c7.\u001fC.A.\u001fC.\u001f\u015e.',
     'eras.eraAbbr': 'e.\u0259.\u001fy.e.',
+    'eras.eraNames': 'eram\u0131zdan \u0259vv\u0259l\u001fyeni era',
     'eras.eraNarrow': 'e.\u0259.\u001fy.e.',
     'months.format.abbreviated':
         'yan\u001ffev\u001fmar\u001fapr\u001fmay\u001fiyn\u001fiyl\u001favq\u001fsen\u001fokt\u001fnoy\u001fdek',
@@ -724,6 +737,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0431\u0430\u0437\u0430\u0440\u001f\u0431\u0430\u0437\u0430\u0440 \u0435\u0440\u0442\u04d9\u0441\u0438\u001f\u0447\u04d9\u0440\u0448\u04d9\u043d\u0431\u04d9 \u0430\u0445\u0448\u0430\u043c\u044b\u001f\u0447\u04d9\u0440\u0448\u04d9\u043d\u0431\u04d9\u001f\u04b9\u04af\u043c\u04d9 \u0430\u0445\u0448\u0430\u043c\u044b\u001f\u04b9\u04af\u043c\u04d9\u001f\u0448\u04d9\u043d\u0431\u04d9',
     'eras.eraAbbr': '\u0435.\u04d9.\u001f\u0458.\u0435.',
+    'eras.eraNames':
+        '\u0435\u0440\u0430\u043c\u044b\u0437\u0434\u0430\u043d \u04d9\u0432\u0432\u04d9\u043b\u001f\u0458\u0435\u043d\u0438 \u0435\u0440\u0430',
     'eras.eraNarrow': '\u0435.\u04d9.\u001f\u0458.\u0435.',
     'months.format.abbreviated':
         '\u0458\u0430\u043d\u001f\u0444\u0435\u0432\u001f\u043c\u0430\u0440\u001f\u0430\u043f\u0440\u001f\u043c\u0430\u0439\u001f\u0438\u0458\u043d\u001f\u0438\u0458\u043b\u001f\u0430\u0432\u0433\u001f\u0441\u0435\u043d\u001f\u043e\u043a\u0442\u001f\u043d\u043e\u0458\u001f\u0434\u0435\u043a',
@@ -782,6 +797,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0439\u04d9\u043a\u0448\u04d9\u043c\u0431\u0435\u001f\u0434\u04af\u0448\u04d9\u043c\u0431\u0435\u001f\u0448\u0438\u0448\u04d9\u043c\u0431\u0435\u001f\u0448\u0430\u0440\u0448\u0430\u043c\u0431\u044b\u001f\u043a\u0435\u0441\u0430\u0499\u043d\u0430\u001f\u0439\u043e\u043c\u0430\u001f\u0448\u04d9\u043c\u0431\u0435',
     'eras.eraAbbr': '\u0431.\u044d.\u0442.\u001f\u0431.\u044d.',
+    'eras.eraNames':
+        '\u0431\u0435\u0499\u0499\u0435\u04a3 \u044d\u0440\u0430\u0493\u0430 \u0442\u0438\u043a\u043b\u0435\u043c\u001f\u0431\u0435\u0499\u0499\u0435\u04a3 \u044d\u0440\u0430',
     'eras.eraNarrow': '\u0431.\u044d.\u0442.\u001f\u0431.\u044d.',
     'months.format.abbreviated':
         '\u0493\u0438\u043d.\u001f\u0444\u0435\u0432.\u001f\u043c\u0430\u0440.\u001f\u0430\u043f\u0440.\u001f\u043c\u0430\u0439\u001f\u0438\u044e\u043d.\u001f\u0438\u044e\u043b.\u001f\u0430\u0432\u0433.\u001f\u0441\u0435\u043d\u0442.\u001f\u043e\u043a\u0442.\u001f\u043d\u043e\u044f\u0431.\u001f\u0434\u0435\u043a.',
@@ -811,6 +828,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Yakshambeh\u001fDoshambeh\u001fSayshambeh\u001fCh\u00e1rshambeh\u001fPanchshambeh\u001fJomah\u001fShambeh',
     'eras.eraAbbr': 'PM\u001fAD',
+    'eras.eraNames': 'P\u00e9shmil\u00e1d\u001fAnn\u00f3 Domini',
     'eras.eraNarrow': 'PM\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fPar\u001fM\u00e1r\u001fApr\u001fMai\u001fJun\u001fJ\u00f3l\u001fAga\u001fSat\u001fAkt\u001fNaw\u001fDas',
@@ -849,6 +867,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u014bgw\u00e0 n\u0254\u0302y\u001f\u014bgw\u00e0 nja\u014bgumba\u001f\u014bgw\u00e0 \u00fbm\u001f\u014bgw\u00e0 \u014bg\u00ea\u001f\u014bgw\u00e0 mb\u0254k\u001f\u014bgw\u00e0 k\u0254\u0254\u001f\u014bgw\u00e0 j\u00f4n',
     'eras.eraAbbr': 'b.Y.K\u001fm.Y.K',
+    'eras.eraNames':
+        'bis\u016b bi Yes\u00f9 Kr\u01d0st\u00f2\u001fi mb\u016bs Yes\u00f9 Kr\u01d0st\u00f2',
     'eras.eraNarrow': 'b.Y.K\u001fm.Y.K',
     'months.format.abbreviated':
         'k\u0254n\u001fmac\u001fmat\u001fmto\u001fmpu\u001fhil\u001fnje\u001fhik\u001fdip\u001fbio\u001fmay\u001fli\u0253',
@@ -904,6 +924,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u043d\u044f\u0434\u0437\u0435\u043b\u044f\u001f\u043f\u0430\u043d\u044f\u0434\u0437\u0435\u043b\u0430\u043a\u001f\u0430\u045e\u0442\u043e\u0440\u0430\u043a\u001f\u0441\u0435\u0440\u0430\u0434\u0430\u001f\u0447\u0430\u0446\u0432\u0435\u0440\u001f\u043f\u044f\u0442\u043d\u0456\u0446\u0430\u001f\u0441\u0443\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u0434\u0430 \u043d.\u044d.\u001f\u043d.\u044d.',
+    'eras.eraNames':
+        '\u0434\u0430 \u043d\u0430\u0440\u0430\u0434\u0436\u044d\u043d\u043d\u044f \u0425\u0440\u044b\u0441\u0442\u043e\u0432\u0430\u001f\u0430\u0434 \u043d\u0430\u0440\u0430\u0434\u0436\u044d\u043d\u043d\u044f \u0425\u0440\u044b\u0441\u0442\u043e\u0432\u0430',
     'eras.eraNarrow': '\u0434\u0430 \u043d.\u044d.\u001f\u043d.\u044d.',
     'months.format.abbreviated':
         '\u0441\u0442\u0443\u001f\u043b\u044e\u0442\u001f\u0441\u0430\u043a\u001f\u043a\u0440\u0430\u001f\u043c\u0430\u044f\u001f\u0447\u044d\u0440\u001f\u043b\u0456\u043f\u001f\u0436\u043d\u0456\u001f\u0432\u0435\u0440\u001f\u043a\u0430\u0441\u001f\u043b\u0456\u0441\u001f\u0441\u043d\u0435',
@@ -940,6 +962,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Pa Mulungu\u001fPalichimo\u001fPalichibuli\u001fPalichitatu\u001fPalichine\u001fPalichisano\u001fPachibelushi',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Before Yesu\u001fAfter Yesu',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fEpr\u001fMei\u001fJun\u001fJul\u001fOga\u001fSep\u001fOkt\u001fNov\u001fDis',
@@ -980,6 +1003,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'pa mulungu\u001fpa shahuviluha\u001fpa hivili\u001fpa hidatu\u001fpa hitayi\u001fpa hihanu\u001fpa shahulembela',
     'eras.eraAbbr': 'KM\u001fBM',
+    'eras.eraNames': 'Kabla ya Mtwaa\u001fBaada ya Mtwaa',
     'eras.eraNarrow': 'KM\u001fBM',
     'months.format.abbreviated':
         'Hut\u001fVil\u001fDat\u001fTai\u001fHan\u001fSit\u001fSab\u001fNan\u001fTis\u001fKum\u001fKmj\u001fKmb',
@@ -1072,6 +1096,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u043d\u0435\u0434\u0435\u043b\u044f\u001f\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u043d\u0438\u043a\u001f\u0432\u0442\u043e\u0440\u043d\u0438\u043a\u001f\u0441\u0440\u044f\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u044a\u0440\u0442\u044a\u043a\u001f\u043f\u0435\u0442\u044a\u043a\u001f\u0441\u044a\u0431\u043e\u0442\u0430',
     'eras.eraAbbr':
         '\u043f\u0440.\u0425\u0440.\u001f\u0441\u043b.\u0425\u0440.',
+    'eras.eraNames':
+        '\u043f\u0440\u0435\u0434\u0438 \u0425\u0440\u0438\u0441\u0442\u0430\u001f\u0441\u043b\u0435\u0434 \u0425\u0440\u0438\u0441\u0442\u0430',
     'eras.eraNarrow':
         '\u043f\u0440.\u0425\u0440.\u001f\u0441\u043b.\u0425\u0440.',
     'gmtFormat': '\u0413\u0440\u0438\u043d\u0443\u0438\u0447{0}',
@@ -1180,6 +1206,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'alaha\u0256\u0269\u001fa\u0256\u0269t\u025bn\u025b\u025b\u001fatalaata\u001falaarba\u001falaam\u0269sh\u0269\u001far\u0269s\u01ddma\u001fasiibi',
     'eras.eraAbbr': 'naaBY\u014aA\u0196\u001fA\u0196AK',
+    'eras.eraNames':
+        'naa Ba Ye \u014a\u028am Annabi \u0196sa\u001fAnnabi \u0196sa Ab\u028a\u014b\u028ama Ka\u014bk\u01ddm',
     'eras.eraNarrow': 'naaBY\u014aA\u0196\u001fA\u0196AK',
     'gmtFormat': '{0} Gk',
     'months.format.abbreviated':
@@ -1218,6 +1246,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'kari\u001fnt\u025bn\u025b\u001ftarata\u001faraba\u001falamisa\u001fjuma\u001fsibiri',
     'eras.eraAbbr': 'J.-C. \u0272\u025b\u001fni J.-C.',
+    'eras.eraNames': 'jezu krisiti \u0272\u025b\u001fjezu krisiti mink\u025b',
     'eras.eraNarrow': 'J.-C. \u0272\u025b\u001fni J.-C.',
     'months.format.abbreviated':
         'zan\u001ffeb\u001fmar\u001fawi\u001fm\u025b\u001fzuw\u001fzul\u001futi\u001fs\u025bt\u001f\u0254ku\u001fnow\u001fdes',
@@ -1273,6 +1302,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u09b0\u09ac\u09bf\u09ac\u09be\u09b0\u001f\u09b8\u09cb\u09ae\u09ac\u09be\u09b0\u001f\u09ae\u0999\u09cd\u0997\u09b2\u09ac\u09be\u09b0\u001f\u09ac\u09c1\u09a7\u09ac\u09be\u09b0\u001f\u09ac\u09c3\u09b9\u09b8\u09cd\u09aa\u09a4\u09bf\u09ac\u09be\u09b0\u001f\u09b6\u09c1\u0995\u09cd\u09b0\u09ac\u09be\u09b0\u001f\u09b6\u09a8\u09bf\u09ac\u09be\u09b0',
     'eras.eraAbbr':
         '\u0996\u09cd\u09b0\u09bf\u09b8\u09cd\u099f\u09aa\u09c2\u09b0\u09cd\u09ac\u001f\u0996\u09c3\u09b7\u09cd\u099f\u09be\u09ac\u09cd\u09a6',
+    'eras.eraNames':
+        '\u0996\u09cd\u09b0\u09bf\u09b8\u09cd\u099f\u09aa\u09c2\u09b0\u09cd\u09ac\u001f\u0996\u09cd\u09b0\u09bf\u09b8\u09cd\u099f\u09be\u09ac\u09cd\u09a6',
     'eras.eraNarrow':
         '\u0996\u09cd\u09b0\u09bf\u09b8\u09cd\u099f\u09aa\u09c2\u09b0\u09cd\u09ac\u001f\u0996\u09c3\u09b7\u09cd\u099f\u09be\u09ac\u09cd\u09a6',
     'gmtFormat': 'GMT {0}',
@@ -1294,6 +1325,8 @@ const dateLocales = <String, Map<String, String>>{
   'bn-IN': {
     'eras.eraAbbr':
         '\u0996\u09cd\u09b0\u09bf\u0983\u09aa\u09c2\u0983\u001f\u0996\u09cd\u09b0\u09bf\u0983',
+    'eras.eraNames':
+        '\u0996\u09cd\u09b0\u09bf\u0983\u09aa\u09c2\u0983\u001f\u0996\u09cd\u09b0\u09bf\u09b7\u09cd\u099f\u09be\u09ac\u09cd\u09a6',
     'eras.eraNarrow':
         '\u0996\u09cd\u09b0\u09bf\u0983\u09aa\u09c2\u0983\u001f\u0996\u09cd\u09b0\u09bf\u0983',
     'months.format.abbreviated':
@@ -1326,6 +1359,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0f42\u0f5f\u0f60\u0f0b\u0f49\u0f72\u0f0b\u0f58\u0f0b\u001f\u0f42\u0f5f\u0f60\u0f0b\u0f5f\u0fb3\u0f0b\u0f56\u0f0b\u001f\u0f42\u0f5f\u0f60\u0f0b\u0f58\u0f72\u0f42\u0f0b\u0f51\u0f58\u0f62\u0f0b\u001f\u0f42\u0f5f\u0f60\u0f0b\u0f63\u0fb7\u0f42\u0f0b\u0f54\u0f0b\u001f\u0f42\u0f5f\u0f60\u0f0b\u0f55\u0f74\u0f62\u0f0b\u0f56\u0f74\u0f0b\u001f\u0f42\u0f5f\u0f60\u0f0b\u0f54\u0f0b\u0f66\u0f44\u0f66\u0f0b\u001f\u0f42\u0f5f\u0f60\u0f0b\u0f66\u0fa4\u0f7a\u0f53\u0f0b\u0f54\u0f0b',
     'eras.eraAbbr':
+        '\u0f66\u0fa4\u0fb1\u0f72\u0f0b\u0f63\u0f7c\u0f0b\u0f66\u0f94\u0f7c\u0f53\u0f0b\u001f\u0f66\u0fa4\u0fb1\u0f72\u0f0b\u0f63\u0f7c\u0f0b',
+    'eras.eraNames':
         '\u0f66\u0fa4\u0fb1\u0f72\u0f0b\u0f63\u0f7c\u0f0b\u0f66\u0f94\u0f7c\u0f53\u0f0b\u001f\u0f66\u0fa4\u0fb1\u0f72\u0f0b\u0f63\u0f7c\u0f0b',
     'eras.eraNarrow':
         '\u0f66\u0fa4\u0fb1\u0f72\u0f0b\u0f63\u0f7c\u0f0b\u0f66\u0f94\u0f7c\u0f53\u0f0b\u001f\u0f66\u0fa4\u0fb1\u0f72\u0f0b\u0f63\u0f7c\u0f0b',
@@ -1395,6 +1430,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sul\u001fLun\u001fMeurzh\u001fMerc\u02bcher\u001fYaou\u001fGwener\u001fSadorn',
     'eras.eraAbbr': 'a-raok J.K.\u001fgoude J.K.',
+    'eras.eraNames': 'a-raok Jezuz-Krist\u001fgoude Jezuz-Krist',
     'eras.eraNarrow': 'a-raok J.K.\u001fgoude J.K.',
     'gmtFormat': 'UTC{0}',
     'months.format.abbreviated':
@@ -1451,6 +1487,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u0930\u092c\u093f\u092c\u093e\u0930\u001f\u0938\u092e\u092c\u093e\u0930\u001f\u092e\u0902\u0917\u0932\u092c\u093e\u0930\u001f\u092c\u0941\u0927\u092c\u093e\u0930\u001f\u092c\u093f\u0938\u094d\u0925\u093f\u092c\u093e\u0930\u001f\u0938\u0941\u0941\u0916\u0941\u0930\u092c\u093e\u0930\u001f\u0938\u0928\u093f\u092c\u093e\u0930',
     'eras.eraAbbr': '\u092c\u093f.\u0938\u093f.\u001f\u090f.\u0926\u093f',
+    'eras.eraNames':
+        '\u0916\u094d\u0930\u093e\u0907\u0937\u094d\u0924\u0928\u093f \u0938\u093f\u0917\u093e\u0902\u001f\u0906\u0928\u094d\u0928\u2019 \u0926\u093e\u092e\u093f\u0928\u093f',
     'eras.eraNarrow': '\u092c\u093f.\u0938\u093f.\u001f\u090f.\u0926\u093f',
     'gmtFormat': '\u091c\u093f.\u090f\u092e.\u0924\u093f {0}',
     'months.format.abbreviated':
@@ -1525,6 +1563,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         'n\u001fp\u001fu\u001fs\u001f\u010d\u001fp\u001fs',
     'eras.eraAbbr': 'p. n. e.\u001fn. e.',
+    'eras.eraNames': 'prije nove ere\u001fnove ere',
     'eras.eraNarrow': 'p.n.e.\u001fn. e.',
     'gmtFormat': 'GMT {0}',
     'hourFormat': '+HH:mm; -HH:mm',
@@ -1575,6 +1614,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u001f\u043f\u043e\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u043a\u001f\u0443\u0442\u043e\u0440\u0430\u043a\u001f\u0441\u0440\u0438\u0458\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0440\u0442\u0430\u043a\u001f\u043f\u0435\u0442\u0430\u043a\u001f\u0441\u0443\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u043f. \u043d. \u0435.\u001f\u043d. \u0435.',
+    'eras.eraNames':
+        '\u043f\u0440\u0438\u0458\u0435 \u043d\u043e\u0432\u0435 \u0435\u0440\u0435\u001f\u043d\u043e\u0432\u0435 \u0435\u0440\u0435',
     'eras.eraNarrow': '\u043f.\u043d.\u0435.\u001f\u043d.\u0435.',
     'months.format.abbreviated':
         '\u0458\u0430\u043d\u001f\u0444\u0435\u0431\u001f\u043c\u0430\u0440\u001f\u0430\u043f\u0440\u001f\u043c\u0430\u0458\u001f\u0458\u0443\u043d\u001f\u0458\u0443\u043b\u001f\u0430\u0443\u0433\u001f\u0441\u0435\u043f\u001f\u043e\u043a\u0442\u001f\u043d\u043e\u0432\u001f\u0434\u0435\u0446',
@@ -1684,6 +1725,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'diumenge\u001fdilluns\u001fdimarts\u001fdimecres\u001fdijous\u001fdivendres\u001fdissabte',
     'eras.eraAbbr': 'aC\u001fdC',
+    'eras.eraNames': 'abans de Crist\u001fdespr\u00e9s de Crist',
     'eras.eraNarrow': 'aC\u001fdC',
     'months.format.abbreviated':
         'de gen.\u001fde febr.\u001fde mar\u00e7\u001fd\u2019abr.\u001fde maig\u001fde juny\u001fde jul.\u001fd\u2019ag.\u001fde set.\u001fd\u2019oct.\u001fde nov.\u001fde des.',
@@ -1762,6 +1804,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u{11122}\u{11127}\u{1111d}\u{11128}\u{1111d}\u{11122}\u{11134}\u001f\u{11125}\u{11127}\u{1111f}\u{11134}\u{1111d}\u{11122}\u{11134}\u001f\u{1111f}\u{11127}\u{11101}\u{11109}\u{11127}\u{11123}\u{11134}\u{1111d}\u{11122}\u{11134}\u001f\u{1111d}\u{1112a}\u{11116}\u{11134}\u{1111d}\u{11122}\u{11134}\u001f\u{1111d}\u{11133}\u{11122}\u{11128}\u{11125}\u{1112a}\u{1111b}\u{11134}\u{1111d}\u{11122}\u{11134}\u001f\u{11125}\u{1112a}\u{11107}\u{11134}\u{11107}\u{1112e}\u{11122}\u{11134}\u{1111d}\u{11122}\u{11134}\u001f\u{11125}\u{11127}\u{1111a}\u{11128}\u{1111d}\u{11122}\u{11134}',
     'eras.eraAbbr':
         '\u{11108}\u{11133}\u{11122}\u{11128}\u{1110c}\u{11134}\u{11111}\u{11134}\u{1111b}\u{1112b}\u{11122}\u{11134}\u{1111d}\u{11127}\u001f\u{11108}\u{11133}\u{11122}\u{11128}\u{1110c}\u{11134}\u{11111}\u{1111b}\u{11134}\u{11118}\u{11127}',
+    'eras.eraNames':
+        '\u{11108}\u{11133}\u{11122}\u{11128}\u{1110c}\u{11134}\u{11111}\u{11134}\u{1111b}\u{1112b}\u{11122}\u{11134}\u{1111d}\u{11127}\u001f\u{11108}\u{11133}\u{11122}\u{11128}\u{1110c}\u{11134}\u{11111}\u{1111b}\u{11134}\u{11118}\u{11127}',
     'eras.eraNarrow':
         '\u{11108}\u{11133}\u{11122}\u{11128}\u{1110c}\u{11134}\u{11111}\u{11134}\u{1111b}\u{1112b}\u{11122}\u{11134}\u{1111d}\u{11127}\u001f\u{11108}\u{11133}\u{11122}\u{11128}\u{1110c}\u{11134}\u{11111}\u{1111b}\u{11134}\u{11118}\u{11127}',
     'gmtFormat': 'GMT {0}',
@@ -1793,6 +1837,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         '\u043a\u04c0\u001f\u043e\u001f\u0448\u001f\u043a\u0445\u001f\u0435\u001f\u043f\u04c0\u001f\u0448',
     'eras.eraAbbr': '\u0432. \u044d. \u0442\u04c0. \u044f\u001f\u0432. \u044d',
+    'eras.eraNames':
+        '\u04c0\u0438\u0439\u0441\u0430 \u043f\u0430\u0439\u0445\u0430\u043c\u0430\u0440 \u0432\u0438\u043d\u0430 \u0434\u0435 \u043a\u0445\u0430\u0447\u0430\u043b\u0435\u001f\u04c0\u0438\u0439\u0441\u0430 \u043f\u0430\u0439\u0445\u0430\u043c\u0430\u0440 \u0432\u0438\u043d\u0430 \u0434\u0438\u0439\u043d\u0430\u0445\u044c \u0434\u0443\u044c\u0439\u043d\u0430',
     'eras.eraNarrow':
         '\u0432. \u044d. \u0442\u04c0. \u044f\u001f\u0432. \u044d',
     'months.format.abbreviated':
@@ -1842,6 +1888,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Domingo\u001fLunes\u001fMartes\u001fMiyerkules\u001fHuwebes\u001fBiyernes\u001fSabado',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Sa Wala Pa Si Kristo\u001fAnno Domini',
     'eras.eraNarrow': 'BC\u001fAD',
     'gmtFormat': 'GMT {0}',
     'months.format.abbreviated':
@@ -1880,6 +1927,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sande\u001fOrwokubanza\u001fOrwakabiri\u001fOrwakashatu\u001fOrwakana\u001fOrwakataano\u001fOrwamukaaga',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Kurisito Atakaijire\u001fKurisito Yaijire',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'KBZ\u001fKBR\u001fKST\u001fKKN\u001fKTN\u001fKMK\u001fKMS\u001fKMN\u001fKMW\u001fKKM\u001fKNK\u001fKNB',
@@ -1931,6 +1979,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u13a4\u13be\u13d9\u13d3\u13c6\u13cd\u13ac\u001f\u13a4\u13be\u13d9\u13d3\u13c9\u13c5\u13af\u001f\u13d4\u13b5\u13c1\u13a2\u13a6\u001f\u13e6\u13a2\u13c1\u13a2\u13a6\u001f\u13c5\u13a9\u13c1\u13a2\u13a6\u001f\u13e7\u13be\u13a9\u13b6\u13cd\u13d7\u001f\u13a4\u13be\u13d9\u13d3\u13c8\u13d5\u13be',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames':
+        '\u13e7\u13d3\u13b7\u13b8 \u13a4\u13b7\u13af\u13cd\u13d7 \u13a6\u13b6\u13c1\u13db\u001f\u13a0\u13c3 \u13d9\u13bb\u13c2',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         '\u13a4\u13c3\u001f\u13a7\u13a6\u001f\u13a0\u13c5\u001f\u13a7\u13ec\u001f\u13a0\u13c2\u001f\u13d5\u13ad\u001f\u13ab\u13f0\u001f\u13a6\u13b6\u001f\u13da\u13b5\u001f\u13da\u13c2\u001f\u13c5\u13d3\u001f\u13a5\u13cd',
@@ -1977,6 +2027,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u06cc\u06d5\u06a9\u0634\u06d5\u0645\u0645\u06d5\u001f\u062f\u0648\u0648\u0634\u06d5\u0645\u0645\u06d5\u001f\u0633\u06ce\u0634\u06d5\u0645\u0645\u06d5\u001f\u0686\u0648\u0627\u0631\u0634\u06d5\u0645\u0645\u06d5\u001f\u067e\u06ce\u0646\u062c\u0634\u06d5\u0645\u0645\u06d5\u001f\u06be\u06d5\u06cc\u0646\u06cc\u001f\u0634\u06d5\u0645\u0645\u06d5',
     'eras.eraAbbr':
+        '\u067e\u06ce\u0634 \u0632\u0627\u06cc\u06cc\u0646\u001f\u0632\u0627\u06cc\u06cc\u0646\u06cc',
+    'eras.eraNames':
         '\u067e\u06ce\u0634 \u0632\u0627\u06cc\u06cc\u0646\u001f\u0632\u0627\u06cc\u06cc\u0646\u06cc',
     'eras.eraNarrow':
         '\u067e\u06ce\u0634 \u0632\u0627\u06cc\u06cc\u0646\u001f\u0632\u0627\u06cc\u06cc\u0646\u06cc',
@@ -2075,6 +2127,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'ned\u011ble\u001fpond\u011bl\u00ed\u001f\u00fater\u00fd\u001fst\u0159eda\u001f\u010dtvrtek\u001fp\u00e1tek\u001fsobota',
     'eras.eraAbbr': 'p\u0159. n. l.\u001fn. l.',
+    'eras.eraNames':
+        'p\u0159ed na\u0161\u00edm letopo\u010dtem\u001fna\u0161eho letopo\u010dtu',
     'eras.eraNarrow': 'p\u0159.n.l.\u001fn.l.',
     'hourFormat': '+H:mm;-H:mm',
     'months.format.abbreviated':
@@ -2178,6 +2232,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0432\u044b\u0440\u0441\u0430\u0440\u043d\u0438 \u043a\u0443\u043d\u001f\u0442\u0443\u043d\u0442\u0438 \u043a\u0443\u043d\u001f\u044b\u0442\u043b\u0430\u0440\u0438 \u043a\u0443\u043d\u001f\u044e\u043d \u043a\u0443\u043d\u001f\u043a\u04d7\u04ab\u043d\u0435\u0440\u043d\u0438 \u043a\u0443\u043d\u001f\u044d\u0440\u043d\u0435 \u043a\u0443\u043d\u001f\u0448\u04d1\u043c\u0430\u0442 \u043a\u0443\u043d',
     'eras.eraAbbr': '\u0445.\u202f\u0441-\u0447.\u001f\u0445.\u202f\u0441.',
+    'eras.eraNames':
+        '\u0445\u0430\u043b\u044c\u0445\u0438 \u0441\u0430\u043c\u0430\u043d\u0430\u0447\u0447\u0435\u043d\u0445\u0438\u001f\u0445\u0430\u043b\u044c\u0445\u0438 \u0441\u0430\u043c\u0430\u043d\u0430\u0440\u0438',
     'eras.eraNarrow': '\u0445.\u202f\u0441-\u0447.\u001f\u0445.\u202f\u0441.',
     'months.format.abbreviated':
         '\u043a\u04d1\u0440.\u001f\u043d\u0430\u0440.\u001f\u043f\u0443\u0448\u001f\u0430\u043a\u0430\u001f\u04ab\u0443\u001f\u04ab\u04d7\u0440\u0442.\u001f\u0443\u0442\u04d1\u001f\u04ab\u0443\u0440.\u001f\u0430\u0432\u04d1\u043d\u001f\u044e\u043f\u0430\u001f\u0447\u04f3\u043a\u001f\u0440\u0430\u0448.',
@@ -2237,6 +2293,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.abbreviated':
         'Sul\u001fLlun\u001fMaw\u001fMer\u001fIau\u001fGwe\u001fSad',
     'eras.eraAbbr': 'CC\u001fOC',
+    'eras.eraNames': 'Cyn Crist\u001fOed Crist',
     'eras.eraNarrow': 'C\u001fO',
     'months.format.abbreviated':
         'Ion\u001fChwef\u001fMaw\u001fEbr\u001fMai\u001fMeh\u001fGorff\u001fAwst\u001fMedi\u001fHyd\u001fTach\u001fRhag',
@@ -2309,6 +2366,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u00f8ndag\u001fmandag\u001ftirsdag\u001fonsdag\u001ftorsdag\u001ffredag\u001fl\u00f8rdag',
     'eras.eraAbbr': 'f.Kr.\u001fe.Kr.',
+    'eras.eraNames': 'f\u00f8r Kristus\u001fefter Kristus',
     'eras.eraNarrow': 'fKr\u001feKr',
     'hourFormat': '+HH.mm;-HH.mm',
     'months.format.abbreviated':
@@ -2346,6 +2404,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Ituku ja jumwa\u001fKuramuka jimweri\u001fKuramuka kawi\u001fKuramuka kadadu\u001fKuramuka kana\u001fKuramuka kasanu\u001fKifula nguwo',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Kristo\u001fBaada ya Kristo',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Imb\u001fKaw\u001fKad\u001fKan\u001fKas\u001fKar\u001fMfu\u001fWun\u001fIke\u001fIku\u001fImw\u001fIwi',
@@ -2422,6 +2481,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.abbreviated':
         'So\u001fMo\u001fDi\u001fMi\u001fDo\u001fFr\u001fSa',
     'eras.eraAbbr': 'v. Chr.\u001fn. Chr.',
+    'eras.eraNames': 'v. Chr.\u001fn. Chr.',
     'eras.eraNarrow': 'v. Chr.\u001fn. Chr.',
     'months.format.abbreviated':
         'Jan.\u001fFeb.\u001fM\u00e4rz\u001fApr.\u001fMai\u001fJuni\u001fJuli\u001fAug.\u001fSept.\u001fOkt.\u001fNov.\u001fDez.',
@@ -2482,6 +2542,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Alhadi\u001fAtinni\u001fAtalaata\u001fAlarba\u001fAlhamisi\u001fAlzuma\u001fAsibti',
     'eras.eraAbbr': 'IJ\u001fIZ',
+    'eras.eraNames': 'Isaa jine\u001fIsaa zamanoo',
     'eras.eraNarrow': 'IJ\u001fIZ',
     'months.format.abbreviated':
         '\u017dan\u001fFee\u001fMar\u001fAwi\u001fMe\u001f\u017duw\u001f\u017duy\u001fUt\u001fSek\u001fOkt\u001fNoo\u001fDee',
@@ -2528,6 +2589,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         '\u0910\u001f\u0938\u094b\u001f\u092e.\u001f\u092c\u0941.\u001f\u092c\u0940.\u001f\u0936\u0941.\u001f\u0936.',
     'eras.eraAbbr': '\u0908.\u092a\u0942.\u001f\u0908\u0938\u0935\u0940',
+    'eras.eraNames': '\u0908.\u092a\u0942.\u001f\u0908. \u0938\u0928\u094d',
     'eras.eraNarrow': '\u0908.\u092a\u0942.\u001f\u0908\u0938\u0935\u0940',
     'months.format.abbreviated':
         '\u091c\u0928.\u001f\u092b\u0930.\u001f\u092e\u093e\u0930\u094d\u091a\u001f\u0905\u092a\u094d\u0930\u0948\u0932\u001f\u092e\u0947\u0908\u001f\u091c\u0942\u0928\u001f\u091c\u0941\u0932\u093e\u0908\u001f\u0905\u0917.\u001f\u0938\u093f\u0924.\u001f\u0905\u0915\u094d\u0924\u0942.\u001f\u0928\u0935.\u001f\u0926\u093f\u0938.',
@@ -2595,6 +2657,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'nje\u017aela\u001fp\u00f3nje\u017aele\u001fwa\u0142tora\u001fsrjoda\u001fstw\u00f3rtk\u001fp\u011btk\u001fsobota',
     'eras.eraAbbr': 'p\u015b.Chr.n.\u001fp\u00f3 Chr.n.',
+    'eras.eraNames':
+        'p\u015bed Kristusowym naro\u017aenim\u001fp\u00f3 Kristusowem naro\u017aenju',
     'eras.eraNarrow': 'p\u015b.Chr.n.\u001fp\u00f3 Chr.n.',
     'months.format.abbreviated':
         'jan.\u001ffeb.\u001fm\u011br.\u001fapr.\u001fmaj.\u001fjun.\u001fjul.\u001fawg.\u001fsep.\u001fokt.\u001fnow.\u001fdec.',
@@ -2642,6 +2706,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u00e9ti\u001fm\u0254\u0301s\u00fa\u001fkwas\u00fa\u001fmuk\u0254\u0301s\u00fa\u001f\u014bgis\u00fa\u001f\u0257\u00f3n\u025bs\u00fa\u001fesa\u0253as\u00fa',
     'eras.eraAbbr': '\u0253.Ys\u001fmb.Ys',
+    'eras.eraNames':
+        '\u0253oso \u0253w\u00e1 y\u00e1\u0253e l\u00e1\u001fmb\u00fasa kw\u00e9di a Y\u00e9s',
     'eras.eraNarrow': '\u0253.Ys\u001fmb.Ys',
     'months.format.abbreviated':
         'di\u001f\u014bg\u0254n\u001fs\u0254\u014b\u001fdi\u0253\u001femi\u001fes\u0254\u001fmad\u001fdi\u014b\u001fny\u025bt\u001fmay\u001ftin\u001fel\u00e1',
@@ -2675,6 +2741,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Dimas\u001fTene\u014b\u001fTalata\u001fAlarbay\u001fAramisay\u001fArjuma\u001fSibiti',
     'eras.eraAbbr': 'ArY\u001fAtY',
+    'eras.eraNames': 'Ari\u014buu Yeesu\u001fAtoo\u014be Yeesu',
     'eras.eraNarrow': 'ArY\u001fAtY',
     'months.format.abbreviated':
         'Sa\u001fFe\u001fMa\u001fAb\u001fMe\u001fSu\u001fS\u00fa\u001fUt\u001fSe\u001fOk\u001fNo\u001fDe',
@@ -2767,6 +2834,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Kiumia\u001fNjumatatu\u001fNjumaine\u001fNjumatano\u001fAramithi\u001fNjumaa\u001fNJumamothii',
     'eras.eraAbbr': 'MK\u001fTK',
+    'eras.eraNames': 'Mbere ya Kristo\u001fThutha wa Kristo',
     'eras.eraNarrow': 'MK\u001fTK',
     'months.format.abbreviated':
         'Mbe\u001fKai\u001fKat\u001fKan\u001fGat\u001fGan\u001fMug\u001fKnn\u001fKen\u001fIku\u001fImw\u001fIgi',
@@ -2837,6 +2905,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'k\u0254si\u0256a\u001fdzo\u0256a\u001fbla\u0256a\u001fku\u0256a\u001fyawo\u0256a\u001ffi\u0256a\u001fmemle\u0256a',
     'eras.eraAbbr': 'HYV\u001fY\u014b',
+    'eras.eraNames': 'Hafi Yesu Va\u001fYesu \u014b\u0254li',
     'eras.eraNarrow': 'HYV\u001fY\u014b',
     'gmtFormat': '{0} GMT',
     'months.format.abbreviated':
@@ -2919,6 +2988,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u039a\u03c5\u03c1\u03b9\u03b1\u03ba\u03ae\u001f\u0394\u03b5\u03c5\u03c4\u03ad\u03c1\u03b1\u001f\u03a4\u03c1\u03af\u03c4\u03b7\u001f\u03a4\u03b5\u03c4\u03ac\u03c1\u03c4\u03b7\u001f\u03a0\u03ad\u03bc\u03c0\u03c4\u03b7\u001f\u03a0\u03b1\u03c1\u03b1\u03c3\u03ba\u03b5\u03c5\u03ae\u001f\u03a3\u03ac\u03b2\u03b2\u03b1\u03c4\u03bf',
     'eras.eraAbbr': '\u03c0.\u03a7.\u001f\u03bc.\u03a7.',
+    'eras.eraNames':
+        '\u03c0\u03c1\u03bf \u03a7\u03c1\u03b9\u03c3\u03c4\u03bf\u03cd\u001f\u03bc\u03b5\u03c4\u03ac \u03a7\u03c1\u03b9\u03c3\u03c4\u03cc\u03bd',
     'eras.eraNarrow': '\u03c0.\u03a7.\u001f\u03bc.\u03a7.',
     'months.format.abbreviated':
         '\u0399\u03b1\u03bd\u001f\u03a6\u03b5\u03b2\u001f\u039c\u03b1\u03c1\u001f\u0391\u03c0\u03c1\u001f\u039c\u03b1\u0390\u001f\u0399\u03bf\u03c5\u03bd\u001f\u0399\u03bf\u03c5\u03bb\u001f\u0391\u03c5\u03b3\u001f\u03a3\u03b5\u03c0\u001f\u039f\u03ba\u03c4\u001f\u039d\u03bf\u03b5\u001f\u0394\u03b5\u03ba',
@@ -2995,6 +3066,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sunday\u001fMonday\u001fTuesday\u001fWednesday\u001fThursday\u001fFriday\u001fSaturday',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Before Christ\u001fAnno Domini',
     'eras.eraNarrow': 'B\u001fA',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApr\u001fMay\u001fJun\u001fJul\u001fAug\u001fSep\u001fOct\u001fNov\u001fDec',
@@ -3275,6 +3347,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u{1041d}\u{10432}\u{1044c}\u{1043c}\u{10429}\u001f\u{10423}\u{10432}\u{1044c}\u{1043c}\u{10429}\u001f\u{10413}\u{1042d}\u{10446}\u{1043c}\u{10429}\u001f\u{1040e}\u{1042f}\u{1044c}\u{10446}\u{1043c}\u{10429}\u001f\u{1041b}\u{10432}\u{10449}\u{10446}\u{1043c}\u{10429}\u001f\u{10419}\u{10449}\u{10434}\u{1043c}\u{10429}\u001f\u{1041d}\u{10430}\u{1043b}\u{10432}\u{10449}\u{1043c}\u{10429}',
     'eras.eraAbbr': '\u{10412}\u{10417}\u001f\u{10408}\u{10414}',
+    'eras.eraNames':
+        '\u{10412}\u{10432}\u{10441}\u{1042c}\u{10449} \u{10417}\u{10449}\u{10434}\u{10445}\u{1043b}\u001f\u{10408}\u{1044c}\u{1042c} \u{10414}\u{10431}\u{1044b}\u{1042e}\u{1044c}\u{10428}',
     'eras.eraNarrow': '\u{10412}\u001f\u{10408}',
     'gmtFormat': '\u{10418}\u{10423}\u{10413} {0}',
     'months.format.abbreviated':
@@ -3732,6 +3806,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u00b7\u{10455}\u{1046d}\u{10459}\u{1045b}\u{10471}\u001f\u00b7\u{10465}\u{1046d}\u{10459}\u{1045b}\u{10471}\u001f\u00b7\u{10451}\u{10475}\u{1045f}\u{1045b}\u{10471}\u001f\u00b7\u{10462}\u{10467}\u{10459}\u{1045f}\u{1045b}\u{10471}\u001f\u00b7\u{10454}\u{1047b}\u{1045f}\u{1045b}\u{10471}\u001f\u00b7\u{10453}\u{1046e}\u{10472}\u{1045b}\u{10471}\u001f\u00b7\u{10455}\u{10468}\u{1045b}\u{1047b}\u{1045b}\u{10471}',
     'eras.eraAbbr': '\u{1045a}\u00b7\u{10452}\u001f\u{10468}\u{1045b}',
+    'eras.eraNames':
+        '\u{1045a}\u{10470}\u{10453}\u{1046a}\u{1046e} \u00b7\u{10452}\u{1046e}\u{10472}\u{10455}\u{10451}\u001f\u{10468}\u{10459}\u{10474} \u{1045b}\u{1046a}\u{10465}\u{10466}\u{10459}\u{10470}',
     'eras.eraNarrow': '\u{1045a}\u001f\u{10468}',
     'gmtFormat': '\u00b7\u{1045c}\u{10465}\u{10451}{0}',
     'months.format.abbreviated':
@@ -3885,6 +3961,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'diman\u0109o\u001flundo\u001fmardo\u001fmerkredo\u001f\u0135a\u016ddo\u001fvendredo\u001fsabato',
     'eras.eraAbbr': 'a.n.e.\u001fn.e.',
+    'eras.eraNames': 'anta\u016d nia erao\u001fde nia erao',
     'eras.eraNarrow': 'a.n.e.\u001fn.e.',
     'gmtFormat': 'UTC{0}',
     'months.format.abbreviated':
@@ -3965,6 +4042,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'domingo\u001flunes\u001fmartes\u001fmi\u00e9rcoles\u001fjueves\u001fviernes\u001fs\u00e1bado',
     'eras.eraAbbr': 'a. C.\u001fd. C.',
+    'eras.eraNames': 'antes de Cristo\u001fdespu\u00e9s de Cristo',
     'eras.eraNarrow': 'a. C.\u001fd. C.',
     'months.format.abbreviated':
         'ene\u001ffeb\u001fmar\u001fabr\u001fmay\u001fjun\u001fjul\u001fago\u001fsept\u001foct\u001fnov\u001fdic',
@@ -4280,6 +4358,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'p\u00fchap\u00e4ev\u001fesmasp\u00e4ev\u001fteisip\u00e4ev\u001fkolmap\u00e4ev\u001fneljap\u00e4ev\u001freede\u001flaup\u00e4ev',
     'eras.eraAbbr': 'eKr\u001fpKr',
+    'eras.eraNames': 'enne Kristust\u001fp\u00e4rast Kristust',
     'eras.eraNarrow': 'eKr\u001fpKr',
     'gmtFormat': 'GMT {0}',
     'hourFormat': '+HH:mm;\u2212HH:mm',
@@ -4347,6 +4426,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'igandea\u001fastelehena\u001fasteartea\u001fasteazkena\u001fosteguna\u001fostirala\u001flarunbata',
     'eras.eraAbbr': 'K.a.\u001fK.o.',
+    'eras.eraNames': 'Kristo aurretik\u001fKristo ondoren',
     'eras.eraNarrow': 'a\u001fo',
     'hourFormat': '+HH:mm;\u2013HH:mm',
     'months.format.abbreviated':
@@ -4384,6 +4464,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u0254\u0301nd\u0254\u001fm\u0254\u0301ndi\u001fs\u0254\u0301nd\u0254 m\u0259l\u00fa m\u0259\u0301b\u025b\u030c\u001fs\u0254\u0301nd\u0254 m\u0259l\u00fa m\u0259\u0301l\u025b\u0301\u001fs\u0254\u0301nd\u0254 m\u0259l\u00fa m\u0259\u0301nyi\u001ff\u00falad\u00e9\u001fs\u00e9rad\u00e9',
     'eras.eraAbbr': 'oyk\u001fayk',
+    'eras.eraNames':
+        'os\u00fas\u00faa Y\u00e9sus kiri\u001f\u00e1mvus Y\u00e9sus Kir\u00eds',
     'eras.eraNarrow': 'oyk\u001fayk',
     'months.format.abbreviated':
         'ngo\u001fngb\u001fngl\u001fngn\u001fngt\u001fngs\u001fngz\u001fngm\u001fnge\u001fnga\u001fngad\u001fngab',
@@ -4453,6 +4535,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u06cc\u06a9\u0634\u0646\u0628\u0647\u001f\u062f\u0648\u0634\u0646\u0628\u0647\u001f\u0633\u0647\u200c\u0634\u0646\u0628\u0647\u001f\u0686\u0647\u0627\u0631\u0634\u0646\u0628\u0647\u001f\u067e\u0646\u062c\u0634\u0646\u0628\u0647\u001f\u062c\u0645\u0639\u0647\u001f\u0634\u0646\u0628\u0647',
     'eras.eraAbbr': '\u0642.\u0645.\u001f\u0645.',
+    'eras.eraNames':
+        '\u0642\u0628\u0644 \u0627\u0632 \u0645\u06cc\u0644\u0627\u062f\u001f\u0645\u06cc\u0644\u0627\u062f\u06cc',
     'eras.eraNarrow': '\u0642\u001f\u0645',
     'gmtFormat': '{0} \u06af\u0631\u06cc\u0646\u0648\u06cc\u0686',
     'hourFormat': '\u200e+HH:mm;\u200e\u2212HH:mm',
@@ -4531,6 +4615,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dewo\u001faa\u0253nde\u001fmawbaare\u001fnjeslaare\u001fnaasaande\u001fmawnde\u001fhoore-biir',
     'eras.eraAbbr': 'H-I\u001fC-I',
+    'eras.eraNames': 'Hade Iisa\u001fCaggal Iisa',
     'eras.eraNarrow': 'H-I\u001fC-I',
     'months.format.abbreviated':
         'sii\u001fcol\u001fmbo\u001fsee\u001fduu\u001fkor\u001fmor\u001fjuk\u001fslt\u001fyar\u001fjol\u001fbow',
@@ -4572,6 +4657,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u{1e908}\u{1e92b}\u{1e92c}\u{1e926}\u{1e92d}\u{1e92a}\u{1e946}\u{1e92b}\u001f\u{1e900}\u{1e944}\u{1e929}\u{1e935}\u{1e932}\u{1e94b}\u{1e923}\u{1e92b}\u001f\u{1e903}\u{1e922}\u{1e931}\u{1e926}\u{1e922}\u{1e944}\u{1e92a}\u{1e92b}\u001f\u{1e910}\u{1e936}\u{1e92b}\u{1e927}\u{1e924}\u{1e922}\u{1e944}\u{1e92a}\u{1e92b}\u001f\u{1e910}\u{1e922}\u{1e944}\u{1e927}\u{1e922}\u{1e944}\u{1e932}\u{1e923}\u{1e92b}\u001f\u{1e903}\u{1e922}\u{1e931}\u{1e932}\u{1e923}\u{1e92b}\u001f\u{1e916}\u{1e92e}\u{1e92a}\u{1e926}\u{1e92d}\u{1e92a}\u{1e946}\u{1e92b}',
     'eras.eraAbbr':
         '\u{1e900}\u{1e900}\u{1e90b}\u001f\u{1e907}\u{1e900}\u{1e90b}',
+    'eras.eraNames':
+        '\u{1e900}\u{1e923}\u{1e92e} \u{1e900}\u{1e932}\u{1e946}\u{1e922}\u{1e926}\u{1e92d} \u{1e90b}\u{1e945}\u{1e927}\u{1e922}\u{1e944}\u001f\u{1e907}\u{1e922}\u{1e944}\u{1e931}\u{1e92e} \u{1e900}\u{1e932}\u{1e946}\u{1e922}\u{1e926}\u{1e92d} \u{1e90b}\u{1e945}\u{1e927}\u{1e922}\u{1e944}',
     'eras.eraNarrow':
         '\u{1e900}\u{1e900}\u{1e90b}\u001f\u{1e907}\u{1e900}\u{1e90b}',
     'gmtFormat': '\u{1e911}\u{1e916}\u{1e918}{0}',
@@ -4770,6 +4857,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         'sunnuntai\u001fmaanantai\u001ftiistai\u001fkeskiviikko\u001ftorstai\u001fperjantai\u001flauantai',
     'eras.eraAbbr': 'eKr.\u001fjKr.',
+    'eras.eraNames':
+        'ennen Kristuksen syntym\u00e4\u00e4\u001fj\u00e4lkeen Kristuksen syntym\u00e4n',
     'eras.eraNarrow': 'eKr\u001fjKr',
     'gmtFormat': 'UTC{0}',
     'hourFormat': '+H.mm;-H.mm',
@@ -4842,6 +4931,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Linggo\u001fLunes\u001fMartes\u001fMiyerkules\u001fHuwebes\u001fBiyernes\u001fSabado',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Before Christ\u001fAnno Domini',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Ene\u001fPeb\u001fMar\u001fAbr\u001fMay\u001fHun\u001fHul\u001fAgo\u001fSet\u001fOkt\u001fNob\u001fDis',
@@ -4907,6 +4997,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.abbreviated':
         'sun\u001fm\u00e1n\u001ft\u00fds\u001fmik\u001fh\u00f3s\u001ffr\u00ed\u001fley',
     'eras.eraAbbr': 'f.Kr.\u001fe.Kr.',
+    'eras.eraNames': 'fyri Krist\u001feftir Krist',
     'eras.eraNarrow': 'fKr\u001feKr',
     'months.format.abbreviated':
         'jan.\u001ffeb.\u001fmar.\u001fapr.\u001fmai\u001fjun.\u001fjul.\u001faug.\u001fsep.\u001fokt.\u001fnov.\u001fdes.',
@@ -4968,6 +5059,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dimanche\u001flundi\u001fmardi\u001fmercredi\u001fjeudi\u001fvendredi\u001fsamedi',
     'eras.eraAbbr': 'av. J.-C.\u001fap. J.-C.',
+    'eras.eraNames':
+        'avant J\u00e9sus-Christ\u001fapr\u00e8s J\u00e9sus-Christ',
     'eras.eraNarrow': 'av. J.-C.\u001fap. J.-C.',
     'gmtFormat': 'UTC{0}',
     'hourFormat': '+HH:mm;\u2212HH:mm',
@@ -5205,6 +5298,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'domenie\u001flunis\u001fmartars\u001fmiercus\u001fjoibe\u001fvinars\u001fsabide',
     'eras.eraAbbr': 'pdC\u001fddC',
+    'eras.eraNames': 'pdC\u001fddC',
     'eras.eraNarrow': 'pdC\u001fddC',
     'months.format.abbreviated':
         'Zen\u001fFev\u001fMar\u001fAvr\u001fMai\u001fJug\u001fLui\u001fAvo\u001fSet\u001fOtu\u001fNov\u001fDic',
@@ -5245,6 +5339,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'snein\u001fmoandei\u001ftiisdei\u001fwoansdei\u001ftongersdei\u001ffreed\u001fsneon',
     'eras.eraAbbr': 'f.Kr.\u001fn.Kr.',
+    'eras.eraNames': 'Foar Kristus\u001fnei Kristus',
     'eras.eraNarrow': 'f.K.\u001fn.K.',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMrt\u001fApr\u001fMai\u001fJun\u001fJul\u001fAug\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -5295,6 +5390,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'D\u00e9 Domhnaigh\u001fD\u00e9 Luain\u001fD\u00e9 M\u00e1irt\u001fD\u00e9 C\u00e9adaoin\u001fD\u00e9ardaoin\u001fD\u00e9 hAoine\u001fD\u00e9 Sathairn',
     'eras.eraAbbr': 'RC\u001fAD',
+    'eras.eraNames': 'Roimh Chr\u00edost\u001fAnno Domini',
     'eras.eraNarrow': 'RC\u001fAD',
     'gmtFormat': 'MAG{0}',
     'months.format.abbreviated':
@@ -5379,6 +5475,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'DiD\u00f2mhnaich\u001fDiLuain\u001fDiM\u00e0irt\u001fDiCiadain\u001fDiarDaoin\u001fDihAoine\u001fDiSathairne',
     'eras.eraAbbr': 'RC\u001fAD',
+    'eras.eraNames': 'Ro Chr\u00ecosta\u001fAn d\u00e8idh Chr\u00ecosta',
     'eras.eraNarrow': 'R\u001fA',
     'months.format.abbreviated':
         'Faoi\u001fGearr\u001fM\u00e0rt\u001fGibl\u001fC\u00e8it\u001f\u00d2gmh\u001fIuch\u001fL\u00f9na\u001fSult\u001fD\u00e0mh\u001fSamh\u001fD\u00f9bh',
@@ -5453,6 +5550,7 @@ const dateLocales = <String, Map<String, String>>{
         'domingo\u001fluns\u001fmartes\u001fm\u00e9rcores\u001fxoves\u001fvenres\u001fs\u00e1bado',
     'days.stand-alone.narrow': 'D\u001fL\u001fM\u001fM\u001fX\u001fV\u001fS',
     'eras.eraAbbr': 'a.C.\u001fd.C.',
+    'eras.eraNames': 'antes de Cristo\u001fdespois de Cristo',
     'eras.eraNarrow': 'a.C.\u001fd.C.',
     'months.format.abbreviated':
         'xan.\u001ffeb.\u001fmar.\u001fabr.\u001fmaio\u001fxu\u00f1o\u001fxul.\u001fago.\u001fset.\u001fout.\u001fnov.\u001fdec.',
@@ -5508,6 +5606,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sunntig\u001fM\u00e4\u00e4ntig\u001fZiischtig\u001fMittwuch\u001fDunschtig\u001fFriitig\u001fSamschtig',
     'eras.eraAbbr': 'v. Chr.\u001fn. Chr.',
+    'eras.eraNames': 'v. Chr.\u001fn. Chr.',
     'eras.eraNarrow': 'v. Chr.\u001fn. Chr.',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fM\u00e4r\u001fApr\u001fMai\u001fJun\u001fJul\u001fAug\u001fSep\u001fOkt\u001fNov\u001fDez',
@@ -5555,6 +5654,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0ab0\u0ab5\u0abf\u0ab5\u0abe\u0ab0\u001f\u0ab8\u0acb\u0aae\u0ab5\u0abe\u0ab0\u001f\u0aae\u0a82\u0a97\u0ab3\u0ab5\u0abe\u0ab0\u001f\u0aac\u0ac1\u0aa7\u0ab5\u0abe\u0ab0\u001f\u0a97\u0ac1\u0ab0\u0ac1\u0ab5\u0abe\u0ab0\u001f\u0ab6\u0ac1\u0a95\u0acd\u0ab0\u0ab5\u0abe\u0ab0\u001f\u0ab6\u0aa8\u0abf\u0ab5\u0abe\u0ab0',
     'eras.eraAbbr':
         '\u0a88.\u0ab8.\u0aaa\u0ac2\u0ab0\u0acd\u0ab5\u0ac7\u001f\u0a88.\u0ab8.',
+    'eras.eraNames':
+        '\u0a88\u0ab8\u0ab5\u0ac0\u0ab8\u0aa8 \u0aaa\u0ac2\u0ab0\u0acd\u0ab5\u0ac7\u001f\u0a87\u0ab8\u0ab5\u0ac0\u0ab8\u0aa8',
     'eras.eraNarrow': '\u0a87 \u0ab8 \u0aaa\u0ac1\u001f\u0a87\u0ab8',
     'months.format.abbreviated':
         '\u0a9c\u0abe\u0aa8\u0acd\u0aaf\u0ac1\u001f\u0aab\u0ac7\u0aac\u0acd\u0ab0\u0ac1\u001f\u0aae\u0abe\u0ab0\u0acd\u0a9a\u001f\u0a8f\u0aaa\u0acd\u0ab0\u0abf\u0ab2\u001f\u0aae\u0ac7\u001f\u0a9c\u0ac2\u0aa8\u001f\u0a9c\u0ac1\u0ab2\u0abe\u0a88\u001f\u0a91\u0a97\u0ab8\u0acd\u0a9f\u001f\u0ab8\u0aaa\u0acd\u0a9f\u0ac7\u001f\u0a91\u0a95\u0acd\u0a9f\u0acb\u001f\u0aa8\u0ab5\u0ac7\u001f\u0aa1\u0abf\u0ab8\u0ac7',
@@ -5592,6 +5693,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Chumapiri\u001fChumatato\u001fChumaine\u001fChumatano\u001fAramisi\u001fIchuma\u001fEsabato',
     'eras.eraAbbr': 'YA\u001fYK',
+    'eras.eraNames': 'Yeso ataiborwa\u001fYeso kaiboirwe',
     'eras.eraNarrow': 'YA\u001fYK',
     'months.format.abbreviated':
         'Can\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fCul\u001fAgt\u001fSep\u001fOkt\u001fNob\u001fDis',
@@ -5606,6 +5708,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jedoonee\u001fJelhein\u001fJemayrt\u001fJercean\u001fJerdein\u001fJeheiney\u001fJesarn',
     'eras.eraAbbr': 'RC\u001fAD',
+    'eras.eraNames': 'RC\u001fAD',
     'eras.eraNarrow': 'RC\u001fAD',
     'months.format.abbreviated':
         'J-guer\u001fT-arree\u001fMayrnt\u001fAvrril\u001fBoaldyn\u001fM-souree\u001fJ-souree\u001fLuanistyn\u001fM-fouyir\u001fJ-fouyir\u001fM-Houney\u001fM-Nollick',
@@ -5647,6 +5750,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Lahadi\u001fLitinin\u001fTalata\u001fLaraba\u001fAlhamis\u001fJumma\u02bca\u001fAsabar',
     'eras.eraAbbr': 'K.H\u001fBHAI',
+    'eras.eraNames': 'Kafin haihuwar annab\u001fBayan haihuwar annab',
     'eras.eraNarrow': 'K.H\u001fBHAI',
     'months.format.abbreviated':
         'Jan\u001fFab\u001fMar\u001fAfi\u001fMay\u001fYun\u001fYul\u001fAgu\u001fSat\u001fOkt\u001fNuw\u001fDis',
@@ -5767,6 +5871,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u05d9\u05d5\u05dd \u05e8\u05d0\u05e9\u05d5\u05df\u001f\u05d9\u05d5\u05dd \u05e9\u05e0\u05d9\u001f\u05d9\u05d5\u05dd \u05e9\u05dc\u05d9\u05e9\u05d9\u001f\u05d9\u05d5\u05dd \u05e8\u05d1\u05d9\u05e2\u05d9\u001f\u05d9\u05d5\u05dd \u05d7\u05de\u05d9\u05e9\u05d9\u001f\u05d9\u05d5\u05dd \u05e9\u05d9\u05e9\u05d9\u001f\u05d9\u05d5\u05dd \u05e9\u05d1\u05ea',
     'eras.eraAbbr':
         '\u05dc\u05e4\u05e0\u05d4\u05f4\u05e1\u001f\u05dc\u05e1\u05e4\u05d9\u05e8\u05d4',
+    'eras.eraNames':
+        '\u05dc\u05e4\u05e0\u05d9 \u05d4\u05e1\u05e4\u05d9\u05e8\u05d4\u001f\u05dc\u05e1\u05e4\u05d9\u05e8\u05d4',
     'eras.eraNarrow':
         '\u05dc\u05e4\u05e0\u05d9\u001f\u05d0\u05d7\u05e8\u05d9\u05d9',
     'gmtFormat': 'GMT{0}\u200e',
@@ -5841,6 +5947,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0930\u0935\u093f\u0935\u093e\u0930\u001f\u0938\u094b\u092e\u0935\u093e\u0930\u001f\u092e\u0902\u0917\u0932\u0935\u093e\u0930\u001f\u092c\u0941\u0927\u0935\u093e\u0930\u001f\u0917\u0941\u0930\u0941\u0935\u093e\u0930\u001f\u0936\u0941\u0915\u094d\u0930\u0935\u093e\u0930\u001f\u0936\u0928\u093f\u0935\u093e\u0930',
     'eras.eraAbbr':
         '\u0908\u0938\u093e-\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u094d\u0935\u0940',
+    'eras.eraNames':
+        '\u0908\u0938\u093e-\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u0935\u0940 \u0938\u0928',
     'eras.eraNarrow':
         '\u0908\u0938\u093e-\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u094d\u0935\u0940',
     'months.format.abbreviated':
@@ -5890,6 +5998,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u{1e10e}\u{1e124}\u{1e132}\u001f\u{1e108}\u{1e126}\u001f\u{1e106}\u{1e128}\u{1e130}\u001f\u{1e117}\u{1e104}\u{1e124}\u{1e130}\u{1e126}\u001f\u{1e119}\u{1e124}\u{1e131}\u{1e128}\u001f\u{1e111}\u{1e124}\u{1e131}\u{1e128}\u001f\u{1e10a}\u{1e127}\u{1e133}',
     'eras.eraAbbr': '\u{1e11c}\u{1e106}\u{1e12a}\u001fCE',
+    'eras.eraNames': '\u{1e11c}\u{1e106}\u{1e12a}\u001fCE',
     'eras.eraNarrow': '\u{1e11c}\u{1e106}\u{1e12a}\u001fCE',
     'months.format.abbreviated':
         '\u{1e106}\u{1e12c}\u001f\u{1e11b}\u{1e128}\u{1e131}\u{1e104}\u{1e124}\u{1e132}\u{1e128}\u001f\u{1e112}\u{1e12b}\u{1e130}\u{1e112}\u{1e12a}\u{1e131}\u001f\u{1e124}\u{1e128}\u{1e131}\u001f\u{1e100}\u{1e12a}\u{1e134}\u001f\u{1e11b}\u{1e124}\u{1e131}\u{1e11e}\u{1e124}\u{1e126}\u001f\u{1e114}\u{1e129}\u{1e134}\u{1e106}\u{1e128}\u{1e130}\u001f\u{1e115}\u{1e129}\u{1e132}\u{1e114}\u{1e104}\u{1e130}\u{1e124}\u001f\u{1e11b}\u{1e124}\u{1e131}\u{1e112}\u{1e124}\u{1e130}\u001f\u{1e12a}\u{1e131}\u{1e100}\u{1e124}\u{1e134}\u001f\u{1e11a}\u{1e126}\u{1e132}\u{1e124}\u{1e11a}\u{1e104}\u{1e130}\u{1e12b}\u001f\u{1e112}\u{1e129}\u{1e131}\u{1e114}\u{1e12c}\u{1e134}',
@@ -5952,6 +6061,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         'n\u001fp\u001fu\u001fs\u001f\u010d\u001fp\u001fs',
     'eras.eraAbbr': 'pr. Kr.\u001fpo. Kr.',
+    'eras.eraNames': 'prije Krista\u001fposlije Krista',
     'eras.eraNarrow': 'pr.n.e.\u001fAD',
     'hourFormat': '+HH:mm; -HH:mm',
     'months.format.abbreviated':
@@ -6020,6 +6130,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'njed\u017aela\u001fp\u00f3nd\u017aela\u001fwutora\u001fsrjeda\u001f\u0161tw\u00f3rtk\u001fpjatk\u001fsobota',
     'eras.eraAbbr': 'p\u0159.Chr.n.\u001fpo Chr.n.',
+    'eras.eraNames':
+        'p\u0159ed Chrystowym narod\u017aenjom\u001fpo Chrystowym narod\u017aenju',
     'eras.eraNarrow': 'p\u0159.Chr.n.\u001fpo Chr.n.',
     'months.format.abbreviated':
         'jan.\u001ffeb.\u001fm\u011br.\u001fapr.\u001fmej.\u001fjun.\u001fjul.\u001fawg.\u001fsep.\u001fokt.\u001fnow.\u001fdec.',
@@ -6101,6 +6213,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'vas\u00e1rnap\u001fh\u00e9tf\u0151\u001fkedd\u001fszerda\u001fcs\u00fct\u00f6rt\u00f6k\u001fp\u00e9ntek\u001fszombat',
     'eras.eraAbbr': 'i. e.\u001fi. sz.',
+    'eras.eraNames':
+        'Krisztus el\u0151tt\u001fid\u0151sz\u00e1m\u00edt\u00e1sunk szerint',
     'eras.eraNarrow': 'ie.\u001fisz.',
     'months.format.abbreviated':
         'jan.\u001ffebr.\u001fm\u00e1rc.\u001f\u00e1pr.\u001fm\u00e1j.\u001fj\u00fan.\u001fj\u00fal.\u001faug.\u001fszept.\u001fokt.\u001fnov.\u001fdec.',
@@ -6177,6 +6291,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u056f\u056b\u0580\u0561\u056f\u056b\u001f\u0565\u0580\u056f\u0578\u0582\u0577\u0561\u0562\u0569\u056b\u001f\u0565\u0580\u0565\u0584\u0577\u0561\u0562\u0569\u056b\u001f\u0579\u0578\u0580\u0565\u0584\u0577\u0561\u0562\u0569\u056b\u001f\u0570\u056b\u0576\u0563\u0577\u0561\u0562\u0569\u056b\u001f\u0578\u0582\u0580\u0562\u0561\u0569\u001f\u0577\u0561\u0562\u0561\u0569',
     'eras.eraAbbr': '\u0574.\u0569.\u0561.\u001f\u0574.\u0569.',
+    'eras.eraNames':
+        '\u0554\u0580\u056b\u057d\u057f\u0578\u057d\u056b\u0581 \u0561\u057c\u0561\u057b\u001f\u0554\u0580\u056b\u057d\u057f\u0578\u057d\u056b\u0581 \u0570\u0565\u057f\u0578',
     'eras.eraNarrow': '\u0574.\u0569.\u0561.\u001f\u0574.\u0569.',
     'months.format.abbreviated':
         '\u0570\u0576\u057e\u001f\u0583\u057f\u057e\u001f\u0574\u0580\u057f\u001f\u0561\u057a\u0580\u001f\u0574\u0575\u057d\u001f\u0570\u0576\u057d\u001f\u0570\u056c\u057d\u001f\u0585\u0563\u057d\u001f\u057d\u0565\u057a\u001f\u0570\u0578\u056f\u001f\u0576\u0578\u0575\u001f\u0564\u0565\u056f',
@@ -6231,6 +6347,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dominica\u001flunedi\u001fmartedi\u001fmercuridi\u001fjovedi\u001fvenerdi\u001fsabbato',
     'eras.eraAbbr': 'a.Chr.\u001fp.Chr.',
+    'eras.eraNames': 'ante Christo\u001fpost Christo',
     'eras.eraNarrow': 'a.Chr.\u001fp.Chr.',
     'months.format.abbreviated':
         'jan\u001ffeb\u001fmar\u001fapr\u001fmai\u001fjun\u001fjul\u001faug\u001fsep\u001foct\u001fnov\u001fdec',
@@ -6298,6 +6415,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Minggu\u001fSenin\u001fSelasa\u001fRabu\u001fKamis\u001fJumat\u001fSabtu',
     'eras.eraAbbr': 'SM\u001fM',
+    'eras.eraNames': 'Sebelum Masehi\u001fMasehi',
     'eras.eraNarrow': 'SM\u001fM',
     'hourFormat': '+HH.mm;-HH.mm',
     'months.format.abbreviated':
@@ -6345,6 +6463,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'soled\u00ed\u001fluned\u00ed\u001fmard\u00ed\u001fmercurd\u00ed\u001fjoved\u00ed\u001fvenerd\u00ed\u001fsaturd\u00ed',
     'eras.eraAbbr': 'a.C.\u001fe.C.',
+    'eras.eraNames': 'ante Crist\u001fera Cristan',
     'eras.eraNarrow': 'a.C.\u001fe.C.',
     'gmtFormat': 'TMG{0}',
     'months.format.abbreviated':
@@ -6389,6 +6508,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'S\u1ecdndee\u001fM\u1ecdnde\u001fTiuzdee\u001fWenezdee\u001fT\u1ecd\u1ecdzdee\u001fFra\u1ecbdee\u001fSat\u1ecddee',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Tupu Kraist\u001fAf\u1ecd Kra\u1ecbst',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jen\u001fFeb\u001fMaa\u001fEpr\u001fMee\u001fJuu\u001fJul\u001f\u1eccg\u1ecd\u001fSep\u001f\u1ecckt\u001fNov\u001fDis',
@@ -6420,6 +6540,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\ua46c\ua18f\ua44d\u001f\ua18f\ua282\ua2cd\u001f\ua18f\ua282\ua44d\u001f\ua18f\ua282\ua315\u001f\ua18f\ua282\ua1d6\u001f\ua18f\ua282\ua26c\u001f\ua18f\ua282\ua0d8',
     'eras.eraAbbr': '\ua0c5\ua2ca\ua0bf\u001f\ua0c5\ua2ca\ua282',
+    'eras.eraNames': '\ua0c5\ua2ca\ua0bf\u001f\ua0c5\ua2ca\ua282',
     'eras.eraNarrow': '\ua0c5\ua2ca\ua0bf\u001f\ua0c5\ua2ca\ua282',
     'gmtFormat': '\ua2e7\ua0c5\ua395\ua3e6\ua12e\ua209{0}',
     'months.format.abbreviated':
@@ -6491,6 +6612,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'sunnudagur\u001fm\u00e1nudagur\u001f\u00feri\u00f0judagur\u001fmi\u00f0vikudagur\u001ffimmtudagur\u001ff\u00f6studagur\u001flaugardagur',
     'eras.eraAbbr': 'f.Kr.\u001fe.Kr.',
+    'eras.eraNames': 'fyrir Krist\u001feftir Krist',
     'eras.eraNarrow': 'f.k.\u001fe.k.',
     'months.format.abbreviated':
         'jan.\u001ffeb.\u001fmar.\u001fapr.\u001fma\u00ed\u001fj\u00fan.\u001fj\u00fal.\u001f\u00e1g\u00fa.\u001fsep.\u001fokt.\u001fn\u00f3v.\u001fdes.',
@@ -6548,6 +6670,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'domenica\u001fluned\u00ec\u001fmarted\u00ec\u001fmercoled\u00ec\u001fgioved\u00ec\u001fvenerd\u00ec\u001fsabato',
     'eras.eraAbbr': 'a.C.\u001fd.C.',
+    'eras.eraNames': 'avanti Cristo\u001fdopo Cristo',
     'eras.eraNarrow': 'aC\u001fdC',
     'months.format.abbreviated':
         'gen\u001ffeb\u001fmar\u001fapr\u001fmag\u001fgiu\u001flug\u001fago\u001fset\u001fott\u001fnov\u001fdic',
@@ -6664,6 +6787,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u65e5\u66dc\u65e5\u001f\u6708\u66dc\u65e5\u001f\u706b\u66dc\u65e5\u001f\u6c34\u66dc\u65e5\u001f\u6728\u66dc\u65e5\u001f\u91d1\u66dc\u65e5\u001f\u571f\u66dc\u65e5',
     'eras.eraAbbr': '\u7d00\u5143\u524d\u001f\u897f\u66a6',
+    'eras.eraNames': '\u7d00\u5143\u524d\u001f\u897f\u66a6',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         '1\u6708\u001f2\u6708\u001f3\u6708\u001f4\u6708\u001f5\u6708\u001f6\u6708\u001f7\u6708\u001f8\u6708\u001f9\u6708\u001f10\u6708\u001f11\u6708\u001f12\u6708',
@@ -6694,6 +6818,8 @@ const dateLocales = <String, Map<String, String>>{
         'S\u0254\u0301\u001fM\u0254\u0301\u001f\u00c1M\u001fW\u025b\u0301\u001fT\u0254\u0301\u001fF\u025b\u001fS\u00e1',
     'days.format.wide':
         'S\u0254\u0301ndi\u001fM\u0254\u0301ndi\u001f\u00c1pta M\u0254\u0301ndi\u001fW\u025b\u0301n\u025bs\u025bd\u025b\u001fT\u0254\u0301s\u025bd\u025b\u001fF\u025bl\u00e2y\u025bd\u025b\u001fS\u00e1sid\u025b',
+    'eras.eraNames':
+        'ts\u025btts\u025bt m\u025b\u014bgu\ua78c mi \u025b\u0301 l\u025b\u025bn\u025b K\u025bl\u00eds\u025bt\u0254 g\u0254 \u0144\u0254\u0301\u001fts\u025btts\u025bt m\u025b\u014bgu\ua78c mi \u025b\u0301 f\u00fan\u025b K\u025bl\u00eds\u025bt\u0254 t\u0254\u0301 m\u0254\u0301',
     'months.format.abbreviated':
         'Ndu\u014bmbi Sa\u014b\u001fP\u025bsa\u014b P\u025b\u0301p\u00e1\u001fP\u025bsa\u014b P\u025b\u0301t\u00e1t\u001fP\u025bsa\u014b P\u025b\u0301n\u025b\u0301kwa\u001fP\u025bsa\u014b Pataa\u001fP\u025bsa\u014b P\u025b\u0301n\u025b\u0301nt\u00fak\u00fa\u001fP\u025bsa\u014b Saamb\u00e1\u001fP\u025bsa\u014b P\u025b\u0301n\u025b\u0301f\u0254m\u001fP\u025bsa\u014b P\u025b\u0301n\u025b\u0301pf\u00fa\ua78b\u00fa\u001fP\u025bsa\u014b N\u025bg\u025b\u0301m\u001fP\u025bsa\u014b Nts\u0254\u030cpm\u0254\u0301\u001fP\u025bsa\u014b Nts\u0254\u030cpp\u00e1',
     'months.format.wide':
@@ -6722,6 +6848,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapilyi\u001fJumatatuu\u001fJumanne\u001fJumatanu\u001fAlhamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Kristu\u001fBaada ya Kristu',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -6766,6 +6893,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Ahad\u001fSenin\u001fSelasa\u001fRabu\u001fKamis\u001fJumat\u001fSabtu',
     'eras.eraAbbr': 'SM\u001fM',
+    'eras.eraNames': 'Sakdurunge Masehi\u001fMasehi',
     'eras.eraNarrow': 'SM\u001fM',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgt\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -6822,6 +6950,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u10d9\u10d5\u10d8\u10e0\u10d0\u001f\u10dd\u10e0\u10e8\u10d0\u10d1\u10d0\u10d7\u10d8\u001f\u10e1\u10d0\u10db\u10e8\u10d0\u10d1\u10d0\u10d7\u10d8\u001f\u10dd\u10d7\u10ee\u10e8\u10d0\u10d1\u10d0\u10d7\u10d8\u001f\u10ee\u10e3\u10d7\u10e8\u10d0\u10d1\u10d0\u10d7\u10d8\u001f\u10de\u10d0\u10e0\u10d0\u10e1\u10d9\u10d4\u10d5\u10d8\u001f\u10e8\u10d0\u10d1\u10d0\u10d7\u10d8',
     'eras.eraAbbr': '\u10eb\u10d5. \u10ec.\u001f\u10d0\u10ee. \u10ec.',
+    'eras.eraNames':
+        '\u10eb\u10d5\u10d4\u10da\u10d8 \u10ec\u10d4\u10da\u10d7\u10d0\u10e6\u10e0\u10d8\u10ea\u10ee\u10d5\u10d8\u10d7\u001f\u10d0\u10ee\u10d0\u10da\u10d8 \u10ec\u10d4\u10da\u10d7\u10d0\u10e6\u10e0\u10d8\u10ea\u10ee\u10d5\u10d8\u10d7',
     'eras.eraNarrow': '\u10eb\u10d5. \u10ec.\u001f\u10d0\u10ee. \u10ec.',
     'months.format.abbreviated':
         '\u10d8\u10d0\u10dc\u001f\u10d7\u10d4\u10d1\u001f\u10db\u10d0\u10e0\u001f\u10d0\u10de\u10e0\u001f\u10db\u10d0\u10d8\u001f\u10d8\u10d5\u10dc\u001f\u10d8\u10d5\u10da\u001f\u10d0\u10d2\u10d5\u001f\u10e1\u10d4\u10e5\u001f\u10dd\u10e5\u10e2\u001f\u10dc\u10dd\u10d4\u001f\u10d3\u10d4\u10d9',
@@ -6836,6 +6966,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0435\u043a\u0448\u0435\u043c\u0431\u0438\u001f\u0434\u04af\u0439\u0448\u0435\u043c\u0431\u0438\u001f\u0441\u0438\u0439\u0448\u0435\u043c\u0431\u0438\u001f\u0441\u04d9\u0440\u0448\u0435\u043c\u0431\u0438\u001f\u043f\u0438\u0439\u0448\u0435\u043c\u0431\u0438\u001f\u0436\u0443\u043c\u0430\u001f\u0448\u0435\u043c\u0431\u0438',
     'eras.eraAbbr': '\u0431. \u044d. \u0448.\u001f\u0431. \u044d.',
+    'eras.eraNames':
+        '\u0431\u0438\u0437\u0438\u04ca \u044d\u0440\u0430\u043c\u044b\u0437\u0493\u0430 \u0448\u0435\u043a\u0435\u043c\u0433\u0438\u001f\u0431\u0438\u0437\u0438\u04ca \u044d\u0440\u0430\u043c\u044b\u0437\u0434\u044b\u04ca',
     'eras.eraNarrow': '\u0431. \u044d. \u0448.\u001f\u0431. \u044d.',
     'months.format.abbreviated':
         '\u044f\u043d\u0432\u001f\u0444\u0435\u0432\u001f\u043c\u0430\u0440\u001f\u0430\u043f\u0440\u001f\u043c\u0430\u0439\u001f\u0438\u044e\u043d\u001f\u0438\u044e\u043b\u001f\u0430\u0432\u0433\u001f\u0441\u0435\u043d\u001f\u043e\u043a\u0442\u001f\u043d\u043e\u044f\u001f\u0434\u0435\u043a',
@@ -6879,6 +7011,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Acer\u001fArim\u001fAram\u001fAhad\u001fAmhad\u001fSem\u001fSed',
     'eras.eraAbbr': 'snd. T.\u0190\u001fsld. T.\u0190',
+    'eras.eraNames': 'send talalit n \u0190isa\u001fseld talalit n \u0190isa',
     'eras.eraNarrow': 'snd. T.\u0190\u001fsld. T.\u0190',
     'months.format.abbreviated':
         'Yen\u001fFur\u001fMe\u0263\u001fYeb\u001fMay\u001fYun\u001fYul\u001f\u0194uc\u001fCte\u001fTub\u001fNun\u001fDu\u01e7',
@@ -6917,6 +7050,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Wa kyumwa\u001fWa kwamb\u0129l\u0129lya\u001fWa kel\u0129\u001fWa katat\u0169\u001fWa kana\u001fWa katano\u001fWa thanthat\u0169',
     'eras.eraAbbr': 'MY\u001fIY',
+    'eras.eraNames': 'Mbee wa Yes\u0169\u001f\u0128tina wa Yes\u0169',
     'eras.eraNarrow': 'MY\u001fIY',
     'months.format.abbreviated':
         'Mbe\u001fKel\u001fKt\u0169\u001fKan\u001fKtn\u001fTha\u001fMoo\u001fNya\u001fKnd\u001f\u0128ku\u001f\u0128km\u001f\u0128kl',
@@ -6947,6 +7081,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Liduva lyapili\u001fLiduva lyatatu\u001fLiduva lyanchechi\u001fLiduva lyannyano\u001fLiduva lyannyano na linji\u001fLiduva lyannyano na mavili\u001fLiduva litandi',
     'eras.eraAbbr': 'AY\u001fNY',
+    'eras.eraNames': 'Akanapawa Yesu\u001fNankuida Yesu',
     'eras.eraNarrow': 'AY\u001fNY',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -7008,6 +7143,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dumingu\u001fsigunda-fera\u001ftersa-fera\u001fkuarta-fera\u001fkinta-fera\u001fsesta-fera\u001fs\u00e1badu',
     'eras.eraAbbr': 'AK\u001fDK',
+    'eras.eraNames': 'antis di Kristu\u001fdispos di Kristu',
     'eras.eraNarrow': 'AK\u001fDK',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fAbr\u001fMai\u001fJun\u001fJul\u001fAgo\u001fSet\u001fOtu\u001fNuv\u001fDiz',
@@ -7073,6 +7209,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'num\u0129ggu\u001fpir-kur\u00e3-h\u00e1\u001fr\u00e9gre-kur\u00e3-h\u00e1\u001ft\u1ebdgt\u0169-kur\u00e3-h\u00e1\u001fv\u1ebdnhk\u00e3gra-kur\u00e3-h\u00e1\u001fp\u00e9nkar-kur\u00e3-h\u00e1\u001fsavnu',
     'eras.eraAbbr': 'C.j.\u001fC.kk.',
+    'eras.eraNames': 'Cristo jo\u001fCristo kar k\u1ef9',
     'eras.eraNarrow': 'C.j.\u001fC.kk.',
     'months.format.abbreviated':
         '1Ky.\u001f2Ky.\u001f3Ky.\u001f4Ky.\u001f5Ky.\u001f6Ky.\u001f7Ky.\u001f8Ky.\u001f9Ky.\u001f10Ky.\u001f11Ky.\u001f12Ky.',
@@ -7110,6 +7247,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Alhadi\u001fAtini\u001fAtalata\u001fAlarba\u001fAlhamiisa\u001fAljuma\u001fAssabdu',
     'eras.eraAbbr': 'IJ\u001fIZ',
+    'eras.eraNames': 'Isaa jine\u001fIsaa jamanoo',
     'eras.eraNarrow': 'IJ\u001fIZ',
     'months.format.abbreviated':
         '\u017dan\u001fFee\u001fMar\u001fAwi\u001fMe\u001f\u017duw\u001f\u017duy\u001fUt\u001fSek\u001fOkt\u001fNoo\u001fDee',
@@ -7139,6 +7277,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Kiumia\u001fNjumatat\u0169\u001fNjumaine\u001fNjumatana\u001fAramithi\u001fNjumaa\u001fNjumamothi',
     'eras.eraAbbr': 'MK\u001fTK',
+    'eras.eraNames': 'Mbere ya Kristo\u001fThutha wa Kristo',
     'eras.eraNarrow': 'MK\u001fTK',
     'months.format.abbreviated':
         'JEN\u001fWKR\u001fWGT\u001fWKN\u001fWTN\u001fWTD\u001fWMJ\u001fWNN\u001fWKD\u001fWIK\u001fWMW\u001fDIT',
@@ -7208,6 +7347,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0436\u0435\u043a\u0441\u0435\u043d\u0431\u0456\u001f\u0434\u04af\u0439\u0441\u0435\u043d\u0431\u0456\u001f\u0441\u0435\u0439\u0441\u0435\u043d\u0431\u0456\u001f\u0441\u04d9\u0440\u0441\u0435\u043d\u0431\u0456\u001f\u0431\u0435\u0439\u0441\u0435\u043d\u0431\u0456\u001f\u0436\u04b1\u043c\u0430\u001f\u0441\u0435\u043d\u0431\u0456',
     'eras.eraAbbr': '\u0431.\u0437.\u0434.\u001f\u0431.\u0437.',
+    'eras.eraNames':
+        '\u0411\u0456\u0437\u0434\u0456\u04a3 \u0437\u0430\u043c\u0430\u043d\u044b\u043c\u044b\u0437\u0493\u0430 \u0434\u0435\u0439\u0456\u043d\u001f\u0431\u0456\u0437\u0434\u0456\u04a3 \u0437\u0430\u043c\u0430\u043d\u044b\u043c\u044b\u0437',
     'eras.eraNarrow': '\u0431.\u0437.\u0434.\u001f\u0431.\u0437.',
     'months.format.abbreviated':
         '\u049b\u0430\u04a3.\u001f\u0430\u049b\u043f.\u001f\u043d\u0430\u0443.\u001f\u0441\u04d9\u0443.\u001f\u043c\u0430\u043c.\u001f\u043c\u0430\u0443.\u001f\u0448\u0456\u043b.\u001f\u0442\u0430\u043c.\u001f\u049b\u044b\u0440.\u001f\u049b\u0430\u0437.\u001f\u049b\u0430\u0440.\u001f\u0436\u0435\u043b.',
@@ -7261,6 +7402,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u062c\u06d5\u0643\u0633\u06d5\u0646\u0628\u0649\u001f\u062f\u06c7\u064a\u0633\u06d5\u0646\u0628\u0649\u001f\u0633\u06d5\u064a\u0633\u06d5\u0646\u0628\u0649\u001f\u0633\u0627\u0631\u0633\u06d5\u0646\u0628\u0649\u001f\u0628\u06d5\u064a\u0633\u06d5\u0646\u0628\u0649\u001f\u062c\u06c7\u0645\u0627\u001f\u0633\u06d5\u0646\u0628\u0649',
     'eras.eraAbbr': '\u0628 \u0632 \u062f\u001f\u0628 \u0632',
+    'eras.eraNames':
+        '\u0621\u0628\u0649\u0632\u062f\u0649\u06ad \u0632\u0627\u0645\u0627\u0646\u0649\u0645\u0649\u0632\u0639\u0627 \u062f\u06d5\u064a\u0649\u0646\u001f\u0621\u0628\u0649\u0632\u062f\u0649\u06ad \u0632\u0627\u0645\u0627\u0646\u0649\u0645\u0649\u0632',
     'eras.eraNarrow': '\u0628 \u0632 \u062f\u001f\u0628 \u0632',
     'months.format.abbreviated':
         '\u0642\u0627\u06ad\u062a\u0627\u0631\u001f\u0627\u0642\u067e\u0627\u0646\u001f\u0646\u0627\u06cb\u0631\u0649\u0632\u001f\u0621\u0633\u0627\u06cb\u0649\u0631\u001f\u0645\u0627\u0645\u0649\u0631\u001f\u0645\u0627\u06cb\u0633\u0649\u0645\u001f\u0634\u0649\u0644\u062f\u06d5\u001f\u062a\u0627\u0645\u0649\u0632\u001f\u0642\u0649\u0631\u0643\u06c7\u064a\u06d5\u0643\u001f\u0642\u0627\u0632\u0627\u0646\u001f\u0642\u0627\u0631\u0627\u0634\u0627\u001f\u062c\u06d5\u0644\u062a\u0648\u0642\u0633\u0627\u0646',
@@ -7340,6 +7483,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Kotisap\u001fKotaai\u001fKoaeng\u2019\u001fKosomok\u001fKoang\u2019wan\u001fKomuut\u001fKolo',
     'eras.eraAbbr': 'AM\u001fKO',
+    'eras.eraNames': 'Amait kesich Jesu\u001fKokakesich Jesu',
     'eras.eraNarrow': 'AM\u001fKO',
     'months.format.abbreviated':
         'Mul\u001fNgat\u001fTaa\u001fIwo\u001fMam\u001fPaa\u001fNge\u001fRoo\u001fBur\u001fEpe\u001fKpt\u001fKpa',
@@ -7400,6 +7544,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u17a2\u17b6\u1791\u17b7\u178f\u17d2\u1799\u001f\u1785\u1793\u17d2\u1791\u001f\u17a2\u1784\u17d2\u1782\u17b6\u179a\u001f\u1796\u17bb\u1792\u001f\u1796\u17d2\u179a\u17a0\u179f\u17d2\u1794\u178f\u17b7\u17cd\u001f\u179f\u17bb\u1780\u17d2\u179a\u001f\u179f\u17c5\u179a\u17cd',
     'eras.eraAbbr': '\u1798\u17bb\u1793 \u1782.\u179f.\u001f\u1782.\u179f.',
+    'eras.eraNames':
+        '\u1798\u17bb\u1793\u200b\u1782\u17d2\u179a\u17b7\u179f\u17d2\u178f\u179f\u1780\u179a\u17b6\u1787\u001f\u1782\u17d2\u179a\u17b7\u179f\u17d2\u178f\u179f\u1780\u179a\u17b6\u1787',
     'eras.eraNarrow': '\u1798\u17bb\u1793 \u1782.\u179f.\u001f\u1782.\u179f.',
     'gmtFormat': '\u1798\u17c9\u17c4\u1784\u200b\u179f\u1780\u179b {0}',
     'months.format.abbreviated':
@@ -7456,6 +7602,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0cad\u0cbe\u0ca8\u0cc1\u0cb5\u0cbe\u0cb0\u001f\u0cb8\u0ccb\u0cae\u0cb5\u0cbe\u0cb0\u001f\u0cae\u0c82\u0c97\u0cb3\u0cb5\u0cbe\u0cb0\u001f\u0cac\u0cc1\u0ca7\u0cb5\u0cbe\u0cb0\u001f\u0c97\u0cc1\u0cb0\u0cc1\u0cb5\u0cbe\u0cb0\u001f\u0cb6\u0cc1\u0c95\u0ccd\u0cb0\u0cb5\u0cbe\u0cb0\u001f\u0cb6\u0ca8\u0cbf\u0cb5\u0cbe\u0cb0',
     'eras.eraAbbr':
         '\u0c95\u0ccd\u0cb0\u0cbf.\u0caa\u0cc2\u001f\u0c95\u0ccd\u0cb0\u0cbf.\u0cb6',
+    'eras.eraNames':
+        '\u0c95\u0ccd\u0cb0\u0cbf\u0cb8\u0ccd\u0ca4 \u0caa\u0cc2\u0cb0\u0ccd\u0cb5\u001f\u0c95\u0ccd\u0cb0\u0cbf\u0cb8\u0ccd\u0ca4 \u0cb6\u0c95',
     'eras.eraNarrow':
         '\u0c95\u0ccd\u0cb0\u0cbf.\u0caa\u0cc2\u001f\u0c95\u0ccd\u0cb0\u0cbf.\u0cb6',
     'months.format.abbreviated':
@@ -7547,6 +7695,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\uc77c\uc694\uc77c\u001f\uc6d4\uc694\uc77c\u001f\ud654\uc694\uc77c\u001f\uc218\uc694\uc77c\u001f\ubaa9\uc694\uc77c\u001f\uae08\uc694\uc77c\u001f\ud1a0\uc694\uc77c',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': '\uae30\uc6d0\uc804\u001f\uc11c\uae30',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         '1\uc6d4\u001f2\uc6d4\u001f3\uc6d4\u001f4\uc6d4\u001f5\uc6d4\u001f6\uc6d4\u001f7\uc6d4\u001f8\uc6d4\u001f9\uc6d4\u001f10\uc6d4\u001f11\uc6d4\u001f12\uc6d4',
@@ -7624,6 +7773,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0906\u001f\u0938\u094b\u001f\u092e\u0902\u001f\u092c\u0941\u001f\u092c\u001f\u0936\u0941\u001f\u0936\u0947',
     'eras.eraAbbr':
         '\u0915\u094d\u0930\u093f\u0938\u094d\u0924\u092a\u0942\u0930\u094d\u0935\u001f\u0915\u094d\u0930\u093f.\u0936.',
+    'eras.eraNames':
+        '\u0915\u094d\u0930\u093f\u0938\u094d\u0924\u093e \u0906\u0926\u0940\u0902\u001f\u0915\u094d\u0930\u093f.\u0936.',
     'eras.eraNarrow':
         '\u0915\u094d\u0930\u093f.\u0906.\u001f\u0915\u094d\u0930\u093f.\u0936.',
     'months.format.abbreviated':
@@ -7701,6 +7852,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Aitar\u001fSomar\u001fMongllar\u001fBudhvar\u001fBirestar\u001fSukrar\u001fSonvar',
     'eras.eraAbbr': 'KA\u001fAD',
+    'eras.eraNames': 'Krista Adim\u001fAnno Domini',
     'eras.eraNarrow': 'K\u001fA',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fAbr\u001fMai\u001fJun\u001fJul\u001fAgo\u001fSet\u001fOtu\u001fNov\u001fDez',
@@ -7770,6 +7922,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0627\u064e\u062a\u06be\u0648\u0627\u0631\u001f\u0698\u0654\u0646\u062f\u0631\u0655\u0631\u0648\u0627\u0631\u001f\u0628\u06c6\u0645\u0648\u0627\u0631\u001f\u0628\u0648\u062f\u0648\u0627\u0631\u001f\u0628\u0631\u0620\u0633\u0648\u0627\u0631\u001f\u062c\u064f\u0645\u06c1\u001f\u0628\u0679\u0648\u0627\u0631',
     'eras.eraAbbr': '\u0628\u06cc \u0633\u06cc\u001f\u0627\u06d2 \u0688\u06cc',
+    'eras.eraNames':
+        '\u0642\u0628\u0655\u0644 \u0645\u0633\u06cc\u0656\u062d\u001f\u0627\u06cc\u0646\u0648 \u0688\u0648\u0645\u0646\u06cc',
     'eras.eraNarrow':
         '\u0628\u06cc \u0633\u06cc\u001f\u0627\u06d2 \u0688\u06cc',
     'months.format.abbreviated':
@@ -7819,6 +7973,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u0906\u0925\u0935\u093e\u0930\u001f\u091a\u0902\u0926\u093f\u0930\u0935\u093e\u0930\u001f\u092c\u0941\u0935\u093e\u0930\u001f\u092c\u094b\u0926\u0935\u093e\u0930\u001f\u092c\u094d\u0930\u0947\u0938\u0935\u093e\u0930\u001f\u091c\u0941\u092e\u094d\u092e\u093e\u001f\u092c\u091f\u0935\u093e\u0930',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames':
+        '\u0908\u0938\u093e \u092c\u094d\u0930\u094b\u0902\u0920\u001f\u0908\u0938\u094d\u0935\u0940',
     'eras.eraNarrow': 'BC\u001fAD',
     'gmtFormat': '\u091c\u0940 \u090f\u092e \u091f\u0940 {0}',
     'months.format.abbreviated':
@@ -7857,6 +8013,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumaapii\u001fJumaatatu\u001fJumaane\u001fJumaatano\u001fAlhamisi\u001fIjumaa\u001fJumaamosi',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Klisto\u001fBaada ya Klisto',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -7891,6 +8048,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u0254\u0301nd\u01dd\u001fl\u01ddnd\u00ed\u001fmaad\u00ed\u001fm\u025bkr\u025bd\u00ed\u001fj\u01dd\u01ddd\u00ed\u001fj\u00famb\u00e1\u001fsamd\u00ed',
     'eras.eraAbbr': 'd.Y.\u001fk.Y.',
+    'eras.eraNames':
+        'di Y\u025b\u0301sus ak\u00e1 y\u00e1l\u025b\u001fc\u00e1m\u025b\u025bn k\u01dd k\u01ddb\u0254pka Y',
     'eras.eraNarrow': 'd.Y.\u001fk.Y.',
     'months.format.abbreviated':
         '\u014b1\u001f\u014b2\u001f\u014b3\u001f\u014b4\u001f\u014b5\u001f\u014b6\u001f\u014b7\u001f\u014b8\u001f\u014b9\u001f\u014b10\u001f\u014b11\u001f\u014b12',
@@ -7926,6 +8085,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sunndaach\u001fMohndaach\u001fDinnsdaach\u001fMetwoch\u001fDunnersdaach\u001fFriidaach\u001fSamsdaach',
     'eras.eraAbbr': 'v. Chr.\u001fn. Chr.',
+    'eras.eraNames': 'v\u00fcr Krestos\u001fnoh Krestos',
     'eras.eraNarrow': 'vC\u001fnC',
     'months.format.abbreviated':
         'Jan\u001fF\u00e4b\u001fM\u00e4z\u001fApr\u001fMai\u001fJun\u001fJul\u001fOuj\u001fS\u00e4p\u001fOkt\u001fNov\u001fDez',
@@ -7972,6 +8132,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'yek\u015fem\u001fdu\u015fem\u001fs\u00ea\u015fem\u001f\u00e7ar\u015fem\u001fp\u00eanc\u015fem\u001f\u00een\u00ee\u001f\u015fem\u00ee',
     'eras.eraAbbr': 'BM\u001fPM',
+    'eras.eraNames':
+        'Ber\u00ee M\u00eelad\u00ea\u001fPi\u015ft\u00ee M\u00eelad\u00ea',
     'eras.eraNarrow': 'BM\u001fPM',
     'months.format.abbreviated':
         'rbn\u001fsbt\u001fadr\u001fnsn\u001fgln\u001fhzr\u001ftrm\u001ftbx\u001f\u00eeln\u001fcot\u001fmjd\u001fbrf',
@@ -7992,6 +8154,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dy Sul\u001fdy Lun\u001fdy Meurth\u001fdy Merher\u001fdy Yow\u001fdy Gwener\u001fdy Sadorn',
     'eras.eraAbbr': 'RC\u001fAD',
+    'eras.eraNames': 'RC\u001fAD',
     'eras.eraNarrow': 'RC\u001fAD',
     'months.format.abbreviated':
         'Gen\u001fHwe\u001fMeu\u001fEbr\u001fMe\u001fMet\u001fGor\u001fEst\u001fGwn\u001fHed\u001fDu\u001fKev',
@@ -8044,6 +8207,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'aadi vara\u001fsmbara\u001fmanga\u1e0da\u001fpudara\u001flaki vara\u001fsukru vara\u001fsani vara',
     'eras.eraAbbr': 'bc\u001fad',
+    'eras.eraNames': 'kris\u1e6d purb nki\u001fkris\u1e6dabd',
     'eras.eraNarrow': 'bc\u001fad',
     'months.format.abbreviated':
         'pusu\u001fmaha\u001fpagu\u001fhire\u001fbese\u001fja\u1e6d\u1e6da\u001faasa\u1e0di\u001fsrab\u0129\u001fbado\u001fdasara\u001fdivi\u001fpande',
@@ -8098,6 +8262,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0906\u0926\u093f \u0935\u093e\u0930\u093e\u001f\u0938\u093e\u0945\u092e\u094d\u0935\u093e\u0930\u093e\u001f\u092e\u0902\u0917\u093e\u0921\u093c\u093e\u001f\u092a\u0941\u0926\u094d\u0926\u093e\u0930\u093e\u001f\u0932\u093e\u0915\u094d\u0915\u093f \u0935\u093e\u0930\u093e\u001f\u0938\u0941\u0915\u0941\u0930\u0941 \u0935\u093e\u0930\u093e\u001f\u0938\u093e\u0928\u094d\u0928\u093f \u0935\u093e\u0930\u093e',
     'eras.eraAbbr': '\u092c\u093f\u0938\u093f\u001f\u090f-\u0921\u093f',
+    'eras.eraNames':
+        '\u092c\u093f\u092b\u094b\u0930 \u0915\u094d\u0930\u093e\u0907\u0938\u094d\u091f\u001f\u0905\u0928\u094d\u0928\u094b \u0921\u094b\u092e\u093f\u0928\u0940',
     'eras.eraNarrow': '\u092c\u093f\u0938\u093f\u001f\u090f-\u0921\u093f',
     'months.format.abbreviated':
         '\u092a\u0941\u0938\u0941\u001f\u092e\u093e\u0939\u093e\u001f\u092a\u093e\u0917\u0941\u001f\u0939\u093f\u0930\u094d\u0930\u0947\u001f\u092c\u0947\u0938\u0947\u001f\u091c\u093e\u091f\u094d\u091f\u093e\u001f\u0906\u0938\u093e\u0921\u093c\u0940\u001f\u0938\u094d\u0930\u093e\u092c\u093e\u0901\u001f\u092c\u093e\u0945\u0926\u094b\u001f\u0926\u093e\u0938\u093e\u0930\u093e\u001f\u0926\u093f\u0935\u0940\u001f\u092a\u093e\u0928\u094d\u0921\u0947',
@@ -8157,6 +8323,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0b06\u0b26\u0b3f \u0b71\u0b3e\u0b30\u0b3e\u001f\u0b38\u0b2e\u0b4d\u0b2c\u0b3e\u0b30\u0b3e\u001f\u0b2e\u0b3e\u0b19\u0b4d\u0b17\u0b3e\u0b21\u0b3c\u0b3e\u001f\u0b2a\u0b41\u0b26\u0b3e\u0b30\u0b3e\u001f\u0b32\u0b3e\u0b15\u0b3f \u0b71\u0b3e\u0b30\u0b3e\u001f\u0b38\u0b41\u0b15\u0b4d\u0b30\u0b41 \u0b71\u0b3e\u0b30\u0b3e\u001f\u0b38\u0b3e\u0b28\u0b3f \u0b71\u0b3e\u0b30\u0b3e',
     'eras.eraAbbr': '\u0b2c\u0b3f\u0b38\u0b3f\u001f\u0b0f\u0b21\u0b3f',
+    'eras.eraNames':
+        '\u0b2c\u0b3f\u0b2b\u0b4b\u0b30 \u0b15\u0b4d\u0b30\u0b3e\u0b07\u0b37\u0b4d\u0b1f\u001f\u0b06\u0b28\u0b4d\u0b28\u0b3e \u0b21\u0b4b\u0b2e\u0b3f\u0b28\u0b3f',
     'eras.eraNarrow': '\u0b2c\u0b3f\u0b38\u0b3f\u001f\u0b0f\u0b21\u0b3f',
     'months.format.abbreviated':
         '\u0b2a\u0b41\u0b38\u0b41\u001f\u0b2e\u0b3e\u0b39\u0b3e\u001f\u0b2a\u0b3e\u0b17\u0b41\u001f\u0b39\u0b3f\u0b30\u0b47\u001f\u0b2c\u0b47\u0b38\u0b47\u001f\u0b1c\u0b3e\u0b1f\u0b3e\u001f\u0b06\u0b38\u0b3e\u0b21\u0b3c\u0b3f\u001f\u0b38\u0b4d\u0b30\u0b3e\u0b2c\u0b3e\u0b01\u001f\u0b2c\u0b26\u001f\u0b26\u0b3e\u0b38\u0b3e\u0b30\u0b3e\u001f\u0b26\u0b3f\u0b71\u0b3f\u001f\u0b2a\u0b3e\u0b23\u0b4d\u0b21\u0b47',
@@ -8216,6 +8384,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0c35\u0c3e\u0c30\u0c2e\u0c3f\u001f\u0c28\u0c2e\u0c3e\u0c30\u0c3e\u001f\u0c2e\u0c3e\u0c02\u0c17\u0c3e\u0c21\u0c3e\u001f\u0c35\u0c41\u0c26\u0c3e\u0c30\u0c3e\u001f\u0c32\u0c3e\u0c15\u0c3f\u0c35\u0c30\u0c3e\u001f\u0c28\u0c41\u0c15\u0c4d \u0c35\u0c30\u0c3e\u001f\u0c38\u0c3e\u0c28\u0c3f\u0c35\u0c30\u0c3e',
     'eras.eraAbbr':
         '\u0c15\u0c4d\u0c30\u0c40\u0c2a\u0c42\u001f\u0c15\u0c4d\u0c30\u0c40\u0c36',
+    'eras.eraNames':
+        '\u0c15\u0c4d\u0c30\u0c40\u0c28\u0c4d\u0c24\u0c41 \u0c35\u0c42\u0c30\u0c4d\u0c35\u0c02\u001f\u0c15\u0c4d\u0c30\u0c40\u0c38\u0c4d\u0c24\u0c41 \u0c38\u0c15\u0c02',
     'eras.eraNarrow':
         '\u0c15\u0c4d\u0c30\u0c40\u0c2a\u0c42\u001f\u0c15\u0c4d\u0c30\u0c40\u0c36',
     'months.format.abbreviated':
@@ -8277,6 +8447,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0436\u0435\u043a\u0448\u0435\u043c\u0431\u0438\u001f\u0434\u04af\u0439\u0448\u04e9\u043c\u0431\u04af\u001f\u0448\u0435\u0439\u0448\u0435\u043c\u0431\u0438\u001f\u0448\u0430\u0440\u0448\u0435\u043c\u0431\u0438\u001f\u0431\u0435\u0439\u0448\u0435\u043c\u0431\u0438\u001f\u0436\u0443\u043c\u0430\u001f\u0438\u0448\u0435\u043c\u0431\u0438',
     'eras.eraAbbr': '\u0431.\u0437.\u0447.\u001f\u0431.\u0437.',
+    'eras.eraNames':
+        '\u0431\u0438\u0437\u0434\u0438\u043d \u0437\u0430\u043c\u0430\u043d\u0433\u0430 \u0447\u0435\u0439\u0438\u043d\u001f\u0431\u0438\u0437\u0434\u0438\u043d \u0437\u0430\u043c\u0430\u043d',
     'eras.eraNarrow': '\u0431.\u0437.\u0447.\u001f\u0431.\u0437.',
     'months.format.abbreviated':
         '\u044f\u043d\u0432.\u001f\u0444\u0435\u0432.\u001f\u043c\u0430\u0440.\u001f\u0430\u043f\u0440.\u001f\u043c\u0430\u0439\u001f\u0438\u044e\u043d.\u001f\u0438\u044e\u043b.\u001f\u0430\u0432\u0433.\u001f\u0441\u0435\u043d.\u001f\u043e\u043a\u0442.\u001f\u043d\u043e\u044f.\u001f\u0434\u0435\u043a.',
@@ -8311,6 +8483,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumap\u00ediri\u001fJumat\u00e1tu\u001fJuma\u00edne\u001fJumat\u00e1ano\u001fAlam\u00edisi\u001fIjum\u00e1a\u001fJumam\u00f3osi',
     'eras.eraAbbr': 'KSA\u001fKA',
+    'eras.eraNames':
+        'K\u0268r\u0268sit\u0289 s\u0268 anavyaal\u001fK\u0268r\u0268sit\u0289 akavyaalwe',
     'eras.eraNarrow': 'KSA\u001fKA',
     'months.format.abbreviated':
         'F\u00fangat\u0268\u001fNaan\u0268\u001fKeenda\u001fIk\u00fami\u001fInyambala\u001fIdwaata\u001fM\u0289\u0289nch\u0268\u001fV\u0268\u0268r\u0268\u001fSaat\u0289\u001fInyi\u001fSaano\u001fSasat\u0289',
@@ -8357,6 +8531,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.abbreviated':
         'Son\u001fM\u00e9i\u001fD\u00ebn\u001fM\u00ebt\u001fDon\u001fFre\u001fSam',
     'eras.eraAbbr': 'v. Chr.\u001fn. Chr.',
+    'eras.eraNames': 'v. Chr.\u001fn. Chr.',
     'eras.eraNarrow': 'v. Chr.\u001fn. Chr.',
     'months.format.abbreviated':
         'Jan.\u001fFeb.\u001fM\u00e4e.\u001fAbr.\u001fMee\u001fJuni\u001fJuli\u001fAug.\u001fSep.\u001fOkt.\u001fNov.\u001fDez.',
@@ -8386,6 +8561,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sabbiiti\u001fBalaza\u001fLwakubiri\u001fLwakusatu\u001fLwakuna\u001fLwakutaano\u001fLwamukaaga',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Kulisito nga tannaza\u001fBukya Kulisito Azaal',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApu\u001fMaa\u001fJuu\u001fJul\u001fAgu\u001fSeb\u001fOki\u001fNov\u001fDes',
@@ -8474,6 +8650,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dom\u00ebnia\u001fl\u00f6nesc\u001fmertesc\u001fmercui\u001fj\u00f6bia\u001fv\u00ebndres\u001fsabeda',
     'eras.eraAbbr': 'dan G.C.\u001fAD',
+    'eras.eraNames': 'dan Gej\u00fa Crist\u001fAD',
     'eras.eraNarrow': 'dan G.C.\u001fAD',
     'months.format.abbreviated':
         'de jen\u00e1\u001fde for\u00e1\u001fde merz\u001fd\u2019aur\u00ed\u001fde ma\u001fde j\u00fcgn\u001fde mess\u00e9\u001fd\u2019aost\u001fde set\u00ebmber\u001fd\u2019otober\u001fde nov\u00ebmber\u001fde dez\u00ebmber',
@@ -8523,6 +8700,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'eyenga\u001fmok\u0254l\u0254 mwa yambo\u001fmok\u0254l\u0254 mwa m\u00edbal\u00e9\u001fmok\u0254l\u0254 mwa m\u00eds\u00e1to\u001fmok\u0254l\u0254 ya m\u00edn\u00e9i\u001fmok\u0254l\u0254 ya m\u00edt\u00e1no\u001fmp\u0254\u0301s\u0254',
     'eras.eraAbbr': 'lib\u00f3so ya\u001fnsima ya Y',
+    'eras.eraNames':
+        'Yambo ya Y\u00e9zu Kr\u00eds\u001fNsima ya Y\u00e9zu Kr\u00eds',
     'eras.eraNarrow': 'lib\u00f3so ya\u001fnsima ya Y',
     'months.format.abbreviated':
         'yan\u001ffbl\u001fmsi\u001fapl\u001fmai\u001fyun\u001fyul\u001fagt\u001fstb\u001f\u0254tb\u001fnvb\u001fdsb',
@@ -8586,6 +8765,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0ea7\u0eb1\u0e99\u0ead\u0eb2\u0e97\u0eb4\u0e94\u001f\u0ea7\u0eb1\u0e99\u0e88\u0eb1\u0e99\u001f\u0ea7\u0eb1\u0e99\u0ead\u0eb1\u0e87\u0e84\u0eb2\u0e99\u001f\u0ea7\u0eb1\u0e99\u0e9e\u0eb8\u0e94\u001f\u0ea7\u0eb1\u0e99\u0e9e\u0eb0\u0eab\u0eb1\u0e94\u001f\u0ea7\u0eb1\u0e99\u0eaa\u0eb8\u0e81\u001f\u0ea7\u0eb1\u0e99\u0ec0\u0eaa\u0ebb\u0eb2',
     'eras.eraAbbr':
         '\u0e81\u0ec8\u0ead\u0e99 \u0e84.\u0eaa.\u001f\u0e84.\u0eaa.',
+    'eras.eraNames':
+        '\u0e81\u0ec8\u0ead\u0e99\u0e84\u0ea3\u0eb4\u0e94\u0eaa\u0eb1\u0e81\u0e81\u0eb0\u0ea5\u0eb2\u0e94\u001f\u0e84\u0ea3\u0eb4\u0e94\u0eaa\u0eb1\u0e81\u0e81\u0eb0\u0ea5\u0eb2\u0e94',
     'eras.eraNarrow':
         '\u0e81\u0ec8\u0ead\u0e99 \u0e84.\u0eaa.\u001f\u0e84.\u0eaa.',
     'months.format.abbreviated':
@@ -8679,6 +8860,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'sekmadienis\u001fpirmadienis\u001fantradienis\u001ftre\u010diadienis\u001fketvirtadienis\u001fpenktadienis\u001f\u0161e\u0161tadienis',
     'eras.eraAbbr': 'pr. Kr.\u001fpo Kr.',
+    'eras.eraNames': 'prie\u0161 Krist\u0173\u001fpo Kristaus',
     'eras.eraNarrow': 'pr. Kr.\u001fpo Kr.',
     'hourFormat': '+HH:mm;\u2212HH:mm',
     'months.format.abbreviated':
@@ -8717,6 +8899,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Lumingu\u001fNkodya\u001fNd\u00e0ay\u00e0\u001fNdang\u00f9\u001fNj\u00f2wa\u001fNg\u00f2vya\u001fLubingu',
     'eras.eraAbbr': 'kmp. Y.K.\u001fkny. Y. K.',
+    'eras.eraNames': 'Kumpala kwa Yezu Kli\u001fKunyima kwa Yezu Kli',
     'eras.eraNarrow': 'kmp. Y.K.\u001fkny. Y. K.',
     'months.format.abbreviated':
         'Cio\u001fLui\u001fLus\u001fMuu\u001fLum\u001fLuf\u001fKab\u001fLush\u001fLut\u001fLun\u001fKas\u001fCis',
@@ -8746,6 +8929,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapil\u001fWuok Tich\u001fTich Ariyo\u001fTich Adek\u001fTich Ang\u2019wen\u001fTich Abich\u001fNgeso',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Kapok Kristo obiro\u001fKa Kristo osebiro',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'DAC\u001fDAR\u001fDAD\u001fDAN\u001fDAH\u001fDAU\u001fDAO\u001fDAB\u001fDOC\u001fDAP\u001fDGI\u001fDAG',
@@ -8774,6 +8958,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapiri\u001fJumatatu\u001fJumanne\u001fJumatano\u001fMurwa wa Kanne\u001fMurwa wa Katano\u001fJumamosi',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Imberi ya Kuuza Kwa\u001fMuhiga Kuvita Kuuza',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -8835,6 +9020,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         'Sv\u0113tdiena\u001fPirmdiena\u001fOtrdiena\u001fTre\u0161diena\u001fCeturtdiena\u001fPiektdiena\u001fSestdiena',
     'eras.eraAbbr': 'p.m.\u0113.\u001fm.\u0113.',
+    'eras.eraNames': 'pirms m\u016bsu \u0113ras\u001fm\u016bsu \u0113r\u0101',
     'eras.eraNarrow': 'p.m.\u0113.\u001fm.\u0113.',
     'months.format.abbreviated':
         'janv.\u001ffebr.\u001fmarts\u001fapr.\u001fmaijs\u001fj\u016bn.\u001fj\u016bl.\u001faug.\u001fsept.\u001fokt.\u001fnov.\u001fdec.',
@@ -8889,6 +9075,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0930\u0935\u093f \u0926\u093f\u0928\u001f\u0938\u094b\u092e \u0926\u093f\u0928\u001f\u092e\u0902\u0917\u0932 \u0926\u093f\u0928\u001f\u092c\u0941\u0927 \u0926\u093f\u0928\u001f\u092c\u0943\u0939\u0938\u094d\u092a\u0924\u093f \u0926\u093f\u0928\u001f\u0936\u0941\u0915\u094d\u0930 \u0926\u093f\u0928\u001f\u0936\u0928\u093f \u0926\u093f\u0928',
     'eras.eraAbbr':
         '\u0908\u0938\u093e-\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u0935\u0940',
+    'eras.eraNames':
+        '\u0908\u0938\u093e-\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u0935\u0940',
     'eras.eraNarrow':
         '\u0908\u0938\u093e-\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u0935\u0940',
     'gmtFormat': '\u091c\u0940\u090f\u092e\u091f\u0940{0}',
@@ -8930,6 +9118,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumap\u00edl\u00ed\u001fJumat\u00e1tu\u001fJumane\u001fJumat\u00e1n\u0254\u001fAla\u00e1misi\u001fJum\u00e1a\u001fJumam\u00f3si',
     'eras.eraAbbr': 'MY\u001fEY',
+    'eras.eraNames':
+        'Me\u00edn\u014d Y\u025b\u0301s\u0289\u001fE\u00edn\u014d Y\u025b\u0301s\u0289',
     'eras.eraNarrow': 'MY\u001fEY',
     'months.format.abbreviated':
         'Dal\u001fAr\u00e1\u001f\u0186\u025bn\u001fDoy\u001fL\u00e9p\u001fRok\u001fS\u00e1s\u001fB\u0254\u0301r\u001fK\u00fas\u001fG\u00eds\u001fSh\u0289\u0301\u001fNt\u0289\u0301',
@@ -8961,6 +9151,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Kiumia\u001fMuramuko\u001fWairi\u001fWethatu\u001fWena\u001fWetano\u001fJumamosi',
     'eras.eraAbbr': 'MK\u001fNK',
+    'eras.eraNames': 'Mbere ya Krist\u0169\u001fNyuma ya Krist\u0169',
     'eras.eraNarrow': 'MK\u001fNK',
     'months.format.abbreviated':
         'JAN\u001fFEB\u001fMAC\u001f\u0128PU\u001fM\u0128\u0128\u001fNJU\u001fNJR\u001fAGA\u001fSPT\u001fOKT\u001fNOV\u001fDEC',
@@ -8996,6 +9187,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dimans\u001flindi\u001fmardi\u001fmerkredi\u001fzedi\u001fvandredi\u001fsamdi',
     'eras.eraAbbr': 'av. Z-K\u001fap. Z-K',
+    'eras.eraNames': 'avan Zezi-Krist\u001fapre Zezi-Krist',
     'eras.eraNarrow': 'av. Z-K\u001fap. Z-K',
     'months.format.abbreviated':
         'zan\u001ffev\u001fmar\u001favr\u001fme\u001fzin\u001fzil\u001fout\u001fsep\u001fokt\u001fnov\u001fdes',
@@ -9035,6 +9227,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Alahady\u001fAlatsinainy\u001fTalata\u001fAlarobia\u001fAlakamisy\u001fZoma\u001fAsabotsy',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Alohan\u2019i JK\u001fAorian\u2019i JK',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApr\u001fMey\u001fJon\u001fJol\u001fAog\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -9067,6 +9260,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sabato\u001fJumatatu\u001fJumanne\u001fJumatano\u001fArahamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'HY\u001fYY',
+    'eras.eraNames': 'Hinapiya yesu\u001fYopia yesu',
     'eras.eraNarrow': 'HY\u001fYY',
     'months.format.abbreviated':
         'Kwa\u001fUna\u001fRar\u001fChe\u001fTha\u001fMoc\u001fSab\u001fNan\u001fTis\u001fKum\u001fMoj\u001fYel',
@@ -9199,6 +9393,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u043d\u0435\u0434\u0435\u043b\u0430\u001f\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u043d\u0438\u043a\u001f\u0432\u0442\u043e\u0440\u043d\u0438\u043a\u001f\u0441\u0440\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0440\u0442\u043e\u043a\u001f\u043f\u0435\u0442\u043e\u043a\u001f\u0441\u0430\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u043f\u0440. \u043d. \u0435.\u001f\u043d. \u0435.',
+    'eras.eraNames':
+        '\u043f\u0440\u0435\u0434 \u043d\u0430\u0448\u0430\u0442\u0430 \u0435\u0440\u0430\u001f\u043e\u0434 \u043d\u0430\u0448\u0430\u0442\u0430 \u0435\u0440\u0430',
     'eras.eraNarrow': '\u043f\u0440. \u043d. \u0435.\u001f\u043d. \u0435.',
     'months.format.abbreviated':
         '\u0458\u0430\u043d.\u001f\u0444\u0435\u0432.\u001f\u043c\u0430\u0440.\u001f\u0430\u043f\u0440.\u001f\u043c\u0430\u0458\u001f\u0458\u0443\u043d.\u001f\u0458\u0443\u043b.\u001f\u0430\u0432\u0433.\u001f\u0441\u0435\u043f.\u001f\u043e\u043a\u0442.\u001f\u043d\u043e\u0435.\u001f\u0434\u0435\u043a.',
@@ -9263,6 +9459,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u0d1e\u0d3e\u0d2f\u0d31\u0d3e\u0d34\u0d4d\u200c\u0d1a\u001f\u0d24\u0d3f\u0d19\u0d4d\u0d15\u0d33\u0d3e\u0d34\u0d4d\u200c\u0d1a\u001f\u0d1a\u0d4a\u0d35\u0d4d\u0d35\u0d3e\u0d34\u0d4d\u200c\u0d1a\u001f\u0d2c\u0d41\u0d27\u0d28\u0d3e\u0d34\u0d4d\u200c\u0d1a\u001f\u0d35\u0d4d\u0d2f\u0d3e\u0d34\u0d3e\u0d34\u0d4d\u200c\u0d1a\u001f\u0d35\u0d46\u0d33\u0d4d\u0d33\u0d3f\u0d2f\u0d3e\u0d34\u0d4d\u200c\u0d1a\u001f\u0d36\u0d28\u0d3f\u0d2f\u0d3e\u0d34\u0d4d\u200c\u0d1a',
     'eras.eraAbbr': '\u0d2c\u0d3f\u0d38\u0d3f\u001f\u0d0e\u0d21\u0d3f',
+    'eras.eraNames':
+        '\u0d15\u0d4d\u0d30\u0d3f\u0d38\u0d4d\u200c\u0d24\u0d41\u0d35\u0d3f\u0d28\u0d4d \u0d2e\u0d41\u0d2e\u0d4d\u0d2a\u0d4d\u001f\u0d06\u0d28\u0d4d\u0d28\u0d4b \u0d21\u0d4a\u0d2e\u0d3f\u0d28\u0d3f',
     'eras.eraNarrow': '\u0d2c\u0d3f\u0d38\u0d3f\u001f\u0d0e\u0d21\u0d3f',
     'gmtFormat': '\u0d1c\u0d3f\u0d0e\u0d02\u0d1f\u0d3f{0}',
     'months.format.abbreviated':
@@ -9341,6 +9539,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u041d\u044f\u043c\u001f\u0414\u0430\u0432\u0430\u0430\u001f\u041c\u044f\u0433\u043c\u0430\u0440\u001f\u041b\u0445\u0430\u0433\u0432\u0430\u001f\u041f\u04af\u0440\u044d\u0432\u001f\u0411\u0430\u0430\u0441\u0430\u043d\u001f\u0411\u044f\u043c\u0431\u0430',
     'eras.eraAbbr': '\u041c\u042d\u04e8\u001f\u041c\u042d',
+    'eras.eraNames':
+        '\u043c\u0430\u043d\u0430\u0439 \u044d\u0440\u0438\u043d\u0438\u0439 \u04e9\u043c\u043d\u04e9\u0445\u001f\u043c\u0430\u043d\u0430\u0439 \u044d\u0440\u0438\u043d\u0438\u0439',
     'eras.eraNarrow': '\u041c\u042d\u04e8\u001f\u041c\u042d',
     'months.format.abbreviated':
         '1-\u0440 \u0441\u0430\u0440\u001f2-\u0440 \u0441\u0430\u0440\u001f3-\u0440 \u0441\u0430\u0440\u001f4-\u0440 \u0441\u0430\u0440\u001f5-\u0440 \u0441\u0430\u0440\u001f6-\u0440 \u0441\u0430\u0440\u001f7-\u0440 \u0441\u0430\u0440\u001f8-\u0440 \u0441\u0430\u0440\u001f9-\u0440 \u0441\u0430\u0440\u001f10-\u0440 \u0441\u0430\u0440\u001f11-\u0440 \u0441\u0430\u0440\u001f12-\u0440 \u0441\u0430\u0440',
@@ -9371,6 +9571,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         '\u1828\u1822\u001f\u1833\u1820\u001f\u182e\u1822\u182d\u001f\u1840\u1820\u001f\u182b\u1825\u1837\u001f\u182a\u1820\u001f\u182a\u1822\u182e',
     'eras.eraAbbr':
+        '\u182e\u1802 \u1821\u1821\u1802 \u1826\u001f\u182e\u1802 \u1821',
+    'eras.eraNames':
         '\u182e\u1802 \u1821\u1821\u1802 \u1826\u001f\u182e\u1802 \u1821',
     'eras.eraNarrow':
         '\u182e\u1802 \u1821\u1821\u1802 \u1826\u001f\u182e\u1802 \u1821',
@@ -9418,6 +9620,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         '\u09a8\u09cb\u001f\u09a8\u09bf\u0982\u001f\u09b2\u09c8\u001f\u09af\u09bc\u09c1\u09ae\u001f\u09b6\u0997\u001f\u0987\u09b0\u09be\u001f\u09a5\u09be\u0982',
     'eras.eraAbbr':
+        '\u0996\u09c3: \u09ae\u09ae\u09be\u0982\u001f\u0996\u09c3: \u09ae\u09a4\u09c1\u0982',
+    'eras.eraNames':
         '\u0996\u09c3: \u09ae\u09ae\u09be\u0982\u001f\u0996\u09c3: \u09ae\u09a4\u09c1\u0982',
     'eras.eraNarrow':
         '\u0996\u09c3: \u09ae\u09ae\u09be\u0982\u001f\u0996\u09c3: \u09ae\u09a4\u09c1\u0982',
@@ -9508,6 +9712,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0930\u0935\u093f\u0935\u093e\u0930\u001f\u0938\u094b\u092e\u0935\u093e\u0930\u001f\u092e\u0902\u0917\u0933\u0935\u093e\u0930\u001f\u092c\u0941\u0927\u0935\u093e\u0930\u001f\u0917\u0941\u0930\u0941\u0935\u093e\u0930\u001f\u0936\u0941\u0915\u094d\u0930\u0935\u093e\u0930\u001f\u0936\u0928\u093f\u0935\u093e\u0930',
     'eras.eraAbbr': '\u0908. \u0938. \u092a\u0942.\u001f\u0907. \u0938.',
+    'eras.eraNames':
+        '\u0908\u0938\u0935\u0940\u0938\u0928\u092a\u0942\u0930\u094d\u0935\u001f\u0908\u0938\u0935\u0940\u0938\u0928',
     'eras.eraNarrow': '\u0908. \u0938. \u092a\u0942.\u001f\u0907. \u0938.',
     'gmtFormat': '[GMT]{0}',
     'months.format.abbreviated':
@@ -9574,6 +9780,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Ahad\u001fIsnin\u001fSelasa\u001fRabu\u001fKhamis\u001fJumaat\u001fSabtu',
     'eras.eraAbbr': 'S.M.\u001fTM',
+    'eras.eraNames': 'S.M.\u001fTM',
     'eras.eraNarrow': 'S.M.\u001fTM',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fOgo\u001fSep\u001fOkt\u001fNov\u001fDis',
@@ -9688,6 +9895,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         '\u0126d\u001fTn\u001fTl\u001fEr\u001f\u0126m\u001f\u0120m\u001fSb',
     'eras.eraAbbr': 'QK\u001fWK',
+    'eras.eraNames': 'Qabel Kristu\u001fWara Kristu',
     'eras.eraNarrow': 'QK\u001fWK',
     'months.format.abbreviated':
         'Jan\u001fFra\u001fMar\u001fApr\u001fMej\u001f\u0120un\u001fLul\u001fAww\u001fSet\u001fOtt\u001fNov\u001fDi\u010b',
@@ -9722,6 +9930,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Com\u2019yakke\u001fComlaa\u0257ii\u001fComzyii\u0257ii\u001fComkolle\u001fComkald\u01dd\u0253lii\u001fComgaisuu\u001fComzye\u0253suu',
     'eras.eraAbbr': 'KK\u001fPK',
+    'eras.eraNames': 'K\u01ddPel Kristu\u001fPel Kristu',
     'eras.eraNarrow': 'KK\u001fPK',
     'months.format.abbreviated':
         'FLO\u001fCLA\u001fCKI\u001fFMF\u001fMAD\u001fMBI\u001fMLI\u001fMAM\u001fFDE\u001fFMU\u001fFGW\u001fFYU',
@@ -9790,6 +9999,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u1010\u1014\u1004\u103a\u1039\u1002\u1014\u103d\u1031\u001f\u1010\u1014\u1004\u103a\u1039\u101c\u102c\u001f\u1021\u1004\u103a\u1039\u1002\u102b\u001f\u1017\u102f\u1012\u1039\u1013\u101f\u1030\u1038\u001f\u1000\u103c\u102c\u101e\u1015\u1010\u1031\u1038\u001f\u101e\u1031\u102c\u1000\u103c\u102c\u001f\u1005\u1014\u1031',
     'eras.eraAbbr': '\u1018\u102e\u1005\u102e\u001f\u1021\u1012\u1031\u102e',
+    'eras.eraNames':
+        '\u1001\u101b\u1005\u103a\u1010\u1031\u102c\u103a \u1019\u1015\u1031\u102b\u103a\u1019\u102e\u1014\u103e\u1005\u103a\u001f\u1001\u101b\u1005\u103a\u1014\u103e\u1005\u103a',
     'eras.eraNarrow': '\u1018\u102e\u1005\u102e\u001f\u1021\u1012\u1031\u102e',
     'months.format.abbreviated':
         '\u1007\u1014\u103a\u001f\u1016\u1031\u001f\u1019\u1010\u103a\u001f\u1027\u001f\u1019\u1031\u001f\u1007\u103d\u1014\u103a\u001f\u1007\u1030\u001f\u1029\u001f\u1005\u1000\u103a\u001f\u1021\u1031\u102c\u1000\u103a\u001f\u1014\u102d\u102f\u001f\u1012\u102e',
@@ -9804,6 +10015,8 @@ const dateLocales = <String, Map<String, String>>{
   'myv': {},
   'mzn': {
     'eras.eraAbbr': '\u067e.\u0645\u001f\u0645.',
+    'eras.eraNames':
+        '\u0642\u0628\u0644 \u0645\u06cc\u0644\u0627\u062f\u001f\u0628\u0639\u062f \u0645\u06cc\u0644\u0627\u062f',
     'eras.eraNarrow': '\u067e.\u0645\u001f\u0645.',
     'months.format.abbreviated':
         '\u0698\u0627\u0646\u0648\u06cc\u0647\u001f\u0641\u0648\u0631\u06cc\u0647\u001f\u0645\u0627\u0631\u0633\u001f\u0622\u0648\u0631\u06cc\u0644\u001f\u0645\u0647\u001f\u0698\u0648\u0626\u0646\u001f\u0698\u0648\u0626\u06cc\u0647\u001f\u0627\u0648\u062a\u001f\u0633\u067e\u062a\u0627\u0645\u0628\u0631\u001f\u0627\u06a9\u062a\u0628\u0631\u001f\u0646\u0648\u0627\u0645\u0628\u0631\u001f\u062f\u0633\u0627\u0645\u0628\u0631',
@@ -9833,6 +10046,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sontaxtsees\u001fMantaxtsees\u001fDenstaxtsees\u001fWunstaxtsees\u001fDondertaxtsees\u001fFraitaxtsees\u001fSatertaxtsees',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Xristub ai\u01c3\u00e2\u001fXristub khao\u01c3g\u00e2',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApr\u001fMay\u001fJun\u001fJul\u001fAug\u001fSep\u001fOct\u001fNov\u001fDec',
@@ -9870,6 +10084,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sonto\u001fMvulo\u001fSibili\u001fSithathu\u001fSine\u001fSihlanu\u001fMgqibelo',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'UKristo angakabuyi\u001fUkristo ebuyile',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Zib\u001fNhlo\u001fMbi\u001fMab\u001fNkw\u001fNhla\u001fNtu\u001fNcw\u001fMpan\u001fMfu\u001fLwe\u001fMpal',
@@ -9926,6 +10141,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0906\u0907\u0924\u092c\u093e\u0930\u001f\u0938\u094b\u092e\u092c\u093e\u0930\u001f\u092e\u0919\u094d\u0917\u0932\u092c\u093e\u0930\u001f\u092c\u0941\u0927\u092c\u093e\u0930\u001f\u092c\u093f\u0939\u093f\u092c\u093e\u0930\u001f\u0936\u0941\u0915\u094d\u0930\u092c\u093e\u0930\u001f\u0936\u0928\u093f\u092c\u093e\u0930',
     'eras.eraAbbr':
+        '\u0908\u0938\u093e \u092a\u0942\u0930\u094d\u0935\u001f\u0938\u0928\u094d',
+    'eras.eraNames':
         '\u0908\u0938\u093e \u092a\u0942\u0930\u094d\u0935\u001f\u0938\u0928\u094d',
     'eras.eraNarrow':
         '\u0908\u0938\u093e \u092a\u0942\u0930\u094d\u0935\u001f\u0938\u0928\u094d',
@@ -9990,6 +10207,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'zondag\u001fmaandag\u001fdinsdag\u001fwoensdag\u001fdonderdag\u001fvrijdag\u001fzaterdag',
     'eras.eraAbbr': 'v.Chr.\u001fn.Chr.',
+    'eras.eraNames': 'voor Christus\u001fna Christus',
     'eras.eraNarrow': 'v.C.\u001fn.C.',
     'months.format.abbreviated':
         'jan\u001ffeb\u001fmrt\u001fapr\u001fmei\u001fjun\u001fjul\u001faug\u001fsep\u001fokt\u001fnov\u001fdec',
@@ -10038,6 +10256,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u0254\u0301nd\u0254\u001fm\u0254\u0301nd\u0254\u001fs\u0254\u0301nd\u0254 maf\u00fa m\u00e1ba\u001fs\u0254\u0301nd\u0254 maf\u00fa m\u00e1lal\u001fs\u0254\u0301nd\u0254 maf\u00fa m\u00e1na\u001fmab\u00e1g\u00e1 m\u00e1 sukul\u001fs\u00e1sadi',
     'eras.eraAbbr': 'BL\u001fPB',
+    'eras.eraNames': 'B\u00f3 Lahl\u025b\u0304\u001fPfi\u025b Bur\u012b',
     'eras.eraNarrow': 'BL\u001fPB',
     'months.format.abbreviated':
         'ng1\u001fng2\u001fng3\u001fng4\u001fng5\u001fng6\u001fng7\u001fng8\u001fng9\u001fng10\u001fng11\u001fkris',
@@ -10080,6 +10299,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'ly\u025b\u02bc\u025b\u0301 s\u1e85\u00ed\u014bt\u00e8\u001fmvf\u00f2 ly\u025b\u030c\u02bc\u001fmb\u0254\u0301\u0254nt\u00e8 mvf\u00f2 ly\u025b\u030c\u02bc\u001fts\u00e8ts\u025b\u0300\u025b ly\u025b\u030c\u02bc\u001fmb\u0254\u0301\u0254nt\u00e8 tsets\u025b\u0300\u025b ly\u025b\u030c\u02bc\u001fmvf\u00f2 m\u00e0ga ly\u025b\u030c\u02bc\u001fm\u00e0ga ly\u025b\u030c\u02bc',
     'eras.eraAbbr': 'm.z.Y.\u001fm.g.n.Y.',
+    'eras.eraNames':
+        'm\u00e9 zy\u00e9 Y\u011bs\u00f4\u001fm\u00e9 g\u00ffo \u0144zy\u00e9 Y\u011bs\u00f4',
     'eras.eraNarrow': 'm.z.Y.\u001fm.g.n.Y.',
     'months.format.abbreviated':
         'sa\u014b tsets\u025b\u0300\u025b l\u00f9m\u001fsa\u014b k\u00e0g ngw\u00f3\u014b\u001fsa\u014b lepy\u00e8 sh\u00fam\u001fsa\u014b c\u00ff\u00f3\u001fsa\u014b ts\u025b\u0300\u025b c\u00ff\u00f3\u001fsa\u014b nj\u00ffol\u00e1\u02bc\u001fsa\u014b ty\u025b\u0300b ty\u025b\u0300b mb\u0289\u0300\u014b\u001fsa\u014b mb\u0289\u0300\u014b\u001fsa\u014b ngw\u0254\u0300\u02bc mb\u00ff\u025b\u001fsa\u014b t\u00e0\u014ba tsets\u00e1\u02bc\u001fsa\u014b mejwo\u014b\u00f3\u001fsa\u014b l\u00f9m',
@@ -10145,6 +10366,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u00f8ndag\u001fmandag\u001ftirsdag\u001fonsdag\u001ftorsdag\u001ffredag\u001fl\u00f8rdag',
     'eras.eraAbbr': 'f.Kr.\u001fe.Kr.',
+    'eras.eraNames': 'f\u00f8r Kristus\u001fetter Kristus',
     'eras.eraNarrow': 'f.Kr.\u001fe.Kr.',
     'months.format.abbreviated':
         'jan.\u001ffeb.\u001fmars\u001fapr.\u001fmai\u001fjuni\u001fjuli\u001faug.\u001fsep.\u001fokt.\u001fnov.\u001fdes.',
@@ -10168,6 +10390,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u07de\u07ca\u07ef\u07d9\u001f\u07de\u07d0\u07ec\u07d3\u001f\u07de\u07d0\u07ec\u07df\u001f\u07de\u07ce\u07e3\u001f\u07d3\u07cc\u07df\u001f\u07db\u07cc\u07ec\u07e3\u001f\u07de\u07cd\u07f2\u07d8',
     'eras.eraAbbr':
         '\u07cc\u07db. \u07e1. \u07e2\u07cd\u07eb\u001f\u07cc\u07db. \u07e1. \u07de\u07d0\u07eb',
+    'eras.eraNames':
+        '\u07cc\u07db\u07ca\u07eb \u07e1\u07cf\u07e6\u07cc \u07e2\u07cd\u07eb\u001f\u07cc\u07db\u07ca\u07eb \u07e1\u07cf\u07e6\u07cc \u07de\u07d0\u07eb',
     'eras.eraNarrow':
         '\u07cc\u07db. \u07e2\u07cd\u07eb\u001f\u07cc\u07db. \u07de\u07d0\u07eb',
     'gmtFormat': '\u07dc\u07ed\u07d5\u07d6{0}',
@@ -10200,6 +10424,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Lamorena\u001fMo\u0161upologo\u001fLabobedi\u001fLaboraro\u001fLabone\u001fLabohlano\u001fMokibelo',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Before Christ\u001fAnno Domini',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMat\u001fApo\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNof\u001fDis',
@@ -10234,6 +10459,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'C\u00e4\u014b ku\u0254th\u001fJiec la\u0331t\u001fR\u025bw l\u00e4tni\u001fDi\u0254\u0331k l\u00e4tni\u001f\u014auaan l\u00e4tni\u001fDhieec l\u00e4tni\u001fB\u00e4k\u025bl l\u00e4tni',
     'eras.eraAbbr': 'AY\u001f\u0190Y',
+    'eras.eraNames': 'A ka\u0331n Yecu ni dap\u001f\u0190 ca Yecu dap',
     'eras.eraNarrow': 'AY\u001f\u0190Y',
     'months.format.abbreviated':
         'Tiop\u001fP\u025bt\u001fDu\u0254\u0331\u0254\u0331\u001fGuak\u001fDu\u00e4\u001fKor\u001fPay\u001fThoo\u001fT\u025b\u025b\u001fLaa\u001fKur\u001fTid',
@@ -10280,6 +10506,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sande\u001fOrwokubanza\u001fOrwakabiri\u001fOrwakashatu\u001fOrwakana\u001fOrwakataano\u001fOrwamukaaga',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Kurisito Atakaijire\u001fKurisito Yaijire',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'KBZ\u001fKBR\u001fKST\u001fKKN\u001fKTN\u001fKMK\u001fKMS\u001fKMN\u001fKMW\u001fKKM\u001fKNK\u001fKNB',
@@ -10351,6 +10578,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Dilbata\u001fWiixata\u001fKibxata\u001fRoobii\u001fKamisa\u001fJimaata\u001fSanbata',
     'eras.eraAbbr': 'DhKD\u001fBA',
+    'eras.eraNames': 'Dhaloota Kiristoos Dura\u001fBara Araaraa',
     'eras.eraNarrow': 'Dh\u001fB',
     'months.format.abbreviated':
         'Ama\u001fGur\u001fBitootessa\u001fElb\u001fCam\u001fWax\u001fAdo\u001fHag\u001fFul\u001fOnk\u001fSadaasa\u001fMud',
@@ -10417,6 +10645,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0b30\u0b2c\u0b3f\u0b2c\u0b3e\u0b30\u001f\u0b38\u0b4b\u0b2e\u0b2c\u0b3e\u0b30\u001f\u0b2e\u0b19\u0b4d\u0b17\u0b33\u0b2c\u0b3e\u0b30\u001f\u0b2c\u0b41\u0b27\u0b2c\u0b3e\u0b30\u001f\u0b17\u0b41\u0b30\u0b41\u0b2c\u0b3e\u0b30\u001f\u0b36\u0b41\u0b15\u0b4d\u0b30\u0b2c\u0b3e\u0b30\u001f\u0b36\u0b28\u0b3f\u0b2c\u0b3e\u0b30',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames':
+        '\u0b16\u0b4d\u0b30\u0b40\u0b37\u0b4d\u0b1f\u0b2a\u0b42\u0b30\u0b4d\u0b2c\u001f\u0b16\u0b4d\u0b30\u0b40\u0b37\u0b4d\u0b1f\u0b3e\u0b2c\u0b4d\u0b26',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         '\u0b1c\u0b3e\u0b28\u0b41\u0b06\u0b30\u0b40\u001f\u0b2b\u0b47\u0b2c\u0b43\u0b06\u0b30\u0b40\u001f\u0b2e\u0b3e\u0b30\u0b4d\u0b1a\u0b4d\u0b1a\u001f\u0b05\u0b2a\u0b4d\u0b30\u0b47\u0b32\u001f\u0b2e\u0b07\u001f\u0b1c\u0b41\u0b28\u001f\u0b1c\u0b41\u0b32\u0b3e\u0b07\u001f\u0b05\u0b17\u0b37\u0b4d\u0b1f\u001f\u0b38\u0b47\u0b2a\u0b4d\u0b1f\u0b47\u0b2e\u0b4d\u0b2c\u0b30\u001f\u0b05\u0b15\u0b4d\u0b1f\u0b4b\u0b2c\u0b30\u001f\u0b28\u0b2d\u0b47\u0b2e\u0b4d\u0b2c\u0b30\u001f\u0b21\u0b3f\u0b38\u0b47\u0b2e\u0b4d\u0b2c\u0b30',
@@ -10467,6 +10697,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u0425\u0443\u044b\u0446\u0430\u0443\u0431\u043e\u043d\u001f\u041a\u044a\u0443\u044b\u0440\u0438\u0441\u04d5\u0440\u001f\u0414\u044b\u0446\u0446\u04d5\u0433\u001f\u04d4\u0440\u0442\u044b\u0446\u0446\u04d5\u0433\u001f\u0426\u044b\u043f\u043f\u04d5\u0440\u04d5\u043c\u001f\u041c\u0430\u0439\u0440\u04d5\u043c\u0431\u043e\u043d\u001f\u0421\u0430\u0431\u0430\u0442',
     'eras.eraAbbr': '\u043d.\u0434.\u0430.\u001f\u043d.\u0434.',
+    'eras.eraNames': '\u043d.\u0434.\u0430.\u001f\u043d.\u0434.',
     'eras.eraNarrow': '\u043d.\u0434.\u0430.\u001f\u043d.\u0434.',
     'months.format.abbreviated':
         '\u044f\u043d\u0432.\u001f\u0444\u0435\u0432.\u001f\u043c\u0430\u0440.\u001f\u0430\u043f\u0440.\u001f\u043c\u0430\u0439\u044b\u001f\u0438\u044e\u043d\u044b\u001f\u0438\u044e\u043b\u044b\u001f\u0430\u0432\u0433.\u001f\u0441\u0435\u043d.\u001f\u043e\u043a\u0442.\u001f\u043d\u043e\u044f.\u001f\u0434\u0435\u043a.',
@@ -10537,6 +10768,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0a10\u0a24\u0a35\u0a3e\u0a30\u001f\u0a38\u0a4b\u0a2e\u0a35\u0a3e\u0a30\u001f\u0a2e\u0a70\u0a17\u0a32\u0a35\u0a3e\u0a30\u001f\u0a2c\u0a41\u0a71\u0a27\u0a35\u0a3e\u0a30\u001f\u0a35\u0a40\u0a30\u0a35\u0a3e\u0a30\u001f\u0a38\u0a3c\u0a41\u0a71\u0a15\u0a30\u0a35\u0a3e\u0a30\u001f\u0a38\u0a3c\u0a28\u0a40\u0a35\u0a3e\u0a30',
     'eras.eraAbbr': '\u0a08. \u0a2a\u0a42.\u001f\u0a38\u0a70\u0a28',
+    'eras.eraNames':
+        '\u0a08\u0a38\u0a35\u0a40 \u0a2a\u0a42\u0a30\u0a35\u001f\u0a08\u0a38\u0a35\u0a40 \u0a38\u0a70\u0a28',
     'eras.eraNarrow': '\u0a08.\u0a2a\u0a42.\u001f\u0a38\u0a70\u0a28',
     'months.format.abbreviated':
         '\u0a1c\u0a28\u001f\u0a2b\u0a3c\u0a30\u001f\u0a2e\u0a3e\u0a30\u0a1a\u001f\u0a05\u0a2a\u0a4d\u0a30\u0a48\u001f\u0a2e\u0a08\u001f\u0a1c\u0a42\u0a28\u001f\u0a1c\u0a41\u0a32\u0a3e\u001f\u0a05\u0a17\u001f\u0a38\u0a24\u0a70\u001f\u0a05\u0a15\u0a24\u0a42\u001f\u0a28\u0a35\u0a70\u001f\u0a26\u0a38\u0a70',
@@ -10566,6 +10799,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0627\u062a\u0648\u0627\u0631\u001f\u067e\u06cc\u0631\u001f\u0645\u0646\u06af\u0644\u001f\u0628\u064f\u062f\u06be\u001f\u062c\u0645\u0639\u0631\u0627\u062a\u001f\u062c\u0645\u0639\u06c1\u001f\u06c1\u0641\u062a\u06c1',
     'eras.eraAbbr':
+        '\u0627\u064a\u0633\u0627\u067e\u0648\u0631\u0648\u001f\u0633\u06ba',
+    'eras.eraNames':
         '\u0627\u064a\u0633\u0627\u067e\u0648\u0631\u0648\u001f\u0633\u06ba',
     'eras.eraNarrow':
         '\u0627\u064a\u0633\u0627\u067e\u0648\u0631\u0648\u001f\u0633\u06ba',
@@ -10633,6 +10868,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'S\u1ecd\u0301nd\u00e8\u001fM\u1ecd\u0301nd\u00e8\u001fTi\u00fazd\u00e8\u001fW\u1eb9\u0301n\u1eb9\u0301zd\u00e8\u001fT\u1ecd\u0301zd\u00e8\u001fFra\u00edd\u00e8\u001fS\u00e1t\u1ecdd\u00e8',
     'eras.eraAbbr': 'BK\u001fKIY',
+    'eras.eraNames': 'Bif\u1ecd\u0301 Kraist\u001fKraist Im Yi\u1eb9',
     'eras.eraNarrow': 'BK\u001fKIY',
     'months.format.abbreviated':
         'J\u00e9n\u001fF\u1eb9\u0301b\u001fMach\u001f\u00c9pr\u001fMee\u001fJun\u001fJul\u001f\u1eccg\u1ecd\u001fS\u1eb9p\u001f\u1ecckt\u001fN\u1ecdv\u001fDis',
@@ -10714,6 +10950,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         'N\u001fP\u001fW\u001f\u015a\u001fC\u001fP\u001fS',
     'eras.eraAbbr': 'p.n.e.\u001fn.e.',
+    'eras.eraNames': 'przed nasz\u0105 er\u0105\u001fnaszej ery',
     'eras.eraNarrow': 'p.n.e.\u001fn.e.',
     'months.format.abbreviated':
         'sty\u001flut\u001fmar\u001fkwi\u001fmaj\u001fcze\u001flip\u001fsie\u001fwrz\u001fpa\u017a\u001flis\u001fgru',
@@ -10769,6 +11006,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u064a\u0648\u0646\u06cd\u001f\u062f\u0648\u0646\u06cd\u001f\u062f\u0631\u06d0\u0646\u06cd\u001f\u0685\u0644\u0631\u0646\u06cd\u001f\u067e\u064a\u0646\u0681\u0646\u06cd\u001f\u062c\u0645\u0639\u0647\u001f\u0627\u0648\u0646\u06cd',
     'eras.eraAbbr':
         '\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0648\u0693\u0627\u0646\u062f\u06d0\u001f\u0645.',
+    'eras.eraNames':
+        '\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0685\u062e\u0647 \u0648\u0693\u0627\u0646\u062f\u06d0\u001f\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0685\u062e\u0647 \u0648\u0631\u0648\u0633\u062a\u0647',
     'eras.eraNarrow':
         '\u0644\u0647 \u0645\u06cc\u0644\u0627\u062f \u0648\u0693\u0627\u0646\u062f\u06d0\u001f\u0645.',
     'months.format.abbreviated':
@@ -10855,6 +11094,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'domingo\u001fsegunda-feira\u001fter\u00e7a-feira\u001fquarta-feira\u001fquinta-feira\u001fsexta-feira\u001fs\u00e1bado',
     'eras.eraAbbr': 'a.C.\u001fd.C.',
+    'eras.eraNames': 'antes de Cristo\u001fdepois de Cristo',
     'eras.eraNarrow': 'a.C.\u001fd.C.',
     'months.format.abbreviated':
         'jan.\u001ffev.\u001fmar.\u001fabr.\u001fmai.\u001fjun.\u001fjul.\u001fago.\u001fset.\u001fout.\u001fnov.\u001fdez.',
@@ -10939,6 +11179,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Domingo\u001fLunes\u001fMartes\u001fMi\u00e9rcoles\u001fJueves\u001fViernes\u001fS\u00e1bado',
     'eras.eraAbbr': 'a.d.\u001fd.C.',
+    'eras.eraNames': '\u00f1awpa cristu\u001fchanta cristu',
     'eras.eraNarrow': 'a.d.\u001fdC',
     'months.format.abbreviated':
         'Ene\u001fFeb\u001fMar\u001fAbr\u001fMay\u001fJun\u001fJul\u001fAgo\u001fSet\u001fOct\u001fNov\u001fDic',
@@ -11039,6 +11280,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dumengia\u001fglindesdi\u001fmardi\u001fmesemna\u001fgievgia\u001fvenderdi\u001fsonda',
     'eras.eraAbbr': 'a.Cr.\u001fs.C.',
+    'eras.eraNames': 'avant Cristus\u001fsuenter Cristus',
     'eras.eraNarrow': 'a.Cr.\u001fs.C.',
     'months.format.abbreviated':
         'schan.\u001ffavr.\u001fmars\u001favr.\u001fmatg\u001fzercl.\u001ffan.\u001favust\u001fsett.\u001foct.\u001fnov.\u001fdec.',
@@ -11074,6 +11316,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Ku w\u2019indwi\u001fKu wa mbere\u001fKu wa kabiri\u001fKu wa gatatu\u001fKu wa kane\u001fKu wa gatanu\u001fKu wa gatandatu',
     'eras.eraAbbr': 'Mb.Y.\u001fNy.Y',
+    'eras.eraNames': 'Mbere ya Yezu\u001fNyuma ya Yezu',
     'eras.eraNarrow': 'Mb.Y.\u001fNy.Y',
     'months.format.abbreviated':
         'Mut.\u001fGas.\u001fWer.\u001fMat.\u001fGic.\u001fKam.\u001fNya.\u001fKan.\u001fNze.\u001fUkw.\u001fUgu.\u001fUku.',
@@ -11136,6 +11379,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'duminic\u0103\u001fluni\u001fmar\u021bi\u001fmiercuri\u001fjoi\u001fvineri\u001fs\u00e2mb\u0103t\u0103',
     'eras.eraAbbr': '\u00ee.Hr.\u001fd.Hr.',
+    'eras.eraNames': '\u00eenainte de Hristos\u001fdup\u0103 Hristos',
     'eras.eraNarrow': '\u00ee.Hr.\u001fd.Hr.',
     'months.format.abbreviated':
         'ian.\u001ffeb.\u001fmar.\u001fapr.\u001fmai\u001fiun.\u001fiul.\u001faug.\u001fsept.\u001foct.\u001fnov.\u001fdec.',
@@ -11170,6 +11414,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Ijumapili\u001fIjumatatu\u001fIjumanne\u001fIjumatano\u001fAlhamisi\u001fIjumaa\u001fIjumamosi',
     'eras.eraAbbr': 'KM\u001fBM',
+    'eras.eraNames': 'Kabla ya Mayesu\u001fBaada ya Mayesu',
     'eras.eraNarrow': 'KM\u001fBM',
     'months.format.abbreviated':
         'M1\u001fM2\u001fM3\u001fM4\u001fM5\u001fM6\u001fM7\u001fM8\u001fM9\u001fM10\u001fM11\u001fM12',
@@ -11236,6 +11481,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435\u001f\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a\u001f\u0432\u0442\u043e\u0440\u043d\u0438\u043a\u001f\u0441\u0440\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0435\u0440\u0433\u001f\u043f\u044f\u0442\u043d\u0438\u0446\u0430\u001f\u0441\u0443\u0431\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u0434\u043e \u043d. \u044d.\u001f\u043d. \u044d.',
+    'eras.eraNames':
+        '\u0434\u043e \u0420\u043e\u0436\u0434\u0435\u0441\u0442\u0432\u0430 \u0425\u0440\u0438\u0441\u0442\u043e\u0432\u0430\u001f\u043e\u0442 \u0420\u043e\u0436\u0434\u0435\u0441\u0442\u0432\u0430 \u0425\u0440\u0438\u0441\u0442\u043e\u0432\u0430',
     'eras.eraNarrow': '\u0434\u043e \u043d.\u044d.\u001f\u043d.\u044d.',
     'months.format.abbreviated':
         '\u044f\u043d\u0432.\u001f\u0444\u0435\u0432\u0440.\u001f\u043c\u0430\u0440.\u001f\u0430\u043f\u0440.\u001f\u043c\u0430\u044f\u001f\u0438\u044e\u043d.\u001f\u0438\u044e\u043b.\u001f\u0430\u0432\u0433.\u001f\u0441\u0435\u043d\u0442.\u001f\u043e\u043a\u0442.\u001f\u043d\u043e\u044f\u0431.\u001f\u0434\u0435\u043a.',
@@ -11310,6 +11557,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapilyi\u001fJumatatuu\u001fJumanne\u001fJumatanu\u001fAlhamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Kristu\u001fBaada ya Kristu',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -11395,6 +11643,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0431\u0430\u0441\u043a\u044b\u04bb\u044b\u0430\u043d\u043d\u044c\u0430\u001f\u0431\u044d\u043d\u0438\u0434\u0438\u044d\u043d\u043d\u044c\u0438\u043a\u001f\u043e\u043f\u0442\u0443\u043e\u0440\u0443\u043d\u043d\u044c\u0443\u043a\u001f\u0441\u044d\u0440\u044d\u0434\u044d\u001f\u0447\u044d\u043f\u043f\u0438\u044d\u0440\u001f\u0411\u044d\u044d\u0442\u0438\u04a5\u0441\u044d\u001f\u0441\u0443\u0431\u0443\u043e\u0442\u0430',
     'eras.eraAbbr': '\u0431. \u044d. \u0438.\u001f\u0431. \u044d',
+    'eras.eraNames': '\u0431. \u044d. \u0438.\u001f\u0431. \u044d',
     'eras.eraNarrow': '\u0431. \u044d. \u0438.\u001f\u0431. \u044d',
     'months.format.abbreviated':
         '\u0422\u043e\u0445\u0441\u001f\u041e\u043b\u0443\u043d\u001f\u041a\u043b\u043d\u001f\u041c\u0441\u0443\u001f\u042b\u0430\u043c\u001f\u0411\u044d\u0441\u001f\u041e\u0442\u0439\u001f\u0410\u0442\u0440\u001f\u0411\u043b\u0495\u001f\u0410\u043b\u0442\u001f\u0421\u044d\u0442\u001f\u0410\u0445\u0441',
@@ -11426,6 +11675,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Mderot ee are\u001fMderot ee kuni\u001fMderot ee ong\u2019wan\u001fMderot ee inet\u001fMderot ee ile\u001fMderot ee sapa\u001fMderot ee kwe',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Christo\u001fBaada ya Christo',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Obo\u001fWaa\u001fOku\u001fOng\u001fIme\u001fIle\u001fSap\u001fIsi\u001fSaa\u001fTom\u001fTob\u001fTow',
@@ -11445,6 +11695,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u1c65\u1c64\u1c78\u1c5c\u1c6e\u001f\u1c5a\u1c5b\u1c6e\u001f\u1c75\u1c5f\u1c5e\u1c6e\u001f\u1c65\u1c5f\u1c79\u1c5c\u1c69\u1c71\u001f\u1c65\u1c5f\u1c79\u1c68\u1c6b\u1c64\u001f\u1c61\u1c5f\u1c79\u1c68\u1c69\u1c62\u001f\u1c67\u1c69\u1c66\u1c69\u1c62',
     'eras.eraAbbr': '\u1c75\u1c64 \u1c65\u1c64\u001f\u1c64\u1c65\u1c63\u1c64',
+    'eras.eraNames': '\u1c75\u1c64 \u1c65\u1c64\u001f\u1c64\u1c65\u1c63\u1c64',
     'eras.eraNarrow': '\u1c75\u1c64 \u1c65\u1c64\u001f\u1c64\u1c65\u1c63\u1c64',
     'gmtFormat': '\u1c61\u1c64\u1c6e\u1c62\u1c74\u1c64{0}',
     'months.format.abbreviated':
@@ -11488,6 +11739,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Mulungu\u001fJumatatu\u001fJumanne\u001fJumatano\u001fAlahamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'AK\u001fPK',
+    'eras.eraNames': 'Ashanali uKilisito\u001fPamwandi ya Kilisto',
     'eras.eraNarrow': 'AK\u001fPK',
     'months.format.abbreviated':
         'Mup\u001fMwi\u001fMsh\u001fMun\u001fMag\u001fMuj\u001fMsp\u001fMpg\u001fMye\u001fMok\u001fMus\u001fMuh',
@@ -11533,6 +11785,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dom\u00ecniga\u001flunis\u001fmartis\u001fm\u00e8rcuris\u001fgi\u00f2bia\u001fchen\u00e0bura\u001fs\u00e0badu',
     'eras.eraAbbr': 'a.C.\u001fp.C.',
+    'eras.eraNames': 'in antis de Cristu\u001fa pustis de Cristu',
     'eras.eraNarrow': 'a.C.\u001fp.C.',
     'months.format.abbreviated':
         'ghe\u001ffre\u001fmar\u001fabr\u001fmaj\u001fl\u00e0m\u001ftr\u00ec\u001faus\u001fcab\u001fstG\u001fstA\u001fnad',
@@ -11580,6 +11833,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dum\u00ecnica\u001flunnid\u00eca\u001fmartid\u00eca\u001fmercurid\u00eca\u001fjovid\u00eca\u001fvennirid\u00eca\u001fs\u00e0bbatu',
     'eras.eraAbbr': 'p.C.\u001fd.C.',
+    'eras.eraNames': 'prima di Cristu\u001fdoppu di Cristu',
     'eras.eraNarrow': 'pC\u001fdC',
     'months.format.abbreviated':
         'jin\u001ffri\u001fmar\u001fapr\u001fmaj\u001fgiu\u001fgnt\u001fagu\u001fsit\u001futt\u001fnuv\u001fdic',
@@ -11601,6 +11855,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0622\u0686\u0631\u001f\u0633\u0648\u0645\u0631\u001f\u0627\u06b1\u0627\u0631\u0648\u001f\u0627\u0631\u0628\u0639\u001f\u062e\u0645\u064a\u0633\u001f\u062c\u0645\u0639\u0648\u001f\u0687\u0646\u0687\u0631',
     'eras.eraAbbr': '\u0642 \u0645\u001f\u0639',
+    'eras.eraNames':
+        '\u0642\u0628\u0644 \u0645\u0633\u064a\u062d\u001f\u0639\u064a\u0633\u0648\u064a \u06a9\u0627\u0646 \u067e\u0647\u0631\u064a\u0646',
     'eras.eraNarrow': '\u0642 \u0645\u001f\u0639',
     'months.format.abbreviated':
         '\u062c\u0646\u0648\u0631\u064a\u001f\u0641\u064a\u0628\u0631\u0648\u0631\u064a\u001f\u0645\u0627\u0631\u0686\u001f\u0627\u067e\u0631\u064a\u0644\u001f\u0645\u0626\u064a\u001f\u062c\u0648\u0646\u001f\u062c\u0648\u0644\u0627\u0621\u0650\u001f\u0622\u06af\u0633\u067d\u001f\u0633\u064a\u067e\u067d\u0645\u0628\u0631\u001f\u0622\u06aa\u067d\u0648\u0628\u0631\u001f\u0646\u0648\u0645\u0628\u0631\u001f\u068a\u0633\u0645\u0628\u0631',
@@ -11659,6 +11915,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u0906\u0930\u094d\u0924\u001f\u0938\u0942\u001f\u092e\u0902\u001f\u092c\u0941\u0952\u0927\u001f\u0935\u093f\u0938\u001f\u091c\u0941\u092e\u001f\u091b\u0902\u091b',
     'eras.eraAbbr': '\u092c\u0940\u0938\u0940\u001f\u090f\u0921\u0940',
+    'eras.eraNames': '\u092c\u0940\u0938\u0940\u001f\u090f\u0921\u0940',
     'eras.eraNarrow': '\u092c\u0940\u0938\u0940\u001f\u090f\u0921\u0940',
     'gmtFormat': '\u091c\u0940\u090f\u092e\u091f\u0940{0}',
     'months.format.abbreviated':
@@ -11695,6 +11952,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'sotnabeaivi\u001fvuoss\u00e1rga\u001fma\u014b\u014beb\u00e1rga\u001fgaskavahkku\u001fduorasdat\u001fbearjadat\u001fl\u00e1vvardat',
     'eras.eraAbbr': 'o.Kr.\u001fm.Kr.',
+    'eras.eraNames': 'ovdal Kristtusa\u001fma\u014b\u014bel Kristtusa',
     'eras.eraNarrow': 'o.Kr.\u001fm.Kr.',
     'gmtFormat': 'UTC{0}',
     'hourFormat': '+HH:mm;\u2212HH:mm',
@@ -11733,6 +11991,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'sotnabeaivi\u001fm\u00e1nnodat\u001fdisdat\u001fgaskavahkku\u001fduorastat\u001fbearjadat\u001fl\u00e1vvordat',
     'eras.eraAbbr': 'oKr.\u001fmKr.',
+    'eras.eraNames': 'ovdal Kristusa\u001fma\u014b\u014bel Kristusa',
     'eras.eraNarrow': 'oKr.\u001fmKr.',
     'gmtFormat': '{0} GMT',
     'hourFormat': '+HH:mm;-HH:mm',
@@ -11770,6 +12029,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Dimingu\u001fChiposi\u001fChipiri\u001fChitatu\u001fChinai\u001fChishanu\u001fSabudu',
     'eras.eraAbbr': 'AC\u001fAD',
+    'eras.eraNames': 'Antes de Cristo\u001fAnno Domini',
     'eras.eraNarrow': 'AC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFev\u001fMar\u001fAbr\u001fMai\u001fJun\u001fJul\u001fAug\u001fSet\u001fOtu\u001fNov\u001fDec',
@@ -11807,6 +12067,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Alhadi\u001fAtinni\u001fAtalaata\u001fAlarba\u001fAlhamiisa\u001fAlzuma\u001fAsibti',
     'eras.eraAbbr': 'IJ\u001fIZ',
+    'eras.eraNames': 'Isaa jine\u001fIsaa zamanoo',
     'eras.eraNarrow': 'IJ\u001fIZ',
     'months.format.abbreviated':
         '\u017dan\u001fFee\u001fMar\u001fAwi\u001fMe\u001f\u017duw\u001f\u017duy\u001fUt\u001fSek\u001fOkt\u001fNoo\u001fDee',
@@ -11842,6 +12103,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Bikua-\u00f4ko\u001fB\u00efkua-\u00fbse\u001fB\u00efkua-pt\u00e2\u001fB\u00efkua-us\u00ef\u00f6\u001fB\u00efkua-ok\u00fc\u001fL\u00e2p\u00f4s\u00f6\u001fL\u00e2yenga',
     'eras.eraAbbr': 'KnK\u001fNpK',
+    'eras.eraNames':
+        'K\u00f4zo na Kr\u00eestu\u001fNa pek\u00f4 t\u00ee Kr\u00eestu',
     'eras.eraNarrow': 'KnK\u001fNpK',
     'months.format.abbreviated':
         'Nye\u001fFul\u001fMb\u00e4\u001fNgu\u001fB\u00eal\u001fF\u00f6n\u001fLen\u001fK\u00fck\u001fMvu\u001fNgb\u001fNab\u001fKak',
@@ -11877,6 +12140,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u2d30\u2d59\u2d30\u2d4e\u2d30\u2d59\u001f\u2d30\u2d62\u2d4f\u2d30\u2d59\u001f\u2d30\u2d59\u2d49\u2d4f\u2d30\u2d59\u001f\u2d30\u2d3d\u2d55\u2d30\u2d59\u001f\u2d30\u2d3d\u2d61\u2d30\u2d59\u001f\u2d59\u2d49\u2d4e\u2d61\u2d30\u2d59\u001f\u2d30\u2d59\u2d49\u2d39\u2d62\u2d30\u2d59',
     'eras.eraAbbr': '\u2d37\u2d30\u2d44\u001f\u2d37\u2d3c\u2d44',
+    'eras.eraNames':
+        '\u2d37\u2d30\u2d5c \u2d4f \u2d44\u2d49\u2d59\u2d30\u001f\u2d37\u2d3c\u2d3c\u2d49\u2d54 \u2d4f \u2d44\u2d49\u2d59\u2d30',
     'eras.eraNarrow': '\u2d37\u2d30\u2d44\u001f\u2d37\u2d3c\u2d44',
     'months.format.abbreviated':
         '\u2d49\u2d4f\u2d4f\u001f\u2d31\u2d55\u2d30\u001f\u2d4e\u2d30\u2d55\u001f\u2d49\u2d31\u2d54\u001f\u2d4e\u2d30\u2d62\u001f\u2d62\u2d53\u2d4f\u001f\u2d62\u2d53\u2d4d\u001f\u2d56\u2d53\u2d5b\u001f\u2d5b\u2d53\u2d5c\u001f\u2d3d\u2d5c\u2d53\u001f\u2d4f\u2d53\u2d61\u001f\u2d37\u2d53\u2d4a',
@@ -11911,6 +12176,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'asamas\u001faynas\u001fasinas\u001fak\u1e5bas\u001fakwas\u001fasimwas\u001fasi\u1e0dyas',
     'eras.eraAbbr': 'da\u025b\u001fdf\u025b',
+    'eras.eraNames': 'dat n \u025bisa\u001fdffir n \u025bisa',
     'eras.eraNarrow': 'da\u025b\u001fdf\u025b',
     'months.format.abbreviated':
         'inn\u001fb\u1e5ba\u001fma\u1e5b\u001fibr\u001fmay\u001fyun\u001fyul\u001f\u0263uc\u001fcut\u001fktu\u001fnuw\u001fduj',
@@ -11939,6 +12205,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u1010\u102d\u1010\u103a\u1089\u001f\u1078\u107c\u103a\u001f\u1075\u1062\u107c\u103a\u1038\u001f\u1015\u102f\u1010\u103a\u1089\u001f\u107d\u1010\u103a\u1038\u001f\u101e\u102f\u1075\u103a\u1038\u001f\u101e\u101d\u103a',
     'eras.eraAbbr':
         '\u1015\u102e\u1087\u1078\u102e\u1087\u001f\u1022\u1031\u1087\u1010\u102e\u1087',
+    'eras.eraNames':
+        '\u1022\u103d\u107c\u103a\u107c\u1083\u1088\u1078\u101d\u103a\u1088\u1076\u101b\u102d\u1010\u103a\u1089\u001f\u1015\u102e\u1076\u101b\u102d\u1010\u103a\u1089',
     'eras.eraNarrow':
         '\u1015\u102e\u1087\u1078\u102e\u1087\u001f\u1022\u1031\u1087\u1010\u102e\u1087',
     'months.format.abbreviated':
@@ -12002,6 +12270,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0d89\u0dbb\u0dd2\u0daf\u0dcf\u001f\u0dc3\u0db3\u0dd4\u0daf\u0dcf\u001f\u0d85\u0d9f\u0dc4\u0dbb\u0dd4\u0dc0\u0dcf\u0daf\u0dcf\u001f\u0db6\u0daf\u0dcf\u0daf\u0dcf\u001f\u0db6\u0dca\u200d\u0dbb\u0dc4\u0dc3\u0dca\u0db4\u0dad\u0dd2\u0db1\u0dca\u0daf\u0dcf\u001f\u0dc3\u0dd2\u0d9a\u0dd4\u0dbb\u0dcf\u0daf\u0dcf\u001f\u0dc3\u0dd9\u0db1\u0dc3\u0dd4\u0dbb\u0dcf\u0daf\u0dcf',
     'eras.eraAbbr':
         '\u0d9a\u0dca\u200d\u0dbb\u0dd2.\u0db4\u0dd6.\u001f\u0d9a\u0dca\u200d\u0dbb\u0dd2.\u0dc0.',
+    'eras.eraNames':
+        '\u0d9a\u0dca\u200d\u0dbb\u0dd2\u0dc3\u0dca\u0dad\u0dd4 \u0db4\u0dd6\u0dbb\u0dca\u0dc0\u001f\u0d9a\u0dca\u200d\u0dbb\u0dd2\u0dc3\u0dca\u0dad\u0dd4 \u0dc0\u0dbb\u0dca\u0dc2',
     'eras.eraNarrow':
         '\u0d9a\u0dca\u200d\u0dbb\u0dd2.\u0db4\u0dd6.\u001f\u0d9a\u0dca\u200d\u0dbb\u0dd2.\u0dc0.',
     'gmtFormat': '\u0d9c\u0dca\u200d\u0dbb\u0dd2\u0db8\u0dc0\u0dda{0}',
@@ -12078,6 +12348,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'nede\u013ea\u001fpondelok\u001futorok\u001fstreda\u001f\u0161tvrtok\u001fpiatok\u001fsobota',
     'eras.eraAbbr': 'pred Kr.\u001fpo Kr.',
+    'eras.eraNames': 'pred Kristom\u001fpo Kristovi',
     'eras.eraNarrow': 'pred Kr.\u001fpo Kr.',
     'months.format.abbreviated':
         'jan\u001ffeb\u001fmar\u001fapr\u001fm\u00e1j\u001fj\u00fan\u001fj\u00fal\u001faug\u001fsep\u001fokt\u001fnov\u001fdec',
@@ -12155,6 +12426,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'nedelja\u001fponedeljek\u001ftorek\u001fsreda\u001f\u010detrtek\u001fpetek\u001fsobota',
     'eras.eraAbbr': 'pr. Kr.\u001fpo Kr.',
+    'eras.eraNames': 'pred Kristusom\u001fpo Kristusu',
     'eras.eraNarrow': 'pr. Kr.\u001fpo Kr.',
     'gmtFormat': 'GMT {0}',
     'hourFormat': '+HH.mm;-HH.mm',
@@ -12219,6 +12491,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         'pasepeivi\u001fvuossarg\u00e2\u001fmajebarg\u00e2\u001fkoskokko\u001ftuor\u00e2st\u00e2h\u001fv\u00e1stuppeivi\u001fl\u00e1vurd\u00e2h',
     'eras.eraAbbr': 'oKr.\u001fmKr.',
+    'eras.eraNames':
+        'Ovdil Kristus \u0161odd\u00e2m\u001fma\u014ba Kristus \u0161odd\u00e2m',
     'eras.eraNarrow': 'oKr.\u001fmKr.',
     'months.format.abbreviated':
         'u\u0111iv\u001fkuov\u00e2\u001fnjuh\u010d\u00e2\u001fcu\u00e1\u014bui\u001fvyesi\u001fkesi\u001fsyeini\u001fporge\u001f\u010doh\u010d\u00e2\u001froovv\u00e2d\u001fskamm\u00e2\u001fjuovl\u00e2',
@@ -12248,6 +12522,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Svondo\u001fMuvhuro\u001fChipiri\u001fChitatu\u001fChina\u001fChishanu\u001fMugovera',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Kristo asati auya\u001fmugore ramambo vedu',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Ndi\u001fKuk\u001fKur\u001fKub\u001fChv\u001fChk\u001fChg\u001fNya\u001fGun\u001fGum\u001fMbu\u001fZvi',
@@ -12294,6 +12569,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Axad\u001fIsniin\u001fTalaado\u001fArbaco\u001fKhamiis\u001fJimco\u001fSabti',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Ciise Hortii\u001fCiise Dabadii',
     'eras.eraNarrow': 'B\u001fA',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fAbr\u001fMay\u001fJun\u001fLul\u001fOgs\u001fSeb\u001fOkt\u001fNof\u001fDis',
@@ -12388,6 +12664,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'e diel\u001fe h\u00ebn\u00eb\u001fe mart\u00eb\u001fe m\u00ebrkur\u00eb\u001fe enjte\u001fe premte\u001fe shtun\u00eb',
     'eras.eraAbbr': 'p.K.\u001fmb.K.',
+    'eras.eraNames': 'para Krishtit\u001fmbas Krishtit',
     'eras.eraNarrow': 'p.K.\u001fmb.K.',
     'months.format.abbreviated':
         'jan\u001fshk\u001fmar\u001fpri\u001fmaj\u001fqer\u001fkorr\u001fgush\u001fsht\u001ftet\u001fn\u00ebn\u001fdhj',
@@ -12478,6 +12755,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u043d\u0435\u0434\u0435\u0459\u0430\u001f\u043f\u043e\u043d\u0435\u0434\u0435\u0459\u0430\u043a\u001f\u0443\u0442\u043e\u0440\u0430\u043a\u001f\u0441\u0440\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0440\u0442\u0430\u043a\u001f\u043f\u0435\u0442\u0430\u043a\u001f\u0441\u0443\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u043f. \u043d. \u0435.\u001f\u043d. \u0435.',
+    'eras.eraNames':
+        '\u043f\u0440\u0435 \u043d\u043e\u0432\u0435 \u0435\u0440\u0435\u001f\u043d\u043e\u0432\u0435 \u0435\u0440\u0435',
     'eras.eraNarrow': '\u043f.\u043d.\u0435.\u001f\u043d.\u0435.',
     'months.format.abbreviated':
         '\u0458\u0430\u043d\u001f\u0444\u0435\u0431\u001f\u043c\u0430\u0440\u001f\u0430\u043f\u0440\u001f\u043c\u0430\u0458\u001f\u0458\u0443\u043d\u001f\u0458\u0443\u043b\u001f\u0430\u0432\u0433\u001f\u0441\u0435\u043f\u001f\u043e\u043a\u0442\u001f\u043d\u043e\u0432\u001f\u0434\u0435\u0446',
@@ -12492,7 +12771,9 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.abbreviated':
         '\u043d\u0435\u0434\u001f\u043f\u043e\u043d\u001f\u0443\u0442\u043e\u001f\u0441\u0440\u0438\u001f\u0447\u0435\u0442\u001f\u043f\u0435\u0442\u001f\u0441\u0443\u0431',
     'days.format.wide':
-        '\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u001f\u043f\u043e\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u043a\u001f\u0443\u0442\u043e\u0440\u0430\u043a\u001f\u0441\u0440\u0438\u0458\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0440\u0442\u0430\u043a\u001f\u043f\u0435\u0442\u0430\u043a\u001f\u0441\u0443\u0431\u043e\u0442\u0430'
+        '\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u001f\u043f\u043e\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u043a\u001f\u0443\u0442\u043e\u0440\u0430\u043a\u001f\u0441\u0440\u0438\u0458\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0440\u0442\u0430\u043a\u001f\u043f\u0435\u0442\u0430\u043a\u001f\u0441\u0443\u0431\u043e\u0442\u0430',
+    'eras.eraNames':
+        '\u043f\u0440\u0438\u0458\u0435 \u043d\u043e\u0432\u0435 \u0435\u0440\u0435\u001f\u043d\u043e\u0432\u0435 \u0435\u0440\u0435'
   },
   'sr-Cyrl-ME': {
     'dayPeriods.afternoon1': '\u043f\u043e \u043f\u043e\u0434.',
@@ -12503,6 +12784,8 @@ const dateLocales = <String, Map<String, String>>{
     'dayPeriods.pm': '\u043f\u043e\u202f\u043f\u043e\u0434\u043d\u0435',
     'days.format.wide':
         '\u043d\u0435\u0434\u0458\u0435\u0459\u0430\u001f\u043f\u043e\u043d\u0435\u0434\u0435\u0459\u0430\u043a\u001f\u0443\u0442\u043e\u0440\u0430\u043a\u001f\u0441\u0440\u0438\u0458\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0440\u0442\u0430\u043a\u001f\u043f\u0435\u0442\u0430\u043a\u001f\u0441\u0443\u0431\u043e\u0442\u0430',
+    'eras.eraNames':
+        '\u043f\u0440\u0438\u0458\u0435 \u043d\u043e\u0432\u0435 \u0435\u0440\u0435\u001f\u043d\u043e\u0432\u0435 \u0435\u0440\u0435',
     'months.format.abbreviated':
         '\u0458\u0430\u043d\u001f\u0444\u0435\u0431\u001f\u043c\u0430\u0440\u0442\u001f\u0430\u043f\u0440\u001f\u043c\u0430\u0458\u001f\u0458\u0443\u043d\u001f\u0458\u0443\u043b\u001f\u0430\u0432\u0433\u001f\u0441\u0435\u043f\u0442\u001f\u043e\u043a\u0442\u001f\u043d\u043e\u0432\u001f\u0434\u0435\u0446'
   },
@@ -12567,6 +12850,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'nedelja\u001fponedeljak\u001futorak\u001fsreda\u001f\u010detvrtak\u001fpetak\u001fsubota',
     'eras.eraAbbr': 'p. n. e.\u001fn. e.',
+    'eras.eraNames': 'pre nove ere\u001fnove ere',
     'eras.eraNarrow': 'p.n.e.\u001fn.e.',
     'months.format.abbreviated':
         'jan\u001ffeb\u001fmar\u001fapr\u001fmaj\u001fjun\u001fjul\u001favg\u001fsep\u001fokt\u001fnov\u001fdec',
@@ -12579,7 +12863,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.abbreviated':
         'ned\u001fpon\u001futo\u001fsri\u001f\u010det\u001fpet\u001fsub',
     'days.format.wide':
-        'nedjelja\u001fponedjeljak\u001futorak\u001fsrijeda\u001f\u010detvrtak\u001fpetak\u001fsubota'
+        'nedjelja\u001fponedjeljak\u001futorak\u001fsrijeda\u001f\u010detvrtak\u001fpetak\u001fsubota',
+    'eras.eraNames': 'prije nove ere\u001fnove ere'
   },
   'sr-Latn-ME': {
     'dayPeriods.afternoon1': 'po pod.',
@@ -12589,6 +12874,7 @@ const dateLocales = <String, Map<String, String>>{
     'dayPeriods.pm': 'po\u202fpodne',
     'days.format.wide':
         'nedjelja\u001fponedeljak\u001futorak\u001fsrijeda\u001f\u010detvrtak\u001fpetak\u001fsubota',
+    'eras.eraNames': 'prije nove ere\u001fnove ere',
     'months.format.abbreviated':
         'jan\u001ffeb\u001fmart\u001fapr\u001fmaj\u001fjun\u001fjul\u001favg\u001fsept\u001fokt\u001fnov\u001fdec'
   },
@@ -12695,6 +12981,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Minggu\u001fSen\u00e9n\u001fSalasa\u001fRebo\u001fKemis\u001fJumaah\u001fSaptu',
     'eras.eraAbbr': 'SM\u001fM',
+    'eras.eraNames': 'SM\u001fM',
     'eras.eraNarrow': 'SM\u001fM',
     'months.format.abbreviated':
         'Jan\u001fP\u00e9b\u001fMar\u001fApr\u001fM\u00e9i\u001fJun\u001fJul\u001fAgs\u001fS\u00e9p\u001fOkt\u001fNop\u001fD\u00e9s',
@@ -12761,6 +13048,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u00f6ndag\u001fm\u00e5ndag\u001ftisdag\u001fonsdag\u001ftorsdag\u001ffredag\u001fl\u00f6rdag',
     'eras.eraAbbr': 'f.Kr.\u001fe.Kr.',
+    'eras.eraNames': 'f\u00f6re Kristus\u001fefter Kristus',
     'eras.eraNarrow': 'f.Kr.\u001fe.Kr.',
     'hourFormat': '+HH:mm;\u2212HH:mm',
     'months.format.abbreviated':
@@ -12857,6 +13145,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapili\u001fJumatatu\u001fJumanne\u001fJumatano\u001fAlhamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Kristo\u001fBaada ya Kristo',
     'eras.eraNarrow': 'KK\u001fBK',
     'gmtFormat': 'GMT {0}',
     'months.format.abbreviated':
@@ -12912,6 +13201,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u071a\u0715\u0712\u072b\u0712\u0710\u001f\u072c\u072a\u071d\u0722\u0712\u072b\u0712\u0710\u001f\u072c\u0720\u072c\u0712\u072b\u0712\u0710\u001f\u0710\u072a\u0712\u0725\u0712\u072b\u0712\u0710\u001f\u071a\u0721\u072b\u0712\u072b\u0712\u0710\u001f\u0725\u072a\u0718\u0712\u072c\u0710\u001f\u072b\u0712\u072c\u0710',
     'eras.eraAbbr': '\u070f\u0729\u0721\u200c\u001f\u070f\u072b\u0721\u200c',
+    'eras.eraNames':
+        '\u0729\u0715\u0721 \u0721\u072b\u071d\u071a\u0710\u001f\u072b\u0722\u072c\u0710 \u0721\u072a\u0722\u071d\u072c\u0710',
     'eras.eraNarrow': '\u070f\u0729\u0721\u200c\u001f\u070f\u072b\u0721\u200c',
     'months.format.abbreviated':
         '\u071f\u0722\u0718\u0722 \u0712\u001f\u072b\u0712\u071b\u001f\u0710\u0715\u072a\u001f\u0722\u071d\u0723\u0722\u001f\u0710\u071d\u072a\u001f\u071a\u0719\u071d\u072a\u0722\u001f\u072c\u0721\u0718\u0719\u001f\u0710\u0712\u001f\u0710\u071d\u0720\u0718\u0720\u001f\u072c\u072b\u072a\u071d\u0722 \u0710\u001f\u072c\u072b\u072a\u071d\u0722 \u0712\u001f\u071f\u0722\u0718\u0722 \u0710',
@@ -12988,6 +13279,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0b9e\u0bbe\u0baf\u0bbf\u0bb1\u0bc1\u001f\u0ba4\u0bbf\u0b99\u0bcd\u0b95\u0bb3\u0bcd\u001f\u0b9a\u0bc6\u0bb5\u0bcd\u0bb5\u0bbe\u0baf\u0bcd\u001f\u0baa\u0bc1\u0ba4\u0ba9\u0bcd\u001f\u0bb5\u0bbf\u0baf\u0bbe\u0bb4\u0ba9\u0bcd\u001f\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bbf\u001f\u0b9a\u0ba9\u0bbf',
     'eras.eraAbbr':
         '\u0b95\u0bbf.\u0bae\u0bc1.\u001f\u0b95\u0bbf.\u0baa\u0bbf.',
+    'eras.eraNames':
+        '\u0b95\u0bbf\u0bb1\u0bbf\u0bb8\u0bcd\u0ba4\u0bc1\u0bb5\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bc1\u0ba9\u0bcd\u001f\u0b85\u0ba9\u0bcd\u0ba9\u0bcb \u0b9f\u0bcb\u0bae\u0bbf\u0ba9\u0bbf',
     'eras.eraNarrow':
         '\u0b95\u0bbf.\u0bae\u0bc1.\u001f\u0b95\u0bbf.\u0baa\u0bbf.',
     'months.format.abbreviated':
@@ -13058,6 +13351,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0c06\u0c26\u0c3f\u0c35\u0c3e\u0c30\u0c02\u001f\u0c38\u0c4b\u0c2e\u0c35\u0c3e\u0c30\u0c02\u001f\u0c2e\u0c02\u0c17\u0c33\u0c35\u0c3e\u0c30\u0c02\u001f\u0c2c\u0c41\u0c27\u0c35\u0c3e\u0c30\u0c02\u001f\u0c17\u0c41\u0c30\u0c41\u0c35\u0c3e\u0c30\u0c02\u001f\u0c36\u0c41\u0c15\u0c4d\u0c30\u0c35\u0c3e\u0c30\u0c02\u001f\u0c36\u0c28\u0c3f\u0c35\u0c3e\u0c30\u0c02',
     'eras.eraAbbr':
         '\u0c15\u0c4d\u0c30\u0c40\u0c2a\u0c42\u001f\u0c15\u0c4d\u0c30\u0c40\u0c36',
+    'eras.eraNames':
+        '\u0c15\u0c4d\u0c30\u0c40\u0c38\u0c4d\u0c24\u0c41 \u0c2a\u0c42\u0c30\u0c4d\u0c35\u0c02\u001f\u0c15\u0c4d\u0c30\u0c40\u0c38\u0c4d\u0c24\u0c41 \u0c36\u0c15\u0c02',
     'eras.eraNarrow':
         '\u0c15\u0c4d\u0c30\u0c40\u0c2a\u0c42\u001f\u0c15\u0c4d\u0c30\u0c40\u0c36',
     'months.format.abbreviated':
@@ -13096,6 +13391,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Nakaejuma\u001fNakaebarasa\u001fNakaare\u001fNakauni\u001fNakaung\u2019on\u001fNakakany\u001fNakasabiti',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Christo\u001fBaada ya Christo',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Rar\u001fMuk\u001fKwa\u001fDun\u001fMar\u001fMod\u001fJol\u001fPed\u001fSok\u001fTib\u001fLab\u001fPoo',
@@ -13148,6 +13444,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u042f\u043a\u0448\u0430\u043d\u0431\u0435\u001f\u0414\u0443\u0448\u0430\u043d\u0431\u0435\u001f\u0421\u0435\u0448\u0430\u043d\u0431\u0435\u001f\u0427\u043e\u0440\u0448\u0430\u043d\u0431\u0435\u001f\u041f\u0430\u043d\u04b7\u0448\u0430\u043d\u0431\u0435\u001f\u04b6\u0443\u043c\u044a\u0430\u001f\u0428\u0430\u043d\u0431\u0435',
     'eras.eraAbbr': '\u041f\u0435\u041c\u001f\u041f\u0430\u041c',
+    'eras.eraNames':
+        '\u041f\u0435\u0448 \u0430\u0437 \u043c\u0438\u043b\u043e\u0434\u001f\u041f\u0430\u0441 \u0430\u0437 \u043c\u0438\u043b\u043e\u0434',
     'eras.eraNarrow': '\u041f\u0435\u041c\u001f\u041f\u0430\u041c',
     'months.format.abbreviated':
         '\u042f\u043d\u0432\u001f\u0424\u0435\u0432\u001f\u041c\u0430\u0440\u001f\u0410\u043f\u0440\u001f\u041c\u0430\u0439\u001f\u0418\u044e\u043d\u001f\u0418\u044e\u043b\u001f\u0410\u0432\u0433\u001f\u0421\u0435\u043d\u001f\u041e\u043a\u0442\u001f\u041d\u043e\u044f\u001f\u0414\u0435\u043a',
@@ -13214,6 +13512,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0e27\u0e31\u0e19\u0e2d\u0e32\u0e17\u0e34\u0e15\u0e22\u0e4c\u001f\u0e27\u0e31\u0e19\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c\u001f\u0e27\u0e31\u0e19\u0e2d\u0e31\u0e07\u0e04\u0e32\u0e23\u001f\u0e27\u0e31\u0e19\u0e1e\u0e38\u0e18\u001f\u0e27\u0e31\u0e19\u0e1e\u0e24\u0e2b\u0e31\u0e2a\u0e1a\u0e14\u0e35\u001f\u0e27\u0e31\u0e19\u0e28\u0e38\u0e01\u0e23\u0e4c\u001f\u0e27\u0e31\u0e19\u0e40\u0e2a\u0e32\u0e23\u0e4c',
     'eras.eraAbbr':
         '\u0e01\u0e48\u0e2d\u0e19 \u0e04.\u0e28.\u001f\u0e04.\u0e28.',
+    'eras.eraNames':
+        '\u0e1b\u0e35\u0e01\u0e48\u0e2d\u0e19\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e01\u0e32\u0e25\u001f\u0e04\u0e23\u0e34\u0e2a\u0e15\u0e4c\u0e28\u0e31\u0e01\u0e23\u0e32\u0e0a',
     'eras.eraNarrow':
         '\u0e01\u0e48\u0e2d\u0e19 \u0e04.\u0e28.\u001f\u0e04.\u0e28.',
     'months.format.abbreviated':
@@ -13273,6 +13573,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u1230\u1295\u1260\u1275\u001f\u1230\u1291\u12ed\u001f\u1230\u1209\u1235\u001f\u1228\u1261\u12d5\u001f\u1213\u1219\u1235\u001f\u12d3\u122d\u1262\u001f\u1240\u12f3\u121d',
     'eras.eraAbbr': '\u12d3/\u12d3\u001f\u12d3/\u121d',
+    'eras.eraNames':
+        '\u1245\u12f5\u1218 \u12ad\u122d\u1235\u1276\u1235\u001f\u12d3\u1218\u1270 \u121d\u1215\u1228\u1275',
     'eras.eraNarrow': '\u12d3/\u12d3\u001f\u12d3/\u121d',
     'months.format.abbreviated':
         '\u1325\u122a\u001f\u1208\u12ab\u001f\u1218\u130b\u001f\u121a\u12eb\u001f\u130d\u1295\u001f\u1230\u1290\u001f\u1213\u121d\u001f\u1290\u1213\u001f\u1218\u1235\u001f\u1325\u1245\u001f\u1215\u12f3\u001f\u1273\u1215',
@@ -13287,7 +13589,10 @@ const dateLocales = <String, Map<String, String>>{
     'timeSkeleton.medium': 'ahmmss',
     'timeSkeleton.short': 'ahmm'
   },
-  'ti-ER': {},
+  'ti-ER': {
+    'eras.eraNames':
+        '\u12d3\u1218\u1270 \u12d3\u1208\u121d\u001f\u12d3\u1218\u1270 \u121d\u1215\u1228\u1275'
+  },
   'tig': {},
   'tk': {
     'availableFormats.EBh': 'E, h B',
@@ -13339,6 +13644,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u00ddek\u015fenbe\u001fDu\u015fenbe\u001fSi\u015fenbe\u001f\u00c7ar\u015fenbe\u001fPen\u015fenbe\u001fAnna\u001f\u015eenbe',
     'eras.eraAbbr': 'B.e.\u00f6\u0148\u001fB.e.',
+    'eras.eraNames': 'Isadan \u00f6\u0148\u001fIsadan so\u0148',
     'eras.eraNarrow': 'B.e.\u00f6\u0148\u001fB.e.',
     'months.format.abbreviated':
         '\u00fdan\u001ffew\u001fmart\u001fapr\u001fma\u00fd\u001fi\u00fdun\u001fi\u00fdul\u001fawg\u001fsen\u001fokt\u001fno\u00fd\u001fdek',
@@ -13369,6 +13675,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Tshipi\u001fMosupologo\u001fLabobedi\u001fLaboraro\u001fLabone\u001fLabotlhano\u001fMatlhatso',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames':
+        'Pele ga tsalo ya Morena Jeso\u001fMorago ga Leso la Morena Jeso',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Fer\u001fTlh\u001fMop\u001fMor\u001fMot\u001fSee\u001fPhu\u001fPha\u001fLwe\u001fDip\u001fNgw\u001fSed',
@@ -13422,6 +13730,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'S\u0101pate\u001fM\u014dnite\u001fT\u016bsite\u001fPulelulu\u001fTu\u02bbapulelulu\u001fFalaite\u001fTokonaki',
     'eras.eraAbbr': 'KM\u001fTS',
+    'eras.eraNames': 'ki mu\u02bba\u001fta\u02bbu \u02bbo S\u012bs\u016b',
     'eras.eraNarrow': 'KM\u001fTS',
     'months.format.abbreviated':
         'S\u0101n\u001fF\u0113p\u001fMa\u02bba\u001f\u02bbEpe\u001fM\u0113\u001fSun\u001fSiu\u001f\u02bbAok\u001fS\u0113p\u001f\u02bbOka\u001fN\u014dv\u001fT\u012bs',
@@ -13538,6 +13847,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Pazar\u001fPazartesi\u001fSal\u0131\u001f\u00c7ar\u015famba\u001fPer\u015fembe\u001fCuma\u001fCumartesi',
     'eras.eraAbbr': 'M\u00d6\u001fMS',
+    'eras.eraNames': 'Milattan \u00d6nce\u001fMilattan Sonra',
     'eras.eraNarrow': 'M\u00d6\u001fMS',
     'months.format.abbreviated':
         'Oca\u001f\u015eub\u001fMar\u001fNis\u001fMay\u001fHaz\u001fTem\u001fA\u011fu\u001fEyl\u001fEki\u001fKas\u001fAra',
@@ -13568,6 +13878,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sonta\u001fMusumbhunuku\u001fRavumbirhi\u001fRavunharhu\u001fRavumune\u001fRavuntlhanu\u001fMugqivela',
     'eras.eraAbbr': 'BC\u001fCE',
+    'eras.eraNames': 'BC\u001fCE',
     'eras.eraNarrow': 'BC\u001fCE',
     'months.format.abbreviated':
         'Sun\u001fYan\u001fKul\u001fDzi\u001fMud\u001fKho\u001fMaw\u001fMha\u001fNdz\u001fNhl\u001fHuk\u001fN\u2019w',
@@ -13619,6 +13930,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u044f\u043a\u0448\u04d9\u043c\u0431\u0435\u001f\u0434\u04af\u0448\u04d9\u043c\u0431\u0435\u001f\u0441\u0438\u0448\u04d9\u043c\u0431\u0435\u001f\u0447\u04d9\u0440\u0448\u04d9\u043c\u0431\u0435\u001f\u043f\u04d9\u043d\u0497\u0435\u0448\u04d9\u043c\u0431\u0435\u001f\u0497\u043e\u043c\u0433\u0430\u001f\u0448\u0438\u043c\u0431\u04d9',
     'eras.eraAbbr':
         '\u0431.\u044d.\u043a.\u001f\u043c\u0438\u043b\u0430\u0434\u0438',
+    'eras.eraNames':
+        '\u0431\u0435\u0437\u043d\u0435\u04a3 \u044d\u0440\u0430\u0433\u0430 \u043a\u0430\u0434\u04d9\u0440\u001f\u043c\u0438\u043b\u0430\u0434\u0438',
     'eras.eraNarrow':
         '\u0431.\u044d.\u043a.\u001f\u043c\u0438\u043b\u0430\u0434\u0438',
     'months.format.abbreviated':
@@ -13662,6 +13975,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Alhadi\u001fAtinni\u001fAtalaata\u001fAlarba\u001fAlhamiisa\u001fAlzuma\u001fAsibti',
     'eras.eraAbbr': 'IJ\u001fIZ',
+    'eras.eraNames': 'Isaa jine\u001fIsaa zamanoo',
     'eras.eraNarrow': 'IJ\u001fIZ',
     'months.format.abbreviated':
         '\u017dan\u001fFee\u001fMar\u001fAwi\u001fMe\u001f\u017duw\u001f\u017duy\u001fUt\u001fSek\u001fOkt\u001fNoo\u001fDee',
@@ -13700,6 +14014,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0423\u043b\u0443\u0433-\u0445\u04af\u043d\u001f\u041f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a\u001f\u0412\u0442\u043e\u0440\u043d\u0438\u043a\u001f\u0421\u0440\u0435\u0434\u0430\u001f\u0427\u0435\u0442\u0432\u0435\u0440\u0433\u001f\u041f\u044f\u0442\u043d\u0438\u0446\u0430\u001f\u0421\u0443\u0431\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u0411\u042d\u0427\u001f\u0411\u042d',
+    'eras.eraNames':
+        '\u0425\u0440\u0438\u0441\u0442\u043e\u0441 \u0431\u0435\u0440\u0442\u0438\u043d\u0434\u0435\u001f\u0425\u0440\u0438\u0441\u0442\u043e\u0441 \u0442\u04e9\u0440\u04af\u043c\u0435\u043b\u0438\u043d\u0434\u0435\u043d',
     'eras.eraNarrow': '\u0411\u042d\u0427\u001f\u0411\u042d',
     'months.format.abbreviated':
         '\u042f\u043d\u0432.\u001f\u0424\u0435\u0432\u0440.\u001f\u041c\u0430\u0440.\u001f\u0410\u043f\u0440.\u001f\u041c\u0430\u0439\u001f\u0418\u044e\u043d.\u001f\u0418\u044e\u043b.\u001f\u0410\u0432\u0433.\u001f\u0421\u0435\u043d\u0442.\u001f\u041e\u043a\u0442.\u001f\u041d\u043e\u044f\u0431.\u001f\u0414\u0435\u043a.',
@@ -13729,6 +14045,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Asamas\u001fAynas\u001fAsinas\u001fAkras\u001fAkwas\u001fAsimwas\u001fAsi\u1e0dyas',
     'eras.eraAbbr': 'Z\u0190\u001f\u1e0c\u0190',
+    'eras.eraNames':
+        'Zdat \u0190isa (TA\u0194)\u001f\u1e0ceffir \u0190isa (TA\u0194)',
     'eras.eraNarrow': 'Z\u0190\u001f\u1e0c\u0190',
     'months.format.abbreviated':
         'Yen\u001fYeb\u001fMar\u001fIbr\u001fMay\u001fYun\u001fYul\u001f\u0194uc\u001fCut\u001fK\u1e6du\u001fNwa\u001fDuj',
@@ -13767,6 +14085,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u064a\u06d5\u0643\u0634\u06d5\u0646\u0628\u06d5\u001f\u062f\u06c8\u0634\u06d5\u0646\u0628\u06d5\u001f\u0633\u06d5\u064a\u0634\u06d5\u0646\u0628\u06d5\u001f\u0686\u0627\u0631\u0634\u06d5\u0646\u0628\u06d5\u001f\u067e\u06d5\u064a\u0634\u06d5\u0646\u0628\u06d5\u001f\u062c\u06c8\u0645\u06d5\u001f\u0634\u06d5\u0646\u0628\u06d5',
     'eras.eraAbbr': 'BCE\u001f\u0645\u0649\u0644\u0627\u062f\u0649\u064a\u06d5',
+    'eras.eraNames':
+        '\u0645\u0649\u0644\u0627\u062f\u0649\u064a\u06d5\u062f\u0649\u0646 \u0628\u06c7\u0631\u06c7\u0646\u001f\u0645\u0649\u0644\u0627\u062f\u0649\u064a\u06d5',
     'eras.eraNarrow':
         'BCE\u001f\u0645\u0649\u0644\u0627\u062f\u0649\u064a\u06d5',
     'months.format.abbreviated':
@@ -13836,6 +14156,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u043d\u0435\u0434\u0456\u043b\u044f\u001f\u043f\u043e\u043d\u0435\u0434\u0456\u043b\u043e\u043a\u001f\u0432\u0456\u0432\u0442\u043e\u0440\u043e\u043a\u001f\u0441\u0435\u0440\u0435\u0434\u0430\u001f\u0447\u0435\u0442\u0432\u0435\u0440\u001f\u043f\u02bc\u044f\u0442\u043d\u0438\u0446\u044f\u001f\u0441\u0443\u0431\u043e\u0442\u0430',
     'eras.eraAbbr': '\u0434\u043e \u043d. \u0435.\u001f\u043d. \u0435.',
+    'eras.eraNames':
+        '\u0434\u043e \u043d\u0430\u0448\u043e\u0457 \u0435\u0440\u0438\u001f\u043d\u0430\u0448\u043e\u0457 \u0435\u0440\u0438',
     'eras.eraNarrow': '\u0434\u043e \u043d.\u0435.\u001f\u043d.\u0435.',
     'months.format.abbreviated':
         '\u0441\u0456\u0447.\u001f\u043b\u044e\u0442.\u001f\u0431\u0435\u0440.\u001f\u043a\u0432\u0456\u0442.\u001f\u0442\u0440\u0430\u0432.\u001f\u0447\u0435\u0440\u0432.\u001f\u043b\u0438\u043f.\u001f\u0441\u0435\u0440\u043f.\u001f\u0432\u0435\u0440.\u001f\u0436\u043e\u0432\u0442.\u001f\u043b\u0438\u0441\u0442.\u001f\u0433\u0440\u0443\u0434.',
@@ -13925,6 +14247,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow': '',
     'days.stand-alone.wide': '',
     'eras.eraAbbr': 'BCE\u001fCE',
+    'eras.eraNames': 'BCE\u001fCE',
     'eras.eraNarrow': 'BCE\u001fCE',
     'gmtFormat': 'GMT{0}',
     'hourFormat': '+HH:mm;-HH:mm',
@@ -13984,6 +14307,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u0627\u062a\u0648\u0627\u0631\u001f\u067e\u06cc\u0631\u001f\u0645\u0646\u06af\u0644\u001f\u0628\u062f\u06be\u001f\u062c\u0645\u0639\u0631\u0627\u062a\u001f\u062c\u0645\u0639\u06c1\u001f\u06c1\u0641\u062a\u06c1',
     'eras.eraAbbr':
+        '\u0642\u0628\u0644 \u0645\u0633\u06cc\u062d\u001f\u0639\u06cc\u0633\u0648\u06cc',
+    'eras.eraNames':
         '\u0642\u0628\u0644 \u0645\u0633\u06cc\u062d\u001f\u0639\u06cc\u0633\u0648\u06cc',
     'eras.eraNarrow':
         '\u0642\u0628\u0644 \u0645\u0633\u06cc\u062d\u001f\u0639\u06cc\u0633\u0648\u06cc',
@@ -14066,6 +14391,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'yakshanba\u001fdushanba\u001fseshanba\u001fchorshanba\u001fpayshanba\u001fjuma\u001fshanba',
     'eras.eraAbbr': 'm.a.\u001fmilodiy',
+    'eras.eraNames': 'miloddan avvalgi\u001fmilodiy',
     'eras.eraNarrow': 'm.a.\u001fmilodiy',
     'months.format.abbreviated':
         'yan\u001ffev\u001fmar\u001fapr\u001fmay\u001fiyn\u001fiyl\u001favg\u001fsen\u001fokt\u001fnoy\u001fdek',
@@ -14144,6 +14470,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u044f\u043a\u0448\u0430\u043d\u0431\u0430\u001f\u0434\u0443\u0448\u0430\u043d\u0431\u0430\u001f\u0441\u0435\u0448\u0430\u043d\u0431\u0430\u001f\u0447\u043e\u0440\u0448\u0430\u043d\u0431\u0430\u001f\u043f\u0430\u0439\u0448\u0430\u043d\u0431\u0430\u001f\u0436\u0443\u043c\u0430\u001f\u0448\u0430\u043d\u0431\u0430',
     'eras.eraAbbr':
         '\u043c.\u0430.\u001f\u043c\u0438\u043b\u043e\u0434\u0438\u0439',
+    'eras.eraNames':
+        '\u043c\u0438\u043b\u043e\u0434\u0434\u0430\u043d \u0430\u0432\u0432\u0430\u043b\u0433\u0438\u001f\u043c\u0438\u043b\u043e\u0434\u0438\u0439',
     'eras.eraNarrow':
         '\u043c.\u0430.\u001f\u043c\u0438\u043b\u043e\u0434\u0438\u0439',
     'months.format.abbreviated':
@@ -14262,6 +14590,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'dom\u00e9nega\u001fluni\u001fmarti\u001fm\u00e8rcore\u001fzoba\u001fv\u00e8nare\u001fsabo',
     'eras.eraAbbr': 'v.C.\u001fd.C.',
+    'eras.eraNames': 'vanti Cristo\u001fdasp\u00f2 Cristo',
     'eras.eraNarrow': 'v.C.\u001fd.C.',
     'gmtFormat': 'UTC{0}',
     'months.format.abbreviated':
@@ -14337,6 +14666,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Ch\u1ee7 Nh\u1eadt\u001fTh\u1ee9 Hai\u001fTh\u1ee9 Ba\u001fTh\u1ee9 T\u01b0\u001fTh\u1ee9 N\u0103m\u001fTh\u1ee9 S\u00e1u\u001fTh\u1ee9 B\u1ea3y',
     'eras.eraAbbr': 'TCN\u001fSCN',
+    'eras.eraNames':
+        'Tr\u01b0\u1edbc Ch\u00faa Gi\u00e1ng Sinh\u001fSau C\u00f4ng Nguy\u00ean',
     'eras.eraNarrow': 'TCN\u001fCN',
     'months.format.abbreviated':
         'thg 1\u001fthg 2\u001fthg 3\u001fthg 4\u001fthg 5\u001fthg 6\u001fthg 7\u001fthg 8\u001fthg 9\u001fthg 10\u001fthg 11\u001fthg 12',
@@ -14384,6 +14715,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Jumapilyi\u001fJumatatuu\u001fJumanne\u001fJumatanu\u001fAlhamisi\u001fIjumaa\u001fJumamosi',
     'eras.eraAbbr': 'KK\u001fBK',
+    'eras.eraNames': 'Kabla ya Kristu\u001fBaada ya Kristu',
     'eras.eraNarrow': 'KK\u001fBK',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMac\u001fApr\u001fMei\u001fJun\u001fJul\u001fAgo\u001fSep\u001fOkt\u001fNov\u001fDes',
@@ -14416,6 +14748,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sunntag\u001fM\u00e4ntag\u001fZi\u0161tag\u001fMittwu\u010d\u001fFr\u00f3ntag\u001fFritag\u001fSam\u0161tag',
     'eras.eraAbbr': 'v. Chr.\u001fn. Chr',
+    'eras.eraNames': 'v. Chr.\u001fn. Chr',
     'eras.eraNarrow': 'v. Chr.\u001fn. Chr',
     'months.format.abbreviated':
         'Jen\u001fHor\u001fM\u00e4r\u001fAbr\u001fMei\u001fBr\u00e1\u001fHei\u001f\u00d6ig\u001fHer\u001fW\u00edm\u001fWin\u001fChr',
@@ -14471,6 +14804,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Dib\u00e9er\u001fAltine\u001fTalaata\u001f\u00c0larba\u001fAlxamis\u001f\u00c0jjuma\u001fAseer',
     'eras.eraAbbr': 'JC\u001fAD',
+    'eras.eraNames': 'av. JC\u001fAD',
     'eras.eraNarrow': 'JC\u001fAD',
     'months.format.abbreviated':
         'Sam\u001fFew\u001fMar\u001fAwr\u001fMee\u001fSuw\u001fSul\u001fUt\u001fS\u00e0t\u001fOkt\u001fNow\u001fDes',
@@ -14509,6 +14843,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.narrow':
         'C\u001fMv\u001fSb\u001fSt\u001fSin\u001fHl\u001fMg',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'Phambi KoKristu\u001fAnno Domino',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMat\u001fEpr\u001fMey\u001fJun\u001fJul\u001fAga\u001fSept\u001fOkt\u001fNov\u001fDis',
@@ -14566,6 +14901,8 @@ const dateLocales = <String, Map<String, String>>{
         '\u0924\u094b\u0906\u0930\u001f\u0938\u094b\u0906\u0930\u001f\u092e\u0902\u0917\u0932\u0935\u093e\u0930\u001f\u092c\u0941\u0927\u0935\u093e\u0930\u001f\u0935\u0940\u0930\u0935\u093e\u0930\u001f\u0936\u0941\u0915\u094d\u0915\u0930\u0935\u093e\u0930\u001f\u0936\u0928\u093f\u091a\u094d\u091a\u0930\u0935\u093e\u0930',
     'eras.eraAbbr':
         '\u0908\u0938\u093e-\u092a\u0948\u0932\u0947\u001f\u0908\u0938\u094d\u0935\u0940',
+    'eras.eraNames':
+        '\u0908\u0938\u093e-\u092a\u0948\u0932\u0947\u001f\u0908\u0938\u0935\u0940 \u0938\u0928',
     'eras.eraNarrow':
         '\u0908\u0938\u093e-\u092a\u0948\u0932\u0947\u001f\u0908\u0938\u094d\u0935\u0940',
     'gmtFormat':
@@ -14602,6 +14939,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'Sabiiti\u001fBalaza\u001fOwokubili\u001fOwokusatu\u001fOlokuna\u001fOlokutaanu\u001fOlomukaaga',
     'eras.eraAbbr': 'AZ\u001fAF',
+    'eras.eraNames': 'Kulisto nga azilawo\u001fKulisto nga affile',
     'eras.eraNarrow': 'AZ\u001fAF',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMar\u001fApu\u001fMaa\u001fJuu\u001fJul\u001fAgu\u001fSeb\u001fOki\u001fNov\u001fDes',
@@ -14636,6 +14974,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         's\u0254\u0301ndi\u025b\u001fm\u00f3ndie\u001fmu\u00e1ny\u00e1\u014bm\u00f3ndie\u001fmet\u00fakp\u00ed\u00e1p\u025b\u001fk\u00fap\u00e9limet\u00fakpiap\u025b\u001ffel\u00e9te\u001fs\u00e9sel\u00e9',
     'eras.eraAbbr': 'k.Y.\u001f+J.C.',
+    'eras.eraNames':
+        'katikup\u00eden Y\u00e9suse\u001f\u00e9k\u00e9l\u00e9mk\u00fanup\u00ed\u00e9n n',
     'eras.eraNarrow': 'k.Y.\u001f+J.C.',
     'months.format.abbreviated':
         'o.1\u001fo.2\u001fo.3\u001fo.4\u001fo.5\u001fo.6\u001fo.7\u001fo.8\u001fo.9\u001fo.10\u001fo.11\u001fo.12',
@@ -14723,6 +15063,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.stand-alone.wide':
         '\u00c0\u00eck\u00fa\u001fAj\u00e9\u001f\u00ccs\u1eb9\u0301gun\u001f\u1eccj\u1ecd\u0301r\u00fa\u001f\u1eccj\u1ecd\u0301b\u1ecd\u001f\u1eb8t\u00ec\u001f\u00c0b\u00e1m\u1eb9\u0301ta',
     'eras.eraAbbr': 'BCE\u001fAD',
+    'eras.eraNames': 'Saju Kristi\u001fLehin Kristi',
     'eras.eraNarrow': 'BCE\u001fAD',
     'gmtFormat': 'WAT{0}',
     'months.format.abbreviated':
@@ -14799,6 +15140,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'mitu\u00fa\u001fmurakip\u00ed\u001fmurak\u00ed-muk\u0169i\u001fmurak\u00ed-musap\u00edri\u001fsupap\u00e1\u001fyukuak\u00fa\u001fsaur\u00fa',
     'eras.eraAbbr': 'K.s.\u001fK.a.',
+    'eras.eraNames': 'Kiristu sen\u0169d\u00e9\u001fKiristu arir\u00e9',
     'eras.eraNarrow': 'K.s.\u001fK.a.',
     'months.format.abbreviated':
         'ye\u001fmk\u001fms\u001fid\u001fpu\u001fpy\u001fpm\u001fps\u001fpi\u001fyp\u001fyy\u001fym',
@@ -14891,6 +15233,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u661f\u671f\u65e5\u001f\u661f\u671f\u4e00\u001f\u661f\u671f\u4e8c\u001f\u661f\u671f\u4e09\u001f\u661f\u671f\u56db\u001f\u661f\u671f\u4e94\u001f\u661f\u671f\u516d',
     'eras.eraAbbr': '\u897f\u5143\u524d\u001f\u897f\u5143',
+    'eras.eraNames': '\u897f\u5143\u524d\u001f\u897f\u5143',
     'eras.eraNarrow': '\u897f\u5143\u524d\u001f\u897f\u5143',
     'months.format.abbreviated':
         '1\u6708\u001f2\u6708\u001f3\u6708\u001f4\u6708\u001f5\u6708\u001f6\u6708\u001f7\u6708\u001f8\u6708\u001f9\u6708\u001f10\u6708\u001f11\u6708\u001f12\u6708',
@@ -14973,6 +15316,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u661f\u671f\u65e5\u001f\u661f\u671f\u4e00\u001f\u661f\u671f\u4e8c\u001f\u661f\u671f\u4e09\u001f\u661f\u671f\u56db\u001f\u661f\u671f\u4e94\u001f\u661f\u671f\u516d',
     'eras.eraAbbr': '\u897f\u5143\u524d\u001f\u897f\u5143',
+    'eras.eraNames': '\u897f\u5143\u524d\u001f\u897f\u5143',
     'eras.eraNarrow': '\u897f\u5143\u524d\u001f\u897f\u5143',
     'months.format.abbreviated':
         '1\u6708\u001f2\u6708\u001f3\u6708\u001f4\u6708\u001f5\u6708\u001f6\u6708\u001f7\u6708\u001f8\u6708\u001f9\u6708\u001f10\u6708\u001f11\u6708\u001f12\u6708',
@@ -15033,6 +15377,8 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u2d30\u2d59\u2d30\u2d4e\u2d30\u2d59\u001f\u2d30\u2d62\u2d4f\u2d30\u2d59\u001f\u2d30\u2d59\u2d49\u2d4f\u2d30\u2d59\u001f\u2d30\u2d3d\u2d55\u2d30\u2d59\u001f\u2d30\u2d3d\u2d61\u2d30\u2d59\u001f\u2d30\u2d59\u2d49\u2d4e\u2d61\u2d30\u2d59\u001f\u2d30\u2d59\u2d49\u2d39\u2d62\u2d30\u2d59',
     'eras.eraAbbr': '\u2d37\u2d30\u2d44\u001f\u2d37\u2d3c\u2d44',
+    'eras.eraNames':
+        '\u2d37\u2d30\u2d5c \u2d4f \u2d44\u2d49\u2d59\u2d30\u001f\u2d37\u2d3c\u2d3c\u2d49\u2d54 \u2d4f \u2d44\u2d49\u2d59\u2d30',
     'eras.eraNarrow': '\u2d37\u2d30\u2d44\u001f\u2d37\u2d3c\u2d44',
     'months.format.abbreviated':
         '\u2d49\u2d4f\u2d4f\u001f\u2d31\u2d55\u2d30\u001f\u2d4e\u2d30\u2d55\u001f\u2d49\u2d31\u2d54\u001f\u2d4e\u2d30\u2d62\u001f\u2d62\u2d53\u2d4f\u001f\u2d62\u2d53\u2d4d\u001f\u2d56\u2d53\u2d5b\u001f\u2d5b\u2d53\u2d5c\u001f\u2d3d\u2d5c\u2d53\u001f\u2d4f\u2d53\u2d61\u001f\u2d37\u2d53\u2d4a',
@@ -15111,6 +15457,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u661f\u671f\u65e5\u001f\u661f\u671f\u4e00\u001f\u661f\u671f\u4e8c\u001f\u661f\u671f\u4e09\u001f\u661f\u671f\u56db\u001f\u661f\u671f\u4e94\u001f\u661f\u671f\u516d',
     'eras.eraAbbr': '\u516c\u5143\u524d\u001f\u516c\u5143',
+    'eras.eraNames': '\u516c\u5143\u524d\u001f\u516c\u5143',
     'eras.eraNarrow': '\u516c\u5143\u524d\u001f\u516c\u5143',
     'months.format.abbreviated':
         '1\u6708\u001f2\u6708\u001f3\u6708\u001f4\u6708\u001f5\u6708\u001f6\u6708\u001f7\u6708\u001f8\u6708\u001f9\u6708\u001f10\u6708\u001f11\u6708\u001f12\u6708',
@@ -15259,6 +15606,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         '\u661f\u671f\u65e5\u001f\u661f\u671f\u4e00\u001f\u661f\u671f\u4e8c\u001f\u661f\u671f\u4e09\u001f\u661f\u671f\u56db\u001f\u661f\u671f\u4e94\u001f\u661f\u671f\u516d',
     'eras.eraAbbr': '\u897f\u5143\u524d\u001f\u897f\u5143',
+    'eras.eraNames': '\u897f\u5143\u524d\u001f\u897f\u5143',
     'eras.eraNarrow': '\u897f\u5143\u524d\u001f\u897f\u5143',
     'months.format.abbreviated':
         '1\u6708\u001f2\u6708\u001f3\u6708\u001f4\u6708\u001f5\u6708\u001f6\u6708\u001f7\u6708\u001f8\u6708\u001f9\u6708\u001f10\u6708\u001f11\u6708\u001f12\u6708',
@@ -15295,6 +15643,7 @@ const dateLocales = <String, Map<String, String>>{
     'dateFormat.short': 'd/M/y',
     'dayPeriods.morning1': '\u65e9\u4e0a',
     'eras.eraAbbr': '\u516c\u5143\u524d\u001f\u516c\u5143',
+    'eras.eraNames': '\u516c\u5143\u524d\u001f\u516c\u5143',
     'eras.eraNarrow': '\u516c\u5143\u524d\u001f\u516c\u5143',
     'timeFormat.full': 'ah:mm:ss [zzzz]',
     'timeFormat.long': 'ah:mm:ss [z]',
@@ -15347,6 +15696,7 @@ const dateLocales = <String, Map<String, String>>{
     'days.format.wide':
         'ISonto\u001fUMsombuluko\u001fULwesibili\u001fULwesithathu\u001fULwesine\u001fULwesihlanu\u001fUMgqibelo',
     'eras.eraAbbr': 'BC\u001fAD',
+    'eras.eraNames': 'BC\u001fAD',
     'eras.eraNarrow': 'BC\u001fAD',
     'months.format.abbreviated':
         'Jan\u001fFeb\u001fMas\u001fEph\u001fMey\u001fJun\u001fJul\u001fAga\u001fSep\u001fOkt\u001fNov\u001fDis',
@@ -16748,4 +17098,632 @@ const dayPeriodRules = <String, Map<String, (int, int)>>{
     'morning2': (360, 600),
     'night1': (1140, 1440)
   },
+};
+
+/// The time zone identifiers that CLDR knows: the IANA identifiers and
+/// their aliases, from the BCP 47 `tz` keyword, without those of the
+/// unknown time zone.
+const timeZoneIds = <String>{
+  'Africa/Abidjan',
+  'Africa/Accra',
+  'Africa/Addis_Ababa',
+  'Africa/Algiers',
+  'Africa/Asmara',
+  'Africa/Asmera',
+  'Africa/Bamako',
+  'Africa/Bangui',
+  'Africa/Banjul',
+  'Africa/Bissau',
+  'Africa/Blantyre',
+  'Africa/Brazzaville',
+  'Africa/Bujumbura',
+  'Africa/Cairo',
+  'Africa/Casablanca',
+  'Africa/Ceuta',
+  'Africa/Conakry',
+  'Africa/Dakar',
+  'Africa/Dar_es_Salaam',
+  'Africa/Djibouti',
+  'Africa/Douala',
+  'Africa/El_Aaiun',
+  'Africa/Freetown',
+  'Africa/Gaborone',
+  'Africa/Harare',
+  'Africa/Johannesburg',
+  'Africa/Juba',
+  'Africa/Kampala',
+  'Africa/Khartoum',
+  'Africa/Kigali',
+  'Africa/Kinshasa',
+  'Africa/Lagos',
+  'Africa/Libreville',
+  'Africa/Lome',
+  'Africa/Luanda',
+  'Africa/Lubumbashi',
+  'Africa/Lusaka',
+  'Africa/Malabo',
+  'Africa/Maputo',
+  'Africa/Maseru',
+  'Africa/Mbabane',
+  'Africa/Mogadishu',
+  'Africa/Monrovia',
+  'Africa/Nairobi',
+  'Africa/Ndjamena',
+  'Africa/Niamey',
+  'Africa/Nouakchott',
+  'Africa/Ouagadougou',
+  'Africa/Porto-Novo',
+  'Africa/Sao_Tome',
+  'Africa/Timbuktu',
+  'Africa/Tripoli',
+  'Africa/Tunis',
+  'Africa/Windhoek',
+  'America/Adak',
+  'America/Anchorage',
+  'America/Anguilla',
+  'America/Antigua',
+  'America/Araguaina',
+  'America/Argentina/Buenos_Aires',
+  'America/Argentina/Catamarca',
+  'America/Argentina/ComodRivadavia',
+  'America/Argentina/Cordoba',
+  'America/Argentina/Jujuy',
+  'America/Argentina/La_Rioja',
+  'America/Argentina/Mendoza',
+  'America/Argentina/Rio_Gallegos',
+  'America/Argentina/Salta',
+  'America/Argentina/San_Juan',
+  'America/Argentina/San_Luis',
+  'America/Argentina/Tucuman',
+  'America/Argentina/Ushuaia',
+  'America/Aruba',
+  'America/Asuncion',
+  'America/Atikokan',
+  'America/Atka',
+  'America/Bahia',
+  'America/Bahia_Banderas',
+  'America/Barbados',
+  'America/Belem',
+  'America/Belize',
+  'America/Blanc-Sablon',
+  'America/Boa_Vista',
+  'America/Bogota',
+  'America/Boise',
+  'America/Buenos_Aires',
+  'America/Cambridge_Bay',
+  'America/Campo_Grande',
+  'America/Cancun',
+  'America/Caracas',
+  'America/Catamarca',
+  'America/Cayenne',
+  'America/Cayman',
+  'America/Chicago',
+  'America/Chihuahua',
+  'America/Ciudad_Juarez',
+  'America/Coral_Harbour',
+  'America/Cordoba',
+  'America/Costa_Rica',
+  'America/Coyhaique',
+  'America/Creston',
+  'America/Cuiaba',
+  'America/Curacao',
+  'America/Danmarkshavn',
+  'America/Dawson',
+  'America/Dawson_Creek',
+  'America/Denver',
+  'America/Detroit',
+  'America/Dominica',
+  'America/Edmonton',
+  'America/Eirunepe',
+  'America/El_Salvador',
+  'America/Ensenada',
+  'America/Fort_Nelson',
+  'America/Fort_Wayne',
+  'America/Fortaleza',
+  'America/Glace_Bay',
+  'America/Godthab',
+  'America/Goose_Bay',
+  'America/Grand_Turk',
+  'America/Grenada',
+  'America/Guadeloupe',
+  'America/Guatemala',
+  'America/Guayaquil',
+  'America/Guyana',
+  'America/Halifax',
+  'America/Havana',
+  'America/Hermosillo',
+  'America/Indiana/Indianapolis',
+  'America/Indiana/Knox',
+  'America/Indiana/Marengo',
+  'America/Indiana/Petersburg',
+  'America/Indiana/Tell_City',
+  'America/Indiana/Vevay',
+  'America/Indiana/Vincennes',
+  'America/Indiana/Winamac',
+  'America/Indianapolis',
+  'America/Inuvik',
+  'America/Iqaluit',
+  'America/Jamaica',
+  'America/Jujuy',
+  'America/Juneau',
+  'America/Kentucky/Louisville',
+  'America/Kentucky/Monticello',
+  'America/Knox_IN',
+  'America/Kralendijk',
+  'America/La_Paz',
+  'America/Lima',
+  'America/Los_Angeles',
+  'America/Louisville',
+  'America/Lower_Princes',
+  'America/Maceio',
+  'America/Managua',
+  'America/Manaus',
+  'America/Marigot',
+  'America/Martinique',
+  'America/Matamoros',
+  'America/Mazatlan',
+  'America/Mendoza',
+  'America/Menominee',
+  'America/Merida',
+  'America/Metlakatla',
+  'America/Mexico_City',
+  'America/Miquelon',
+  'America/Moncton',
+  'America/Monterrey',
+  'America/Montevideo',
+  'America/Montreal',
+  'America/Montserrat',
+  'America/Nassau',
+  'America/New_York',
+  'America/Nipigon',
+  'America/Nome',
+  'America/Noronha',
+  'America/North_Dakota/Beulah',
+  'America/North_Dakota/Center',
+  'America/North_Dakota/New_Salem',
+  'America/Nuuk',
+  'America/Ojinaga',
+  'America/Panama',
+  'America/Pangnirtung',
+  'America/Paramaribo',
+  'America/Phoenix',
+  'America/Port-au-Prince',
+  'America/Port_of_Spain',
+  'America/Porto_Acre',
+  'America/Porto_Velho',
+  'America/Puerto_Rico',
+  'America/Punta_Arenas',
+  'America/Rainy_River',
+  'America/Rankin_Inlet',
+  'America/Recife',
+  'America/Regina',
+  'America/Resolute',
+  'America/Rio_Branco',
+  'America/Rosario',
+  'America/Santa_Isabel',
+  'America/Santarem',
+  'America/Santiago',
+  'America/Santo_Domingo',
+  'America/Sao_Paulo',
+  'America/Scoresbysund',
+  'America/Shiprock',
+  'America/Sitka',
+  'America/St_Barthelemy',
+  'America/St_Johns',
+  'America/St_Kitts',
+  'America/St_Lucia',
+  'America/St_Thomas',
+  'America/St_Vincent',
+  'America/Swift_Current',
+  'America/Tegucigalpa',
+  'America/Thule',
+  'America/Thunder_Bay',
+  'America/Tijuana',
+  'America/Toronto',
+  'America/Tortola',
+  'America/Vancouver',
+  'America/Virgin',
+  'America/Whitehorse',
+  'America/Winnipeg',
+  'America/Yakutat',
+  'America/Yellowknife',
+  'Antarctica/Casey',
+  'Antarctica/Davis',
+  'Antarctica/DumontDUrville',
+  'Antarctica/Macquarie',
+  'Antarctica/Mawson',
+  'Antarctica/McMurdo',
+  'Antarctica/Palmer',
+  'Antarctica/Rothera',
+  'Antarctica/South_Pole',
+  'Antarctica/Syowa',
+  'Antarctica/Troll',
+  'Antarctica/Vostok',
+  'Arctic/Longyearbyen',
+  'Asia/Aden',
+  'Asia/Almaty',
+  'Asia/Amman',
+  'Asia/Anadyr',
+  'Asia/Aqtau',
+  'Asia/Aqtobe',
+  'Asia/Ashgabat',
+  'Asia/Ashkhabad',
+  'Asia/Atyrau',
+  'Asia/Baghdad',
+  'Asia/Bahrain',
+  'Asia/Baku',
+  'Asia/Bangkok',
+  'Asia/Barnaul',
+  'Asia/Beirut',
+  'Asia/Bishkek',
+  'Asia/Brunei',
+  'Asia/Calcutta',
+  'Asia/Chita',
+  'Asia/Choibalsan',
+  'Asia/Chongqing',
+  'Asia/Chungking',
+  'Asia/Colombo',
+  'Asia/Dacca',
+  'Asia/Damascus',
+  'Asia/Dhaka',
+  'Asia/Dili',
+  'Asia/Dubai',
+  'Asia/Dushanbe',
+  'Asia/Famagusta',
+  'Asia/Gaza',
+  'Asia/Harbin',
+  'Asia/Hebron',
+  'Asia/Ho_Chi_Minh',
+  'Asia/Hong_Kong',
+  'Asia/Hovd',
+  'Asia/Irkutsk',
+  'Asia/Istanbul',
+  'Asia/Jakarta',
+  'Asia/Jayapura',
+  'Asia/Jerusalem',
+  'Asia/Kabul',
+  'Asia/Kamchatka',
+  'Asia/Karachi',
+  'Asia/Kashgar',
+  'Asia/Kathmandu',
+  'Asia/Katmandu',
+  'Asia/Khandyga',
+  'Asia/Kolkata',
+  'Asia/Krasnoyarsk',
+  'Asia/Kuala_Lumpur',
+  'Asia/Kuching',
+  'Asia/Kuwait',
+  'Asia/Macao',
+  'Asia/Macau',
+  'Asia/Magadan',
+  'Asia/Makassar',
+  'Asia/Manila',
+  'Asia/Muscat',
+  'Asia/Nicosia',
+  'Asia/Novokuznetsk',
+  'Asia/Novosibirsk',
+  'Asia/Omsk',
+  'Asia/Oral',
+  'Asia/Phnom_Penh',
+  'Asia/Pontianak',
+  'Asia/Pyongyang',
+  'Asia/Qatar',
+  'Asia/Qostanay',
+  'Asia/Qyzylorda',
+  'Asia/Rangoon',
+  'Asia/Riyadh',
+  'Asia/Saigon',
+  'Asia/Sakhalin',
+  'Asia/Samarkand',
+  'Asia/Seoul',
+  'Asia/Shanghai',
+  'Asia/Singapore',
+  'Asia/Srednekolymsk',
+  'Asia/Taipei',
+  'Asia/Tashkent',
+  'Asia/Tbilisi',
+  'Asia/Tehran',
+  'Asia/Tel_Aviv',
+  'Asia/Thimbu',
+  'Asia/Thimphu',
+  'Asia/Tokyo',
+  'Asia/Tomsk',
+  'Asia/Ujung_Pandang',
+  'Asia/Ulaanbaatar',
+  'Asia/Ulan_Bator',
+  'Asia/Urumqi',
+  'Asia/Ust-Nera',
+  'Asia/Vientiane',
+  'Asia/Vladivostok',
+  'Asia/Yakutsk',
+  'Asia/Yangon',
+  'Asia/Yekaterinburg',
+  'Asia/Yerevan',
+  'Atlantic/Azores',
+  'Atlantic/Bermuda',
+  'Atlantic/Canary',
+  'Atlantic/Cape_Verde',
+  'Atlantic/Faeroe',
+  'Atlantic/Faroe',
+  'Atlantic/Jan_Mayen',
+  'Atlantic/Madeira',
+  'Atlantic/Reykjavik',
+  'Atlantic/South_Georgia',
+  'Atlantic/St_Helena',
+  'Atlantic/Stanley',
+  'Australia/ACT',
+  'Australia/Adelaide',
+  'Australia/Brisbane',
+  'Australia/Broken_Hill',
+  'Australia/Canberra',
+  'Australia/Currie',
+  'Australia/Darwin',
+  'Australia/Eucla',
+  'Australia/Hobart',
+  'Australia/LHI',
+  'Australia/Lindeman',
+  'Australia/Lord_Howe',
+  'Australia/Melbourne',
+  'Australia/NSW',
+  'Australia/North',
+  'Australia/Perth',
+  'Australia/Queensland',
+  'Australia/South',
+  'Australia/Sydney',
+  'Australia/Tasmania',
+  'Australia/Victoria',
+  'Australia/West',
+  'Australia/Yancowinna',
+  'Brazil/Acre',
+  'Brazil/DeNoronha',
+  'Brazil/East',
+  'Brazil/West',
+  'CET',
+  'CST6CDT',
+  'Canada/Atlantic',
+  'Canada/Central',
+  'Canada/East-Saskatchewan',
+  'Canada/Eastern',
+  'Canada/Mountain',
+  'Canada/Newfoundland',
+  'Canada/Pacific',
+  'Canada/Saskatchewan',
+  'Canada/Yukon',
+  'Chile/Continental',
+  'Chile/EasterIsland',
+  'Cuba',
+  'EET',
+  'EST',
+  'EST5EDT',
+  'Egypt',
+  'Eire',
+  'Etc/GMT',
+  'Etc/GMT+0',
+  'Etc/GMT+1',
+  'Etc/GMT+10',
+  'Etc/GMT+11',
+  'Etc/GMT+12',
+  'Etc/GMT+2',
+  'Etc/GMT+3',
+  'Etc/GMT+4',
+  'Etc/GMT+5',
+  'Etc/GMT+6',
+  'Etc/GMT+7',
+  'Etc/GMT+8',
+  'Etc/GMT+9',
+  'Etc/GMT-0',
+  'Etc/GMT-1',
+  'Etc/GMT-10',
+  'Etc/GMT-11',
+  'Etc/GMT-12',
+  'Etc/GMT-13',
+  'Etc/GMT-14',
+  'Etc/GMT-2',
+  'Etc/GMT-3',
+  'Etc/GMT-4',
+  'Etc/GMT-5',
+  'Etc/GMT-6',
+  'Etc/GMT-7',
+  'Etc/GMT-8',
+  'Etc/GMT-9',
+  'Etc/GMT0',
+  'Etc/Greenwich',
+  'Etc/UCT',
+  'Etc/UTC',
+  'Etc/Universal',
+  'Etc/Zulu',
+  'Europe/Amsterdam',
+  'Europe/Andorra',
+  'Europe/Astrakhan',
+  'Europe/Athens',
+  'Europe/Belfast',
+  'Europe/Belgrade',
+  'Europe/Berlin',
+  'Europe/Bratislava',
+  'Europe/Brussels',
+  'Europe/Bucharest',
+  'Europe/Budapest',
+  'Europe/Busingen',
+  'Europe/Chisinau',
+  'Europe/Copenhagen',
+  'Europe/Dublin',
+  'Europe/Gibraltar',
+  'Europe/Guernsey',
+  'Europe/Helsinki',
+  'Europe/Isle_of_Man',
+  'Europe/Istanbul',
+  'Europe/Jersey',
+  'Europe/Kaliningrad',
+  'Europe/Kiev',
+  'Europe/Kirov',
+  'Europe/Kyiv',
+  'Europe/Lisbon',
+  'Europe/Ljubljana',
+  'Europe/London',
+  'Europe/Luxembourg',
+  'Europe/Madrid',
+  'Europe/Malta',
+  'Europe/Mariehamn',
+  'Europe/Minsk',
+  'Europe/Monaco',
+  'Europe/Moscow',
+  'Europe/Nicosia',
+  'Europe/Oslo',
+  'Europe/Paris',
+  'Europe/Podgorica',
+  'Europe/Prague',
+  'Europe/Riga',
+  'Europe/Rome',
+  'Europe/Samara',
+  'Europe/San_Marino',
+  'Europe/Sarajevo',
+  'Europe/Saratov',
+  'Europe/Simferopol',
+  'Europe/Skopje',
+  'Europe/Sofia',
+  'Europe/Stockholm',
+  'Europe/Tallinn',
+  'Europe/Tirane',
+  'Europe/Tiraspol',
+  'Europe/Ulyanovsk',
+  'Europe/Uzhgorod',
+  'Europe/Vaduz',
+  'Europe/Vatican',
+  'Europe/Vienna',
+  'Europe/Vilnius',
+  'Europe/Volgograd',
+  'Europe/Warsaw',
+  'Europe/Zagreb',
+  'Europe/Zaporozhye',
+  'Europe/Zurich',
+  'GB',
+  'GB-Eire',
+  'GMT',
+  'GMT+0',
+  'GMT-0',
+  'GMT0',
+  'Greenwich',
+  'HST',
+  'Hongkong',
+  'Iceland',
+  'Indian/Antananarivo',
+  'Indian/Chagos',
+  'Indian/Christmas',
+  'Indian/Cocos',
+  'Indian/Comoro',
+  'Indian/Kerguelen',
+  'Indian/Mahe',
+  'Indian/Maldives',
+  'Indian/Mauritius',
+  'Indian/Mayotte',
+  'Indian/Reunion',
+  'Iran',
+  'Israel',
+  'Jamaica',
+  'Japan',
+  'Kwajalein',
+  'Libya',
+  'MET',
+  'MST',
+  'MST7MDT',
+  'Mexico/BajaNorte',
+  'Mexico/BajaSur',
+  'Mexico/General',
+  'NZ',
+  'NZ-CHAT',
+  'Navajo',
+  'PRC',
+  'PST8PDT',
+  'Pacific/Apia',
+  'Pacific/Auckland',
+  'Pacific/Bougainville',
+  'Pacific/Chatham',
+  'Pacific/Chuuk',
+  'Pacific/Easter',
+  'Pacific/Efate',
+  'Pacific/Enderbury',
+  'Pacific/Fakaofo',
+  'Pacific/Fiji',
+  'Pacific/Funafuti',
+  'Pacific/Galapagos',
+  'Pacific/Gambier',
+  'Pacific/Guadalcanal',
+  'Pacific/Guam',
+  'Pacific/Honolulu',
+  'Pacific/Johnston',
+  'Pacific/Kanton',
+  'Pacific/Kiritimati',
+  'Pacific/Kosrae',
+  'Pacific/Kwajalein',
+  'Pacific/Majuro',
+  'Pacific/Marquesas',
+  'Pacific/Midway',
+  'Pacific/Nauru',
+  'Pacific/Niue',
+  'Pacific/Norfolk',
+  'Pacific/Noumea',
+  'Pacific/Pago_Pago',
+  'Pacific/Palau',
+  'Pacific/Pitcairn',
+  'Pacific/Pohnpei',
+  'Pacific/Ponape',
+  'Pacific/Port_Moresby',
+  'Pacific/Rarotonga',
+  'Pacific/Saipan',
+  'Pacific/Samoa',
+  'Pacific/Tahiti',
+  'Pacific/Tarawa',
+  'Pacific/Tongatapu',
+  'Pacific/Truk',
+  'Pacific/Wake',
+  'Pacific/Wallis',
+  'Pacific/Yap',
+  'Poland',
+  'Portugal',
+  'ROC',
+  'ROK',
+  'Singapore',
+  'Turkey',
+  'UCT',
+  'US/Alaska',
+  'US/Aleutian',
+  'US/Arizona',
+  'US/Central',
+  'US/East-Indiana',
+  'US/Eastern',
+  'US/Hawaii',
+  'US/Indiana-Starke',
+  'US/Michigan',
+  'US/Mountain',
+  'US/Pacific',
+  'US/Pacific-New',
+  'US/Samoa',
+  'UTC',
+  'Universal',
+  'W-SU',
+  'WET',
+  'Zulu',
+};
+
+/// The identifiers in [timeZoneIds] of UTC and GMT, whose offset is
+/// always zero.
+const utcTimeZoneIds = <String>{
+  'Etc/GMT',
+  'Etc/GMT+0',
+  'Etc/GMT-0',
+  'Etc/GMT0',
+  'Etc/Greenwich',
+  'Etc/UCT',
+  'Etc/UTC',
+  'Etc/Universal',
+  'Etc/Zulu',
+  'GMT',
+  'GMT+0',
+  'GMT-0',
+  'GMT0',
+  'Greenwich',
+  'UCT',
+  'UTC',
+  'Universal',
+  'Zulu',
 };

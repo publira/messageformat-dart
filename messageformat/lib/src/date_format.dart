@@ -520,7 +520,11 @@ final class _Formatter {
     return switch (symbol) {
       'G' => (
           'era',
-          _names('eras.${length == 5 ? 'eraNarrow' : 'eraAbbr'}')[era]
+          _names(switch (length) {
+            4 => 'eras.eraNames',
+            5 => 'eras.eraNarrow',
+            _ => 'eras.eraAbbr',
+          })[era]
         ),
       'y' || 'Y' || 'u' => (
           'year',

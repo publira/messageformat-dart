@@ -1,3 +1,4 @@
+import 'date_data.dart';
 import 'date_format.dart';
 import 'date_locale.dart';
 import 'errors.dart';
@@ -147,7 +148,7 @@ DateTimeFields _inTimeZone(
     ));
     timeZone = null;
   }
-  final utc = timeZone != null && _utc.contains(timeZone);
+  final utc = timeZone != null && _utcIds.contains(timeZone.toLowerCase());
   if (timeZone != null && !utc) {
     // Without time zone data, only a floating time can be shown in another
     // time zone, and only without its offset.
@@ -170,8 +171,10 @@ DateTimeFields _inTimeZone(
   return DateTimeFields.of(local, offset: local.timeZoneOffset);
 }
 
-/// The values of the option `timeZone` for UTC.
-const _utc = {'UTC', 'Etc/UTC', 'Etc/GMT', 'GMT'};
+/// The time zone identifiers of CLDR, and those of UTC, in lowercase, since
+/// identifiers are matched without regard to case.
+final _timeZoneIds = {for (final id in timeZoneIds) id.toLowerCase()};
+final _utcIds = {for (final id in utcTimeZoneIds) id.toLowerCase()};
 
 /// The operand of a date/time function: a date and time, with the offset
 /// from UTC of its time zone unless it is a floating time.
@@ -413,13 +416,14 @@ final class _OptionReader {
     }
   }
 
-  /// The value of `timeZone`, if it is `input` or a well-formed time zone
-  /// identifier.
+  /// The value of `timeZone`, if it is `input` or a time zone identifier
+  /// that CLDR knows.
   String? timeZone() {
     const name = 'timeZone';
     if (!_options.containsKey(name)) return null;
     final text = _string(name);
-    if (text == null || !_timeZone.hasMatch(text)) {
+    if (text != 'input' &&
+        (text == null || !_timeZoneIds.contains(text.toLowerCase()))) {
       _bad(name, 'a time zone identifier or input');
       return null;
     }
@@ -427,9 +431,6 @@ final class _OptionReader {
     return text;
   }
 }
-
-/// A well-formed IANA time zone identifier, such as `America/New_York`.
-final _timeZone = RegExp(r'^[A-Za-z][A-Za-z0-9_+\-]*(/[A-Za-z0-9_+\-]+)*$');
 
 /// The resolved value of a date/time function.
 final class _DateTimeValue extends MessageValue {

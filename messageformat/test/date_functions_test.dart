@@ -90,6 +90,7 @@ void main() {
       ('hi', '{|$t| :datetime}', '2 जन॰ 2006, 3:04 pm'),
       ('ru', '{|$t| :date length=long}', '2 января 2006\u202fг.'),
       ('en-US', '{|0750-01-02| :date}', 'Jan 2, 750 AD'),
+      ('sq', '{|0750-01-02| :date length=short}', '2.1.750 mbas Krishtit'),
       ('en-US', '{|$t| :time hour12=false}', '15:04'),
       ('en-u-hc-h23', '{|$t| :time}', '15:04'),
       (
@@ -182,6 +183,10 @@ void main() {
 
     test('show a floating time as it is in the given time zone', () {
       expect(_ok('{|2006-01-02T15:04:06| :time timeZone=UTC}'), '3:04\u202fPM');
+      expect(
+          _ok('{|2006-01-02T15:04:06Z| :time timeZone=utc}'), '3:04\u202fPM');
+      expect(_ok('{|2006-01-02T15:04:06Z| :time timeZone=|Etc/GMT|}'),
+          '3:04\u202fPM');
       expect(_ok('{|2006-01-02T15:04:06| :time timeZone=|Asia/Tokyo|}'),
           '3:04\u202fPM');
     });
@@ -285,6 +290,7 @@ void main() {
         ('{|2006-01-02T15:04:06| :time hour12=yes}', '3:04\u202fPM'),
         ('{|2006-01-02T15:04:06| :time calendar=buddhist}', '3:04\u202fPM'),
         ('{|2006-01-02T15:04:06| :time timeZone=|not a zone|}', '3:04\u202fPM'),
+        ('{|2006-01-02T15:04:06| :time timeZone=|Not/AZone|}', '3:04\u202fPM'),
       ]) {
         expect(_format(source), (expected, 'bad-option'), reason: source);
       }

@@ -6,7 +6,8 @@
 //
 // The data comes from the JSON form of the CLDR release that matches the
 // pinned LDML version ([cldrJsonVersion]), as published to npm by the CLDR
-// project as `cldr-core`, `cldr-numbers-full`, and `cldr-dates-full`.
+// project as `cldr-core`, `cldr-numbers-full`, `cldr-dates-full`, and
+// `cldr-bcp47`.
 // Moving the pin (#10) updates the version and reruns this script.
 
 import 'dart:convert';
@@ -25,6 +26,7 @@ Future<void> main() async {
   final core = await _package('cldr-core');
   final numbers = await _package('cldr-numbers-full');
   final dates = await _package('cldr-dates-full');
+  final bcp47 = await _package('cldr-bcp47');
   Object? json(Map<String, String> files, String path) =>
       jsonDecode(files['package/$path'] ?? (throw StateError('No $path')));
 
@@ -324,6 +326,20 @@ Future<void> main() async {
     };
   }
 
+  final timeZoneIds = <String>{};
+  final utcTimeZoneIds = <String>{};
+  for (final MapEntry(:key, :value)
+      in (_path(json(bcp47, 'bcp47/timezone.json'), ['keyword', 'u', 'tz'])
+              as Map<String, Object?>)
+          .entries) {
+    if (key.startsWith('_') || key == 'unk') continue;
+    final aliases = (value! as Map<String, Object?>)['_alias'] as String?;
+    if (aliases == null) continue;
+    final ids = aliases.split(' ');
+    timeZoneIds.addAll(ids);
+    if (key == 'utc' || key == 'gmt') utcTimeZoneIds.addAll(ids);
+  }
+
   _write('lib/src/date_data.dart', [
     notice,
     '/// The locales with date data, the same as those of `numberLocales`,\n'
@@ -382,6 +398,17 @@ Future<void> main() async {
             in dayPeriodRules[language]!.entries)
           '${_string(period)}: ($from, $before)',
       ].join(', ')}},\n',
+    '};\n\n',
+    '/// The time zone identifiers that CLDR knows: the IANA identifiers and\n'
+        '/// their aliases, from the BCP 47 `tz` keyword, without those of the\n'
+        '/// unknown time zone.\n'
+        'const timeZoneIds = <String>{\n',
+    for (final id in timeZoneIds.toList()..sort()) '  ${_string(id)},\n',
+    '};\n\n',
+    '/// The identifiers in [timeZoneIds] of UTC and GMT, whose offset is\n'
+        '/// always zero.\n'
+        'const utcTimeZoneIds = <String>{\n',
+    for (final id in utcTimeZoneIds.toList()..sort()) '  ${_string(id)},\n',
     '};\n',
   ]);
 
@@ -543,7 +570,7 @@ Map<String, String> _dateFields(
           standAlone == format ? '' : standAlone;
     }
   }
-  for (final width in ['eraAbbr', 'eraNarrow']) {
+  for (final width in ['eraAbbr', 'eraNames', 'eraNarrow']) {
     final names = map(map(calendar['eras'])[width]);
     fields['eras.$width'] = [
       for (final key in ['0', '1']) names[key]! as String
