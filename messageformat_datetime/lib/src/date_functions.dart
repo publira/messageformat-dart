@@ -1,14 +1,43 @@
+import 'package:messageformat/messageformat.dart';
+
 import 'date_data.dart';
 import 'date_format.dart';
 import 'date_locale.dart';
-import 'errors.dart';
-import 'locale_direction.dart';
-import 'message_value.dart';
+import 'version.dart';
 
-/// The default functions that LDML 48.2 marks Draft, by identifier: the
-/// date/time functions, which can change in a later version of the
-/// specification.
-const Map<String, MessageFunction> draftFunctions = {
+/// The date/time functions `:datetime`, `:date`, and `:time` by identifier,
+/// to register with `MessageFormatOptions.functions`.
+///
+/// ```dart
+/// final mf = MessageFormat(
+///   'en',
+///   r'Updated {$when :datetime}',
+///   options: MessageFormatOptions(functions: dateTimeFunctions),
+/// );
+/// mf.format({'when': DateTime(2006, 1, 2, 15, 4)});
+/// // 'Updated Jan 2, 2006, 3:04 PM'
+/// ```
+///
+/// LDML 48.2 marks these default functions **Draft**: their options and
+/// output can change in a minor release of this package when a later
+/// version of the specification changes them. They format a [DateTime] or
+/// an ISO 8601 date/time literal value, such as `2006-01-02T15:04:06`, with
+/// the CLDR [dateTimeCldrVersion] patterns that the *semantic skeleton* of
+/// their options maps to (UTS #35, Part 4, Semantic Skeletons). Once they
+/// are registered, a [DateTime] in a placeholder without a function, such as
+/// `{$when}`, is formatted with `:datetime`. They have these limits:
+///
+/// - Dates use the Gregorian calendar in every locale, and the option
+///   `calendar` accepts only `gregory`.
+/// - The default time zone is the platform's local time zone. The option
+///   `timeZone` accepts `input` and the time zone identifiers that CLDR
+///   knows, such as `UTC` or `America/New_York`. Since time zone data is
+///   not included, a value with an offset cannot be converted to a zone
+///   other than UTC, and its expression formats as its fallback value with
+///   a *Bad Option* error.
+/// - The option `timeZoneStyle` shows the offset from GMT, such as
+///   `GMT-8`, since time zone names are not included.
+const Map<String, MessageFunction> dateTimeFunctions = {
   'date': _date,
   'datetime': _datetime,
   'time': _time,
@@ -115,14 +144,13 @@ MessageValue _resolve(
     zone: zone,
     hour12: hour12,
   );
-  final tag = locale.tag;
   return _DateTimeValue(
     input,
     format,
     fields,
     Map.unmodifiable(reader.valid),
-    tag,
-    localeDirection(tag),
+    locale.tag,
+    locale.cldr.dir,
   );
 }
 

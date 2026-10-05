@@ -1,5 +1,4 @@
 import 'data_model.dart';
-import 'date_functions.dart';
 import 'default_functions.dart';
 import 'errors.dart';
 import 'locale_direction.dart';
@@ -46,14 +45,18 @@ final class MessageFormatOptions {
   /// Custom functions by identifier, without the `:` sigil and including any
   /// namespace, such as `ns:upper`. They are added to the default
   /// functions, and replace a default function of the same name.
+  ///
+  /// The date/time functions are added here too, as the
+  /// `dateTimeFunctions` map of `package:messageformat_datetime`.
   final Map<String, MessageFunction> functions;
 }
 
 /// The default functions that every [MessageFormat] has, by identifier.
-const Map<String, MessageFunction> _defaultFunctions = {
-  ...stableFunctions,
-  ...draftFunctions,
-};
+const Map<String, MessageFunction> _defaultFunctions = stableFunctions;
+
+/// The default functions that `package:messageformat_datetime` provides,
+/// which an Unknown Function error names.
+const _dateTimeFunctions = {'datetime', 'date', 'time'};
 
 /// A MessageFormat 2.0 message, ready to be formatted.
 ///
@@ -90,32 +93,12 @@ const Map<String, MessageFunction> _defaultFunctions = {
 /// mf.format({'count': 2}); // '2 episodes'
 /// ```
 ///
-/// Messages can also use the date/time functions `:datetime`, `:date`, and
-/// `:time`, which the specification marks **Draft**: their options and
-/// output can change in a minor release of this package when a later
-/// version of the specification changes them. They format a [DateTime] or
-/// an ISO 8601 date/time literal value, such as `2006-01-02T15:04:06`, with
-/// the CLDR [cldrVersion] patterns that the *semantic skeleton* of their
-/// options maps to (UTS #35, Part 4, Semantic Skeletons), and a [DateTime]
-/// in a placeholder without a function is formatted with `:datetime`. They
-/// have these limits:
-///
-/// - Dates use the Gregorian calendar in every locale, and the option
-///   `calendar` accepts only `gregory`.
-/// - The default time zone is the platform's local time zone. The option
-///   `timeZone` accepts `input` and the time zone identifiers that CLDR
-///   knows, such as `UTC` or `America/New_York`. Since time zone data is
-///   not included, a value with an offset cannot be converted to a zone
-///   other than UTC, and its expression formats as its fallback value with
-///   a *Bad Option* error.
-/// - The option `timeZoneStyle` shows the offset from GMT, such as
-///   `GMT-8`, since time zone names are not included.
-///
-/// ```dart
-/// final mf = MessageFormat('en', r'Updated {$when :datetime}');
-/// mf.format({'when': DateTime(2006, 1, 2, 15, 4)});
-/// // 'Updated Jan 2, 2006, 3:04 PM'
-/// ```
+/// The default functions that the specification marks Draft are not
+/// included. `package:messageformat_datetime` provides the date/time
+/// functions `:datetime`, `:date`, and `:time` as a map to add to
+/// [MessageFormatOptions.functions]. Without them, a message that calls one
+/// reports an *Unknown Function* error, and a [DateTime] in a placeholder
+/// without a function is formatted with its `toString()`.
 ///
 /// This corresponds to `MessageFormat` in the JS `messageformat` package and
 /// to the TC39 `Intl.MessageFormat` proposal.
@@ -531,9 +514,13 @@ final class _Formatter {
   ) {
     final handler = _format._functions[toNfc(function.name)];
     if (handler == null) {
+      final name = function.name;
       _report(MessageResolutionError(
         ResolutionErrorKind.unknownFunction,
-        'Unknown function :${function.name}',
+        _dateTimeFunctions.contains(name)
+            ? 'Unknown function :$name; register the dateTimeFunctions of '
+                'package:messageformat_datetime to use it'
+            : 'Unknown function :$name',
         source: source,
       ));
       return const _Fallback();

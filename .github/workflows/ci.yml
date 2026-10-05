@@ -49,9 +49,13 @@ jobs:
       - name: Validate / Analyze
         run: dart analyze --fatal-infos
 
-      - name: Validate / Test
+      - name: Validate / Test (messageformat)
         run: dart test
         working-directory: messageformat
+
+      - name: Validate / Test (messageformat_datetime)
+        run: dart test
+        working-directory: messageformat_datetime
 
   # Single required status check for the branch ruleset (shown as "CI / Summary").
   # The matrix job names include the SDK version, so requiring them directly

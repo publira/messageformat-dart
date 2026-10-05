@@ -46,10 +46,10 @@
 //
 // SPDX-License-Identifier: Unicode-3.0
 
-/// The locales with date data, the same as those of `numberLocales`,
-/// mapped to the fields in which each differs from its parent (the
-/// same as for number data). The data is that of the Gregorian
-/// calendar.
+/// The locales with date data, the CLDR locales that `CldrLocale.chain`
+/// of package:messageformat finds, mapped to the fields in which each
+/// differs from its parent in that chain. The data is that of the
+/// Gregorian calendar.
 ///
 /// A field is one of:
 ///
