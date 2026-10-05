@@ -2,7 +2,7 @@ name: messageformat_datetime
 description: >-
   The date/time functions of Unicode MessageFormat 2.0 (:datetime, :date,
   and :time) with Unicode CLDR data, for package:messageformat.
-version: 0.1.0-dev
+version: 0.1.0
 repository: https://github.com/publira/messageformat-dart/tree/main/messageformat_datetime
 issue_tracker: https://github.com/publira/messageformat-dart/issues
 topics:
@@ -18,7 +18,7 @@ environment:
 resolution: workspace
 
 dependencies:
-  messageformat: ^0.1.0-dev
+  messageformat: ^0.1.0
 
 dev_dependencies:
   test: ^1.25.15

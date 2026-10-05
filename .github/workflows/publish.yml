@@ -1,0 +1,86 @@
+name: Publish
+
+# pub.dev accepts an upload from GitHub Actions only from a workflow started
+# by pushing a tag that matches the tag pattern configured for the package
+# on pub.dev. Each package has its own tag, `<package>-v<version>`, so that
+# one workflow run publishes one package.
+#
+# Tag patterns on pub.dev:
+#   messageformat:          `messageformat-v{{version}}`
+#   messageformat_datetime: `messageformat_datetime-v{{version}}`
+on:
+  push:
+    tags:
+      - messageformat-v[0-9]+.[0-9]+.[0-9]+*
+      - messageformat_datetime-v[0-9]+.[0-9]+.[0-9]+*
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    uses: ./.github/workflows/ci.yml
+
+  publish:
+    name: Publish
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # The current stable release, as in ci.yml.
+      # renovate: datasource=dart-version depName=dart
+      DART_VERSION: 3.13.5
+    # pub.dev can require uploads to come from this environment.
+    environment: pub.dev
+    permissions:
+      contents: read
+      # Lets setup-dart exchange a GitHub OIDC token for a pub.dev token.
+      id-token: write
+    steps:
+      - name: Setup / Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The whole history, with origin/main, to check that the tag is on
+          # main.
+          fetch-depth: 0
+          persist-credentials: false
+
+      # The tag must be on main, and it names the package directory and the
+      # version, which must be the version in its pubspec.yaml.
+      - name: Setup / Package
+        id: package
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if ! git merge-base --is-ancestor "${GITHUB_SHA}" origin/main; then
+            echo "::error::Tag ${TAG} is not on main"
+            exit 1
+          fi
+          package="${TAG%-v*}"
+          version="${TAG##*-v}"
+          actual="$(sed -n 's/^version:[[:space:]]*\([^[:space:]]*\)[[:space:]]*$/\1/p' "${package}/pubspec.yaml")"
+          if [ "${actual}" != "${version}" ]; then
+            echo "::error::Tag ${TAG} does not match version ${actual} in ${package}/pubspec.yaml"
+            exit 1
+          fi
+          echo "directory=${package}" >> "${GITHUB_OUTPUT}"
+
+      - name: Setup / Dart
+        uses: dart-lang/setup-dart@6afc89df92d6eb3834022f73cd65adc8cdfcb92d # v1.8.1
+        with:
+          sdk: ${{ env.DART_VERSION }}
+
+      - name: Setup / Dependencies
+        working-directory: ${{ steps.package.outputs.directory }}
+        run: dart pub get
+
+      - name: Validate / Dry run
+        working-directory: ${{ steps.package.outputs.directory }}
+        run: dart pub publish --dry-run
+
+      - name: Publish / pub.dev
+        working-directory: ${{ steps.package.outputs.directory }}
+        run: dart pub publish --force
