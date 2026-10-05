@@ -24,4 +24,13 @@ void main() {
         ?.group(1);
     expect(constraint, '^$dateTimePackageVersion');
   });
+
+  test('the dev dependency of messageformat starts at the same version', () {
+    final pubspec = File('../messageformat/pubspec.yaml').readAsStringSync();
+    final constraint =
+        RegExp(r'^  messageformat_datetime:\s*(\S+)\s*$', multiLine: true)
+            .firstMatch(pubspec)
+            ?.group(1);
+    expect(constraint, '^$dateTimePackageVersion');
+  });
 }
