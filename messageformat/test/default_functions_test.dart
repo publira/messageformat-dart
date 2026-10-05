@@ -276,6 +276,11 @@ void main() {
           ('{|1e-99999999999|}', 'unsupported-operation'));
     });
 
+    test('format zero with any exponent', () {
+      expect(_ok('{|0e1073741824| :number minimumFractionDigits=2}'), '0.00');
+      expect(_ok('{|-0e-1073741824| :number}'), '-0');
+    });
+
     test('take the value and options of a number function', () {
       expect(
         _ok(
@@ -423,6 +428,17 @@ void main() {
                     bidiIsolation: BidiIsolation.none))
             .format(),
         '1,5',
+      );
+    });
+
+    test('have the locale and direction of the locale that formats them', () {
+      final parts = MessageFormat(['tlh', 'ar'], '{1 :number}').formatToParts();
+      expect(parts.first, const MessageBidiIsolationPart('\u2067'));
+      expect(
+        parts[1],
+        isA<MessageExpressionPart>()
+            .having((part) => part.dir, 'dir', MessageDirection.rtl)
+            .having((part) => part.locale, 'locale', 'ar'),
       );
     });
   });

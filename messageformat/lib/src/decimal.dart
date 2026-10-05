@@ -10,8 +10,13 @@ final class Decimal {
   const Decimal._(this.negative, this.coefficient, this.exponent, this._kind);
 
   /// A finite value.
-  Decimal.finite(this.negative, this.coefficient, this.exponent)
-      : _kind = _Kind.finite;
+  ///
+  /// Zero always has the exponent 0, so that a literal such as `0e999999`
+  /// costs nothing to round.
+  Decimal.finite(this.negative, BigInt coefficient, int exponent)
+      : coefficient = coefficient,
+        exponent = coefficient == BigInt.zero ? 0 : exponent,
+        _kind = _Kind.finite;
 
   /// Positive or negative infinity.
   const Decimal.infinity({this.negative = false})

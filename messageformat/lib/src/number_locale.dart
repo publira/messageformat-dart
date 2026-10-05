@@ -4,8 +4,12 @@ import 'number_data.dart';
 /// patterns, and currency symbols, and the locales whose plural rules
 /// apply to it.
 final class NumberLocale {
-  NumberLocale._(this._chain, this.numberingSystem, this.pluralLocales)
-      : digits = numberingSystemDigits[numberingSystem]!;
+  NumberLocale._(
+    this.tag,
+    this._chain,
+    this.numberingSystem,
+    this.pluralLocales,
+  ) : digits = numberingSystemDigits[numberingSystem]!;
 
   /// The data of the first of [tags] that CLDR has data for, or of the root
   /// locale if none has.
@@ -21,6 +25,10 @@ final class NumberLocale {
   }
 
   static final _cache = <String, NumberLocale>{};
+
+  /// The requested tag whose data this is, or the first one (`und` if there
+  /// is none) when no tag has data: the locale of a formatted number.
+  final String tag;
 
   /// The locale with data and its ancestors, ending with `und`.
   final List<String> _chain;
@@ -75,13 +83,13 @@ final class NumberLocale {
       final parsed = _Tag.parse(tag);
       if (parsed == null) continue;
       final locale = parsed.dataLocale();
-      if (locale != null) return _create(locale, parsed);
+      if (locale != null) return _create(tag, locale, parsed);
     }
-    final first = tags.isEmpty ? null : _Tag.parse(tags.first);
-    return _create('und', first);
+    final first = tags.isEmpty ? 'und' : tags.first;
+    return _create(first, 'und', _Tag.parse(first));
   }
 
-  static NumberLocale _create(String locale, _Tag? tag) {
+  static NumberLocale _create(String requested, String locale, _Tag? tag) {
     final chain = <String>[];
     for (String? current = locale; current != null;) {
       chain.add(current);
@@ -92,6 +100,7 @@ final class NumberLocale {
       _ => _fieldOf(chain, 'numberingSystem') ?? 'latn',
     };
     return NumberLocale._(
+      requested,
       List.unmodifiable(chain),
       numberingSystem,
       List.unmodifiable([

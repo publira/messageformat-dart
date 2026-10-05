@@ -29,6 +29,12 @@ void main() {
       expect(Decimal.tryParse('1e9')!.toPlainString(5), isNull);
     });
 
+    test('keeps zero with the exponent 0', () {
+      final zero = Decimal.tryParse('-0e1073741824')!;
+      expect((zero.exponent, zero.negative), (0, true));
+      expect(zero.round(-100, UnsignedRounding.halfEven).isZero, isTrue);
+    });
+
     test('knows whether it is an integer', () {
       expect(Decimal.tryParse('1.000')!.isInteger, isTrue);
       expect(Decimal.tryParse('1.5e1')!.isInteger, isTrue);

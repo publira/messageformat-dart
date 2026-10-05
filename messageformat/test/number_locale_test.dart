@@ -32,6 +32,9 @@ void main() {
       expect(NumberLocale(['xx', 'de']).symbol('decimal'), ',');
       expect(NumberLocale(['not a tag']).symbol('decimal'), '.');
       expect(NumberLocale(const []).symbol('decimal'), '.');
+      expect(NumberLocale(['xx', 'de-AT']).tag, 'de-AT');
+      expect(NumberLocale(['xx', 'yy']).tag, 'xx');
+      expect(NumberLocale(const []).tag, 'und');
     });
 
     test('reads the numbering system from the u extension', () {

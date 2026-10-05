@@ -568,7 +568,8 @@ class _NumberValue extends MessageValue {
       ...reader.valid,
       if (!selectable && kind != _Kind.currency) 'select': merged['select'],
     };
-    final tag = context.locales.first;
+    // The locale whose data formats the number, which may not be the first.
+    final tag = locale.tag;
     final dir = localeDirection(tag);
     return selectable
         ? _SelectableNumberValue(
