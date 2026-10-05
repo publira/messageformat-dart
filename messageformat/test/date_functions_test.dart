@@ -87,7 +87,8 @@ void main() {
       ('ko', '{|$t| :time}', '오후 3:04'),
       ('ar-EG', '{|$t| :date length=long}', '٢ يناير ٢٠٠٦'),
       ('ar-EG', '{|$t| :time}', '٣:٠٤ م'),
-      ('hi', '{|$t| :datetime}', '2 जन॰ 2006, 3:04 pm'),
+      ('hi', '{|$t| :date}', '2 जन॰ 2006'),
+      ('mn', '{|$t| :date length=short}', '2006.01.02'),
       ('ru', '{|$t| :date length=long}', '2 января 2006\u202fг.'),
       ('en-US', '{|0750-01-02| :date}', 'Jan 2, 750 AD'),
       ('sq', '{|0750-01-02| :date length=short}', '2.1.750 mbas Krishtit'),
@@ -149,6 +150,24 @@ void main() {
           '午前0:30');
       expect(
           _ok('{|2006-01-02T00:30:00| :time}', locale: 'en-u-hc-h24'), '24:30');
+      // A language can prefer other hour formats than its region: Hindi in
+      // India prefers flexible day periods, and English there AM and PM.
+      expect(_ok('{|2006-01-02T15:04:06| :time}', locale: 'hi'), 'दोपहर 3:04');
+      expect(
+          _ok('{|2006-01-02T15:04:06| :time}', locale: 'gu-IN'), '3:04 બપોરે');
+      expect(_ok('{|2006-01-02T15:04:06| :time}', locale: 'en-IN'),
+          '3:04\u202fpm');
+    });
+
+    test('use the name widths that patterns ask for', () {
+      // Mongolian short month-day pattern is `MMMMM/dd`, with narrow months.
+      expect(
+          _ok('{|2006-01-02| :date fields=month-day length=short}',
+              locale: 'mn'),
+          'I/02');
+      // Albanian `GyMd` pattern is `d.M.y GGGG`, with wide era names.
+      expect(_ok('{|0750-01-02| :date length=short}', locale: 'sq'),
+          '2.1.750 mbas Krishtit');
     });
 
     test('accept hour12 from a variable', () {

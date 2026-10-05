@@ -63,8 +63,8 @@ final class DateLocale {
     return formats;
   }();
 
-  /// The hour formats that the locale's region allows, most preferred
-  /// first, such as `h`, `hb`, or `H`.
+  /// The hour formats that the locale's language in its region, or else its
+  /// region, allows, most preferred first, such as `h`, `hb`, or `H`.
   late final List<String> hourFormats = () {
     var region = numbers.region;
     if (region == null) {
@@ -75,7 +75,11 @@ final class DateLocale {
         }
       }
     }
-    return (hourCycles[region] ?? hourCycles['001']!).split(' ');
+    final language = numbers.chain.first.split('-').first;
+    return (hourCycles['$language-$region'] ??
+            hourCycles[region] ??
+            hourCycles['001']!)
+        .split(' ');
   }();
 
   /// The day period rules of the locale's language, or of the root locale.

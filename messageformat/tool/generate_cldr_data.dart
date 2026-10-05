@@ -381,9 +381,10 @@ Future<void> main() async {
     for (final key in localeRegions.keys.toList()..sort())
       '  ${_string(key)}: ${_string(localeRegions[key]!)},\n',
     '};\n\n',
-    '/// The hour formats allowed in each region, most preferred first, such\n'
-        '/// as `h hb H hB`: an hour symbol, optionally followed by the day\n'
-        '/// period symbol to use with it. `001` is the default.\n'
+    '/// The hour formats allowed in each region, or for a language in a\n'
+        '/// region such as `hi-IN`, most preferred first, such as `h hb H hB`:\n'
+        '/// an hour symbol, optionally followed by the day period symbol to\n'
+        '/// use with it. `001` is the default.\n'
         'const hourCycles = <String, String>{\n',
     for (final key in hourCycles.keys.toList()..sort())
       '  ${_string(key)}: ${_string(hourCycles[key]!)},\n',
@@ -548,7 +549,7 @@ Map<String, String> _dateFields(
   for (final (section, widths, keys) in [
     (
       'months',
-      ['abbreviated', 'wide'],
+      ['abbreviated', 'wide', 'narrow'],
       [for (var month = 1; month <= 12; month++) '$month'],
     ),
     (

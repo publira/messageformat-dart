@@ -538,7 +538,11 @@ final class _Formatter {
               : _locale.names(
                   'months',
                   symbol == 'L' ? 'stand-alone' : 'format',
-                  length == 4 ? 'wide' : 'abbreviated',
+                  switch (length) {
+                    4 => 'wide',
+                    5 => 'narrow',
+                    _ => 'abbreviated',
+                  },
                 )![value.month - 1],
         ),
       'd' => ('day', _number(value.day, length)),
