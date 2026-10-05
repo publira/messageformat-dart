@@ -79,8 +79,8 @@ void checkParse(ConformanceSubject subject, ConformanceCase testCase) {
   );
 }
 
-/// The functions of [pendingFunctions] that formatting [testCase] uses, in
-/// source order.
+/// The functions of [pending], by default [pendingFunctions], that
+/// formatting [testCase] uses, in source order.
 ///
 /// A case that expects a Syntax Error or a Data Model Error is never
 /// formatted, so it uses none.
@@ -92,7 +92,10 @@ void checkParse(ConformanceSubject subject, ConformanceCase testCase) {
 /// a [DateTime] uses `number` or `datetime` when an expression holds just
 /// its variable, such as `{$x}`, unless an `.input` declaration gives the
 /// variable a function.
-List<String> pendingFunctionsUsedBy(ConformanceCase testCase) {
+List<String> pendingFunctionsUsedBy(
+  ConformanceCase testCase, [
+  Map<String, String> pending = pendingFunctions,
+]) {
   final src = testCase.src;
   if (testCase.expErrors?.any(staticErrorTypes.contains) ?? false) {
     return const [];
@@ -107,7 +110,7 @@ List<String> pendingFunctionsUsedBy(ConformanceCase testCase) {
   };
   return [
     for (final function in used)
-      if (pendingFunctions.containsKey(function)) function,
+      if (pending.containsKey(function)) function,
   ];
 }
 

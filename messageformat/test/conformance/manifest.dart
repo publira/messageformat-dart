@@ -73,11 +73,7 @@ const notYetImplemented = <String, String>{};
 ///
 /// Like [notYetImplemented], this list is temporary: each Issue removes the
 /// functions it adds, and the list must be empty before #1 is closed.
-const pendingFunctions = <String, String>{
-  'date': '#7',
-  'datetime': '#7',
-  'time': '#7',
-};
+const pendingFunctions = <String, String>{};
 
 /// The error types that parsing reports: the Syntax Error and the Data
 /// Model Errors.

@@ -1,4 +1,5 @@
 import 'data_model.dart';
+import 'date_functions.dart';
 import 'default_functions.dart';
 import 'errors.dart';
 import 'locale_direction.dart';
@@ -49,9 +50,10 @@ final class MessageFormatOptions {
 }
 
 /// The default functions that every [MessageFormat] has, by identifier.
-///
-/// The Draft date and time functions are added by #7.
-const Map<String, MessageFunction> _defaultFunctions = stableFunctions;
+const Map<String, MessageFunction> _defaultFunctions = {
+  ...stableFunctions,
+  ...draftFunctions,
+};
 
 /// A MessageFormat 2.0 message, ready to be formatted.
 ///
@@ -86,6 +88,33 @@ const Map<String, MessageFunction> _defaultFunctions = stableFunctions;
 /// ''');
 /// mf.format({'count': 1}); // '1 episode'
 /// mf.format({'count': 2}); // '2 episodes'
+/// ```
+///
+/// Messages can also use the date/time functions `:datetime`, `:date`, and
+/// `:time`, which the specification marks **Draft**: their options and
+/// output can change in a minor release of this package when a later
+/// version of the specification changes them. They format a [DateTime] or
+/// an ISO 8601 date/time literal value, such as `2006-01-02T15:04:06`, with
+/// the CLDR [cldrVersion] patterns that the *semantic skeleton* of their
+/// options maps to (UTS #35, Part 4, Semantic Skeletons), and a [DateTime]
+/// in a placeholder without a function is formatted with `:datetime`. They
+/// have these limits:
+///
+/// - Dates use the Gregorian calendar in every locale, and the option
+///   `calendar` accepts only `gregory`.
+/// - The default time zone is the platform's local time zone. The option
+///   `timeZone` accepts `input` and the time zone identifiers that CLDR
+///   knows, such as `UTC` or `America/New_York`. Since time zone data is
+///   not included, a value with an offset cannot be converted to a zone
+///   other than UTC, and its expression formats as its fallback value with
+///   a *Bad Option* error.
+/// - The option `timeZoneStyle` shows the offset from GMT, such as
+///   `GMT-8`, since time zone names are not included.
+///
+/// ```dart
+/// final mf = MessageFormat('en', r'Updated {$when :datetime}');
+/// mf.format({'when': DateTime(2006, 1, 2, 15, 4)});
+/// // 'Updated Jan 2, 2006, 3:04 PM'
 /// ```
 ///
 /// This corresponds to `MessageFormat` in the JS `messageformat` package and
