@@ -99,4 +99,15 @@ git push origin <package>-v<version>
 curl -sS -o /dev/null -w '%{http_code}\n' https://pub.dev/api/packages/messageformat/versions/<version>
 ```
 
+Once the publish run has succeeded, create a GitHub release for the tag, titled `<package> <version>`, with the package's new `CHANGELOG.md` entry, without its heading, as the notes. Only a release of `messageformat` is marked as the latest release. `gh release create` marks a release as the latest by its date and version unless told otherwise, so a release of `messageformat_datetime` passes `--latest=false`.
+
+```bash
+# messageformat
+gh release create messageformat-v<version> --verify-tag \
+  --title "messageformat <version>" --notes-file <notes> --latest
+# messageformat_datetime
+gh release create messageformat_datetime-v<version> --verify-tag \
+  --title "messageformat_datetime <version>" --notes-file <notes> --latest=false
+```
+
 pub.dev accepts automated uploads only for a package that already exists, so the first version of a new sibling package is uploaded by hand. Then transfer it to the verified publisher `publira.dev`, and, under Automated publishing on pub.dev, enable publishing from GitHub Actions with its tag pattern and require the `pub.dev` environment. Do not tag a version that is already on pub.dev, such as one uploaded by hand: the workflow would fail to publish it again.
