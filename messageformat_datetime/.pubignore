@@ -1,3 +1,0 @@
-# This test reads messageformat from the workspace, which a published
-# package does not have.
-/test/release_sync_test.dart

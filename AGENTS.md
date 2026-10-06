@@ -83,17 +83,31 @@ Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-A
 
 ## Releases
 
-`messageformat` and `messageformat_datetime` release together, with the same version. A release is a pull request that sets, in both packages, the `version` in `pubspec.yaml`, the version constant in `lib/src/version.dart` (`packageVersion` and `dateTimePackageVersion`), the lower bound of the `^` constraints between the two packages, and a new top entry in `CHANGELOG.md`. The tests in `test/messageformat_test.dart` and `test/messageformat_datetime_test.dart` of each package, and `messageformat_datetime/test/release_sync_test.dart` across the two, fail when these disagree.
+Each package releases on its own, with its own version, when it has changes. A release is a pull request for one package that sets the `version` in its `pubspec.yaml`, its version constant in `lib/src/version.dart` (`packageVersion` or `dateTimePackageVersion`), and a new top entry in its `CHANGELOG.md`. The package's `test/messageformat_test.dart` or `test/messageformat_datetime_test.dart` fails when these disagree.
 
-After the pull request is merged, tag its merge commit on `main` by hand, one tag per package, and push the tags one at a time: `messageformat-v<version>` first, and `messageformat_datetime-v<version>` only once pub.dev serves the new `messageformat`. Each tag starts its own workflow run, and `messageformat_datetime` requires the same version of `messageformat`. Its dry run resolves `messageformat` from the workspace, not from pub.dev, so it does not catch a `messageformat` that is not published yet. pub.dev accepts an upload from GitHub Actions only from a workflow started by such a tag push, so the tag is what starts `.github/workflows/publish.yml`. It runs `ci.yml`, checks that the tag matches the package's `pubspec.yaml`, runs `dart pub publish --dry-run`, and publishes the package from the `pub.dev` environment. A sibling package that joins the workspace gets its own tag pattern in `publish.yml` and on pub.dev.
+`messageformat_datetime` depends on `messageformat` with a `^` constraint, and `messageformat` has a dev dependency on `messageformat_datetime`. `dart pub get` in the workspace fails when either constraint does not admit the version of the other package, so a release that moves a package outside the other's constraint changes that constraint in the same pull request. When a change to `messageformat_datetime` starts to rely on an API or a behavior that `messageformat` gained after the lower bound of its constraint, raise that lower bound in the same change. The workspace always resolves the `messageformat` in the repository, so neither CI nor the dry run notices a lower bound that is too low. A changed dependency of `messageformat_datetime` on `messageformat` reaches its users only with a release of `messageformat_datetime`.
+
+After the pull request is merged, tag its merge commit on `main` by hand with `<package>-v<version>` and push the tag. pub.dev accepts an upload from GitHub Actions only from a workflow started by such a tag push, so the tag is what starts `.github/workflows/publish.yml`. It runs `ci.yml`, checks that the tag matches the package's `pubspec.yaml`, runs `dart pub publish --dry-run`, and publishes the package from the `pub.dev` environment. A sibling package that joins the workspace gets its own tag pattern in `publish.yml` and on pub.dev.
+
+When a release of `messageformat_datetime` raises its lower bound on `messageformat`, release that `messageformat` version first, and push the `messageformat_datetime` tag only once pub.dev serves it. The dry run resolves `messageformat` from the workspace, not from pub.dev, so it does not catch a `messageformat` that is not published yet.
 
 ```bash
-git tag messageformat-v<version> <merge-commit>
-git push origin messageformat-v<version>
-# Once the publish run has succeeded, this must print 200.
+git tag <package>-v<version> <merge-commit>
+git push origin <package>-v<version>
+# Before tagging a messageformat_datetime that raises its lower bound on
+# messageformat, this must print 200 for that messageformat version.
 curl -sS -o /dev/null -w '%{http_code}\n' https://pub.dev/api/packages/messageformat/versions/<version>
-git tag messageformat_datetime-v<version> <merge-commit>
-git push origin messageformat_datetime-v<version>
+```
+
+Once the publish run has succeeded, create a GitHub release for the tag, titled `<package> <version>`, with the package's new `CHANGELOG.md` entry, without its heading, as the notes. Only a release of `messageformat` is marked as the latest release. `gh release create` marks a release as the latest by its date and version unless told otherwise, so a release of `messageformat_datetime` passes `--latest=false`.
+
+```bash
+# messageformat
+gh release create messageformat-v<version> --verify-tag \
+  --title "messageformat <version>" --notes-file <notes> --latest
+# messageformat_datetime
+gh release create messageformat_datetime-v<version> --verify-tag \
+  --title "messageformat_datetime <version>" --notes-file <notes> --latest=false
 ```
 
 pub.dev accepts automated uploads only for a package that already exists, so the first version of a new sibling package is uploaded by hand. Then transfer it to the verified publisher `publira.dev`, and, under Automated publishing on pub.dev, enable publishing from GitHub Actions with its tag pattern and require the `pub.dev` environment. Do not tag a version that is already on pub.dev, such as one uploaded by hand: the workflow would fail to publish it again.
