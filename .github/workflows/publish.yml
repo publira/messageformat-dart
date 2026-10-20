@@ -31,7 +31,7 @@ jobs:
     env:
       # The current stable release, as in ci.yml.
       # renovate: datasource=dart-version depName=dart
-      DART_VERSION: 3.13.5
+      DART_VERSION: 3.13.6
     # pub.dev can require uploads to come from this environment.
     environment: pub.dev
     permissions:
