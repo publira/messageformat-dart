@@ -36,7 +36,7 @@ jobs:
           - DART_VERSION: 3.6.0
           # The current stable release.
           - # renovate: datasource=dart-version depName=dart
-            DART_VERSION: 3.13.5
+            DART_VERSION: 3.13.6
     defaults:
       run:
         working-directory: ${{ matrix.PACKAGE }}
