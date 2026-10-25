@@ -10,7 +10,7 @@
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0.5": {}
   },
-  "image": "ghcr.io/publira/base-images/publira-dev:2026.10.24@sha256:6f8d9affded1a097503d3aad5a75f50b79bc8bd71e7c9ee8f2b958e50e731057",
+  "image": "ghcr.io/publira/base-images/publira-dev:2026.10.25@sha256:296fc877fd52153ec872327c521bd1a2ca3233bd7b63cc32aac2dd049541560e",
   "mounts": [
     "source=messageformat-dart-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
     "source=messageformat-dart-codex-${devcontainerId},target=/home/vscode/.codex,type=volume",
