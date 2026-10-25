@@ -164,7 +164,7 @@ void main() {
       expect(
           _ok('{|2006-01-02T15:04:06| :time}', locale: 'gu-IN'), '3:04 બપોરે');
       expect(_ok('{|2006-01-02T15:04:06| :time}', locale: 'en-IN'),
-          '3:04\u202fpm');
+          '3:04\u202fPM');
     });
 
     test('use the name widths that patterns ask for', () {

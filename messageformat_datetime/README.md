@@ -6,7 +6,7 @@ The date/time functions of [Unicode MessageFormat 2.0](https://www.unicode.org/r
 
 ## Specification version
 
-The package implements the date/time functions of **LDML 48.2**, revision [`tr35-78`](https://www.unicode.org/reports/tr35/tr35-78/tr35-messageFormat.html) of UTS #35, Part 9, with the date data of **Unicode CLDR 48.2**. Together with `messageformat`, they pass every case of the [MessageFormat Working Group conformance suite](https://github.com/unicode-org/message-format-wg/tree/LDML48.2/test) at tag `LDML48.2`, including those in `functions/date.json`, `functions/datetime.json`, and `functions/time.json`.
+The package implements the date/time functions of **LDML 48.2**, revision [`tr35-78`](https://www.unicode.org/reports/tr35/tr35-78/tr35-messageFormat.html) of UTS #35, Part 9, with the date data of **Unicode CLDR 49**. Together with `messageformat`, they pass every case of the [MessageFormat Working Group conformance suite](https://github.com/unicode-org/message-format-wg/tree/LDML48.2/test) at tag `LDML48.2`, including those in `functions/date.json`, `functions/datetime.json`, and `functions/time.json`.
 
 > [!NOTE]
 > The specification marks `:datetime`, `:date`, and `:time` as **Draft**. Their options and output can change in a minor release of this package when a later version of the specification changes them.
