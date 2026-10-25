@@ -21,6 +21,16 @@ void main() {
       expect(NumberLocale(['pa']).numberingSystem, 'latn');
     });
 
+    test('drops the script of a tag when it is the likely one', () {
+      // en-Latn-IN is en-IN and de-Latn-CH is de-CH. A script that is not
+      // the likely one, such as en-Dsrt, has no data and falls back to root.
+      expect(
+          NumberLocale(['en-Latn-IN']).chain, ['en-IN', 'en-001', 'en', 'und']);
+      expect(NumberLocale(['de-Latn-CH']).chain, NumberLocale(['de-CH']).chain);
+      expect(NumberLocale(['mn-Cyrl']).chain, ['mn', 'und']);
+      expect(NumberLocale(['en-Dsrt']).chain, ['und']);
+    });
+
     test('follows deprecated language codes', () {
       expect(NumberLocale(['iw']).currencySymbol('ILS'), '\u20aa');
       expect(NumberLocale(['sh']).currencySymbol('RSD'),

@@ -130,8 +130,16 @@ Future<void> main() async {
     };
   }
 
-  // Languages that have locales for more than one script, whose likely
-  // script decides which of those locales a tag without a script uses.
+  // The likely script of every language with data. It decides whether a tag
+  // with a script, such as `en-Latn-IN`, can fall back to the locales
+  // without one, and which of the locales of a language with more than one
+  // script a tag without a script uses. The regions whose likely script
+  // differs from the language's choose among those locales, so they are
+  // listed only for such a language.
+  final languages = {
+    for (final locale in available)
+      if (locale != 'und') locale.split('-').first,
+  };
   final scripted = {
     for (final locale in available)
       if (locale.split('-') case [final language, final script, ...]
@@ -139,9 +147,14 @@ Future<void> main() async {
         language,
   };
   final likelyScripts = <String, String>{};
-  for (final language in scripted) {
+  for (final language in languages) {
+    if (!likely.containsKey(language)) {
+      stderr.writeln('warning: no likely subtags for $language');
+      continue;
+    }
     final script = likelyScript(language);
     likelyScripts[language] = script;
+    if (!scripted.contains(language)) continue;
     for (final MapEntry(:key, :value) in likely.entries) {
       if (key.split('-') case [final l, final region]
           when l == language && region.length != 4) {
@@ -213,9 +226,10 @@ Future<void> main() async {
     for (final key in parents.keys.toList()..sort())
       '  ${_string(key)}: ${_string(parents[key]!)},\n',
     '};\n\n',
-    '/// The likely script of each language that has locales for more than\n'
-        '/// one script, and of each of its `language-REGION` combinations\n'
-        '/// whose likely script differs from the language\'s.\n'
+    '/// The likely script of each language with data and, for a language\n'
+        '/// that has locales for more than one script, of each of its\n'
+        '/// `language-REGION` combinations whose likely script differs from\n'
+        '/// the language\'s.\n'
         'const likelyScripts = <String, String>{\n',
     for (final key in likelyScripts.keys.toList()..sort())
       '  ${_string(key)}: ${_string(likelyScripts[key]!)},\n',
