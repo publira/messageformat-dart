@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'dart:io';
 
 /// The CLDR tag of the pinned LDML version.
-const cldrTag = 'release-48-2';
+const cldrTag = 'release-49';
 
 const _base = 'https://raw.githubusercontent.com/unicode-org/cldr/$cldrTag';
 

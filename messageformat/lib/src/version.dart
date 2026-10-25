@@ -5,6 +5,5 @@ const packageVersion = '0.1.0';
 /// patterns, and currency data of the default functions, and the locales
 /// of `CldrLocale`, come from.
 ///
-/// It is the CLDR release of LDML 48.2, the version of the specification
-/// that the package implements.
-const cldrVersion = '48.2';
+/// It is the CLDR release of LDML 49.
+const cldrVersion = '49';

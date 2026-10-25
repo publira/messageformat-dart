@@ -6,7 +6,7 @@ The package depends only on Dart, not on Flutter, so it works on the server, on 
 
 ## Specification version
 
-The package implements **LDML 48.2**, revision [`tr35-78`](https://www.unicode.org/reports/tr35/tr35-78/tr35-messageFormat.html) of UTS #35, Part 9. Its locale data comes from **Unicode CLDR 48.2**, the CLDR release of the same version.
+The package implements **LDML 48.2**, revision [`tr35-78`](https://www.unicode.org/reports/tr35/tr35-78/tr35-messageFormat.html) of UTS #35, Part 9. Its locale data comes from **Unicode CLDR 49**.
 
 Correctness is judged by the [MessageFormat Working Group conformance suite](https://github.com/unicode-org/message-format-wg/tree/LDML48.2/test) at tag `LDML48.2`. A move to a later version of the specification is made in a release of its own.
 
