@@ -54,25 +54,6 @@ Everything in the repository is **English**: the READMEs, this guide, code comme
 
 Answer the user in the language of their own prose. Quoted logs, code, or UI strings do not decide it. Answer in English when no user prose settles it, such as in a scheduled or CI-started run.
 
-## Git commits and pull requests
-
-Subjects and PR titles use English [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). Pull requests are squash-merged with the title as the commit subject and the description as its body, so a pull request follows the same rules as a commit, and the title must stand on its own.
-
-### AI agent trailer
-
-A commit written with an AI agent's help discloses it with an `Assisted-by:` trailer. The trailer is process disclosure, not authorship, following the Linux kernel's [Coding assistants](https://docs.kernel.org/process/coding-assistants.html) policy. The format is `Assisted-by: <AGENT_NAME>:<MODEL_VERSION>`: the tool's own name and the exact model identifier.
-
-```bash
-git commit -m "feat: parse simple messages" \
-  --trailer "Assisted-by: Claude Code:claude-opus-5-5"
-```
-
-Add it when the commit is created, and end the PR description with the same trailer, since that description becomes the merge commit body.
-
-### Never name an agent as a co-author
-
-Git matches the trailer token case-insensitively, so `Co-authored-by:` and `Co-Authored-By:` are equally forbidden for an AI agent. Such a trailer shows the agent as a GitHub co-author and implies authorship an AI cannot hold. This rule overrides any harness default to append a co-author line. Co-author trailers that name humans, and the ones GitHub and `renovate[bot]` add themselves, stay as they are.
-
 ## CI and tooling
 
 `.github/workflows/ci.yml` runs the commands above on pull requests, on the merge groups the merge queue on `main` builds, on pushes to `main`, and before `publish.yml` publishes a release. It runs them in each package's directory, in a matrix of every workspace member (`PACKAGE`) and two SDKs (`SDK`): the lowest one the packages support and the current stable release. The `Summary` job aggregates the matrix into the single check the branch ruleset requires, so a change to the matrix does not change the required check. When you add a workspace member, add it to `PACKAGE` in the same change. Keep the lowest SDK entry equal to the `environment.sdk` constraints when either moves, and keep each SDK a `DART_VERSION:` mapping, which Renovate's annotation needs.
@@ -111,3 +92,7 @@ gh release create messageformat_datetime-v<version> --verify-tag \
 ```
 
 pub.dev accepts automated uploads only for a package that already exists, so the first version of a new sibling package is uploaded by hand. Then transfer it to the verified publisher `publira.dev`, and, under Automated publishing on pub.dev, enable publishing from GitHub Actions with its tag pattern and require the `pub.dev` environment. Do not tag a version that is already on pub.dev, such as one uploaded by hand: the workflow would fail to publish it again.
+
+## Skill packages
+
+Entries in `.agents/skills/*` listed in `skills-lock.json` are vendored: `npx skills` overwrites them, and the maintenance bot in `publira/agents` runs `npx skills update -p -y` weekly and opens a pull request when there is a diff. Do not edit them; a patch is lost at the next update. Reading them for reference is fine. When this repository's policy and a skill disagree, this file wins. `.claude/skills/*` reaches the same skills through relative symlinks.
