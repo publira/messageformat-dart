@@ -111,3 +111,7 @@ gh release create messageformat_datetime-v<version> --verify-tag \
 ```
 
 pub.dev accepts automated uploads only for a package that already exists, so the first version of a new sibling package is uploaded by hand. Then transfer it to the verified publisher `publira.dev`, and, under Automated publishing on pub.dev, enable publishing from GitHub Actions with its tag pattern and require the `pub.dev` environment. Do not tag a version that is already on pub.dev, such as one uploaded by hand: the workflow would fail to publish it again.
+
+## Skill packages
+
+Entries in `.agents/skills/*` listed in `skills-lock.json` are vendored: `npx skills` overwrites them, and the maintenance bot in `publira/agents` runs `npx skills update -p -y` weekly and opens a pull request when there is a diff. Do not edit them; a patch is lost at the next update. Reading them for reference is fine. When this repository's policy and a skill disagree, this file wins. `.claude/skills/*` reaches the same skills through relative symlinks.
